@@ -1,3 +1,3 @@
-# An introduction
+# Μια εισαγωγή
 
-About the JavaScript language and the environment to develop with it.
+Με τον γλώσσα προγραμματισμού JavaScript και το περιβάλλον που μπορείτε να τη χρησιμοποιήσετε.
