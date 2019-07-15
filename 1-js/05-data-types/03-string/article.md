@@ -54,7 +54,7 @@ Backticks also allow us to specify a "template function" before the first backti
 
 ## Special characters
 
-It is still possible to create multiline strings with single quotes by using a so-called "newline character", written as `\n`, which denotes a line break:
+It is still possible to create multiline strings with single and double quotes by using a so-called "newline character", written as `\n`, which denotes a line break:
 
 ```js run
 let guestList = "Guests:\n * John\n * Pete\n * Mary";
@@ -81,14 +81,14 @@ Here's the full list:
 | Character | Description |
 |-----------|-------------|
 |`\n`|New line|
-|`\r`|Carriage return: not used alone. Windows text files use a combination of two characters `\n\r` to represent a line break. |
+|`\r`|Carriage return: not used alone. Windows text files use a combination of two characters `\r\n` to represent a line break. |
 |`\'`, `\"`|Quotes|
 |`\\`|Backslash|
 |`\t`|Tab|
-|`\b`, `\f`,`\v` | Backspace, Form Feed, Vertical Tab -- kept for compatibility, not used nowadays. |
+|`\b`, `\f`, `\v`| Backspace, Form Feed, Vertical Tab -- kept for compatibility, not used nowadays. |
 |`\xXX`|Unicode character with the given hexadimal unicode `XX`, e.g. `'\x7A'` is the same as `'z'`.|
 |`\uXXXX`|A unicode symbol with the hex code `XXXX` in UTF-16 encoding, for instance `\u00A9` -- is a unicode for the copyright symbol `©`. It must be exactly 4 hex digits. |
-|`\u{X…XXXXXX}` (1 to 6 hex characters)|A unicode symbol with the given UTF-32 encoding. Some rare characters are encoded with two unicode symbols, taking up to 4 bytes. This way we can insert long codes. |
+|`\u{X…XXXXXX}` (1 to 6 hex characters)|A unicode symbol with the given UTF-32 encoding. Some rare characters are encoded with two unicode symbols, taking 4 bytes. This way we can insert long codes. |
 
 Examples with unicode:
 
@@ -538,11 +538,11 @@ Luckily, all modern browsers (IE10- requires the additional library [Intl.JS](ht
 
 It provides a special method to compare strings in different languages, following their rules.
 
-The call [str.localeCompare(str2)](mdn:js/String/localeCompare):
+The call [str.localeCompare(str2)](mdn:js/String/localeCompare) returns an integer indicating whether `str` comes before, after or is equivalent to `str2` according to the language rules:
 
-- Returns `1` if `str` is greater than `str2` according to the language rules.
-- Returns `-1` if `str` is less than `str2`.
-- Returns `0` if they are equal.
+- Returns a negative number if `str` is less than `str2`, i.e. `str` occurs before `str2`.
+- Returns a positive number if `str` is greater than `str2`, i.e. `str` occurs after `str2`.
+- Returns `0` if they are equivalent.
 
 For instance:
 
