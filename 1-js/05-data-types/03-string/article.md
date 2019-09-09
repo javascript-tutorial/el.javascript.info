@@ -50,7 +50,7 @@ let guestList = "Guests: // Error: Unexpected token ILLEGAL
 
 Single and double quotes come from ancient times of language creation when the need for multiline strings was not taken into account. Backticks appeared much later and thus are more versatile.
 
-Backticks also allow us to specify a "template function" before the first backtick. The syntax is: <code>func&#96;string&#96;</code>. The function `func` is called automatically, receives the string and embedded expressions and can process them. You can read more about it in the [docs](mdn:/JavaScript/Reference/Template_literals#Tagged_template_literals). This is called "tagged templates". This feature makes it easier to wrap strings into custom templating or other functionality, but it is rarely used.
+Backticks also allow us to specify a "template function" before the first backtick. The syntax is: <code>func&#96;string&#96;</code>. The function `func` is called automatically, receives the string and embedded expressions and can process them. You can read more about it in the [docs](mdn:/JavaScript/Reference/Template_literals#Tagged_templates). This is called "tagged templates". This feature makes it easier to wrap strings into custom templating or other functionality, but it is rarely used.
 
 ## Special characters
 
@@ -86,7 +86,7 @@ Here's the full list:
 |`\\`|Backslash|
 |`\t`|Tab|
 |`\b`, `\f`, `\v`| Backspace, Form Feed, Vertical Tab -- kept for compatibility, not used nowadays. |
-|`\xXX`|Unicode character with the given hexadimal unicode `XX`, e.g. `'\x7A'` is the same as `'z'`.|
+|`\xXX`|Unicode character with the given hexadecimal unicode `XX`, e.g. `'\x7A'` is the same as `'z'`.|
 |`\uXXXX`|A unicode symbol with the hex code `XXXX` in UTF-16 encoding, for instance `\u00A9` -- is a unicode for the copyright symbol `©`. It must be exactly 4 hex digits. |
 |`\u{X…XXXXXX}` (1 to 6 hex characters)|A unicode symbol with the given UTF-32 encoding. Some rare characters are encoded with two unicode symbols, taking 4 bytes. This way we can insert long codes. |
 
@@ -364,8 +364,8 @@ alert( "Hello".includes("Bye") ); // false
 The optional second argument of `str.includes` is the position to start searching from:
 
 ```js run
-alert( "Midget".includes("id") ); // true
-alert( "Midget".includes("id", 3) ); // false, from position 3 there is no "id"
+alert( "Widget".includes("id") ); // true
+alert( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"
 ```
 
 The methods [str.startsWith](mdn:js/String/startsWith) and [str.endsWith](mdn:js/String/endsWith) do exactly what they say:
@@ -538,10 +538,10 @@ Luckily, all modern browsers (IE10- requires the additional library [Intl.JS](ht
 
 It provides a special method to compare strings in different languages, following their rules.
 
-The call [str.localeCompare(str2)](mdn:js/String/localeCompare) returns an integer indicating whether `str` comes before, after or is equivalent to `str2` according to the language rules:
+The call [str.localeCompare(str2)](mdn:js/String/localeCompare) returns an integer indicating whether `str` is less, equal or greater than `str2` according to the language rules:
 
-- Returns a negative number if `str` is less than `str2`, i.e. `str` occurs before `str2`.
-- Returns a positive number if `str` is greater than `str2`, i.e. `str` occurs after `str2`.
+- Returns a negative number if `str` is less than `str2`.
+- Returns a positive number if `str` is greater than `str2`.
 - Returns `0` if they are equivalent.
 
 For instance:
