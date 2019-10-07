@@ -43,7 +43,7 @@ If we look for a property in `rabbit`, and it's missing, JavaScript automaticall
 
 For instance:
 
-```js run
+```js
 let animal = {
   eats: true
 };
@@ -101,7 +101,6 @@ The method is automatically taken from the prototype, like this:
 
 The prototype chain can be longer:
 
-
 ```js run
 let animal = {
   eats: true,
@@ -131,10 +130,10 @@ alert(longEar.jumps); // true (from rabbit)
 
 ![](proto-animal-rabbit-chain.svg)
 
-There are actually only two limitations:
+There are only two limitations:
 
 1. The references can't go in circles. JavaScript will throw an error if we try to assign `__proto__` in a circle.
-2. The value of `__proto__` can be either an object or `null`, other types (like primitives) are ignored.
+2. The value of `__proto__` can be either an object or `null`. Other types are ignored.
 
 Also it may be obvious, but still: there can be only one `[[Prototype]]`. An object may not inherit from two others.
 
@@ -171,7 +170,7 @@ From now on, `rabbit.walk()` call finds the method immediately in the object and
 
 ![](proto-animal-rabbit-walk-2.svg)
 
-That's for data properties only, not for accessors. If a property is a getter/setter, then it behaves like a function: getters/setters are looked up in the prototype.
+Accessor properties are an exception, as assignment is handled by a setter function. So writing to such a property is actually the same as calling a function.
 
 For that reason `admin.fullName` works correctly in the code below:
 
@@ -247,7 +246,7 @@ The resulting picture:
 
 ![](proto-animal-rabbit-walk-3.svg)
 
-If we had other objects like `bird`, `snake` etc inheriting from `animal`, they would also gain access to methods of `animal`. But `this` in each method would be the corresponding object, evaluated at the call-time (before dot), not `animal`. So when we write data into `this`, it is stored into these objects.
+If we had other objects like `bird`, `snake` etc inheriting from `animal`, they would also gain access to methods of `animal`. But `this` in each method call would be the corresponding object, evaluated at the call-time (before dot), not `animal`. So when we write data into `this`, it is stored into these objects.
 
 As a result, methods are shared, but the object state is not.
 
@@ -309,14 +308,14 @@ Here we have the following inheritance chain: `rabbit` inherits from `animal`, t
 
 Note, there's one funny thing. Where is the method `rabbit.hasOwnProperty` coming from? We did not define it. Looking at the chain we can see that the method is provided by `Object.prototype.hasOwnProperty`. In other words, it's inherited.
 
-...But why `hasOwnProperty` does not appear in `for..in` loop, like `eats` and `jumps`, if it lists all inherited properties.
+...But why does `hasOwnProperty` not appear in the `for..in` loop like `eats` and `jumps` do, if `for..in` lists inherited properties?
 
-The answer is simple: it's not enumerable. Just like all other properties of `Object.prototype`, it has `enumerable:false` flag. That's why they are not listed.
+The answer is simple: it's not enumerable. Just like all other properties of `Object.prototype`, it has `enumerable:false` flag. And `for..in` only lists enumerable properties. That's why it and the rest of the `Object.prototype` properties are not listed.
 
-```smart header="All other iteration methods ignore inherited properties"
-All other key/value-getting methods, such as `Object.keys`, `Object.values` and so on ignore inherited properties.
+```smart header="Almost all other key/value-getting methods ignore inherited properties"
+Almost all other key/value-getting methods, such as `Object.keys`, `Object.values` and so on ignore inherited properties.
 
-They only operate on the object itself. Properties from the prototype are taken into account.
+They only operate on the object itself. Properties from the prototype are *not* taken into account.
 ```
 
 ## Summary
@@ -325,6 +324,6 @@ They only operate on the object itself. Properties from the prototype are taken 
 - We can use `obj.__proto__` to access it (a historical getter/setter, there are other ways, to be covered soon).
 - The object referenced by `[[Prototype]]` is called a "prototype".
 - If we want to read a property of `obj` or call a method, and it doesn't exist, then JavaScript tries to find it in the prototype.
-- Write/delete operations for act directly on the object, they don't use the prototype (assuming it's a data property, not is a setter).
+- Write/delete operations act directly on the object, they don't use the prototype (assuming it's a data property, not a setter).
 - If we call `obj.method()`, and the `method` is taken from the prototype, `this` still references `obj`. So methods always work with the current object even if they are inherited.
-- The `for..in` loop iterates over both own and inherited properties. All other key/value-getting methods only operate on the object itself.
+- The `for..in` loop iterates over both its own and its inherited properties. All other key/value-getting methods only operate on the object itself.
