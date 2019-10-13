@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Type conversions
+# Μετατροπές τύπων
 
-What are results of these expressions?
+Ποια είναι τα αποτελέσματα αυτών των εκφράσεων;
 
 ```js no-beautify
 "" + 1 + 0
@@ -23,4 +23,4 @@ null + 1
 undefined + 1
 ```
 
-Think well, write down and then compare with the answer.
+Σκεφτείτε καλά, γράψτε κάτω τις απαντήσεις σας και μετά συγκρίνετε τες με την απάντηση.
