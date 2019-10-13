@@ -114,8 +114,7 @@ alert(Boolean(0)); // false
 alert(Boolean("γεια")); // true
 alert(Boolean("")); // false
 ```
-
-
+````
 
 ## Περίληψη
 
