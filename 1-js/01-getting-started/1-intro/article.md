@@ -12,8 +12,13 @@
 
 Σε αυτό το σημείο, να συμπληρώσω οτι η JavaScript έχει μεγάλη διάφορα με την [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
+<<<<<<< HEAD
 '''smart header="Γιατί <u>Java</u>Script?"
 Όταν είχε φτιαχτεί η JavaScript, είχε ένα διαφορετικό όνομά, λεγότανε "LiveScript". Αλά η Java ήταν πολύ γνωστή εκείνη την εποχή, οπότε αποφασίστηκε οτι θα βοηθούσε αν έκαναν την γλωσσά προγραμματισμού τον "μικρο αδελφό" της Java.
+=======
+```smart header="Why is it called <u>Java</u>Script?"
+When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+>>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 Αλλά καθώς εξελίχθηκε, η JavaScript έγινε μια πλήρως ανεξάρτητη γλώσσα με τη δική της προδιαγραφή που ονομάζεται [ECMAScript] (http://en.wikipedia.org/wiki/ECMAScript), και τώρα δεν έχει καμία σχέση με την Java
 
@@ -90,7 +95,11 @@ JavaScript is the only browser technology that combines these three things.
 
 That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
 
+<<<<<<< HEAD
 While planning to learn a new technology, it's beneficial to check its perspectives. So let's move on to the modern trends affecting it, including new languages and browser abilities.
+=======
+That said, JavaScript also allows to create servers, mobile applications, etc.
+>>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 ## Languages "over" JavaScript
 

@@ -1,9 +1,13 @@
 
 # Class inheritance
 
-Let's say we have two classes.
+Class inheritance is a way for one class to extend another class.
 
-`Animal`:
+So we can create new functionality on top of the existing.
+
+## The "extends" keyword
+
+Let's say with have class `Animal`:
 
 ```js
 class Animal {
@@ -17,28 +21,26 @@ class Animal {
   }
   stop() {
     this.speed = 0;
-    alert(`${this.name} stopped.`);
+    alert(`${this.name} stands still.`);
   }
 }
 
 let animal = new Animal("My animal");
 ```
 
+<<<<<<< HEAD
+![](rabbit-animal-independent-animal.svg)
+=======
+Here's how we can represent `animal` object and `Animal` class graphically:
+>>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
+
 ![](rabbit-animal-independent-animal.svg)
 
+...And we would like to create another `class Rabbit`.
 
-...And `Rabbit`:
+As rabbits are animals, `Rabbit` class should be based on `Animal`, have access to animal methods, so that rabbits can do what "generic" animals can do.
 
-```js
-class Rabbit {
-  constructor(name) {
-    this.name = name;
-  }
-  hide() {
-    alert(`${this.name} hides!`);
-  }
-}
-
+<<<<<<< HEAD
 let rabbit = new Rabbit("My rabbit");
 ```
 
@@ -48,28 +50,13 @@ let rabbit = new Rabbit("My rabbit");
 Right now they are fully independent.
 
 But we'd want `Rabbit` to extend `Animal`. In other words, rabbits should be based on animals, have access to methods of `Animal` and extend them with its own methods.
+=======
+The syntax to extend another class is: `class Child extends Parent`.
+>>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
-To inherit from another class, we should specify `"extends"` and the parent class before the braces `{..}`.
+Let's create `class Rabbit` that inherits from `Animal`:
 
-Here `Rabbit` inherits from `Animal`:
-
-```js run
-class Animal {
-  constructor(name) {
-    this.speed = 0;
-    this.name = name;
-  }
-  run(speed) {
-    this.speed += speed;
-    alert(`${this.name} runs with speed ${this.speed}.`);
-  }
-  stop() {
-    this.speed = 0;
-    alert(`${this.name} stopped.`);
-  }
-}
-
-// Inherit from Animal by specifying "extends Animal"
+```js
 *!*
 class Rabbit extends Animal {
 */!*
@@ -84,15 +71,18 @@ rabbit.run(5); // White Rabbit runs with speed 5.
 rabbit.hide(); // White Rabbit hides!
 ```
 
-Now the `Rabbit` code became a bit shorter, as it uses `Animal` constructor by default, and it also can `run`, as animals do.
+Object of `Rabbit` class have access to both `Rabbit` methods, such as `rabbit.hide()`, and also to `Animal` methods, such as `rabbit.run()`.
 
-Internally, `extends` keyword adds `[[Prototype]]` reference from `Rabbit.prototype` to `Animal.prototype`:
+Internally, `extends` keyword works using the good old prototype mechanics. It sets `Rabbit.prototype.[[Prototype]]` to `Animal.prototype`. So, if a method is not found in `Rabbit.prototype`, JavaScript takes it from `Animal.prototype`.
 
 ![](animal-rabbit-extends.svg)
 
-So, if a method is not found in `Rabbit.prototype`, JavaScript takes it from `Animal.prototype`.
+For instance, to find `rabbit.run` method, the engine checks (bottom-up on the picture):
+1. The `rabbit` object (has no `run`).
+2. Its prototype, that is `Rabbit.prototype` (has `hide`, but not `run`).
+3. Its prototype, that is (due to `extends`) `Animal.prototype`, that finally has the `run` method.
 
-As we can recall from the chapter <info:native-prototypes>, JavaScript uses the same prototypal inheritance for build-in objects. E.g. `Date.prototype.[[Prototype]]` is `Object.prototype`, so dates have generic object methods.
+As we can recall from the chapter <info:native-prototypes>, JavaScript itself uses prototypal inheritance for build-in objects. E.g. `Date.prototype.[[Prototype]]` is `Object.prototype`. That's why dates have access to generic object methods.
 
 ````smart header="Any expression is allowed after `extends`"
 Class syntax allows to specify not just a class, but any expression after `extends`.
@@ -119,20 +109,20 @@ That may be useful for advanced programming patterns when we use functions to ge
 
 ## Overriding a method
 
-Now let's move forward and override a method. As of now, `Rabbit` inherits the `stop` method that sets `this.speed = 0` from `Animal`.
+Now let's move forward and override a method. By default, all methods that are not specified in `class Rabbit` are taken directly "as is" from `class Animal`.
 
-If we specify our own `stop` in `Rabbit`, then it will be used instead:
+But if we specify our own method in `Rabbit`, such as `stop()` then it will be used instead:
 
 ```js
 class Rabbit extends Animal {
   stop() {
-    // ...this will be used for rabbit.stop()
+    // ...now this will be used for rabbit.stop()
+    // instead of stop() from class Animal
   }
 }
 ```
 
-
-...But usually we don't want to totally replace a parent method, but rather to build on top of it, tweak or extend its functionality. We do something in our method, but call the parent method before/after it or in the process.
+Usually we don't want to totally replace a parent method, but rather to build on top of it to tweak or extend its functionality. We do something in our method, but call the parent method before/after it or in the process.
 
 Classes provide `"super"` keyword for that.
 
@@ -156,7 +146,7 @@ class Animal {
 
   stop() {
     this.speed = 0;
-    alert(`${this.name} stopped.`);
+    alert(`${this.name} stands still.`);
   }
 
 }
@@ -177,7 +167,7 @@ class Rabbit extends Animal {
 let rabbit = new Rabbit("White Rabbit");
 
 rabbit.run(5); // White Rabbit runs with speed 5.
-rabbit.stop(); // White Rabbit stopped. White rabbit hides!
+rabbit.stop(); // White Rabbit stands still. White rabbit hides!
 ```
 
 Now `Rabbit` has the `stop` method that calls the parent `super.stop()` in the process.
@@ -260,18 +250,18 @@ The short answer is: constructors in inheriting classes must call `super(...)`, 
 
 ...But why? What's going on here? Indeed, the requirement seems strange.
 
-Of course, there's an explanation. Let's get into details, so you'd really understand what's going on.
+Of course, there's an explanation. Let's get into details, so you'll really understand what's going on.
 
-In JavaScript, there's a distinction between a "constructor function of an inheriting class" and all others. In an inheriting class, the corresponding constructor function is labelled with a special internal property `[[ConstructorKind]]:"derived"`.
+In JavaScript, there's a distinction between a "constructor function of an inheriting class" and all others. In an inheriting class, the corresponding constructor function is labeled with a special internal property `[[ConstructorKind]]:"derived"`.
 
 The difference is:
 
-- When a normal constructor runs, it creates an empty object as `this` and continues with it.
-- But when a derived constructor runs, it doesn't do it. It expects the parent constructor to do this job.
+- When a normal constructor runs, it creates an empty object and assigns it to `this`.
+- But when a derived constructor runs, it doesn't do this. It expects the parent constructor to do this job.
 
-So if we're making a constructor of our own, then we must call `super`, because otherwise the object with `this` reference to it won't be created. And we'll get an error.
+So if we're making a constructor of our own, then we must call `super`, because otherwise the object for `this` won't be created. And we'll get an error.
 
-For `Rabbit` to work, we need to call `super()` before using `this`, like here:
+For `Rabbit` constructor to work, it needs to call `super()` before using `this`, like here:
 
 ```js run
 class Animal {
@@ -307,15 +297,23 @@ alert(rabbit.earLength); // 10
 
 ## Super: internals, [[HomeObject]]
 
-Let's get a little deeper under the hood of `super`. We'll see some interesting things by the way.
+```warn header="Advanced information"
+If you're reading the tutorial for the first time - this section may be skipped.
+
+It's about the internal mechanisms behind inheritance and `super`.
+```
+
+Let's get a little deeper under the hood of `super`. We'll see some interesting things along the way.
 
 First to say, from all that we've learned till now, it's impossible for `super` to work at all!
 
-Yeah, indeed, let's ask ourselves, how it could technically work? When an object method runs, it gets the current object as `this`. If we call `super.method()` then, it needs to retrieve the `method` from the prototype of the current object.
+Yeah, indeed, let's ask ourselves, how it should technically work? When an object method runs, it gets the current object as `this`. If we call `super.method()` then, the engine needs to get the `method` from the prototype of the current object. But how?
 
 The task may seem simple, but it isn't. The engine knows the current object `this`, so it could get the parent `method` as `this.__proto__.method`. Unfortunately, such a "naive" solution won't work.
 
 Let's demonstrate the problem. Without classes, using plain objects for the sake of simplicity.
+
+You may skip this part and go below to the `[[HomeObject]]` subsection if you don't want to know the details. That won't harm. Or read on if you're interested in understanding things in-depth.
 
 In the example below, `rabbit.__proto__ = animal`. Now let's try: in `rabbit.eat()` we'll call `animal.eat()`, using `this.__proto__`:
 
@@ -460,7 +458,7 @@ The very existance of `[[HomeObject]]` violates that principle, because methods 
 
 The only place in the language where `[[HomeObject]]` is used -- is `super`. So, if a method does not use `super`, then we can still consider it free and copy between objects. But with `super` things may go wrong.
 
-Here's the demo of a wrong `super` call:
+Here's the demo of a wrong `super` result after copying:
 
 ```js run
 let animal = {
@@ -469,6 +467,7 @@ let animal = {
   }
 };
 
+// rabbit inherits from animal
 let rabbit = {
   __proto__: animal,
   sayHi() {
@@ -482,6 +481,7 @@ let plant = {
   }
 };
 
+// tree inherits from plant
 let tree = {
   __proto__: plant,
 *!*
@@ -498,9 +498,14 @@ A call to `tree.sayHi()` shows "I'm an animal". Definitevely wrong.
 
 The reason is simple:
 - In the line `(*)`, the method `tree.sayHi` was copied from `rabbit`. Maybe we just wanted to avoid code duplication?
-- So its `[[HomeObject]]` is `rabbit`, as it was created in `rabbit`. There's no way to change `[[HomeObject]]`.
+- Its `[[HomeObject]]` is `rabbit`, as it was created in `rabbit`. There's no way to change `[[HomeObject]]`.
 - The code of `tree.sayHi()` has `super.sayHi()` inside. It goes up from `rabbit` and takes the method from `animal`.
 
+<<<<<<< HEAD
+=======
+Here's the diagram of what happens:
+
+>>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 ![](super-homeobject-wrong.svg)
 
 ### Methods, not function properties
@@ -513,7 +518,7 @@ In the example below a non-method syntax is used for comparison. `[[HomeObject]]
 
 ```js run
 let animal = {
-  eat: function() { // should be the short syntax: eat() {...}
+  eat: function() { // intentially writing like this instead of eat() {...
     // ...
   }
 };
