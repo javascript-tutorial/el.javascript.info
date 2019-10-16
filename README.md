@@ -1,9 +1,9 @@
-# The Modern JavaScript Tutorial in Greek
+# Το μοντέρνο JavaScript Tutorial στα Ελληνικά
 
 This repository hosts the translation of <https://javascript.info> in Greek.
 
 
-**That's how you can contribute:**
+**Πώς μπορείς να βοηθήσεις:**
 
 - See the [Greek Translate Progress](https://github.com/javascript-tutorial/el.javascript.info/issues/1) issue.
 - Choose an unchecked article you'd like to translate.
