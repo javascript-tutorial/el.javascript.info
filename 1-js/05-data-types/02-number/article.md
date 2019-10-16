@@ -2,7 +2,7 @@
 
 All numbers in JavaScript are stored in 64-bit format [IEEE-754](https://en.wikipedia.org/wiki/IEEE_754-2008_revision), also known as "double precision floating point numbers".
 
-Let's recap and expand upon what we currently know about them.
+Let's expand upon what we currently know about them.
 
 ## More ways to write a number
 
@@ -213,7 +213,7 @@ So, division by powers `10` is guaranteed to work well in the decimal system, bu
 
 There's just no way to store *exactly 0.1* or *exactly 0.2* using the binary system, just like there is no way to store one-third as a decimal fraction.
 
-The numeric format IEEE-754 solves this by rounding to the nearest possible number. These rounding rules normally don't allow us to see that "tiny precision loss", so the number shows up as `0.3`. But beware, the loss still exists.
+The numeric format IEEE-754 solves this by rounding to the nearest possible number. These rounding rules normally don't allow us to see that "tiny precision loss", but it exists.
 
 We can see this in action:
 ```js run
@@ -417,7 +417,7 @@ To write big numbers:
 For different numeral systems:
 
 - Can write numbers directly in hex (`0x`), octal (`0o`) and binary (`0b`) systems
-- `parseInt(str, base)` parses an integer from any numeral system with base: `2 ≤ base ≤ 36`.
+- `parseInt(str, base)` parses the string `str` into an integer in numeral system with given `base`, `2 ≤ base ≤ 36`.
 - `num.toString(base)` converts a number to a string in the numeral system with the given `base`.
 
 For converting values like `12pt` and `100px` to a number:

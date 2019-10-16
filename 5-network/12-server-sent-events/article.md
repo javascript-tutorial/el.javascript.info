@@ -37,9 +37,9 @@ data: Message 3
 data: of two lines
 ```
 
-- A message text goes after `data:`, the space after the semicolon is optional.
+- A message text goes after `data:`, the space after the colon is optional.
 - Messages are delimited with double line breaks `\n\n`.
-- To send a line break `\n`, we can immediately one more `data:` (3rd message above).
+- To send a line break `\n`, we can immediately send one more `data:` (3rd message above).
 
 In practice, complex messages are usually sent JSON-encoded. Line-breaks are encoded as `\n` within them, so multiline `data:` messages are not necessary.
 
@@ -64,7 +64,7 @@ eventSource.onmessage = function(event) {
 // or eventSource.addEventListener('message', ...)
 ```
 
-### Cross-domain requests
+### Cross-origin requests
 
 `EventSource` supports cross-origin requests, like `fetch` any other networking methods. We can use any URL:
 
@@ -82,7 +82,7 @@ let source = new EventSource("https://another-site.com/events", {
 });
 ```
 
-Please see the chapter <info:fetch-crossorigin> for more details about cross-domain headers.
+Please see the chapter <info:fetch-crossorigin> for more details about cross-origin headers.
 
 
 ## Reconnection
@@ -102,7 +102,7 @@ data: Hello, I set the reconnection delay to 15 seconds
 
 The `retry:` may come both together with some data, or as a standalone message.
 
-The browser should wait that many milliseconds before reconnect. Or longer, e.g. if the browser knows (from OS) that there's no network connection at the moment, it may wait until the connection appears, and then retry.
+The browser should wait that many milliseconds before reconnecting. Or longer, e.g. if the browser knows (from OS) that there's no network connection at the moment, it may wait until the connection appears, and then retry.
 
 - If the server wants the browser to stop reconnecting, it should respond with HTTP status 204.
 - If the browser wants to close the connection, it should call `eventSource.close()`:
@@ -113,7 +113,7 @@ let eventSource = new EventSource(...);
 eventSource.close();
 ```
 
-Also, there will be no reconnection if the response has an incorrect `Content-Type` or its HTTP status differs from 301, 307, 200 and 204. The connection the `"error"` event is emitted, and the browser won't reconnect.
+Also, there will be no reconnection if the response has an incorrect `Content-Type` or its HTTP status differs from 301, 307, 200 and 204. In such cases the `"error"` event will be emitted, and the browser won't reconnect.
 
 ```smart
 When a connection is finally closed, there's no way to "reopen" it. If we'd like to connect again, just create a new `EventSource`.
@@ -227,9 +227,9 @@ The syntax is:
 let source = new EventSource(url, [credentials]);
 ```
 
-The second argument has only one possible option: `{ withCredentials: true }`, it allows sending cross-domain credentials.
+The second argument has only one possible option: `{ withCredentials: true }`, it allows sending cross-origin credentials.
 
-Overall cross-domain security is same as for `fetch` and other network methods.
+Overall cross-origin security is same as for `fetch` and other network methods.
 
 ### Properties of an `EventSource` object
 
@@ -242,7 +242,7 @@ Overall cross-domain security is same as for `fetch` and other network methods.
 ### Methods
 
 `close()`
-: Closes the connection соединение.
+: Closes the connection.
 
 ### Events
 
@@ -266,6 +266,6 @@ A message may have following fields:
 - `data:` -- message body, a sequence of multiple `data` is interpreted as a single message, with `\n` between the parts.
 - `id:` -- renews `lastEventId`, sent in `Last-Event-ID` on reconnect.
 - `retry:` -- recommends a retry delay for reconnections in ms. There's no way to set it from JavaScript.
-- `event:` -- even name, must precede `data:`.
+- `event:` -- event name, must precede `data:`.
 
 A message may include one or more fields in any order, but `id:` usually goes the last.

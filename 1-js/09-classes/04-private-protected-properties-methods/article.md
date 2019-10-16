@@ -53,7 +53,7 @@ In JavaScript, there are two types of object fields (properties and methods):
 - Public: accessible from anywhere. They comprise the external interface. Till now we were only using public properties and methods.
 - Private: accessible only from inside the class. These are for the internal interface.
 
-In many other languages there also exist "protected" fields: accessible only from inside the class and those extending it. They are also useful for the internal interface. They are in a sense more widespread than private ones, because we usually want inheriting classes to gain access to them.
+In many other languages there also exist "protected" fields: accessible only from inside the class and those extending it (like private, but plus access from inheriting classes). They are also useful for the internal interface. They are in a sense more widespread than private ones, because we usually want inheriting classes to gain access to them.
 
 Protected fields are not implemented in JavaScript on the language level, but in practice they are very convenient, so they are emulated.
 
@@ -248,7 +248,7 @@ Unlike protected ones, private fields are enforced by the language itself. That'
 But if we inherit from `CoffeeMachine`, then we'll have no direct access to `#waterAmount`. We'll need to rely on `waterAmount` getter/setter:
 
 ```js
-class MegaCoffeeMachine extends CoffeeMachine() {
+class MegaCoffeeMachine extends CoffeeMachine {
   method() {
 *!*
     alert( this.#waterAmount ); // Error: can only access from CoffeeMachine
@@ -297,12 +297,12 @@ Supportable
 
     **If we strictly delimit the internal interface, then the developer of the class can freely change its internal properties and methods, even without informing the users.**
 
-    If you're a developer of such class, it's great to know that private methods can be safely renamed, their parameters can be changed, and even removed, because no external code depends on them. 
+    If you're a developer of such class, it's great to know that private methods can be safely renamed, their parameters can be changed, and even removed, because no external code depends on them.
 
     For users, when a new version comes out, it may be a total overhaul internally, but still simple to upgrade if the external interface is the same.
 
 Hiding complexity
-: People adore to use things that are simple. At least from outside. What's inside is a different thing.
+: People adore using things that are simple. At least from outside. What's inside is a different thing.
 
     Programmers are not an exception.
 
