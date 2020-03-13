@@ -1,21 +1,21 @@
-# Decorators and forwarding, call/apply
+# Διακοσμητές και προώθηση, call/apply
 
-JavaScript gives exceptional flexibility when dealing with functions. They can be passed around, used as objects, and now we'll see how to *forward* calls between them and *decorate* them.
+Η JavaScript δίνει εξαιρετική ευελιξία στη χρήση συναρτήσεων. Μπορούν να δοθούν σαν ορίσματα, να χρησιμοποιηθούν σαν αντικείμενα και τώρα θα δούμε πως γίνεται να *προωθήσουμε* κλήσεις μεταξύ τους και να τις *διακοσμήσουμε*.
 
-## Transparent caching
+## Διαφανές caching
 
-Let's say we have a function `slow(x)` which is CPU-heavy, but its results are stable. In other words, for the same `x` it always returns the same result.
+Ας υποθέσουμε ότι έχουμε μια συνάρτηση `slow(x)` η οποία απαιτεί υψηλή επεξεργαστική ισχύ όμως τα αποτελέσματα της είναι σταθερά. Με άλλα λόγια, για το ίδιο `x` επιστρέφει πάντα το ίδιο αποτέλεσμα.
 
-If the function is called often, we may want to cache (remember) the results to avoid spending extra-time on recalculations.
+Αν η συνάρτηση καλείται συχνά, ενδέχεται να θέλουμε να κάνουμε cache (θυμόμαστε) τα αποτελέσματα προκείμενου να μην χρειάζεται να δαπανήσουμε επιπλέον χρόνο σε επανυπολογισμούς.
 
-But instead of adding that functionality into `slow()` we'll create a wrapper function, that adds caching. As we'll see, there are many benefits of doing so.
+Όμως, αντί να προσθέσουμε αυτή τη λειτουργικότητα στη `slow()` θα δημιουρήσουμε μια συνάρτηση "κάλυμμα", η οποία θα προσθέσει το caching. Όπως θα δούμε, υπάρχουν αρκετά πλεονεκτήματα σε αυτή τη μέθοδο.
 
-Here's the code, and explanations follow:
+Αυτός είναι ο κώδικας, και οι επεξηγήσεις ακολουθούν:
 
 ```js run
 function slow(x) {
-  // there can be a heavy CPU-intensive job here
-  alert(`Called with ${x}`);
+  // μπορεί να είναι μια διεργασία που απαιτεί υψηλή επεξεργαστική ισχύ εδώ
+  alert(`Καλέστηκε με ${x}`);
   return x;
 }
 
@@ -23,45 +23,45 @@ function cachingDecorator(func) {
   let cache = new Map();
 
   return function(x) {
-    if (cache.has(x)) {    // if there's such key in cache
-      return cache.get(x); // read the result from it
+    if (cache.has(x)) {  // αν υπάρχει τέτοιο κλειδί στο cache
+      return cache.get(x); // διάβασε το αποτέλεσμα από αυτό
     }
 
-    let result = func(x);  // otherwise call func
+    let result = func(x);  // αλλιώς κάλεσε την func
 
-    cache.set(x, result);  // and cache (remember) the result
+    cache.set(x, result);  // και κανε cached (θυμίσου) το αποτέλεσμα
     return result;
   };
 }
 
 slow = cachingDecorator(slow);
 
-alert( slow(1) ); // slow(1) is cached
-alert( "Again: " + slow(1) ); // the same
+alert( slow(1) ); // slow(1) είναι cached
+alert( "Again: " + slow(1) ); // το ίδιο
 
-alert( slow(2) ); // slow(2) is cached
-alert( "Again: " + slow(2) ); // the same as the previous line
+alert( slow(2) ); // slow(2) είναι cached
+alert( "Again: " + slow(2) ); // το ίδιο με τη προηγούμενη γραμμή
 ```
 
-In the code above `cachingDecorator` is a *decorator*: a special function that takes another function and alters its behavior.
+Στον από πάνω κώδικα, η `cachingDecorator` είναι ένας *διακοσμητής*, μια ειδική συνάρτηση η οποία παίρνει μια άλλη συνάρτηση και επηρεάζει την συμπεριφορά της.
 
-The idea is that we can call `cachingDecorator` for any function, and it will return the caching wrapper. That's great, because we can have many functions that could use such a feature, and all we need to do is to apply `cachingDecorator` to them.
+Η ιδέα είναι ότι μπορούμε να καλέσουμε την `cachingDecorator` για κάθε συνάρτηση, και αυτή θα επιστρέψει το κάλυμμα του cache. Αυτό είναι πολύ καλό, γιατί μπορούμε να έχουμε πολλές συναρτήσεις που μπορούν να χρησιμοποιήσουν αυτό το χαρακτηριστικό, και το μόνο που χρειάζεται να κάνουμε είναι να εφαρμόσουμε τη `cachingDecorator` σε αυτές.
 
-By separating caching from the main function code we also keep the main code simpler.
+Με το να διαχωρίζουμε το caching από τη συνάρτηση με τον βασικό κώδικα, διατηρούμε και τον βασικό κώδικα πιο απλό.
 
-The result of `cachingDecorator(func)` is a "wrapper": `function(x)` that "wraps" the call of `func(x)` into caching logic:
+Το αποτέλεσμα της `cachingDecorator(func)` είναι ένα "κάλυμμα": `function(x)` που καλύπτει το κάλεσμα της `func(x)` σε λογική caching:
 
 ![](decorator-makecaching-wrapper.svg)
 
-From an outside code, the wrapped `slow` function still does the same. It just got a caching aspect added to its behavior.
+Από εξωτερικό κώδικα, η καλυμμένη συνάρτηση `slow` κάνει ακόμα το ίδιο. Απλά προστέθηκε ένα caching στοιχείο στη συμπεριφορά της.
 
-To summarize, there are several benefits of using a separate `cachingDecorator` instead of altering the code of `slow` itself:
+Για να συνοψίσουμε, υπάρχουν αρκετά πλεονεκτήματα της χρήσης μιας ξεχωριστής `cachingDecorator` αντί να αλλάξει ο κώδικας της ίδιας της `slow`.
 
-- The `cachingDecorator` is reusable. We can apply it to another function.
-- The caching logic is separate, it did not increase the complexity of `slow` itself (if there was any).
-- We can combine multiple decorators if needed (other decorators will follow).
+- H `cachingDecorator` είναι επαναχρησιμοποιήσιμη. Μπορούμε να την εφαρμόσουμε σε άλλη συνάρτηση.
+- Η λογική cache είναι διαχωρισμένη, δεν αύξησε τη πολυπλοκότητα της ίδιας της `slow` (εαν υπήρχε κάποια).
+- Μπορούμε να συνδυάσουμε πολλαπλούς διακοσμητές αν χρειάζεται (οι άλλοι διακοσμητές θα ακολουθήσουν).
 
-## Using "func.call" for the context
+## Χρησιμοποιώντας "func.call" για το πλαίσιο.
 
 The caching decorator mentioned above is not suited to work with object methods.
 
