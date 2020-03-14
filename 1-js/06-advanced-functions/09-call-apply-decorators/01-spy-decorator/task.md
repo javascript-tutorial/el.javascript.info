@@ -2,17 +2,17 @@ importance: 5
 
 ---
 
-# Spy decorator
+# Διακοσμητής κατάσκοπος
 
-Create a decorator `spy(func)` that should return a wrapper that saves all calls to function in its `calls` property.
+Δημιούργησε ένα διακοσμητή `spy(func)` που επιστρέφει έναν wrapper που αποθηκέυει όλες τις κλήσεις στη συνάρτηση στην `calls` ιδιότητα του.
 
-Every call is saved as an array of arguments.
+Κάθε κλήση αποθηκέυεται σαν ένας πίνακας από ορίσματα.
 
-For instance:
+Για παράδειγμα:
 
 ```js
 function work(a, b) {
-  alert( a + b ); // work is an arbitrary function or method
+  alert( a + b ); // η work είναι μια τυχαία συνάρτηση η μέθοδος
 }
 
 *!*
@@ -27,4 +27,4 @@ for (let args of work.calls) {
 }
 ```
 
-P.S. That decorator is sometimes useful for unit-testing. Its advanced form is `sinon.spy` in [Sinon.JS](http://sinonjs.org/) library.
+ Αυτός ο διακοσμητής είναι μερικές φορές χρήσιμος για unit-testing. Η προηγμένη του μορφή είναι το `sinon.spy` στην [Sinon.JS](http://sinonjs.org/) βιβλιοθήκη.
