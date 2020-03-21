@@ -16,13 +16,13 @@ function debounce(f, ms) {
 }
 ```
 
-A call to `debounce` returns a wrapper. There may be two states:
+Μια κλήση στη `debounce` επιστρέφει μια συνάρτηση-κάλυμμα. Μπορεί να υπάρχουν δύο καταστάσεις:
 
-- `isCooldown = false` -- ready to run.
-- `isCooldown = true` -- waiting for the timeout.
+- `isCooldown = false` -- έτοιμη να τρέξει.
+- `isCooldown = true` -- περιμένοντας για το timeout.
 
-In the first call `isCooldown` is falsy, so the call proceeds, and the state changes to `true`.
+Στη πρώτη κλήση η `isCooldown` επιστρέφει μια τιμή λάθους, οπότε η κλήση προχωράει, και η κατάσταση αλλάζει σε `true`.
 
-While `isCooldown` is true, all other calls are ignored.
+Όοσ η `isCooldown` είναι αληθής, όλες οι άλλες κλήσεις μπορούν να αγνοηθούν.
 
-Then `setTimeout` reverts it to `false` after the given delay.
+Τότε η `setTimeout` την ξανακάνει `false` μετά τη δοσμένη καθυστέρηση.
