@@ -16,7 +16,7 @@ class Animal {
     this.name = name;
   }
   run(speed) {
-    this.speed += speed;
+    this.speed = speed;
     alert(`${this.name} runs with speed ${this.speed}.`);
   }
   stop() {
@@ -56,7 +56,7 @@ The syntax to extend another class is: `class Child extends Parent`.
 
 Let's create `class Rabbit` that inherits from `Animal`:
 
-```js run
+```js
 *!*
 class Rabbit extends Animal {
 */!*
@@ -140,7 +140,7 @@ class Animal {
   }
 
   run(speed) {
-    this.speed += speed;
+    this.speed = speed;
     alert(`${this.name} runs with speed ${this.speed}.`);
   }
 
@@ -518,7 +518,7 @@ In the example below a non-method syntax is used for comparison. `[[HomeObject]]
 
 ```js run
 let animal = {
-  eat: function() { // intentially writing like this instead of eat() {...
+  eat: function() { // intentionally writing like this instead of eat() {...
     // ...
   }
 };
