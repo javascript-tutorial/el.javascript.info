@@ -4,11 +4,9 @@ importance: 5
 
 # Διακοσμητής καθυστέρησης
 
-Create a decorator `delay(f, ms)` that delays each call of `f` by `ms` milliseconds.
-
 Δημιούργησε ένα διακοσμητή `delay(f, ms)` που καθυστερεί κάθε κλήση της `f` χρόνο ίσο με `ms` δέκατα του δευτερολέπτου.
 
-Για παράδειγμαω
+Για παράδειγμα:
 
 ```js
 function f(x) {
