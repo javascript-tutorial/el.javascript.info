@@ -2,11 +2,11 @@ importance: 5
 
 ---
 
-# Show an alert
+# Δείξε το alert
 
-Create a page that shows a message "I'm JavaScript!".
+Δημιουργήστε μια σελίδα που να εμφανίζει το μήνυμα "I'm JavaScript!".
 
-Do it in a sandbox, or on your hard drive, doesn't matter, just ensure that it works.
+Φτιάξτε το σε ενα sandbox, ή στο σκληρό σας δίσκο, δεν έχει σημασία, απλά βεβαιωθείτε ότι λειτουργεί.
 
 [demo src="solution"]
 
