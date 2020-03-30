@@ -33,6 +33,11 @@
 
 Τώρα μπορούμε να δούμε λάθη, και αυτό είναι αρκετό για μια αρχή. Θα επιστρέψουμε αργότερα στα developer tools και θα καλύψουμε λεπτομερέστερα το σφάλμα στο κεφάλαιο <info:debugging-chrome>.
 
+```smart header="Multi-line input"
+Usually, when we put a line of code into the console, and then press `key:Enter`, it executes.
+
+To insert multiple lines, press `key:Shift+Enter`. This way one can enter long fragments of JavaScript code.
+```
 
 ## Firefox, Edge, και άλλο
 
