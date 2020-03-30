@@ -1,42 +1,42 @@
 
-# Manuals and specifications
+# Εγχειρίδια και προδιαγραφές
 
-This book is a *tutorial*. It aims to help you gradually learn the language. But once you're familiar with the basics, you'll need other sources.
+Αυτό το βιβλίο είναι ένα *εκπαιδευτικό υλικό*. Στόχος του είναι να σας βοηθήσει να μάθετε σταδιακά τη γλώσσα. Αλλά μόλις εξοικειωθείτε με τα βασικά, θα χρειαστείτε άλλες πηγές.
 
-## Specification
+## Προδιαγραφή
 
-[The ECMA-262 specification](https://www.ecma-international.org/publications/standards/Ecma-262.htm) contains the most in-depth, detailed and formalized information about JavaScript. It defines the language.
+[Tο ECMA-262 προδιαγραφή](https://www.ecma-international.org/publications/standards/Ecma-262.htm) περιέχει την πιο αναλυτική, λεπτομερή και τυποποιημένη πληροφορία σχετικά με την JavaScript. Ορίζει την ίδια τη γλώσσα.
 
-But being that formalized, it's difficult to understand at first. So if you need the most trustworthy source of information about the language details, the specification is the right place. But it's not for everyday use.
+Αλλά είναι τόσο επίσημο, είναι δύσκολο να το καταλάβεις στην αρχή. Έτσι, εάν χρειάζεστε την πιο αξιόπιστη πηγή πληροφοριών σχετικά με τις λεπτομέρειες της γλώσσας, η προδιαγραφή αυτή είναι το σωστό μέρος. Αλλά δεν είναι για καθημερινή χρήση.
 
-A new specification version is released every year. In-between these releases, the latest specification draft is at <https://tc39.es/ecma262/>.
+Μια νέα έκδοση προδιαγραφών κυκλοφορεί κάθε χρόνο. Μεταξύ αυτών των εκδόσεων, η τελευταία έκδοση υπάρχει και στο <https://tc39.es/ecma262/>.
 
-To read about new bleeding-edge features, including those that are "almost standard" (so-called "stage 3"), see proposals at <https://github.com/tc39/proposals>.
+Για να διαβάσετε για τα πιο πρόσφατα νέα σχετικά για τα χαρακτηριστικά, συμπεριλαμβανομένων εκείνων που είναι "almost standard" (το λεγόμενο "stage 3") , βλέπε στο  <https://github.com/tc39/proposals>.
 
-Also, if you're in developing for the browser, then there are other specs covered in the [second part](info:browser-environment) of the tutorial.
+Επίσης, εάν αναπτύσσεται για το πρόγραμμα περιήγησης, τότε υπάρχουν και άλλες προδιαγραφές που καλύπτονται στο [δεύτερο μέρος](info:browser-environment) του εκπαιδευτικού υλικού.
 
-## Manuals
+## Εγχειρίδια
 
-- **MDN (Mozilla) JavaScript Reference** is a manual with examples and other information. It's great to get in-depth information about individual language functions, methods etc.
+- **MDN (Mozilla) JavaScript Reference** είναι ένα εγχειρίδιο με παραδείγματα και άλλες πληροφορίες. Είναι καλό να λάβετε σε βάθος πληροφορίες σχετικά με μεμονωμένες λειτουργίες γλώσσας, μεθόδους κλπ.
 
-    One can find it at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
+    Μπορεί κανείς να το βρει στο <https://developer.mozilla.org/en-US/ docs/Web/JavaScript/Reference>.
 
-    Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for `parseInt` function.
+    Αν και είναι καλύτερα να χρησιμοποιήσετε μια αναζήτηση στο Διαδίκτυο. Απλά χρησιμοποιήστε "MDN [όρος]" σαν ερώτημα, πχ. <https://google.com/search?q=MDN+parseInt> αναζήτηση σχετικά για το `parseInt` function.
 
 
-- **MSDN** – Microsoft manual with a lot of information, including JavaScript (often referred to as JScript). If one needs something specific to Internet Explorer, better go there: <http://msdn.microsoft.com/>.
+- **MSDN** – Microsoft εγχειρίδιο με πολλές πληροφορίες, όπως JavaScript (συχνά αναφέρεται ως JScript). Εάν κάποιος χρειάζεται κάτι συγκεκριμένο για τον Internet Explorer, καλύτερα να πάτε στο: <http://msdn.microsoft.com/>.
 
-    Also, we can use an internet search with phrases such as "RegExp MSDN" or "RegExp MSDN jscript".
+    Επίσης, μπορούμε να χρησιμοποιήσουμε μια αναζήτηση στο διαδίκτυο με φράσεις όπως "RegExp MSDN" ή "RegExp MSDN jscript".
 
-## Compatibility tables
+## Πίνακες συμβατότητας
 
-JavaScript is a developing language, new features get added regularly.
+JavaScript είναι μια αναπτυσσόμενη γλώσσα, νέα χαρακτηριστικά προστίθενται τακτικά.
 
-To see their support among browser-based and other engines, see:
+Για να δείτε την υποστήριξή τους μεταξύ των μηχανών περιήγησης και άλλων προγραμμάτων περιήγησης, δείτε:
 
-- <http://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
-- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+- <http://caniuse.com> - ανά χαρακτηριστικό πίνακες υποστήριξης, π. χ. για να δείτε ποιες μηχανές υποστηρίζουν τη σύγχρονη λειτουργία για cryptography: <http://caniuse.com/#feat=cryptography>.
+- <https://kangax.github.io/compat-table> - ένας πίνακας με χαρακτηριστικά γλώσσας και μηχανές που υποστηρίζουν ή που δεν υποστηρίζουν.
 
-All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
+Όλοι αυτές οι πήγες είναι χρήσιμοι στο real-life development, καθώς περιέχουν πολύτιμες πληροφορίες σχετικά με τις γλωσσικές λεπτομέρειες, την υποστήριξή τους κλπ.
 
-Please remember them (or this page) for the cases when you need in-depth information about a particular feature.
+Παρακαλούμε να τους θυμάστε (ή αυτή τη σελίδα) για τις περιπτώσεις που χρειάζεστε σε βάθος πληροφορίες σχετικά για ένα συγκεκριμένο χαρακτηριστικό.
