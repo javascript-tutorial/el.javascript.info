@@ -2,7 +2,7 @@ The HTML code:
 
 [html src="index.html"]
 
-For the file `alert.js` in the same folder:
+Για το αρχείο `alert.js` να βρίσκεται στο ίδιο φάκελο:
 
 [js src="alert.js"]
 

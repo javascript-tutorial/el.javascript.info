@@ -2,8 +2,8 @@ importance: 5
 
 ---
 
-# Show an alert with an external script
+# Δείξε το alert από το εξωτερικό αρχείο
 
-Take the solution of the previous task <info:task/hello-alert>. Modify it by extracting the script content into an external file `alert.js`, residing in the same folder.
+Πάρτε τη λύση της προηγούμενης εργασίας από τo  <info:task/hello-alert>. Τροποποιήστε και  εξάγετε το περιεχόμενο του script σε ένα εξωτερικό αρχείο `alert.js`, που βρίσκεται στον ίδιο φάκελο.
 
-Open the page, ensure that the alert works.
+Ανοίξτε τη σελίδα, βεβαιωθείτε ότι η ειδοποίηση λειτουργεί.
