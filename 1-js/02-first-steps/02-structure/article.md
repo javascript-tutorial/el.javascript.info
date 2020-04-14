@@ -131,6 +131,7 @@ alert('World');
 ```js run
 /* Commenting out the code
 alert('Hello');
+
 */
 alert('World');
 ```
