@@ -1,7 +1,7 @@
-In the code below, each line corresponds to the item in the task list.
+Στον παρακάτω κώδικα, κάθε γραμμή αντιστοιχεί στο στοιχείο της λίστας εργασιών.
 
 ```js run
-let admin, name; // can declare two variables at once
+let admin, name; // μπορoύμε να δηλώσουμε δύο μεταβλητές ταυτόχρονα
 
 name = "John";
 
