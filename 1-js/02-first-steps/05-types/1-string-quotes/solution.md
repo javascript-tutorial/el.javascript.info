@@ -1,15 +1,15 @@
 
-Backticks embed the expression inside `${...}` into the string.
+Τα backticks ενσωματώνουν την έκφραση μέσα στο `$ {...}`στη συμβολοσειρά.
 
 ```js run
 let name = "Ilya";
 
-// the expression is a number 1
+// η έκφραση μας δίνει το νούμερο 1
 alert( `hello ${1}` ); // hello 1
 
-// the expression is a string "name"
+// η έκφραση μας δίνει την συμβολοσειρά "name"
 alert( `hello ${"name"}` ); // hello name
 
-// the expression is a variable, embed it
+// η έκφραση είναι μια ενσωματώμενη μεταβλητή
 alert( `hello ${name}` ); // hello Ilya
 ```
