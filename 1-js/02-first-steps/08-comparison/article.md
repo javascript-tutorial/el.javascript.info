@@ -1,20 +1,20 @@
-# Comparisons
+# Συγκρίσεις
 
-We know many comparison operators from maths:
+Γνωρίζουμε αρκετούς τελεστές σύγκρισης από μαθηματικά:
 
-- Greater/less than: <code>a &gt; b</code>, <code>a &lt; b</code>.
-- Greater/less than or equals: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
-- Equals: `a == b` (please note the double equals sign `=`. A single symbol `a = b` would mean an assignment).
-- Not equals. In maths the notation is <code>&ne;</code>, but in JavaScript it's written as an assignment with an exclamation sign before it: <code>a != b</code>.
+- Μεγαλύτερο/μικρότερο από: <code>a &gt; b</code>, <code>a &lt; b</code>.
+- Μεγαλύτερο/μικρότερο από ή ίσον: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
+- Ισούται: `a == b` (παρακαλώ σημειώστε το σύμβολο του διπλού ίσον `=`. Το μόνο σύμβολο `a = b`  σήμαινε μια ανάθεση).
+- Όχι ισον. Στα μαθηματικά, ο συμβολισμός είναι <code>&ne;</code>, αλλά στην JavaScript γράφεται ως ανάθεση με ένα θαυμαστικό πριν από αυτό: <code>a != b</code>.
 
-## Boolean is the result
+## Το αποτέλεσμα είναι Boolean
 
-Like all other operators, a comparison returns a value. In this case, the value is a boolean.
+Όπως όλοι οι υπόλοιποι τελεστές, μια σύγκριση επιστρέφει μια τιμή. Σε αυτήν την περίπτωση, η τιμή είναι δυαδική.
 
-- `true` -- means "yes", "correct" or "the truth".
-- `false` -- means "no", "wrong" or "not the truth".
+- `true` -- σημαίνει "yes", "correct" ή "the truth".
+- `false` -- σημαίνει "no", "wrong" ή "not the truth".
 
-For example:
+Ένα παράδειγμα:
 
 ```js run
 alert( 2 > 1 );  // true (correct)
@@ -22,20 +22,20 @@ alert( 2 == 1 ); // false (wrong)
 alert( 2 != 1 ); // true (correct)
 ```
 
-A comparison result can be assigned to a variable, just like any value:
+Ένα αποτέλεσμα σύγκρισης μπορούμε να την αναθέσουμε σε μια μεταβλητή, όπως και κάθε τιμή:
 
 ```js run
-let result = 5 > 4; // assign the result of the comparison
+let result = 5 > 4; // αποτέλεσμα μιας ανάθεσης μίας σύγκριση
 alert( result ); // true
 ```
 
-## String comparison
+## Σύγκριση συμβολοσειρών
 
-To see whether a string is greater than another, JavaScript uses the so-called "dictionary" or "lexicographical" order.
+Για να δείτε εάν μια συμβολοσειρά είναι μεγαλύτερη από μια άλλη, η JavaScript χρησιμοποιεί το λεγόμενο "λεξικό" ή "λεξικογραφική" σειρά.
 
-In other words, strings are compared letter-by-letter.
+Με άλλα λόγια, οι συμβολοσειρές συγκρίνονται γράμμα-ανα-γράμμα.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 alert( 'Z' > 'A' ); // true
@@ -43,40 +43,40 @@ alert( 'Glow' > 'Glee' ); // true
 alert( 'Bee' > 'Be' ); // true
 ```
 
-The algorithm to compare two strings is simple:
+Ο αλγόριθμος που συγκρίνει δύο συμβολοσειρές είναι απλός:
 
-1. Compare the first character of both strings.
-2. If the first character from the first string is greater (or less) than the other string's, then the first string is greater (or less) than the second. We're done.
-3. Otherwise, if both strings' first characters are the same, compare the second characters the same way.
-4. Repeat until the end of either string.
-5. If both strings end at the same length, then they are equal. Otherwise, the longer string is greater.
+1. Συγκρίνει τον πρώτο χαρακτήρα και των δύο συμβολοσειρών.
+2. Εάν ο πρώτος χαρακτήρας από την πρώτη συμβολοσειρά είναι μεγαλύτερος (ή μικρότερος) από τους άλλους συμβολοσειρές, τότε η πρώτη συμβολοσειρά είναι μεγαλύτερη (ή μικρότερη) από τη δεύτερη. Τελειώσαμε.
+3. Διαφορετικά, εάν οι πρώτοι χαρακτήρες και των δύο χορδών είναι οι ίδιοι, συγκρίνει τους δεύτερους χαρακτήρες με τον ίδιο τρόπο.
+4. Επαναλάμβανει μέχρι το τέλος κάθε συμβολοσειράς.
+5. Εάν και οι δύο χορδές έχουν ίδιο μήκος, τότε είναι ίσες. Διαφορετικά, η  συμβολοσειρά με το μεγαλύτερο μήκος είναι μεγαλύτερη.
 
-In the examples above, the comparison `'Z' > 'A'` gets to a result at the first step while the strings `"Glow"` and `"Glee"` are compared character-by-character:
+Στα παραπάνω παραδείγματα, η σύγκριση `"Z" > "A"` φτάνει στο αποτέλεσμα από πρώτο βήμα, ενώ οι συμβολοσειρές `"Glow"` και `"Glee"` συγκρίνονται χαρακτήρες ανά χαρακτήρα:
 
-1. `G` is the same as `G`.
-2. `l` is the same as `l`.
-3. `o` is greater than `e`. Stop here. The first string is greater.
+1. `G` είναι το ίδιο με `G`.
+2. `l` είναι το ίδιο με `l`.
+3. `o` είναι μεγαλύτερο από `e`. Σταματάει εδώ. Η πρώτη συμβολοσειρά είναι μεγαλύτερη.
 
 ```smart header="Not a real dictionary, but Unicode order"
-The comparison algorithm given above is roughly equivalent to the one used in dictionaries or phone books, but it's not exactly the same.
+Ο αλγόριθμος σύγκρισης που δίνεται παραπάνω είναι περίπου ισοδύναμος με αυτόν που χρησιμοποιείται σε λεξικά ή τηλεφωνικά βιβλία, αλλά δεν είναι ακριβώς ο ίδιος.
 
-For instance, case matters. A capital letter `"A"` is not equal to the lowercase `"a"`. Which one is greater? The lowercase `"a"`. Why? Because the lowercase character has a greater index in the internal encoding table JavaScript uses (Unicode). We'll get back to specific details and consequences of this in the chapter <info:string>.
+Για παράδειγμα, η υπόθεση έχει σημασία. Το κεφαλαίο γράμμα `"A"` δεν είναι ίσο με το πεζά `"a"`. Ποιο είναι μεγαλύτερο; Τα πεζά `"a"`. Γιατί; Επειδή ο πεζός χαρακτήρας έχει μεγαλύτερο ευρετήριο στον πίνακα εσωτερικής κωδικοποίησης που χρησιμοποιεί JavaScript (Unicode). Θα επιστρέψουμε σε συγκεκριμένες λεπτομέρειες και συνέπειες αυτού στο κεφάλαιο <info:string>.
 ```
 
-## Comparison of different types
+## Σύγκριση διαφορετικών τύπων
 
-When comparing values of different types, JavaScript converts the values to numbers.
+Κατά τη σύγκριση των τιμών διαφορετικών τύπων, η JavaScript μετατρέπει τις τιμές σε αριθμούς.
 
-For example:
+Για παράδειγμα:
 
 ```js run
-alert( '2' > 1 ); // true, string '2' becomes a number 2
-alert( '01' == 1 ); // true, string '01' becomes a number 1
+alert( '2' > 1 ); // true, η συμβολοσειρά '2' μετατρέπεται σε αριθμό 2
+alert( '01' == 1 ); // true, η συμβολοσειρά '01' μετατρέπεται σε αριθμό 1
 ```
 
-For boolean values, `true` becomes `1` and `false` becomes `0`.
+Για δυαδικές τιμές, το `true` γίνεται `1` και το `false` γίνεται `0`.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 alert( true == 1 ); // true
@@ -84,12 +84,12 @@ alert( false == 0 ); // true
 ```
 
 ````smart header="A funny consequence"
-It is possible that at the same time:
+Είναι πιθανό ότι ταυτόχρονα:
 
-- Two values are equal.
-- One of them is `true` as a boolean and the other one is `false` as a boolean.
+- Δύο τιμές να είναι ίσες.
+- Το ένα από αυτά είναι `true` ως boolean και το άλλο `false` ως boolean.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 let a = 0;
@@ -101,67 +101,67 @@ alert( Boolean(b) ); // true
 alert(a == b); // true!
 ```
 
-From JavaScript's standpoint, this result is quite normal. An equality check converts values using the numeric conversion (hence `"0"` becomes `0`), while the explicit `Boolean` conversion uses another set of rules.
+Από την πλευρά της JavaScript, αυτό το αποτέλεσμα είναι αρκετά φυσιολογικό. Ο έλεγχος ισότητας μετατρέπει τιμές χρησιμοποιώντας την αριθμητική μετατροπή (εξ ου και το `"0"` γίνεται `"0"`), ενώ η ρητή μετατροπή "Boolean" χρησιμοποιεί ένα άλλο σύνολο κανόνων.
 ````
 
-## Strict equality
+## Αυστηρή ισότητα
 
-A regular equality check `==` has a problem. It cannot differentiate `0` from `false`:
+Ένας κανονικός έλεγχος ισότητας `==` έχει πρόβλημα. Δεν μπορεί να διαφοροποιήσει το `0` από το `false`:
 
 ```js run
 alert( 0 == false ); // true
 ```
 
-The same thing happens with an empty string:
+Το ίδιο συμβαίνει με μια κενή συμβολοσειρά:
 
 ```js run
 alert( '' == false ); // true
 ```
 
-This happens because operands of different types are converted to numbers by the equality operator `==`. An empty string, just like `false`, becomes a zero.
+Αυτό συμβαίνει επειδή οι τελεστές διαφορετικών τύπων μετατρέπονται σε αριθμούς από τον τελεστή ισότητας `==`. Μια κενή συμβολοσειρά, όπως το `false`, γίνεται μηδέν.
 
-What to do if we'd like to differentiate `0` from `false`?
+Τι να κάνουμε εάν θέλουμε να κάνουμε διαφοροποίηση `0` από `false`?
 
-**A strict equality operator `===` checks the equality without type conversion.**
+**Ένας αυστηρός τελεστής ισότητας `===` ελέγχει την ισότητα χωρίς μετατροπή τύπου.**
 
-In other words, if `a` and `b` are of different types, then `a === b` immediately returns `false` without an attempt to convert them.
+Με άλλα λόγια, εάν τα `a` και `b` είναι διαφορετικού τύπου, τότε το `a === b` επιστρέφει αμέσως `false` χωρίς καμία προσπάθεια μετατροπής τους.
 
-Let's try it:
+Ας το προσπαθήσουμε:
 
 ```js run
-alert( 0 === false ); // false, because the types are different
+alert( 0 === false ); // false, επειδή οι τύποι είναι διαφορετικοί
 ```
 
-There is also a "strict non-equality" operator `!==` analogous to `!=`.
+Υπάρχει επίσης ένας "αυστηρός μη ισότητας" τελεστής `!==` ανάλογος με το `!=`.
 
-The strict equality operator is a bit longer to write, but makes it obvious what's going on and leaves less room for errors.
+Ο αυστηρός χειριστής ισότητας είναι λίγο μεγάλο για γράφει, αλλά καθιστά προφανές τι συμβαίνει και αφήνει λιγότερο χώρο για λάθη.
 
-## Comparison with null and undefined
+## Σύγκριση με null και undefined
 
-There's a non-intuitive behavior when `null` or `undefined` are compared to other values.
+Υπάρχει μια μη διαισθητική συμπεριφορά όταν το `null` ή το `undefined` συγκρίνονται με άλλες τιμές.
 
-For a strict equality check `===`
-: These values are different, because each of them is a different type.
+Για αυστηρό έλεγχο ισότητας `===`
+: Αυτές οι τιμές είναι διαφορετικές επειδή καθεμία από αυτές είναι διαφορετικού τύπου.
 
     ```js run
     alert( null === undefined ); // false
     ```
 
-For a non-strict check `==`
-: There's a special rule. These two are a "sweet couple": they equal each other (in the sense of `==`), but not any other value.
+Για μη αυστηρό έλεγχο ισότητας `==`
+: Υπάρχει ένας ειδικός κανόνας. Αυτά τα δύο είναι ένα "γλυκό ζευγάρι": είναι ίσα μεταξύ τους (με την έννοια `==`), αλλά όχι με άλλη τιμή.
 
     ```js run
     alert( null == undefined ); // true
     ```
 
-For maths and other comparisons `< > <= >=`
-: `null/undefined` are converted to numbers: `null` becomes `0`, while `undefined` becomes `NaN`.
+Για μαθηματικά και άλλες συγκρίσεις `< > <= >=`:
+Το `null/undefined` μετατρέπονται σε αριθμούς: το `null` γίνεται "0", ενώ το `undefined` γίνεται `NaN`.
 
-Now let's see some funny things that happen when we apply these rules. And, what's more important, how to not fall into a trap with them.
+Τώρα ας δούμε μερικά αστεία πράγματα που συμβαίνουν όταν εφαρμόζουμε αυτούς τους κανόνες. Και, το πιο σημαντικό, πώς να μην πέσετε σε παγίδα μαζί τους.
 
-### Strange result: null vs 0
+### Ασυνήθιστο αποτέλεσμα: null vs 0
 
-Let's compare `null` with a zero:
+Ας συγκρινούμε το `null` με το zero:
 
 ```js run
 alert( null > 0 );  // (1) false
@@ -169,15 +169,15 @@ alert( null == 0 ); // (2) false
 alert( null >= 0 ); // (3) *!*true*/!*
 ```
 
-Mathematically, that's strange. The last result states that "`null` is greater than or equal to zero", so in one of the comparisons above it must be `true`, but they are both false.
+Για τα μαθηματικά, αυτό είναι ασυνήθιστο. Το τελευταίο αποτέλεσμα αναφέρει ότι το "`null` είναι μεγαλύτερο ή ίσο με το μηδέν", οπότε σε μία από τις παραπάνω συγκρίσεις πρέπει να είναι `true`, αλλά και οι δύο είναι ψευδείς.
 
-The reason is that an equality check `==` and comparisons `> < >= <=` work differently. Comparisons convert `null` to a number, treating it as `0`. That's why (3) `null >= 0` is true and (1) `null > 0` is false.
+Ο λόγος είναι ότι ένας έλεγχος ισότητας `==` και οι συγκρίσεις `> <> = <=` λειτουργούν διαφορετικά. Οι συγκρίσεις μετατρέπουν το `null` σε έναν αριθμό, αντιμετωπίζοντας το ως `0`. Γι 'αυτό το (3) `null >= 0` είναι αληθές και (1) `null > 0` είναι ψευδής.
 
-On the other hand, the equality check `==` for `undefined` and `null` is defined such that, without any conversions, they equal each other and don't equal anything else. That's why (2) `null == 0` is false.
+Από την άλλη πλευρά, ο έλεγχος ισότητας `==` για `undefined` και `null` ορίζονται έτσι ώστε χωρίς καμία μετατροπή, να ισούται μεταξύ τους και να μην ισούται με τίποτα άλλο. Γι 'αυτό το (2) το `null == 0` είναι ψευδης.
 
-### An incomparable undefined
+### Ένα ασύγκριτο undefined
 
-The value `undefined` shouldn't be compared to other values:
+Η τιμή `undefined` δεν πρέπει να συγκρίνεται με άλλες τιμές:
 
 ```js run
 alert( undefined > 0 ); // false (1)
@@ -185,25 +185,26 @@ alert( undefined < 0 ); // false (2)
 alert( undefined == 0 ); // false (3)
 ```
 
-Why does it dislike zero so much? Always false!
+Γιατί δεν του αρέσει πολύ το μηδέν; Πάντα ψευδής!
 
-We get these results because:
+Ο λόγος που λαμβάνουμε αυτά τα αποτελέσματα είναι:
 
-- Comparisons `(1)` and `(2)` return `false` because `undefined` gets converted to `NaN` and `NaN` is a special numeric value which returns `false` for all comparisons.
-- The equality check `(3)` returns `false` because `undefined` only equals `null`, `undefined`, and no other value.
+- Οι συγκρίσεις `(1)` και `(2)` επιστρέφουν `false` επειδή το `undefined` μετατρέπεται σε `NaN` και το `NaN` είναι μια ειδική αριθμητική τιμή που επιστρέφει `false` για όλες τις συγκρίσεις.
 
-### Evade problems
+- Ο έλεγχος ισότητας `(3)` επιστρέφει `false` επειδή `undefined` ισούται μόνο με `null`, `undefined` και καμία άλλη τιμή.
 
-Why did we go over these examples? Should we remember these peculiarities all the time? Well, not really. Actually, these tricky things will gradually become familiar over time, but there's a solid way to evade problems with them:
+### Αποφύγετε τα προβλήματα
 
-Just treat any comparison with `undefined/null` except the strict equality `===` with exceptional care.
+Γιατί εξετάσαμε αυτά τα παραδείγματα; Πρέπει να θυμόμαστε αυτές τις ιδιαιτερότητες όλη την ώρα; Βασικά, όχι ακριβώς. Στην πραγματικότητα, αυτά τα δύσκολα πράγματα θα εξοικειωθούν σταδιακά με την πάροδο του χρόνου, αλλά υπάρχει ένας σταθερός τρόπος για να αποφύγετε τα προβλήματα μαζί τους:
 
-Don't use comparisons `>= > < <=` with a variable which may be `null/undefined`, unless you're really sure of what you're doing. If a variable can have these values, check for them separately.
+Απλώς αντιμετωπίστε οποιαδήποτε σύγκριση με το `undefined/null` εκτός από την αυστηρή ισότητα `===` με εξαιρετική προσοχή.
 
-## Summary
+Μην χρησιμοποιείτε συγκρίσεις `> => < <=` με μια μεταβλητή που μπορεί να είναι `null/undefined`, εκτός εάν είστε πραγματικά σίγουροι για το τι κάνετε. Εάν μια μεταβλητή μπορεί να έχει αυτές τις τιμές, ελέγξτε τις ξεχωριστά.
 
-- Comparison operators return a boolean value.
-- Strings are compared letter-by-letter in the "dictionary" order.
-- When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
-- The values `null` and `undefined` equal `==` each other and do not equal any other value.
-- Be careful when using comparisons like `>` or `<` with variables that can occasionally be `null/undefined`. Checking for `null/undefined` separately is a good idea.
+## Περίληψη
+
+- Οι τελεστές σύγκρισης επιστρέφουν μια δυαδική τιμή.
+- Οι συμβολοσειρές συγκρίνονται γράμματα με γράμμα με τη σειρά `λεξικό`.
+- Όταν συγκρίνονται τιμές διαφορετικών τύπων, μετατρέπονται σε αριθμούς (με εξαίρεση έναν αυστηρό έλεγχο ισότητας).
+- Οι τιμές `null` και `undefined` είναι ίσες `==` μεταξύ τους και δεν ισούται με καμία άλλη τιμή.
+- Να είστε προσεκτικοί όταν χρησιμοποιείτε συγκρίσεις όπως `>` ή `<` με μεταβλητές που μπορεί περιστασιακά να είναι `null/undefined`. Ο ξεχωριστός έλεγχος για το `null/undefined` είναι καλή ιδέα.

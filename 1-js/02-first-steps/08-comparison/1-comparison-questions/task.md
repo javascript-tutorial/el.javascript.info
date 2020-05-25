@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Comparisons
+# Συγκρίσεις
 
-What will be the result for these expressions?
+Ποιο θα είναι το αποτέλεσμα αυτών των εκφράσεων;
 
 ```js no-beautify
 5 > 4

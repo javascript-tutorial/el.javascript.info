@@ -10,12 +10,12 @@ null == "\n0\n" → false
 null === +"\n0\n" → false
 ```
 
-Some of the reasons:
+Μερικοί από τους λόγους:
 
-1. Obviously, true.
-2. Dictionary comparison, hence false. `"a"` is smaller than `"p"`.
-3. Again, dictionary comparison, first char of `"2"` is greater than the first char of `"1"`.
-4. Values `null` and `undefined` equal each other only.
-5. Strict equality is strict. Different types from both sides lead to false.
-6. Similar to `(4)`, `null` only equals `undefined`.
-7. Strict equality of different types.
+1. Προφανώς true.
+2. Λεξική σύγκριση, άρα ψευδής. `"a"` είναι μικρότερο από `"p"`.
+3. Πάλι, λεξική σύγκριση, ο πρώτος χαρακτήρας του `"2"` είναι μεγαλύτερος από τον πρώτο χαρακτήρα του `"1"`.
+4. Οι τιμές `null` και `undefined` είναι μόνο ίσες μεταξύ τους.
+5. Η αυστηρή ισότητα είναι αυστηρή. Διαφορετικοί τύποι και από τις δύο πλευρές οδηγούν σε false.
+6. Παρόμοια με το `(4)`, το `null` ισούται μόνο με `undefined`.
+7. Αυστηρή ισότητα διαφορετικών τύπων.
