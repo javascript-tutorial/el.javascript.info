@@ -2,8 +2,8 @@ importance: 4
 
 ---
 
-# A simple page
+# Μια απλή σελίδα
 
-Create a web-page that asks for a name and outputs it.
+Δημιουργήστε μια ιστοσελίδα που ζητά ένα όνομα και την εξάγει της.
 
 [demo]
