@@ -78,7 +78,7 @@ Oί κώδικες της JavaScript μπορούν να εισαχθούν σε
 Επίσης μπορούμε να δώσουμε μια πλήρη διεύθυνση URL. Για παράδειγμα:
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
 ```
 
 Για να επισυνάψετε πολλά scripts, χρησιμοποιήστε πολλαπλά tags:
