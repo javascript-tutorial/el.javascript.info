@@ -1,10 +1,6 @@
 # Μετατροπές Τύπων
 
-<<<<<<< HEAD
 Τις περισσότερες φορές, οι τελεστές και οι συναρτήσεις μετατρέπουν αυτόματα, και στον σωστό τύπο, τις τιμές που δίνονται σε αυτές.
-=======
-Most of the time, operators and functions automatically convert the values given to them to the right type.
->>>>>>> fcfef6a07842ed56144e04a80c3a24de049a952a
 
 Για παράδειγμα, η `alert` μετατρέπει αυτόματα σε string οποιαδήποτε τιμή, ώστε να την εμφανίσει. Οι Μαθηματικές πράξεις μετατρέπουν τιμές σε νούμερα.
 
@@ -14,7 +10,7 @@ Most of the time, operators and functions automatically convert the values given
 Σε αυτό το κεφάλαιο, δεν θα καλύψουμε την ύλη για τα αντικείμενα. Αντίθετα, θα μελετήσουμε πρώτα τις απλές τιμές. Αργότερα, όταν μάθουμε για τα αντικείμενα, θα δούμε πώς δουλεύει η μετατροπή των αντικειμένων στο κεφάλαιο <info:object-toprimitive>.
 ```
 
-## String Conversion
+## Μετατροπή συμβολοσειρών
 
 Η μετατροπή συμβολοσειρών γίνεται όταν χρειαζόμαστε μια τιμή σε μορφή συμβολοσειράς.
 
@@ -27,14 +23,14 @@ let value = true;
 alert(typeof value); // boolean
 
 *!*
-value = String(value); // τώρα η value είναι η συμβολοσειρά "true"
+value = String(value); // τώρα η τιμή είναι η συμβολοσειρά "true"
 alert(typeof value); // string
 */!*
 ```
 
 Η μετατροπή συμβολοσειρών είναι αρκετά προφανής. Η `false` γίνεται `"false"`, η `null` γίνεται `"null"`, κλπ.
 
-## Numeric Conversion
+## Αριθμητική μετατροπή
 
 Η μετατροπή αριθμών γίνεται αυτόματα σε Μαθηματικές συναρτήσεις και εκφράσεις.
 
@@ -85,7 +81,7 @@ alert(Number(false)); // 0
 
 Παρακαλώ προσέξτε ότι οι τιμές `null` και `undefined` συμπεριφέρονται διαφορετικά εδώ: η `null` γίνεται 0 (μηδέν), ενώ η `undefined` γίνεται `NaN`.
 
-<<<<<<< HEAD
+
 ````smart header="Ο τελεστής '+' συνενώνει συμβολοσειρές"
 Σχεδόν όλες οι Μαθηματικές πράξεις μετατρέπουν τιμές σε αριθμούς. Μια ξεχωριστή εξαίρεση είναι ο τελεστής `+`. Έαν μία από τις προστιθέμενες τιμές είναι μια συμβολοσειρά, τότε και η άλλη μετατρέπεται σε συμβολοσειρά.
 
@@ -98,11 +94,8 @@ alert( '1' + 2 ); // '12' (συμβολοσειρά στα αριστερά)
 
 Αυτό συμβαίνει μόνο όταν τουλάχιστον μία από τις παραμέτρους είναι μια συμβολοσειρά. Διαφορετικά, οι τιμές μετατρέπονται σε αριθμούς.
 ````
-=======
-Most mathematical operators also perform such conversion, we'll see that in the next chapter.
->>>>>>> fcfef6a07842ed56144e04a80c3a24de049a952a
 
-## Boolean Conversion
+## Boolean μετατροπή
 
 Η μετατροπή αληθοτιμών είναι η πιο απλή.
 
@@ -124,23 +117,13 @@ alert(Boolean("")); // false
 ```
 ````
 
-<<<<<<< HEAD
 ## Περίληψη
 
 Οι τρεις πιο διαδεδομένα χρησιμοποιούμενες μετατροπές τύπων, είναι: σε συμβολοσειρά, σε αριθμό, και σε αληθοτιμή.
 
-**`ToString`** -- Γίνεται όταν κάτι το δίνουμε ως έξοδο. Μπορεί να εφαρμοστεί με τη `String(value)`. Η μετατροπή σε συμβολοσειρά είναι συνήθως προφανής για τις απλές τιμές.
+**`Boolean μετατροπή`** -- Γίνεται όταν κάτι το δίνουμε ως έξοδο. Μπορεί να εφαρμοστεί με τη `String(value)`. Η μετατροπή σε συμβολοσειρά είναι συνήθως προφανής για τις απλές τιμές.
 
-**`ToNumber`** -- Γίνεται στις Μαθηματικές πράξεις. Μπορεί να εφαρμοστεί με τη `Number(value)`.
-=======
-## Summary
-
-The three most widely used type conversions are to string, to number, and to boolean.
-
-**`String Conversion`** -- Occurs when we output something. Can be performed with `String(value)`. The conversion to string is usually obvious for primitive values.
-
-**`Numeric Conversion`** -- Occurs in math operations. Can be performed with `Number(value)`.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
+**`Boolean μετατροπή`** -- Γίνεται στις Μαθηματικές πράξεις. Μπορεί να εφαρμοστεί με τη `Number(value)`.
 
 Η μετατροπή ακολουθεί τους κανόνες:
 
@@ -151,11 +134,8 @@ The three most widely used type conversions are to string, to number, and to boo
 |<code>true&nbsp;/&nbsp;false</code> | `1 / 0` |
 | `string` | Η συμβολοσειρά διαβάζεται "όπως είναι", τα κενά και από τις δύο πλευρές αγνοούνται. Μια άδεια συμβολοσειρά γίνεται `0`. Ένα σφάλμα δίνει `NaN`. |
 
-<<<<<<< HEAD
-**`ToBoolean`** -- Γίνεται σε λογικές πράξεις. Μπορεί να εφαρμοστεί με τη `Boolean(value)`.
-=======
-**`Boolean Conversion`** -- Occurs in logical operations. Can be performed with `Boolean(value)`.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
+
+**`Boolean μετατροπή`** -- Γίνεται σε λογικές πράξεις. Μπορεί να εφαρμοστεί με τη `Boolean(value)`.
 
 Ακολουθεί τους κανόνες:
 

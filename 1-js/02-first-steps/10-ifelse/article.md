@@ -1,14 +1,14 @@
-# Conditional operators: if, '?'
+# Υπό συνθήκη χειριστές: if, '?'
 
-Sometimes, we need to perform different actions based on different conditions.
+Μερικές φορές, πρέπει να εκτελέσουμε διαφορετικές ενέργειες βάσει διαφορετικών συνθηκών.
 
-To do that, we can use the `if` statement and the conditional operator `?`, that's also called a "question mark" operator.
+Για να το κάνουμε αυτό, μπορούμε να χρησιμοποιήσουμε τη δήλωση `if` και τον τελεστή υπό όρο `?`, που ονομάζεται επίσης τελεστής "ερωτηματικού".
 
-## The "if" statement
+## Η δήλωση "if"
 
-The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
+Η δήλωση `if(...)` αξιολογεί μια συνθήκη σε παρένθεση και, εάν το αποτέλεσμα είναι `true`, εκτελεί ένα μπλοκ κώδικα.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 let year = prompt('In which year was ECMAScript-2015 specification published?', '');
@@ -20,7 +20,9 @@ if (year == 2015) alert( 'You are right!' );
 
 In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
 
-If we want to execute more than one statement, we have to wrap our code block inside curly braces:
+Στο παραπάνω παράδειγμα, η συνθήκη είναι ένας απλός έλεγχος ισότητας (`year == 2015`), αλλά μπορεί να είναι πολύ πιο περίπλοκος.
+
+Εάν θέλουμε να εκτελέσουμε περισσότερες από μία δηλώσεις, πρέπει να τυλίξουμε το μπλοκ κώδικα μας μέσα σε άγκιστρα:
 
 ```js
 if (year == 2015) {
@@ -29,63 +31,63 @@ if (year == 2015) {
 }
 ```
 
-We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
+Σας συνιστούμε να τυλίγετε το μπλοκ κώδικα με άγκιστρα `{}` κάθε φορά που χρησιμοποιείτε μια δήλωση `if`, ακόμη και αν υπάρχει μόνο μία δήλωση για εκτέλεση. Αυτό βελτιώνει την αναγνωσιμότητα.
 
-## Boolean conversion
+## Μετατροπή σε Boolean
 
-The `if (…)` statement evaluates the expression in its parentheses and converts the result to a boolean.
+Η δήλωση `if (…)` αξιολογεί την έκφραση στις παρενθέσεις και μετατρέπει το αποτέλεσμα σε δυαδικό.
 
-Let's recall the conversion rules from the chapter <info:type-conversions>:
+Ας θυμηθούμε τους κανόνες μετατροπής από το κεφάλαιο <info:type-conversions>:
 
-- A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called "falsy" values.
-- Other values become `true`, so they are called "truthy".
+- Ένας αριθμός `0`, μια κενή συμβολοσειρά `""`, `null`, `undefined` και `NaN` όλα γίνονται `false`. Εξαιτίας αυτού, ονομάζονται "falsy" τιμές.
+- Άλλες τιμές γίνονται `true`, επομένως ονομάζονται "truthy".
 
-So, the code under this condition would never execute:
+Έτσι, ο κώδικας υπό αυτήν την κατάσταση δεν θα εκτελεστεί ποτέ:
 
 ```js
-if (0) { // 0 is falsy
+if (0) { // 0 είναι falsy
   ...
 }
 ```
 
-...and inside this condition -- it always will:
+...και μέσα σε αυτήν την κατάσταση - θα είναι πάντα:
 
 ```js
-if (1) { // 1 is truthy
+if (1) { // 1 είναι truthy
   ...
 }
 ```
 
-We can also pass a pre-evaluated boolean value to `if`, like this:
+Μπορούμε επίσης να περάσουμε μια προ-αξιολογημένη τιμή boolean στο `if`, έτσι:
 
 ```js
-let cond = (year == 2015); // equality evaluates to true or false
+let cond = (year == 2015); // η ισότητα αξιολογείται true ή false
 
 if (cond) {
   ...
 }
 ```
 
-## The "else" clause
+## Η ρήτρα "else"
 
-The `if` statement may contain an optional "else" block. It executes when the condition is false.
+Η δήλωση `if` μπορεί να περιέχει ένα προαιρετικό μπλοκ "else". Εκτελείται όταν η συνθήκη είναι λανθασμένη.
 
-For example:
+Για παράδειγμα:
 ```js run
 let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
 
 if (year == 2015) {
   alert( 'You guessed it right!' );
 } else {
-  alert( 'How can you be so wrong?' ); // any value except 2015
+  alert( 'How can you be so wrong?' ); // οποιαδήποτε τιμή εκτός 2015
 }
 ```
 
-## Several conditions: "else if"
+## Διάφορες συνθήκες: "else if"
 
-Sometimes, we'd like to test several variants of a condition. The `else if` clause lets us do that.
+Μερικές φορές, θα θέλαμε να δοκιμάσουμε πολλές παραλλαγές μιας κατάστασης. Η ρήτρα `else if` μας επιτρέπει να το κάνουμε αυτό.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
@@ -99,9 +101,9 @@ if (year < 2015) {
 }
 ```
 
-In the code above, JavaScript first checks `year < 2015`. If that is falsy, it goes to the next condition `year > 2015`. If that is also falsy, it shows the last `alert`.
+Στον παραπάνω κώδικα, η JavaScript ελέγχει πρώτα το `year < 2015. Εάν αυτό είναι falsy, πηγαίνει στην επόμενη συνθήκη `year > 2015`. Εάν αυτό είναι επίσης falsy, δείχνει το τελευταίο `alert`.
 
-There can be more `else if` blocks. The final `else` is optional.
+Μπορεί να υπάρχουν περισσότερα μπλοκ `else if`. Το τελικό `else` είναι προαιρετικό.
 
 ## Conditional operator '?'
 
