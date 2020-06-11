@@ -1,32 +1,22 @@
 # Συγκρίσεις
 
-<<<<<<< HEAD:1-js/02-first-steps/08-comparison/article.md
 Γνωρίζουμε αρκετούς τελεστές σύγκρισης από μαθηματικά:
+
+Στην JavaScript, είναι γραμμένα με αυτό τον τρόπο:
 
 - Μεγαλύτερο/μικρότερο από: <code>a &gt; b</code>, <code>a &lt; b</code>.
 - Μεγαλύτερο/μικρότερο από ή ίσον: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
 - Ισούται: `a == b` (παρακαλώ σημειώστε το σύμβολο του διπλού ίσον `=`. Το μόνο σύμβολο `a = b`  σήμαινε μια ανάθεση).
 - Όχι ισον. Στα μαθηματικά, ο συμβολισμός είναι <code>&ne;</code>, αλλά στην JavaScript γράφεται ως ανάθεση με ένα θαυμαστικό πριν από αυτό: <code>a != b</code>.
-=======
-We know many comparison operators from maths.
 
-In JavaScript they are written like this:
-
-- Greater/less than: <code>a &gt; b</code>, <code>a &lt; b</code>.
-- Greater/less than or equals: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
-- Equals: `a == b`, please note the double equality sign `=` means the equality test, while a single one `a = b` means an assignment.
-- Not equals. In maths the notation is <code>&ne;</code>, but in JavaScript it's written as <code>a != b</code>.
-
-In this article we'll learn more about different types of comparisons, how JavaScript makes them, including important peculiarities.
->>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb:1-js/02-first-steps/09-comparison/article.md
+Σε αυτό το άρθρο, θα μάθουμε περισσότερα σχετικά με διαφορετικούς τύπους συγκρίσεων, πώς τις δημιουργεί η JavaScript, συμπεριλαμβανομένων σημαντικών ιδιαιτεροτήτων.
 
 ## Το αποτέλεσμα είναι Boolean
 
-<<<<<<< HEAD:1-js/02-first-steps/08-comparison/article.md
+
 Όπως όλοι οι υπόλοιποι τελεστές, μια σύγκριση επιστρέφει μια τιμή. Σε αυτήν την περίπτωση, η τιμή είναι δυαδική.
-=======
-All comparison operators return a boolean value:
->>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb:1-js/02-first-steps/09-comparison/article.md
+
+Όλοι οι τελεστές σύγκρισης επιστρέφουν μια δυαδική τιμή:
 
 - `true` -- σημαίνει "yes", "correct" ή "the truth".
 - `false` -- σημαίνει "no", "wrong" ή "not the truth".

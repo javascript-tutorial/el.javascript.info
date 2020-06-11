@@ -6,15 +6,11 @@
 
 Υπάρχουν επίσης περιπτώσεις όπου χρειαζόμαστε να μετατρέψουμε ρητά μια τιμή στον προσδοκώμενο τύπο.
 
-<<<<<<< HEAD:1-js/02-first-steps/06-type-conversions/article.md
 ```smart header="Δεν μιλάμε ακόμα για αντικείμενα"
-Σε αυτό το κεφάλαιο, δεν θα καλύψουμε την ύλη για τα αντικείμενα. Αντίθετα, θα μελετήσουμε πρώτα τις απλές τιμές. Αργότερα, όταν μάθουμε για τα αντικείμενα, θα δούμε πώς δουλεύει η μετατροπή των αντικειμένων στο κεφάλαιο <info:object-toprimitive>.
-=======
-```smart header="Not talking about objects yet"
-In this chapter, we won't cover objects. For now we'll just be talking about primitives.
+Σε αυτό το κεφάλαιο, δεν θα καλύψουμε την ύλη για τα αντικείμενα. Αντίθετα, θα μελετήσουμε πρώτα τις απλές τιμές. 
 
-Later, after we learn about objects, in the chapter <info:object-toprimitive> we'll see how objects fit in.
->>>>>>> 69e44506c3e9dac74c282be37b55ba7ff122ae74:1-js/02-first-steps/07-type-conversions/article.md
+Αργότερα, όταν μάθουμε για τα αντικείμενα, θα δούμε πώς δουλεύει η μετατροπή των αντικειμένων στο κεφάλαιο <info:object-toprimitive>.
+
 ```
 
 ## Μετατροπή συμβολοσειρών
