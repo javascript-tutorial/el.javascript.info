@@ -17,7 +17,7 @@
 
 // αυτός ο κώδικας λειτουργεί με τον σύγχρονο τρόπο
 ...
-```
+
 
 Θα μάθουμε σύντομα για τα functions (ένας τρόπος ομαδοποίησης εντολών). Κοιτώντας μπροστά, ας σημειώσουμε ότι το "use strict" μπορεί να τοποθετηθεί στην αρχή της function αντί για ολόκληρο το script. Κάνοντας αυτό μας επιτρέπει αυστηρή λειτουργία μόνο σε αυτήν τη function. Αλλά συνήθως, οι άνθρωποι το χρησιμοποιούν για ολόκληρο το script.
 
@@ -52,7 +52,13 @@ alert("some code");
 
 Μερικές φορές, όταν η χρησιμοποιείτε το `use strict` κάνει τη διαφορά, θα έχετε λανθασμένα αποτελέσματα.
 
+
 Μπορείτε να προσπαθήσετε να πατήσετε `key:Shift+Enter`για εισαγωγή πολλών γραμμών, και βάλτε την `use strict` στην κορυφή, έτσι:
+=======
+So, how to actually `use strict` in the console?
+
+First, you can try to press `key:Shift+Enter` to input multiple lines, and put `use strict` on top, like this:
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb
 
 ```js
 'use strict'; <Shift+Enter for a newline>
@@ -62,12 +68,17 @@ alert("some code");
 
 Λειτουργέι σε ολους τους φυλλομετρητες, κυρίως Firefox και Chrome.
 
+<<<<<<< HEAD
 Εάν δεν συμβαίνει αυτό, ο πιο αξιόπιστος τρόπος για να διασφαλιστεί η `use strict` θα ήταν να εισαγάγετε τον κώδικα στην κονσόλα έτσι:
+=======
+If it doesn't, e.g. in an old browser, there's an ugly, but reliable way to ensure `use strict`. Put it inside this kind of wrapper:
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb
 
 ```js
 (function() {
   'use strict';
 
+<<<<<<< HEAD
   // ...ο κώδικα σας...
 })()
 ```
@@ -85,3 +96,24 @@ alert("some code");
 3. Η αυστηρή λειτουργία υποστηρίζεται σε όλους τους σύγχρονους φυλλομετρητές.
 4. Σας συνιστούμε να ξεκινάτε πάντα τα script με το `"use strict"`. Όλα τα παραδείγματα σε αυτό το σεμινάριο υποστηρίζουν αυστηρή λειτουργία εκτός αν (πολύ σπάνια) ορίζεται διαφορετικά.
 
+=======
+  // ...your code here...
+})()
+```
+
+## Should we "use strict"?
+
+The question may sound obvious, but it's not so.
+
+One could recommend to start scripts with `"use strict"`... But you know what's cool?
+
+Modern JavaScript supports "classes" and "modules" - advanced language structures (we'll surely get to them), that enable `use strict` automatically. So we don't need to add the `"use strict"` directive, if we use them.
+
+**So, for now `"use strict";` is a welcome guest at the top of your scripts. Later, when your code is all in classes and modules, you may omit it.**
+
+As of now, we've got to know about `use strict` in general.
+
+In the next chapters, as we learn language features, we'll see the differences between the strict and old modes. Luckily, there aren't many and they actually make our lives better.
+
+All examples in this tutorial assume strict mode unless (very rarely) specified otherwise.
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb

@@ -80,9 +80,14 @@ let user = 'John'
 
 Τεχνικά, όλες αυτές οι παραλλαγές κάνουν το ίδιο πράγμα. Άρα, είναι θέμα προσωπικής προτίμησης και αισθητικής.
 
+<<<<<<< HEAD
 ````smart header=" 
 `var` αντί `let` "
 Σε παλαιότερα script, μπορείτε επίσης να βρείτε μια άλλη λέξη-κλειδί: `var` αντί `let`:
+=======
+````smart header="`var` instead of `let`"
+In older scripts, you may also find another keyword: `var` instead of `let`:
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb
 
 ```js
 *!*var*/!* message = 'Hello';
@@ -134,6 +139,20 @@ message = hello;
 alert(hello); // Hello world!
 alert(message); // Hello world!
 ```
+
+````warn header="Declaring twice triggers an error"
+A variable should be declared only once.
+
+A repeated declaration of the same variable is an error:
+
+```js run
+let message = "This";
+
+// repeated 'let' leads to an error
+let message = "That"; // SyntaxError: 'message' has already been declared
+```
+So, we should declare a variable once and then refer to it without `let`.
+````
 
 ```smart header="Functional languages"
 Είναι ενδιαφέρον να σημειωθεί ότι υπάρχουν [functional](https://en.wikipedia.org/wiki/Functional_programming) γλώσσες προγραμματισμού, όπως [Scala](http://www.scala-lang.org/) ή [Erlang](http://www.erlang.org/) που απαγορεύουν την αλλαγή τιμής στις μεταβλητές.
@@ -190,7 +209,11 @@ let имя = '...';
 let 我 = '...';
 ```
 
+<<<<<<< HEAD
 Από τεχνικής άποψης, δεν υπάρχει σφάλμα εδώ, τέτοια ονόματα επιτρέπονται, αλλά υπάρχει μια διεθνής παράδοση για τη χρήση μεταβλητών ονόματων στα αγγλικά. Ακόμα κι αν γράφουμε ένα μικρό script, μπορεί να έχει μεγάλη διάρκεια ζωής. Άνθρωποι από άλλες χώρες μπορεί να χρειαστεί να το διαβάσουν κάποια στιγμή.
+=======
+Technically, there is no error here. Such names are allowed, but there is an international convention to use English in variable names. Even if we're writing a small script, it may have a long life ahead. People from other countries may need to read it some time.
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb
 ````
 
 ````warn header="Reserved names"

@@ -1,5 +1,6 @@
 # Αλληλεπίδραση: alert, prompt, confirm
 
+<<<<<<< HEAD:1-js/02-first-steps/09-alert-prompt-confirm/article.md
 Σε αυτό το μέρος του σεμιναρίου, καλύπτουμε τη γλώσσα JavaScript "ως έχει", χωρίς τροποποιήσεις του environment-specific.
 
 Αλλά θα συνεχίσουμε να χρησιμοποιούμε το πρόγραμμα περιήγησης ως περιβάλλον επίδειξης, οπότε θα πρέπει να γνωρίζουμε τουλάχιστον μερικές από τις λειτουργίες διεπαφής χρήστη. Σε αυτό το κεφάλαιο, θα εξοικειωθούμε με τις λειτουργίες του προγράμματος περιήγησης `alert`, `prompt` και `confirm`.
@@ -14,13 +15,25 @@ alert(message);
 ```
 
 Αυτό εμφανίζει ένα μήνυμα και διακόπτει την εκτέλεση του script μέχρι να πατήσει ο χρήστης "OK".
+=======
+As we'll be using the browser as our demo environment, let's see a couple of functions to interact with the user: `alert`, `prompt` and `confirm`.
+
+## alert
+
+This one we've seen already. It shows a message and waits for the user to presses "OK".
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb:1-js/02-first-steps/06-alert-prompt-confirm/article.md
 
 Για παράδειγμα:
 
 ```js run
 alert("Hello");
 ```
+<<<<<<< HEAD:1-js/02-first-steps/09-alert-prompt-confirm/article.md
 Το μίνι παράθυρο με το μήνυμα ονομάζεται *modal παράθυρο*. Η λέξη "modal" σημαίνει ότι ο επισκέπτης δεν μπορεί να αλληλεπιδράσει με την υπόλοιπη σελίδα, να πατήσει άλλα κουμπιά κ.λπ. μέχρι να αλληλεπιδράσει με το παράθυρο. Σε αυτήν την περίπτωση - έως ότου πατήσουν "OK".
+=======
+
+The mini-window with the message is called a *modal window*. The word "modal" means that the visitor can't interact with the rest of the page, press other buttons, etc, until they have dealt with the window. In this case -- until they press "OK".
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb:1-js/02-first-steps/06-alert-prompt-confirm/article.md
 
 ## prompt
 
@@ -38,7 +51,15 @@ result = prompt(title, [default]);
 `default`
 : Μια προαιρετική δεύτερη παράμετρος, η αρχική τιμή για το πεδίο εισαγωγής.
 
+<<<<<<< HEAD:1-js/02-first-steps/09-alert-prompt-confirm/article.md
 Ο επισκέπτης μπορεί να πληκτρολογήσει κάτι στο πεδίο εισαγωγής prompt και να πατήσει OK. Ή μπορούν να ακυρώσουν την είσοδο πατώντας Cancel ή πατώντας το `key:Esc` πλήκτρο.
+=======
+```smart header="The square brackets in syntax `[...]`"
+The square brackets around `default` in the syntax above denote that the parameter as optional, not required.
+```
+
+The visitor can type something in the prompt input field and press OK. Then we get that text in the `result`. Or they can cancel the input by pressing Cancel or hitting the `key:Esc` key, then we get `null` as the `result`.
+>>>>>>> 6167f3aad2afec389b05f45f0c7b665cd0079afb:1-js/02-first-steps/06-alert-prompt-confirm/article.md
 
 Η κλήση στο `prompt` επιστρέφει το κείμενο από το πεδίο εισαγωγής ή `null` εάν η είσοδος ακυρώθηκε.
 
