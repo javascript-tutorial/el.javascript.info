@@ -2,11 +2,11 @@ importance: 5
 
 ---
 
-# Rewrite 'if..else' into '?'
+# Ξαναγράψτε 'if..else' μέσα στο '?'
 
-Rewrite `if..else` using multiple ternary operators `'?'`.
+Ξαναγράψτε `if..else` χρησιμοποιώντας πολλαπλούς ternary τελεστές `'?'`.
 
-For readability, it's recommended to split the code into multiple lines.
+Για αναγνωσιμότητα, συνιστάται να χωρίσετε τον κώδικα σε πολλές γραμμές.
 
 ```js
 let message;
