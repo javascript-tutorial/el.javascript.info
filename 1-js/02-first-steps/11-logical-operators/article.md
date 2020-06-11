@@ -1,4 +1,4 @@
-# Logical operators
+# Λογικοί τελεστές
 
 There are three logical operators in JavaScript: `||` (OR), `&&` (AND), `!` (NOT).
 
