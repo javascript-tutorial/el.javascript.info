@@ -1,15 +1,15 @@
-# Basic operators, maths
+# Βασικοί τελεστές, μαθηματικοί
 
-We know many operators from school. They are things like addition `+`, multiplication `*`, subtraction `-`, and so on.
+Γνωρίζουμε πολλούς τελεστές από το σχολείο. Είναι πράγματα όπως η πρόσθεση `+`, ο πολλαπλασιασμός `*`, η αφαίρεση `-` και ούτω καθεξής.
 
-In this chapter, we’ll start with simple operators, then concentrate on JavaScript-specific aspects, not covered by school arithmetic.
+Σε αυτό το κεφάλαιο, θα ξεκινήσουμε με απλούς τελεστές και, στη συνέχεια, θα επικεντρωθούμε σε συγκεκριμένες πτυχές της JavaScript, που δεν καλύπτονται από στη σχολική αριθμητική.
 
-## Terms: "unary", "binary", "operand"
+## Όροι: "unary", "binary", "operand"
 
-Before we move on, let's grasp some common terminology.
+Πριν προχωρήσουμε, ας κατανοήσουμε κάποια κοινή ορολογία.
 
-- *An operand* -- is what operators are applied to. For instance, in the multiplication of `5 * 2` there are two operands: the left operand is `5` and the right operand is `2`. Sometimes, people call these "arguments" instead of "operands".
-- An operator is *unary* if it has a single operand. For example, the unary negation `-` reverses the sign of a number:
+- *Ένας τελεστής* -- είναι για το οποίο εφαρμόζονται οι τελεστές. Για παράδειγμα, στον πολλαπλασιασμό του `5 * 2` υπάρχουν δύο τελεστές: ο αριστερός τελεστής είναι `5` και ο δεξιός τελεστής είναι `2`. Μερικές φορές, οι άνθρωποι αποκαλούν αυτά "arguments" αντί για "τελεστές.
+- Ένας τελεστής είναι *unary* εάν έχει έναν μόνο τελεστή. Για παράδειγμα, η unary άρνηση `-` αντιστρέφει το σύμβολο ενός αριθμού:
 
     ```js run
     let x = 1;
@@ -17,114 +17,113 @@ Before we move on, let's grasp some common terminology.
     *!*
     x = -x;
     */!*
-    alert( x ); // -1, unary negation was applied
+    alert( x ); // -1, Εφαρμόστηκε unary άρνηση
     ```
-- An operator is *binary* if it has two operands. The same minus exists in binary form as well:
+- Ένας τελεστής είναι *δυαδικός* εάν έχει δύο τελεστές. Το ίδιο μείον υπάρχει και σε δυαδική μορφή:
 
     ```js run no-beautify
     let x = 1, y = 3;
-    alert( y - x ); // 2, binary minus subtracts values
+    alert( y - x ); // 2, δυαδικό μείον αφαιρεί τις τιμές
     ```
 
-    Formally, in the examples above we have two different operators that share the same symbol: the negation operator, a unary operator that reverses the sign, and the subtraction operator, a binary operator that subtracts one number from another.
+    Επισήμως, στα παραπάνω παραδείγματα έχουμε δύο διαφορετικούς τελεστές που μοιράζονται το ίδιο σύμβολο: τον τελεστή άρνησης, έναν unary τελεστή που αντιστρέφει το σύμβολο και τον τελεστή αφαίρεσης, έναν δυαδικό τελεστή που αφαιρεί έναν αριθμό από τον άλλο.
 
-## Maths
+## Μαθηματικά
 
-The following math operations are supported:
+Υποστηρίζονται οι ακόλουθες μαθηματικές λειτουργίες:
 
-- Addition `+`,
-- Subtraction `-`,
-- Multiplication `*`,
-- Division `/`,
-- Remainder `%`,
-- Exponentiation `**`.
+- Πρόσθεση `+`,
+- Αφαίρεση `-`,
+- Πολλαπλασιασμός `*`,
+- Διαίρεση `/`,
+- Υπόλοιπο `%`,
+- Εκθετικό `**`.
 
-The first four are straightforward, while `%` and `**` need a few words about them.
+Τα πρώτα τέσσερα είναι απλά, ενώ τα `%` και `**` χρειάζονται λίγα λόγια για αυτά.
 
-### Remainder %
+### Υπόλοιπο %
 
-The remainder operator `%`, despite its appearance, is not related to percents.
+Ο υπόλοιπος τελεστής `%`, παρά την εμφάνισή του, δεν σχετίζεται με τα ποσοστά.
 
-The result of `a % b` is the [remainder](https://en.wikipedia.org/wiki/Remainder) of the integer division of `a` by `b`.
+Το αποτέλεσμα του `a % b` είναι το [υπόλοιπο](https://en.wikipedia.org/wiki/Remainder) της ακέραιας διαίρεσης του `a` από το `b`.
 
-For instance:
-
+Για παράδειγμα:
 ```js run
-alert( 5 % 2 ); // 1, a remainder of 5 divided by 2
-alert( 8 % 3 ); // 2, a remainder of 8 divided by 3
+alert( 5 % 2 ); // 1, ένα υπόλοιπο 5 διαιρούμενο με 2
+alert( 8 % 3 ); // 2, ένα υπόλοιπο 8 διαιρούμενο με 3
 ```
 
-### Exponentiation **
+### Εκθετικό **
 
-The exponentiation operator `a ** b` multiplies `a` by itself `b` times.
+Ο εκθετικός τελεστής `a ** b` πολλαπλασιάζει το `a` με τον εαυτό του `b` φορές.
 
-For instance:
-
-```js run
-alert( 2 ** 2 ); // 4  (2 multiplied by itself 2 times)
-alert( 2 ** 3 ); // 8  (2 * 2 * 2, 3 times)
-alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2, 4 times)
-```
-
-Mathematically, the exponentiation is defined for non-integer numbers as well. For example, a square root is an exponentiation by `1/2`:
+Για παράδειγμα:
 
 ```js run
-alert( 4 ** (1/2) ); // 2 (power of 1/2 is the same as a square root)
-alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
+alert( 2 ** 2 ); // 4  (2 πολλαπλασιάζεται με τον εαυτό του 2 φορές)
+alert( 2 ** 3 ); // 8  (2 * 2 * 2, 3 φορές)
+alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2, 4 φορές)
+```
+
+Μαθηματικά, ο εκθετικός ορίζεται και για μη ακέραιους αριθμούς. Για παράδειγμα, μια τετραγωνική ρίζα εκτείνεται με το `1/2`:
+
+```js run
+alert( 4 ** (1/2) ); // 2 (η ισχύς του 1/2 είναι η ίδια με μια τετραγωνική ρίζα)
+alert( 8 ** (1/3) ); // 2 (η ισχύς του 1/3 είναι η ίδια με μια τετραγωνική ρίζα)
 ```
 
 
-## String concatenation with binary +
+## Συνδυασμός συμβολοσειράς με δυαδικό +
 
-Let's meet features of JavaScript operators that are beyond school arithmetics.
+Ας συναντήσουμε τις δυνατότητες των τελεστών JavaScript που είναι πέρα ​​από τη σχολική αριθμητική.
 
-Usually, the plus operator `+` sums numbers.
+Συνήθως, ο τελεστής συν `+` αθροίζει τους αριθμούς
 
-But, if the binary `+` is applied to strings, it merges (concatenates) them:
+Όμως, εάν το δυαδικό `+` εφαρμόζεται σε συμβολοσειρές, τα συγχωνεύει:
 
 ```js
 let s = "my" + "string";
 alert(s); // mystring
 ```
 
-Note that if any of the operands is a string, then the other one is converted to a string too.
+Σημειώστε ότι εάν κάποιος από τους τελεστές είναι συμβολοσειρά, τότε και ο άλλος μετατρέπεται σε συμβολοσειρά.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 alert( '1' + 2 ); // "12"
 alert( 2 + '1' ); // "21"
 ```
 
-See, it doesn't matter whether the first operand is a string or the second one.
+Βλέπετε, δεν έχει σημασία αν ο πρώτος τελεστής είναι μια συμβολοσειρά ή ο δεύτερος.
 
-Here's a more complex example:
+Εδώ είναι ένα πιο περίπλοκο παράδειγμα:
 
 ```js run
 alert(2 + 2 + '1' ); // "41" and not "221"
 ```
 
-Here, operators work one after another. The first `+` sums two numbers, so it returns `4`, then the next `+` adds the string `1` to it, so it's like `4 + '1' = 41`.
+Εδώ, οι τελεστές δουλεύουν το ένα μετά το άλλο. Το πρώτο `+` αθροίζει δύο αριθμούς, οπότε επιστρέφει `4`, και στη συνέχεια το επόμενο `+` προσθέτει τη συμβολοσειρά `1` σε αυτό, έτσι είναι σαν `4 + '1' = 41`.
 
-The binary `+` is the only operator that supports strings in such a way. Other arithmetic operators work only with numbers and always convert their operands to numbers.
+Το δυαδικό `+` είναι ο μόνος τελεστής που υποστηρίζει συμβολοσειρές τόσο μακριά. Άλλοι αριθμητικοί τελεστές λειτουργούν μόνο με αριθμούς και μετατρέπουν πάντα τους τελεστές τους σε αριθμούς.
 
-Here's the demo for subtraction and division:
+Εδώ είναι το παράδειγμα για αφαίρεση και διαίρεση:
 
 ```js run
-alert( 6 - '2' ); // 4, converts '2' to a number
-alert( '6' / '2' ); // 3, converts both operands to numbers
+alert( 6 - '2' ); // 4, μετατρέπει το `2` σε έναν αριθμό
+alert( '6' / '2' ); // 3, μετατρέπει και τους δύο τελεστές σε αριθμούς
 ```
 
-## Numeric conversion, unary +
+## Αριθμητική μετατροπή, unary +
 
-The plus `+` exists in two forms: the binary form that we used above and the unary form.
+Το συν `+` υπάρχει σε δύο μορφές: τη δυαδική μορφή που χρησιμοποιήσαμε παραπάνω και την unary μορφή.
 
-The unary plus or, in other words, the plus operator `+` applied to a single value, doesn't do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+Το unary συν ή, με άλλα λόγια, ο τελεστής συν `+` που εφαρμόζεται σε μία μόνο τιμή, δεν κάνει τίποτα στους αριθμούς. Αλλά αν ο τελεστής δεν είναι αριθμός, το unary συν το μετατρέπει σε αριθμό.
 
-For example:
+Για παράδειγμα:
 
 ```js run
-// No effect on numbers
+// Δεν επηρεάζει τους αριθμούς
 let x = 1;
 alert( +x ); // 1
 
@@ -132,55 +131,55 @@ let y = -2;
 alert( +y ); // -2
 
 *!*
-// Converts non-numbers
+// Μετατρέπει σε μη αριθμούς
 alert( +true ); // 1
 alert( +"" );   // 0
 */!*
 ```
 
-It actually does the same thing as `Number(...)`, but is shorter.
+Κάνει το ίδιο πράγμα με το `Number (...)`, αλλά είναι μικρότερο.
 
-The need to convert strings to numbers arises very often. For example, if we are getting values from HTML form fields, they are usually strings. What if we want to sum them?
+Η ανάγκη μετατροπής συμβολοσειρών σε αριθμούς προκύπτει πολύ συχνά. Για παράδειγμα, εάν λαμβάνουμε τιμές από πεδία φόρμας HTML, συνήθως είναι συμβολοσειρές. Τι γίνεται αν θέλουμε να τα αθροίσουμε;
 
-The binary plus would add them as strings:
+Το δυαδικό συν θα τους προσθέσει ως συμβολοσειρές:
 
 ```js run
 let apples = "2";
 let oranges = "3";
 
-alert( apples + oranges ); // "23", the binary plus concatenates strings
+alert( apples + oranges ); // "23", το δυα συν τα συνδεεί σειριακά τις συμβολοσειρές
 ```
 
-If we want to treat them as numbers, we need to convert and then sum them:
+Εάν θέλουμε να τους αντιμετωπίσουμε ως αριθμούς, πρέπει να τα μετατρέψουμε και στη συνέχεια να τους αθροίσουμε:
 
 ```js run
 let apples = "2";
 let oranges = "3";
 
 *!*
-// both values converted to numbers before the binary plus
+// Και οι δύο τιμές μετατράπηκαν σε αριθμούς πριν από το δυαδικό συν
 alert( +apples + +oranges ); // 5
 */!*
 
-// the longer variant
+// η μεγαλύτερη παραλλαγή
 // alert( Number(apples) + Number(oranges) ); // 5
 ```
 
-From a mathematician's standpoint, the abundance of pluses may seem strange. But from a programmer's standpoint, there's nothing special: unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
+Από την άποψη ενός μαθηματικού, η αφθονία των συν μπορεί να φαίνεται περίεργη. Αλλά από τη μερία ενός προγραμματιστή, δεν υπάρχει τίποτα το ιδιαίτερο: εφαρμόζονται πρώτα τα unary plus, μετατρέπουν τις συμβολοσειρές σε αριθμούς και, στη συνέχεια, το δυαδικό συν τους αθροίζει.
 
-Why are unary pluses applied to values before the binary ones? As we're going to see, that's because of their *higher precedence*.
+Γιατί εφαρμόζονται unary plus σε τιμές πριν από τις δυαδικές; Όπως θα δούμε, αυτό οφείλεται στην *υψηλότερη προτεραιότητά τους*.
 
-## Operator precedence
+## Προτεραιότητα τελεστή
 
-If an expression has more than one operator, the execution order is defined by their *precedence*, or, in other words, the default priority order of operators.
+Εάν μια παράσταση έχει περισσότερους από έναν τελεστές, η εντολή εκτέλεσης καθορίζεται από την *προτεραιότητα* ή, με άλλα λόγια, την προεπιλεγμένη σειρά προτεραιότητας των τελεστών.
 
-From school, we all know that the multiplication in the expression `1 + 2 * 2` should be calculated before the addition. That's exactly the precedence thing. The multiplication is said to have *a higher precedence* than the addition.
+Από το σχολείο, όλοι γνωρίζουμε ότι ο πολλαπλασιασμός εκφράσεται `1 + 2 * 2` πρέπει να υπολογίζεται πριν από την πρόσθεση. Αυτό είναι ακριβώς το θέμα προτεραιότητας. Ο πολλαπλασιασμός λέγεται ότι έχει *μεγαλύτερη προτεραιότητα* από την προσθήκη.
 
-Parentheses override any precedence, so if we're not satisfied with the default order, we can use them to change it. For example, write `(1 + 2) * 2`.
+Οι παρενθέσεις παρακάμπτουν κάθε προτεραιότητα, οπότε αν δεν είμαστε ικανοποιημένοι με την προεπιλεγμένη σειρά, μπορούμε να τις χρησιμοποιήσουμε και να της αλλάξουμε. Για παράδειγμα, γράψτε `(1 + 2) * 2`.
 
-There are many operators in JavaScript. Every operator has a corresponding precedence number. The one with the larger number executes first. If the precedence is the same, the execution order is from left to right.
+Υπάρχουν πολλοί τελεστές σε JavaScript. Κάθε τελεστής έχει έναν αντίστοιχο αριθμό προτεραιότητας. Εκείνος με τον μεγαλύτερο αριθμό εκτελείται πρώτα. Εάν η προτεραιότητα είναι η ίδια, η εντολή εκτέλεσης είναι από αριστερά προς τα δεξιά.
 
-Here's an extract from the [precedence table](https://developer.mozilla.org/en/JavaScript/Reference/operators/operator_precedence) (you don't need to remember this, but note that unary operators are higher than corresponding binary ones):
+Ακολουθεί ένα απόσπασμα από τον [πίνακα προτεραιότητας](https://developer.mozilla.org/en/JavaScript/Reference/operators/operator_precedence)(δεν χρειάζεται να το θυμάστε αυτό, αλλά σημειώστε τα unary τελεστές είναι υψηλότεροι από τους αντίστοιχους δυαδικούς):
 
 | Precedence | Name | Sign |
 |------------|------|------|
@@ -196,13 +195,13 @@ Here's an extract from the [precedence table](https://developer.mozilla.org/en/J
 | 3 | assignment | `=` |
 | ... | ... | ... |
 
-As we can see, the "unary plus" has a priority of `17` which is higher than the `13` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
+Όπως μπορούμε να δούμε, το "unary plus" έχει προτεραιότητα `17` που είναι υψηλότερη από το `13` της "προσθήκης" (δυαδικό συν). Γι 'αυτό, στην έκφραση `"+apples + +oranges"`, τα unary plus λειτουργούν πριν από την πρόσθεση.
 
-## Assignment
+## Ανάθεση
 
-Let's note that an assignment `=` is also an operator. It is listed in the precedence table with the very low priority of `3`.
+Ας σημειώσουμε ότι μια ανάθεση `=` είναι επίσης τελεστής. Παρατίθεται στον πίνακα προτεραιότητας με την πολύ χαμηλή προτεραιότητα του `3`.
 
-That's why, when we assign a variable, like `x = 2 * 2 + 1`, the calculations are done first and then the `=` is evaluated, storing the result in `x`.
+Γι 'αυτό, όταν εκχωρούμε μια μεταβλητή, όπως `x = 2 * 2 + 1`, οι υπολογισμοί γίνονται πρώτα και στη συνέχεια αξιολογείται το `=`, αποθηκεύοντας το αποτέλεσμα στο `x`.
 
 ```js
 let x = 2 * 2 + 1;
@@ -210,15 +209,15 @@ let x = 2 * 2 + 1;
 alert( x ); // 5
 ```
 
-### Assignment = returns a value
+### Ανάθεση = επιστροφή τιμής
 
-The fact of `=` being an operator, not a "magical" language construct has an interesting implication.
+Το γεγονός ότι το `=` είναι τελεστής και όχι ένα "μαγικό" γλωσσικό κατασκεύασμα έχει ενδιαφέρουσα επίπτωση.
 
-Most operators in JavaScript return a value. That's obvious for `+` and `-`, but also true for `=`.
+Οι περισσότεροι τελεστές στην JavaScript επιστρέφουν μια τιμή. Αυτό είναι προφανές για τα `+` και `-`, αλλά ισχύει και για το `=`.
 
-The call `x = value` writes the `value` into `x` *and then returns it*.
+Η κλήση `x = value` αναθέτη το `value` στο `x` *και στη συνέχεια την επιστρέφει*.
 
-Here's a demo that uses an assignment as part of a more complex expression:
+Ακολουθεί μια επίδειξη που χρησιμοποιεί μια εργασία ως μέρος μιας πιο περίπλοκης έκφρασης:
 
 ```js run
 let a = 1;
@@ -232,15 +231,15 @@ alert( a ); // 3
 alert( c ); // 0
 ```
 
-In the example above, the result of expression `(a = b + 1)` is the value which was assigned to `a` (that is `3`). It is then used for further evaluations.
+Στο παραπάνω παράδειγμα, το αποτέλεσμα της έκφρασης `(a = b + 1)` είναι η τιμή που αντιστοιχίστηκε στο `a` (δηλαδή `3`). Στη συνέχεια χρησιμοποιείται για περαιτέρω αξιολογήσεις.
 
-Funny code, isn't it? We should understand how it works, because sometimes we see it in JavaScript libraries.
+Αστείος ο κώδικας, έτσι δεν είναι; Πρέπει να καταλάβουμε πώς λειτουργεί γιατί μερικές φορές το βλέπουμε σε βιβλιοθήκες της JavaScript.
 
-Although, please don't write the code like that. Such tricks definitely don't make code clearer or readable.
+Ωστόσο, μην γράψετε τον κωδικό έτσι. Τέτοια κόλπα σίγουρα δεν κάνουν τον κώδικα σαφέστερο ή αναγνώσιμο.
 
-### Chaining assignments
+### Αλυσίδες αναθέσεων
 
-Another interesting feature is the ability to chain assignments:
+Ένα άλλο ενδιαφέρον χαρακτηριστικό είναι η ικανότητα αλυσίδας αναθέσεων:
 
 ```js run
 let a, b, c;
@@ -253,23 +252,22 @@ alert( a ); // 4
 alert( b ); // 4
 alert( c ); // 4
 ```
+Οι αλυσοδεμένες εργασίες αξιολογούνται από δεξιά προς τα αριστερά. Αρχικά, αξιολογείται η πιο δεξιά έκφραση `2 + 2` και στη συνέχεια αντιστοιχίζεται στις μεταβλητές στα αριστερά: `c`, `b` και `a`. Στο τέλος, όλες οι μεταβλητές μοιράζονται μία μόνο τιμή.
 
-Chained assignments evaluate from right to left. First, the rightmost expression `2 + 2` is evaluated and then assigned to the variables on the left: `c`, `b` and `a`. At the end, all the variables share a single value.
-
-Once again, for the purposes of readability it's better to split such code into few lines:
+Για άλλη μια φορά, για λόγους αναγνωσιμότητας, είναι καλύτερο να χωρίσετε αυτόν τον κώδικα σε λίγες γραμμές:
 
 ```js
 c = 2 + 2;
 b = c;
 a = c;
 ```
-That's easier to read, especially when eye-scanning the code fast.
+Αυτό είναι πιο εύκολο να το διαβάσετε, ειδικά όταν κάνετε γρήγορη σάρωση του κώδικα.
 
-## Modify-in-place
+## Τροποποίηση στο χώρο
 
-We often need to apply an operator to a variable and store the new result in that same variable.
+Συχνά πρέπει να εφαρμόσουμε έναν τελεστή σε μια μεταβλητή και να αποθηκεύσουμε το νέο αποτέλεσμα στην ίδια μεταβλητή.
 
-For example:
+Για παράδειγμα:
 
 ```js
 let n = 2;
@@ -277,7 +275,7 @@ n = n + 5;
 n = n * 2;
 ```
 
-This notation can be shortened using the operators `+=` and `*=`:
+Αυτή η σημειογραφία μπορεί να συντομευτεί χρησιμοποιώντας τους τελεστές  `+=` και `*=`:
 
 ```js run
 let n = 2;
@@ -287,57 +285,56 @@ n *= 2; // now n = 14 (same as n = n * 2)
 alert( n ); // 14
 ```
 
-Short "modify-and-assign" operators exist for all arithmetical and bitwise operators: `/=`, `-=`, etc.
+Σύντομοι τελεστές "τροποποίησης και ανάθεση" υπάρχουν για όλους τους αριθμητικούς και bitwise τελεστές: `/=`, `-=`, κτλπ.
 
-Such operators have the same precedence as a normal assignment, so they run after most other calculations:
+Τέτοιοι τελεστές έχουν την ίδια προτεραιότητα με μια κανονική ανάθεση, οπότε εκτελούν τους περισσότερους άλλους υπολογισμούς:
 
 ```js run
 let n = 2;
 
 n *= 3 + 5;
 
-alert( n ); // 16  (right part evaluated first, same as n *= 8)
+alert( n ); // 16  (το σωστό μέρος αξιολογήθηκε πρώτα, το ίδια και για το n *= 8)
 ```
 
-## Increment/decrement
+## Αύξηση/μείωση
 
 <!-- Can't use -- in title, because the built-in parser turns it into a 'long dash' – -->
 
-Increasing or decreasing a number by one is among the most common numerical operations.
+Η αύξηση ή η μείωση ενός αριθμού κατά έναν είναι από τις πιο κοινές αριθμητικές πράξεις.
 
-So, there are special operators for it:
+Έτσι, υπάρχουν ειδικοί τελεστές  για αυτό:
 
-- **Increment** `++` increases a variable by 1:
+- **Αύξηση** `++` αυξάνει την μεταβλητή κατά 1:
 
     ```js run no-beautify
     let counter = 2;
-    counter++;        // works the same as counter = counter + 1, but is shorter
+    counter++;        // λειτουργεί ακριβώς το ίδια με counter = counter + 1, απλώς είναι συντομογραφία
     alert( counter ); // 3
     ```
-- **Decrement** `--` decreases a variable by 1:
+- **Μείωσει** `--` μειώνει την μεταβλητή κατά 1:
 
     ```js run no-beautify
     let counter = 2;
-    counter--;        // works the same as counter = counter - 1, but is shorter
+    counter--;        // λειτουργεί ακριβώς το ίδια με counter = counter - 1, απλώς είναι συντομογραφία
     alert( counter ); // 1
     ```
 
 ```warn
-Increment/decrement can only be applied to variables. Trying to use it on a value like `5++` will give an error.
+Η αύξηση / μείωση μπορεί να εφαρμοστεί μόνο σε μεταβλητές. Προσπαθώντας να το χρησιμοποιήσετε σε μια τιμή όπως `5++` θα εμφανιστεί ένα σφάλμα.
 ```
+Οι τελεστές `++` και ``-` μπορούν να τοποθετηθούν είτε πριν είτε μετά από μια μεταβλητή.
 
-The operators `++` and `--` can be placed either before or after a variable.
+- Όταν ο τελεστής ακολουθεί τη μεταβλητή, είναι σε "postfix form": `counter++`.
+- Η "prefix form" είναι όταν ο τελεστής βρίσκεται πριν από τη μεταβλητή: `++counter`.
 
-- When the operator goes after the variable, it is in "postfix form": `counter++`.
-- The "prefix form" is when the operator goes before the variable: `++counter`.
+Και οι δύο αυτές δηλώσεις κάνουν το ίδιο πράγμα: αύξηση του `counter` κατά `1`.
 
-Both of these statements do the same thing: increase `counter` by `1`.
+Υπάρχει διαφορά; Ναι, αλλά μπορούμε να το δούμε μόνο εάν χρησιμοποιήσουμε την επιστρεφόμενη τιμή `++ / -`.
 
-Is there any difference? Yes, but we can only see it if we use the returned value of `++/--`.
+Ας διευκρινίσουμε. Όπως γνωρίζουμε, όλοι οι τελεστές επιστρέφουν μια τιμή. Η αύξηση/μείωση δεν αποτελεί εξαίρεση. Η φόρμα προθέματος επιστρέφει τη νέα τιμή ενώ η φόρμα μετά την επιδιόρθωση επιστρέφει την παλιά τιμή (πριν από την αύξηση/μείωση).
 
-Let's clarify. As we know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
-
-To see the difference, here's an example:
+Για να δείτε τη διαφορά εδώ είναι ένα παράδειγμα:
 
 ```js run
 let counter = 1;
@@ -345,37 +342,34 @@ let a = ++counter; // (*)
 
 alert(a); // *!*2*/!*
 ```
+Στη γραμμή `(*)`, το *prefix* φόρμα `++counter` αυξάνει το `counter` και επιστρέφει τη νέα τιμή, `2`. Έτσι, το `alert` δείχνει `2`.
 
-In the line `(*)`, the *prefix* form `++counter` increments `counter` and returns the new value, `2`. So, the `alert` shows `2`.
-
-Now, let's use the postfix form:
+Τώρα, ας χρησιμοποιήσουμε τη φόρμα μετά την επιδιόρθωση:
 
 ```js run
 let counter = 1;
-let a = counter++; // (*) changed ++counter to counter++
-
-alert(a); // *!*1*/!*
+let a = counter++; // (*) άλλαξε ++counter σε counter++
+alert(a); // *!*1*/!*
 ```
+Στη γραμμή `(*)`, η φόρμα *postfix* `counter++` αυξάνει επίσης τον `counter` αλλά επιστρέφει την *παλιά* τιμή  (πριν από την αύξηση). Έτσι, το `alert` δείχνει `1`.
 
-In the line `(*)`, the *postfix* form `counter++` also increments `counter` but returns the *old* value (prior to increment). So, the `alert` shows `1`.
+Να συνοψίσουμε:
 
-To summarize:
-
-- If the result of increment/decrement is not used, there is no difference in which form to use:
+- Εάν το αποτέλεσμα της αύξησης/μείωσης δεν χρησιμοποιείται, δεν υπάρχει διαφορά σε ποια μορφή θα χρησιμοποιηθεί:
 
     ```js run
     let counter = 0;
     counter++;
     ++counter;
-    alert( counter ); // 2, the lines above did the same
+    alert( counter ); // 2, οι παραπάνω γραμμές έκαναν το ίδιο
     ```
-- If we'd like to increase a value *and* immediately use the result of the operator, we need the prefix form:
+- Εάν θέλουμε να αυξήσουμε μια τιμή *και* να χρησιμοποιήσουμε αμέσως το αποτέλεσμα του τελεστή, χρειαζόμαστε τη φόρμα prefix:
 
     ```js run
     let counter = 0;
     alert( ++counter ); // 1
     ```
-- If we'd like to increment a value but use its previous value, we need the postfix form:
+- Εάν θέλουμε να αυξήσουμε μια τιμή αλλά να χρησιμοποιήσουμε την προηγούμενη τιμή, χρειαζόμαστε τη φόρμα μετά την postfix:
 
     ```js run
     let counter = 0;
@@ -383,27 +377,27 @@ To summarize:
     ```
 
 ````smart header="Increment/decrement among other operators"
-The operators `++/--` can be used inside expressions as well. Their precedence is higher than most other arithmetical operations.
+Οι τελεστές `++/--` μπορούν να χρησιμοποιηθούν και σε εσωτερικές εκφράσεις. Η προτεραιότητά τους είναι υψηλότερη από τις περισσότερες άλλες αριθμητικές πράξεις.
 
-For instance:
+Για παράδειγμα:
 
 ```js run
 let counter = 1;
 alert( 2 * ++counter ); // 4
 ```
 
-Compare with:
+Σύγκρινε με:
 
 ```js run
 let counter = 1;
-alert( 2 * counter++ ); // 2, because counter++ returns the "old" value
+alert( 2 * counter++ ); // 2, επειδή ο counter++ επιστρέφει την "παλιά" τιμή
 ```
 
-Though technically okay, such notation usually makes code less readable. One line does multiple things -- not good.
+Αν και είναι τεχνικά εντάξει, αυτή η σημειογραφία κάνει συνήθως τον κώδικα λιγότερο ευανάγνωστο. Μια γραμμή κάνει πολλά πράγματα - όχι καλά.
 
-While reading code, a fast "vertical" eye-scan can easily miss something like `counter++` and it won't be obvious that the variable increased.
+Κατά την ανάγνωση του κώδικα, μια γρήγορη "κάθετη" σάρωση ματιών μπορεί εύκολα να χάσει κάτι όπως το `counter++` και δεν θα είναι προφανές ότι η μεταβλητή αυξήθηκε.
 
-We advise a style of "one line -- one action":
+Σας συμβουλεύουμε ένα στυλ "μία γραμμή - μία δράση":
 
 ```js run
 let counter = 1;
@@ -412,13 +406,13 @@ counter++;
 ```
 ````
 
-## Bitwise operators
+## Τελεστές Bitwise
 
-Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
+Οι τελεστές Bitwise αντιμετωπίζουν τα ορίσματα ως ακέραιους αριθμούς 32-bit και εργάζονται στο επίπεδο της δυαδικής τους αναπαράστασης.
 
-These operators are not JavaScript-specific. They are supported in most programming languages.
+Αυτοί οι τελεστές δεν είναι συγκεκριμένοι για JavaScript. Υποστηρίζονται στις περισσότερες γλώσσες προγραμματισμού.
 
-The list of operators:
+Ο κατάλογος των τελεστών:
 
 - AND ( `&` )
 - OR ( `|` )
@@ -428,43 +422,43 @@ The list of operators:
 - RIGHT SHIFT ( `>>` )
 - ZERO-FILL RIGHT SHIFT ( `>>>` )
 
-These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won't need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the [Bitwise Operators](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) article on MDN when a need arises.
+Αυτοί οι τελεστές χρησιμοποιούνται πολύ σπάνια όταν έχουμε να κάνουμε με αριθμούς στο πολύ χαμηλότερο (bitwise) επίπεδο. Δεν θα χρειαζόμαστε αυτούς τους τελεστές σύντομα, καθώς η ανάπτυξη ιστού τους χρησιμοποιεί ελάχιστα, αλλά σε ορισμένες ειδικές περιοχές, όπως η κρυπτογραφία, είναι χρήσιμες. Μπορείτε να διαβάσετε το άρθρο του [Bitwise Operators](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) στο MDN όταν υπάρχει ανάγκη.
 
-## Comma
+## Κόμμα
 
-The comma operator `,` is one of the rarest and most unusual operators. Sometimes, it's used to write shorter code, so we need to know it in order to understand what's going on.
+Ο τελεστής κόμμα `,` είναι ένας από τους σπανιότερους και πιο ασυνήθιστους τελεστές. Μερικές φορές, χρησιμοποιείται για τη σύνταξη μικρότερου κώδικα, οπότε πρέπει να το γνωρίζουμε για να κατανοήσουμε τι συμβαίνει.
 
-The comma operator allows us to evaluate several expressions, dividing them with a comma `,`. Each of them is evaluated but only the result of the last one is returned.
+Ο τελεστής κόμμα μας επιτρέπει να αξιολογήσουμε διάφορες εκφράσεις, διαιρώντας τις με κόμμα `,`. Κάθε ένα από αυτά αξιολογείται αλλά επιστρέφεται μόνο το αποτέλεσμα του τελευταίου.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 *!*
 let a = (1 + 2, 3 + 4);
 */!*
 
-alert( a ); // 7 (the result of 3 + 4)
+alert( a ); // 7 (το αποτέλεσμα του 3 + 4)
 ```
 
-Here, the first expression `1 + 2` is evaluated and its result is thrown away. Then, `3 + 4` is evaluated and returned as the result.
+Εδώ, αξιολογείται η πρώτη έκφραση `1 + 2` και το αποτέλεσμα απορρίπτεται. Στη συνέχεια, το `3 + 4` αξιολογείται και επιστρέφεται ως αποτέλεσμα.
 
 ```smart header="Comma has a very low precedence"
-Please note that the comma operator has very low precedence, lower than `=`, so parentheses are important in the example above.
+Λάβετε υπόψη ότι ο τελεστής κόμμα έχει πολύ χαμηλή προτεραιότητα, χαμηλότερος από το `=`, οπότε οι παρενθέσεις είναι σημαντικές στο παραπάνω παράδειγμα.
 
-Without them: `a = 1 + 2, 3 + 4` evaluates `+` first, summing the numbers into `a = 3, 7`, then the assignment operator `=` assigns `a = 3`, and the rest is ignored. It's like `(a = 1 + 2), 3 + 4`.
+Χωρίς αυτούς: `a = 1 + 2, 3 + 4` αξιολογεί πρώτα το `+`, αθροίζοντας τους αριθμούς σε `a = 3, 7`, στη συνέχεια ο τελεστής ανάθεσης `=` εκχωρεί `a = 3` και το υπόλοιπο αγνοείται. Είναι σαν `(a = 1 + 2), 3 + 4`.
 ```
 
-Why do we need an operator that throws away everything except the last expression?
+Γιατί χρειαζόμαστε έναν τελεστή που αγνοεί τα πάντα εκτός από την τελευταία έκφραση;
 
-Sometimes, people use it in more complex constructs to put several actions in one line.
+Μερικές φορές, οι άνθρωποι το χρησιμοποιούν σε πιο περίπλοκες κατασκευές για να βάλουν πολλές ενέργειες σε μία γραμμή.
 
-For example:
+Για παραδείγμα:
 
 ```js
-// three operations in one line
+// τρεις λειτουργίες σε μία γραμμή
 for (*!*a = 1, b = 3, c = a * b*/!*; a < 10; a++) {
  ...
 }
 ```
 
-Such tricks are used in many JavaScript frameworks. That's why we're mentioning them. But usually they don't improve code readability so we should think well before using them.
+Τέτοια κόλπα χρησιμοποιούνται σε πολλά frameworks της JavaScript. Γι 'αυτό τα αναφέρουμε. Αλλά συνήθως, δεν βελτιώνουν την αναγνωσιμότητα του κώδικα, οπότε πρέπει να σκεφτούμε καλά πριν τα χρησιμοποιήσουμε.
