@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# The result of OR AND OR
+# Το αποτέλεσμα OR καί OR
 
-What will the result be?
+Ποιό θα είναι το αποτέλεσμα?
 
 ```js
 alert( null || 2 && 3 || 4 );

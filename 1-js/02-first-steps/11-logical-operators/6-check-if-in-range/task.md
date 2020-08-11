@@ -2,8 +2,8 @@ importance: 3
 
 ---
 
-# Check the range between
+# Ελέγξτε το εύρος μεταξύ
 
-Write an "if" condition to check that `age` is between `14` and `90` inclusively.
+Γράψτε μια συνθήκη `if` για να ελέγξετε ότι το `age` είναι μεταξύ `14` και `90`.
 
-"Inclusively" means that `age` can reach the edges `14` or `90`.
+"Συμπεριλαμβανόμενα" σημαίνει ότι η `age` μπορεί να φτάσει στα άκρα `14` ή `90`.

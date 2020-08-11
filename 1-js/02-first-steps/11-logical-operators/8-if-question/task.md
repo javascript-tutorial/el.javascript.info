@@ -2,11 +2,10 @@ importance: 5
 
 ---
 
-# A question about "if"
+# Μια ερώτηση για "if"
 
-Which of these `alert`s are going to execute?
-
-What will the results of the expressions be inside `if(...)`?
+Ποιες από αυτές τις `alert` πρόκειται να εκτελέσουν?
+Ποιό θα είναι το αποτέλεσμα μέσα στο `if(...)`?
 
 ```js
 if (-1 || 0) alert( 'first' );

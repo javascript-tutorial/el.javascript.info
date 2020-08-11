@@ -1,10 +1,11 @@
+
 importance: 3
 
 ---
 
-# What is the result of AND'ed alerts?
+# Ποιο είναι το αποτέλεσμα των AND'ed alerts?
 
-What will this code show?
+Τι θα δείξει ο κώδικας?
 
 ```js
 alert( alert(1) && alert(2) );
