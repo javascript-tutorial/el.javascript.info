@@ -1,16 +1,16 @@
-The answer: `3`.
+Η απάντηση είναι: `3`.
 
 ```js run
 alert( null || 2 && 3 || 4 );
 ```
 
-The precedence of AND `&&` is higher than `||`, so it executes first.
+Η προτεραιότητα AND `&&` είναι υψηλότερη απο την `||`, για αυτό και θα εκτελεστεί πρώτο.
 
-The result of `2 && 3 = 3`, so the expression becomes:
+Το αποτέλεσμα της `2 && 3 = 3`, έτσι η έκφραση παίρνει την μορφή:
 
 ```
 null || 3 || 4
 ```
 
-Now the result is the first truthy value: `3`.
+Τώρα το αποτέλεσμα είναι η πρώτη αληθινή τιμή: `3`.
 

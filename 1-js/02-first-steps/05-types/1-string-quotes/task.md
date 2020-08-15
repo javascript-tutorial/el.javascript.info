@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# String quotes
+# Συμβολοσειρά με εισαγωγικά
 
-What is the output of the script?
+Ποιό είναι το αποτέλεσμα του script?
 
 ```js
 let name = "Ilya";

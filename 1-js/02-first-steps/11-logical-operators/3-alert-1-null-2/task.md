@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# What is the result of AND?
+# Πιο είναι το αποτέλεσμα της AND?
 
-What is this code going to show?
+Τι θα δείξει ο παρακάτω κώδικα?
 
 ```js
 alert( 1 && null && 2 );

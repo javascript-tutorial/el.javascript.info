@@ -1,57 +1,57 @@
-# Nullish coalescing operator '??'
+# Μηδενικός τελεστής συγχώνευσης '??'
 
 [recent browser="new"]
 
-The nullish coalescing operator `??` provides a short syntax for selecting a first "defined" variable from the list.
+Ο μηδενικός τελεστής συγχώνευσης `??` παρέχει μια σύντομη σύνταξη για την επιλογή μιας πρώτης `καθορισμένης` μεταβλητής από τη λίστα.
 
-The result of `a ?? b` is:
-- `a` if it's not `null` or `undefined`,
-- `b`, otherwise.
+Το αποτέλεσμα της `a ?? b` είναι:
+- `a` εάν δεν είναι `null` ή `undefined`,
+- `b`, αλλίως.
 
-So, `x = a ?? b` is a short equivalent to:
+Ετσι είναι `x = a ?? b` ισοδύναμο με:
 
 ```js
 x = (a !== null && a !== undefined) ? a : b;
 ```
 
-Here's a longer example.
+Εδώ είναι ένα μεγαλύτερο παράδειγμα.
 
-Imagine, we have a user, and there are variables `firstName`, `lastName` or `nickName` for their first name, last name and the nick name. All of them may be undefined, if the user decided not to enter any value.
+Φανταστείτε, έχουμε έναν χρήστη και υπάρχουν μεταβλητές `firstName`, `lastName` ή `nickName` για το όνομα, το επώνυμο και το ψευδώνυμό τους. Όλα αυτά μπορεί να είναι ακαθόριστα, εάν ο χρήστης αποφασίσει να μην εισαγάγει καμία τιμή.
 
-We'd like to display the user name: one of these three variables, or show "Anonymous" if nothing is set.
+Θα θέλαμε να εμφανίσουμε το όνομα χρήστη: μία από αυτές τις τρεις μεταβλητές ή να δείξουμε "Anonymous" εάν δεν έχει οριστεί τίποτα.
 
-Let's use the `??` operator to select the first defined one:
+Ας χρησιμοποιήσουμε τον τελεστή `??` για να επιλέξουμε τον πρώτο καθορισμένο:
 
 ```js run
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
 
-// show the first not-null/undefined value
+// εμφάνιση της πρώτης μη μηδενικής / μη καθορισμένης τιμής
 *!*
 alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 */!*
 ```
 
-## Comparison with ||
+## Σύγκριση με ||
 
-The OR `||` operator can be used in the same way as `??`. Actually, we can replace `??` with `||` in the code above and get the same result, as it was described in the [previous chapter](info:logical-operators#or-finds-the-first-truthy-value).
+Ο τελεστής OR `||` μπορεί να χρησιμοποιηθεί με τον ίδιο τρόπο όπως `??`. Στην πραγματικότητα, μπορούμε να αντικαταστήσουμε το `??` με το `||` στον παραπάνω κώδικα και να πάρουμε το ίδιο αποτέλεσμα, όπως περιγράφηκε στο [προηγούμενο κεφάλαιο](info:logical-operators#or-finds-the-first-truthy-value)
 
-The important difference is that:
-- `||` returns the first *truthy* value.
-- `??` returns the first *defined* value.
 
-This matters a lot when we'd like to treat `null/undefined` differently from `0`.
+Οι σημαντικές διαφορές είναι:
+- `||` επιστρέφει την πρώτη *truthy* τιμή.
+- `??` επιστρέφει την πρώτη *defined* τιμή.
+Αυτό έχει μεγάλη σημασία όταν θα θέλαμε να αντιμετωπίσουμε το `null/undefined` διαφορετικά από το `0`.
 
-For example, consider this:
+Για παράδειγμα, δείτε αυτό:
 
 ```js
 height = height ?? 100;
 ```
 
-This sets `height` to `100` if it's not defined.
+Αυτό ορίζει το `height` σε `100` εάν δεν έχει οριστεί.
 
-Let's compare it with `||`:
+Ας συκγρίνουμε το `||`:
 
 ```js run
 let height = 0;
@@ -60,71 +60,73 @@ alert(height || 100); // 100
 alert(height ?? 100); // 0
 ```
 
-Here, `height || 100` treats zero height as unset, same as `null`, `undefined` or any other falsy value. So the result is `100`.
+Εδώ, `height || 100` αντιμετωπίζει το μηδέν ύψος ως μη ορισμένο, όπως το `null`, το `undefined` ή οποιαδήποτε άλλη τιμή falsy.
+Έτσι το αποτέλεσμα είναι `100`.
 
 The `height ?? 100` returns `100` only if `height` is exactly `null` or `undefined`. So the `alert` shows the height value `0` "as is".
 
-Which behavior is better depends on a particular use case. When zero height is a valid value, then `??` is preferrable.
+Το `height ?? 100` επιστρέφει το `100` μόνο εάν το `height` είναι `null` ή `undefined`. Έτσι, το `alert` δείχνει την τιμή ύψους `0` "ως έχει".
 
-## Precedence
+Ποια συμπεριφορά είναι καλύτερη εξαρτάται από μια συγκεκριμένη περίπτωση χρήσης. Όταν το μηδέν ύψος είναι μια έγκυρη τιμή, τότε το `??` είναι προτιμότερο.
 
-The precedence of the `??` operator is rather low: `5` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
+## Προτεραιότητα
 
-So `??` is evaluated after most other operations, but before `=` and `?`.
+Η προτεραιότητα του τελεστή `??` είναι μάλλον χαμηλή: `5` στο
+[πίνακα MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
 
-If we need to choose a value with `??` in a complex expression, then consider adding parentheses:
+Για αυτό το `??` αξιολογείται μετά τις υπόλοιπες λειτουργίες, αλλά πριν από το `=` και το `?`.
+
+Εάν χρεαστούμε να επιλέξουμε μια τιμή με `??` σε μια σύνθετη έκφραση, τότε να λαμβάνεται υπ όψιν να προσθέσετε παρενθέσεις:
 
 ```js run
 let height = null;
 let width = null;
 
-// important: use parentheses
+// Προσοχή: χρησιμοποιηστε παρενθέσεις
 let area = (height ?? 100) * (width ?? 50);
 
 alert(area); // 5000
 ```
+Διαφορετικά, εάν παραλείψουμε παρενθέσεις, το `*` έχει την υψηλότερη προτεραιότητα από το `??` και θα τρέξει πρώτα.
 
-Otherwise, if we omit parentheses, `*` has the higher precedence than `??` and would run first.
-
-That would work be the same as:
+Αυτό θα λειτουργούσε ακριβώς το ίδιο με:
 
 ```js
-// probably not correct
+// μάλλον δεν είναι σωστό
 let area = height ?? (100 * width) ?? 50;
 ```
 
-There's also a related language-level limitation.
+Υπάρχει επίσης ένας σχετικός περιορισμός σε επίπεδο γλώσσας.
 
-**Due to safety reasons, it's forbidden to use `??` together with `&&` and `||` operators.**
+**Για λόγους ασφαλείας, απαγορεύεται η χρήση του τελεστή `??` με `&&` και `||`.**
 
-The code below triggers a syntax error:
+Ο παρακάτω κώδικας ενεργοποιεί ένα σφάλμα σύνταξης:
 
 ```js run
 let x = 1 && 2 ?? 3; // Syntax error
 ```
+Ο περιορισμός είναι σίγουρα συζητήσιμος, αλλά προστέθηκε στις προδιαγραφές γλώσσας με σκοπό να αποφευχθούν λάθη προγραμματισμού, καθώς οι άνθρωποι αρχίζουν να αλλάζουν σε `??` από `||`.
 
-The limitation is surely debatable, but it was added to the language specification with the purpose to avoid programming mistakes, as people start to switch to `??` from `||`.
-
-Use explicit parentheses to work around it:
+Χρησιμοποιήστε ρητές παρενθέσεις για να το επιλύσετε:
 
 ```js run
 *!*
-let x = (1 && 2) ?? 3; // Works
+let x = (1 && 2) ?? 3; // Λειτουργεί
 */!*
 
 alert(x); // 2
 ```
 
-## Summary
+## Περίληψη
 
-- The nullish coalescing operator `??` provides a short way to choose a "defined" value from the list.
+- Ο μηδενικός τελεστής συγχώνευσης `??` παρέχει έναν σύντομο τρόπο για να επιλέξετε μια "defined" τιμή από τη λίστα.
 
-    It's used to assign default values to variables:
+    Χρησιμοποιείται για την ανάθεση προεπιλεγμένων τιμών σε μεταβλητές:
 
     ```js
-    // set height=100, if height is null or undefined
+    // set height=100, εαν height είναι null ή undefined
     height = height ?? 100;
     ```
 
-- The operator `??` has a very low precedence, a bit higher than `?` and `=`.
-- It's forbidden to use it with `||` or `&&` without explicit parentheses.
+- Ο τελεστής `??` έχει πολύ χαμηλή προτεραιότητα, λίγο υψηλότερος από το `?` και το `=`.
+- Απαγορεύεται η χρήση του με `||`" ή `&&` χωρίς ρητές παρενθέσεις.

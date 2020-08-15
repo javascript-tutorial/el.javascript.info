@@ -2,24 +2,25 @@ importance: 3
 
 ---
 
-# Check the login
+# Έλεγξε το login
 
-Write the code which asks for a login with `prompt`.
+Γράψτε τον κωδικό με τον οποίο απαιτείται σύνδεση `prompt`.
 
-If the visitor enters `"Admin"`, then `prompt` for a password, if the input is an empty line or `key:Esc` -- show "Canceled", if it's another string -- then show "I don't know you".
+Εάν ο επισκέπτης εισέλθει στο `"Admin"`, τότε `prompt` για κωδικό πρόσβασης, εάν η είσοδος είναι κενή γραμμή ή `key:Esc` -- show "Canceled", εάν είναι άλλη συμβολοσειρά - τότε εμφανίστε "I don't know you".
 
-The password is checked as follows:
+Ο κωδικός ελέγχεται ως εξής:
 
-- If it equals "TheMaster", then show "Welcome!",
-- Another string -- show "Wrong password",
-- For an empty string or cancelled input, show "Canceled"
+- Εάν ισούται με "TheMaster", τότε δείξτε "Welcome!",
+- Άλλη συμβολοσειρά  -- εμφανίζει "Wrong password",
+- Για μια κενή συμβολοσειρά ή μια ακυρωμένη είσοδο, εμφάνιση "Canceled"
 
-The schema:
+Το σχήμα:
 
 ![](ifelse_task.svg)
 
-Please use nested `if` blocks. Mind the overall readability of the code.
+Please use nested `if` blocks. Mind the overall readability of the code
+Χρησιμοποιήστε nested blocks στο `if`. Λάβετε υπόψη τη συνολική αναγνωσιμότητα του κώδικα.
 
-Hint:  passing an empty input to a prompt returns an empty string `''`. Pressing `key:ESC` during a prompt returns `null`.
+Συμβουλή: η μεταφορά μιας κενής εισόδου σε μια προτροπή επιστρέφει μια κενή συμβολοσειρά `''`. Πατώντας το πλήκτρο `key:ESC` κατά τη διάρκεια μιας προτροπής επιστρέφει `null`.
 
 [demo]

@@ -2,9 +2,9 @@ importance: 4
 
 ---
 
-# Uppercase const?
+# Const με κεφαλαία?
 
-Examine the following code:
+Εξέτασε τον παρακάτω κώδικα:
 
 ```js
 const birthday = '18.04.1982';
@@ -12,13 +12,13 @@ const birthday = '18.04.1982';
 const age = someCode(birthday);
 ```
 
-Here we have a constant `birthday` date and the `age` is calculated from `birthday` with the help of some code (it is not provided for shortness, and because details don't matter here).
+Εδώ έχουμε μια σταθερή ημερομηνία "birthday" και η "age" υπολογίζεται από "birthday" με τη βοήθεια κάποιου κωδικού (δεν παρέχεται για βραχύτητα και επειδή οι λεπτομέρειες δεν έχουν σημασία εδώ).
 
-Would it be right to use upper case for `birthday`? For `age`? Or even for both?
+Θα ήταν σωστό να χρησιμοποιήσετε κεφαλαία γράμματα για τα `birthday`; Για `age`; Ή ακόμα και για τα δύο;
 
 ```js
-const BIRTHDAY = '18.04.1982'; // make uppercase?
+const BIRTHDAY = '18.04.1982'; // Με κεφαλαία?
 
-const AGE = someCode(BIRTHDAY); // make uppercase?
+const AGE = someCode(BIRTHDAY); // Με κεφαλαία?
 ```
 

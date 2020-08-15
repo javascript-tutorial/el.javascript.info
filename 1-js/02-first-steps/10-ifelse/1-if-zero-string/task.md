@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# if (a string with zero)
+# if (μια συμβολοσειρά με μηδέν)
 
-Will `alert` be shown?
+Θα δείξει το `alert`?
 
 ```js
 if ("0") {
