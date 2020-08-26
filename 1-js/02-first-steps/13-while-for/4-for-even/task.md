@@ -2,8 +2,8 @@ importance: 5
 
 ---
 
-# Output even numbers in the loop
+# Έξοδος ζυγών αριθμών στο βρόχο 
 
-Use the `for` loop to output even numbers from `2` to `10`.
+Χρησιμοποιήστε το βρόχο `for` για έξοδο ζυγών από `2` έως `10`.
 
 [demo]

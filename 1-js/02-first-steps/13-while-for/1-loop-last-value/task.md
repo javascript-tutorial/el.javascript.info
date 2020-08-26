@@ -2,9 +2,9 @@ importance: 3
 
 ---
 
-# Last loop value
+# Τελευταία τιμή του βρόχου
 
-What is the last value alerted by this code? Why?
+Ποια είναι η τελευταία τιμή που ειδοποιείται από αυτόν τον κωδικό; Γιατί;
 
 ```js
 let i = 3;

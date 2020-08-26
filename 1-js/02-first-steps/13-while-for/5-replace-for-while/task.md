@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Replace "for" with "while"
+# Αντικαταστήστε το "for" με "while"
 
-Rewrite the code changing the `for` loop to `while` without altering its behavior (the output should stay same).
+Ξαναγράψτε τον κώδικα αλλάζοντας το βρόχο `for` σε `while` χωρίς να αλλάξετε τη συμπεριφορά του (η έξοδος θα πρέπει να παραμείνει ίδια).
 
 ```js run
 for (let i = 0; i < 3; i++) {

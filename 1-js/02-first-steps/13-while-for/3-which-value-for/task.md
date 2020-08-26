@@ -2,11 +2,11 @@ importance: 4
 
 ---
 
-# Which values get shown by the "for" loop?
+# Ποιες τιμές εμφανίζονται από το βρόχο "for";
 
-For each loop write down which values it is going to show. Then compare with the answer.
+Για κάθε βρόχο γράψτε ποιες τιμές θα δείξει. Στη συνέχεια συγκρίνετε με την απάντηση.
 
-Both loops `alert` same values or not?
+Και οι δύο βρόχοι εμφανίζουν `alert` τις ίδιες τιμές ή όχι;
 
 1. The postfix form:
 

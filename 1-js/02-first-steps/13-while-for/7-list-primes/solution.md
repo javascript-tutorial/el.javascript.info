@@ -1,29 +1,30 @@
-There are many algorithms for this task.
+Υπάρχουν πολλοί αλγόριθμοι για αυτήν την εργασία.
 
-Let's use a nested loop:
+Ας χρησιμοποιήσουμε έναν ένθετο βρόχο:
 
 ```js
-For each i in the interval {
+Για καθε εσωτερικό i {
   check if i has a divisor from 1..i
-  if yes => the value is not a prime
-  if no => the value is a prime, show it
+	ελέγξτε αν έχει διαιρέτη από το 1..i
+  εάν ναί => τότε η τιμή δεν είναι πρωταρχική
+  εάν οχι => τότε η τιμή είναι πρωταρχική, δείξε την
 }
 ```
 
-The code using a label:
+Χρησιμοποιόντας ετικέτα μέσα στο κώδικα:
 
 ```js run
 let n = 10;
 
 nextPrime:
-for (let i = 2; i <= n; i++) { // for each i...
+for (let i = 2; i <= n; i++) { // για κάθε i...
 
-  for (let j = 2; j < i; j++) { // look for a divisor..
-    if (i % j == 0) continue nextPrime; // not a prime, go next i
+  for (let j = 2; j < i; j++) { // αναζητήσε έναν διαιρέτη..
+    if (i % j == 0) continue nextPrime; // δεν είναι πρωταρχικός, πήγαινε στο επόμενω i
   }
 
-  alert( i ); // a prime
+  alert( i ); // πρωταρχικός
 }
 ```
 
-There's a lot of space to optimize it. For instance, we could look for the divisors from `2` to square root of `i`. But anyway, if we want to be really efficient for large intervals, we need to change the approach and rely on advanced maths and complex algorithms like [Quadratic sieve](https://en.wikipedia.org/wiki/Quadratic_sieve), [General number field sieve](https://en.wikipedia.org/wiki/General_number_field_sieve) etc.
+Υπάρχει πολύς χώρος για βελτιστοποίηση. Για παράδειγμα, θα μπορούσαμε να αναζητήσουμε τους διαχωριστές από το `2` έως την τετραγωνική ρίζα του `i`. Ωστόσο, αν θέλουμε να είμαστε πραγματικά αποτελεσματικοί για μεγάλα διαστήματα, πρέπει να αλλάξουμε την προσέγγιση και να βασιστούμε σε προηγμένα μαθηματικά και σύνθετους αλγόριθμους όπως το [Quadratic sieve](https://en.wikipedia.org/wiki/Quadratic_sieve), [General number field sieve](https://en.wikipedia.org/wiki/General_number_field_sieve) etc.

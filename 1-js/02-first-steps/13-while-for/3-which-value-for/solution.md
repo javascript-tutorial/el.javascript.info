@@ -1,4 +1,4 @@
-**The answer: from `0` to `4` in both cases.**
+**Η απάντηση: από `0 έως 4` και στις δύο περιπτώσεις.**
 
 ```js run
 for (let i = 0; i < 5; ++i) alert( i );
@@ -6,12 +6,12 @@ for (let i = 0; i < 5; ++i) alert( i );
 for (let i = 0; i < 5; i++) alert( i );
 ```
 
-That can be easily deducted from the algorithm of `for`:
+Αυτό μπορεί εύκολα να αφαιρεθεί από τον αλγόριθμο του `for`:
 
-1. Execute once `i = 0` before everything (begin).
-2. Check the condition `i < 5`
-3. If `true` -- execute the loop body `alert(i)`, and then `i++`
+1. Εκτελείτε μία φορά `i = 0` πριν από όλα (στο ξεκίνημα).
+2. Ελέγχει την συνθήκη `i < 5`.
+3. Εάν `true` -- εκτελέι το βρόχο στο body `alert(i)`, και μετά `i++`.
 
-The increment `i++` is separated from the condition check (2). That's just another statement.
+Η αύξηση `i++` διαχωρίζεται από τον έλεγχο συνθηκών (2). Αυτή είναι απλώς μια άλλη δήλωση. 
 
-The value returned by the increment is not used here, so there's no difference between `i++` and `++i`.
+Η τιμή που επιστρέφεται με την αύξηση δεν χρησιμοποιείται εδώ, οπότε δεν υπάρχει διαφορά μεταξύ `i++` και `++i`.
