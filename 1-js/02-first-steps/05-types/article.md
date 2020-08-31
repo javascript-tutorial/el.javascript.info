@@ -84,9 +84,15 @@ const bigInt = 1234567890123456789012345678901234567890n;
 
 Καθώς οι αριθμοί BigInt σπάνια χρειάζονται, έχουμε αφιερώσει ένα ξεχωριστό κεφάλαιο στο <info:bigint>.
 
+<<<<<<< HEAD
 ```smart header="Compatability issues"
 Αυτήν τη στιγμή το "BigInt" υποστηρίζεται στον Firefox και το Chrome, αλλά όχι στο Safari/IE/Edge.
 
+=======
+```smart header="Compatibility issues"
+Right now `BigInt` is supported in Firefox/Chrome/Edge, but not in Safari/IE.
+```
+>>>>>>> f830bc5d9454d85829e011d914f215eb5896579a
 
 Καθώς οι αριθμοί `BigInt` σπάνια χρειάζονται, δεν τους καλύπτουμε εδώ, αλλά τους αφιερώσαμε ένα ξεχωριστό κεφάλαιο <info:bigint>. Διαβάστε το όταν χρειάζεστε τόσο μεγάλους αριθμούς.
 
