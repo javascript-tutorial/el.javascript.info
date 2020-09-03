@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Rewrite the "switch" into an "if"
+# Ξαναγράψτε το "switch" σε "if"
 
-Write the code using `if..else` which would correspond to the following `switch`:
+Γράψτε τον κώδικα χρησιμοποιώντας το `if..else` που αντιστοιχεί στον ακόλουθο `switch`:
 
 ```js
 switch (browser) {

@@ -1,4 +1,4 @@
-The first two checks turn into two `case`. The third check is split into two cases:
+Οι δύο πρώτοι έλεγχοι μετατρέπονται σε δύο `case`. Ο τρίτος έλεγχος χωρίζεται σε δύο περιπτώσεις:
 
 ```js run
 let a = +prompt('a?', '');
@@ -21,6 +21,6 @@ switch (a) {
 }
 ```
 
-Please note: the `break` at the bottom is not required. But we put it to make the code future-proof.
+ΣΗΜΕΙΩΣΗ: το `break` στο κάτω μέρος δεν απαιτείται. Αλλά το βάζουμε για τον μελλοντικό κώδικα.
 
-In the future, there is a chance that we'd want to add one more `case`, for example `case 4`. And if we forget to add a break before it, at the end of `case 3`, there will be an error. So that's a kind of self-insurance.
+Στο μέλλον, υπάρχει πιθανότητα να θέλουμε να προσθέσουμε ένα ακόμη `case`, για παράδειγμα `case 4`. Και αν ξεχάσουμε να προσθέσουμε ένα διάλειμμα πριν από αυτό, στο τέλος της `case 3`, θα υπάρξει σφάλμα. Αυτό είναι ένα είδος αυτοασφάλισης.

@@ -1,6 +1,7 @@
-To precisely match the functionality of `switch`, the `if` must use a strict comparison `'==='`.
+Για να ταιριάζει ακριβώς με τη λειτουργικότητα του `switch`, το `if` πρέπει να χρησιμοποιεί μια αυστηρή σύγκριση `'==='`.
 
-For given strings though, a simple `'=='` works too.
+For given strings though, a simple  works too
+Ωστόσο, για δεδομένες συμβολοσειρές, λειτουργεί ένα απλό `'=='`.
 
 ```js no-beautify
 if(browser == 'Edge') {
@@ -15,6 +16,6 @@ if(browser == 'Edge') {
 }
 ```
 
-Please note: the construct `browser == 'Chrome' || browser == 'Firefox' …` is split into multiple lines for better readability.
+ΣΗΜΕΙΩΣΗ: το construct `browser == 'Chrome' || browser == 'Firefox' …` χωρίζεται σε πολλές γραμμές για καλύτερη αναγνωσιμότητα.
 
-But the `switch` construct is still cleaner and more descriptive.
+Αλλά η κατασκευή `switch` είναι ακόμα πιο καθαρή και πιο περιγραφική.
