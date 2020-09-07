@@ -136,7 +136,11 @@ alert( "the result is ${1 + 2}" ); // το αποτέλεσμα θα είναι 
 ```smart header="There is no *character* type."
 Σε ορισμένες γλώσσες, υπάρχει ένας ειδικός τύπος "character" για έναν μόνο χαρακτήρα. Για παράδειγμα, στη γλώσσα C και στην Java ονομάζεται "char"
 
+<<<<<<< HEAD
 Στην JavaScript, δεν υπάρχει τέτοιος τύπος. Υπάρχει μόνο ένας τύπος: `string`. Μια συμβολοσειρά μπορεί να αποτελείται από έναν μόνο χαρακτήρα ή πολλούς.
+=======
+In JavaScript, there is no such type. There's only one type: `string`. A string may consist of zero characters (be empty), one character or many of them.
+>>>>>>> 58f6599df71b8d50417bb0a52b1ebdc995614017
 ```
 
 ## Boolean (λογικός τύπος)
