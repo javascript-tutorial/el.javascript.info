@@ -422,7 +422,11 @@ counter++;
 - RIGHT SHIFT ( `>>` )
 - ZERO-FILL RIGHT SHIFT ( `>>>` )
 
+<<<<<<< HEAD
 Αυτοί οι τελεστές χρησιμοποιούνται πολύ σπάνια όταν έχουμε να κάνουμε με αριθμούς στο πολύ χαμηλότερο (bitwise) επίπεδο. Δεν θα χρειαζόμαστε αυτούς τους τελεστές σύντομα, καθώς η ανάπτυξη ιστού τους χρησιμοποιεί ελάχιστα, αλλά σε ορισμένες ειδικές περιοχές, όπως η κρυπτογραφία, είναι χρήσιμες. Μπορείτε να διαβάσετε το άρθρο του [Bitwise Operators](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) στο MDN όταν υπάρχει ανάγκη.
+=======
+These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won't need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the [Bitwise Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise) chapter on MDN when a need arises.
+>>>>>>> e074a5f825a3d10b0c1e5e82561162f75516d7e3
 
 ## Κόμμα
 
