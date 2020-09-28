@@ -179,7 +179,11 @@ alert( +apples + +oranges ); // 5
 
 Υπάρχουν πολλοί τελεστές σε JavaScript. Κάθε τελεστής έχει έναν αντίστοιχο αριθμό προτεραιότητας. Εκείνος με τον μεγαλύτερο αριθμό εκτελείται πρώτα. Εάν η προτεραιότητα είναι η ίδια, η εντολή εκτέλεσης είναι από αριστερά προς τα δεξιά.
 
+<<<<<<< HEAD
 Ακολουθεί ένα απόσπασμα από τον [πίνακα προτεραιότητας](https://developer.mozilla.org/en/JavaScript/Reference/operators/operator_precedence)(δεν χρειάζεται να το θυμάστε αυτό, αλλά σημειώστε τα unary τελεστές είναι υψηλότεροι από τους αντίστοιχους δυαδικούς):
+=======
+Here's an extract from the [precedence table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) (you don't need to remember this, but note that unary operators are higher than corresponding binary ones):
+>>>>>>> f489145731a45df6e369a3c063e52250f3f0061d
 
 | Precedence | Name | Sign |
 |------------|------|------|
@@ -422,7 +426,11 @@ counter++;
 - RIGHT SHIFT ( `>>` )
 - ZERO-FILL RIGHT SHIFT ( `>>>` )
 
+<<<<<<< HEAD
 Αυτοί οι τελεστές χρησιμοποιούνται πολύ σπάνια όταν έχουμε να κάνουμε με αριθμούς στο πολύ χαμηλότερο (bitwise) επίπεδο. Δεν θα χρειαζόμαστε αυτούς τους τελεστές σύντομα, καθώς η ανάπτυξη ιστού τους χρησιμοποιεί ελάχιστα, αλλά σε ορισμένες ειδικές περιοχές, όπως η κρυπτογραφία, είναι χρήσιμες. Μπορείτε να διαβάσετε το άρθρο του [Bitwise Operators](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) στο MDN όταν υπάρχει ανάγκη.
+=======
+These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won't need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the [Bitwise Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise) chapter on MDN when a need arises.
+>>>>>>> f489145731a45df6e369a3c063e52250f3f0061d
 
 ## Κόμμα
 

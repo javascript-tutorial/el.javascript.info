@@ -5,12 +5,18 @@
 Στην JavaScript, είναι γραμμένα με αυτό τον τρόπο:
 
 
+<<<<<<< HEAD
 - Μεγαλύτερο/μικρότερο από: <code>a &gt; b</code>, <code>a &lt; b</code>.
 - Μεγαλύτερο/μικρότερο από ή ίσον: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
 - Ισούται: `a == b` (παρακαλώ σημειώστε το σύμβολο του διπλού ίσον `=`. Το μόνο σύμβολο `a = b`  σήμαινε μια ανάθεση).
 - Όχι ισον. Στα μαθηματικά, ο συμβολισμός είναι <code>&ne;</code>, αλλά στην JavaScript γράφεται ως ανάθεση με ένα θαυμαστικό πριν από αυτό: <code>a != b</code>.
 
 Σε αυτό το άρθρο, θα μάθουμε περισσότερα σχετικά με διαφορετικούς τύπους συγκρίσεων, πώς τις δημιουργεί η JavaScript, συμπεριλαμβανομένων σημαντικών ιδιαιτεροτήτων.
+=======
+In this article we'll learn more about different types of comparisons, how JavaScript makes them, including important peculiarities.
+
+At the end you'll find a good recipe to avoid "JavaScript quirks"-related issues.
+>>>>>>> f489145731a45df6e369a3c063e52250f3f0061d
 
 
 ## Το αποτέλεσμα είναι Boolean
@@ -60,7 +66,11 @@ alert( 'Bee' > 'Be' ); // true
 4. Επαναλάμβανει μέχρι το τέλος κάθε συμβολοσειράς.
 5. Εάν και οι δύο χορδές έχουν ίδιο μήκος, τότε είναι ίσες. Διαφορετικά, η  συμβολοσειρά με το μεγαλύτερο μήκος είναι μεγαλύτερη.
 
+<<<<<<< HEAD
 Στα παραπάνω παραδείγματα, η σύγκριση `"Z" > "A"` φτάνει στο αποτέλεσμα από πρώτο βήμα, ενώ οι συμβολοσειρές `"Glow"` και `"Glee"` συγκρίνονται χαρακτήρες ανά χαρακτήρα:
+=======
+In the examples above, the comparison `'Z' > 'A'` gets to a result at the first step while the strings `'Glow'` and `'Glee'` are compared character-by-character:
+>>>>>>> f489145731a45df6e369a3c063e52250f3f0061d
 
 1. `G` είναι το ίδιο με `G`.
 2. `l` είναι το ίδιο με `l`.
