@@ -4,11 +4,7 @@
 
 ## Τι είναι η JavaScript?
 
-<<<<<<< HEAD
 Η *JavaScript* είχε φτιαχτεί για να *ζωντανέψει τις ιστοσελίδες*
-=======
-*JavaScript* was initially created to "make web pages alive".
->>>>>>> c89ddc5d92195e08e2c32e30526fdb755fec4622
 
 Τα προγράμματα σε αυτήν τη γλώσσα λέγονται *scripts*. Μπορούν να γραφτούν κατευθείαν στην κονσόλα του browser ή στο HTML μίας ιστοσελίδας και να τρέχονται όταν φορτώνει η ιστοσελίδα.
 
@@ -16,13 +12,8 @@
 
 Σε αυτό το σημείο, να συμπληρώσω οτι η JavaScript έχει μεγάλη διάφορα με την [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
-<<<<<<< HEAD
 '''smart header="Γιατί <u>Java</u>Script?"
 Όταν είχε φτιαχτεί η JavaScript, είχε ένα διαφορετικό όνομά, λεγότανε "LiveScript". Αλά η Java ήταν πολύ γνωστή εκείνη την εποχή, οπότε αποφασίστηκε οτι θα βοηθούσε αν έκαναν την γλωσσά προγραμματισμού τον "μικρο αδελφό" της Java.
-=======
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 Αλλά καθώς εξελίχθηκε, η JavaScript έγινε μια πλήρως ανεξάρτητη γλώσσα με τη δική της προδιαγραφή που ονομάζεται [ECMAScript] (http://en.wikipedia.org/wiki/ECMAScript), και τώρα δεν έχει καμία σχέση με την Java
 
@@ -30,13 +21,7 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 
 Το browser έχει ένα ενσωματωμένο JavaScript engine που συνηθως λέγεται "JavaScript virtual machine".
 
-<<<<<<< HEAD
 Κάθε engine έχει δικό του "codename". Για παράδειγμά:
-=======
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "ChakraCore" for Microsoft Edge, "Nitro" and "SquirrelFish" for Safari, etc.
->>>>>>> f489145731a45df6e369a3c063e52250f3f0061d
 
 - [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- στο Chrome και Opera.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- στο Firefox.
@@ -51,13 +36,8 @@ Engines are complicated. But the basics are easy.
 2. Then it converts ("compiles") the script to the machine language.
 3. And then the machine code runs, pretty fast.
 
-<<<<<<< HEAD
 The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and applies optimizations to the machine code based on that knowledge. When it's done, scripts run quite fast.
 '''
-=======
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
-```
->>>>>>> fcfef6a07842ed56144e04a80c3a24de049a952a
 
 ## What can in-browser JavaScript do?
 
@@ -110,11 +90,7 @@ JavaScript is the only browser technology that combines these three things.
 
 That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
 
-<<<<<<< HEAD
 While planning to learn a new technology, it's beneficial to check its perspectives. So let's move on to the modern trends affecting it, including new languages and browser abilities.
-=======
-That said, JavaScript also allows to create servers, mobile applications, etc.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 ## Languages "over" JavaScript
 
