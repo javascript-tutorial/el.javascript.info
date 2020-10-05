@@ -87,12 +87,22 @@ const bigInt = 1234567890123456789012345678901234567890n;
 ```smart header="Compatability issues"
 Αυτήν τη στιγμή το "BigInt" υποστηρίζεται στον Firefox και το Chrome, αλλά όχι στο Safari/IE/Edge.
 
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 ```smart header="Compatibility issues"
-Right now `BigInt` is supported in Firefox/Chrome/Edge, but not in Safari/IE.
+Right now, `BigInt` is supported in Firefox/Chrome/Edge/Safari, but not in IE.
 ```
 
+<<<<<<< HEAD
 Καθώς οι αριθμοί `BigInt` σπάνια χρειάζονται, δεν τους καλύπτουμε εδώ, αλλά τους αφιερώσαμε ένα ξεχωριστό κεφάλαιο <info:bigint>. Διαβάστε το όταν χρειάζεστε τόσο μεγάλους αριθμούς.
+=======
+You can check [*MDN* BigInt compatibility table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) to know which versions of a browser are supported.
+
+## String
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
 ## Συμβολοσειρά
 
@@ -136,7 +146,11 @@ alert( "the result is ${1 + 2}" ); // το αποτέλεσμα θα είναι 
 ```smart header="There is no *character* type."
 Σε ορισμένες γλώσσες, υπάρχει ένας ειδικός τύπος "character" για έναν μόνο χαρακτήρα. Για παράδειγμα, στη γλώσσα C και στην Java ονομάζεται "char"
 
+<<<<<<< HEAD
 Στην JavaScript, δεν υπάρχει τέτοιος τύπος. Υπάρχει μόνο ένας τύπος: `string`. Μια συμβολοσειρά μπορεί να αποτελείται από έναν μόνο χαρακτήρα ή πολλούς.
+=======
+In JavaScript, there is no such type. There's only one type: `string`. A string may consist of zero characters (be empty), one character or many of them.
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 ```
 
 ## Boolean (λογικός τύπος)
@@ -264,6 +278,7 @@ typeof alert // "function"  (3)
 
 Υπάρχουν 8 βασικοί τύποι δεδομένων στην JavaScript.
 
+<<<<<<< HEAD
 - `number` για αριθμούς οποιουδήποτε είδους: ακέραιος ή floating-point, οι ακέραιοι αριθμοί περιορίζονται κατά ±2<sup>53</sup>.
 - `bigint` είναι για ακέραιους αριθμούς αυθαίρετου μήκους.
 - `string` για συμβολοσειρές. Μια συμβολοσειρά μπορεί να έχει έναν ή περισσότερους χαρακτήρες, δεν υπάρχει ξεχωριστός τύπος ενός χαρακτήρα.
@@ -272,6 +287,16 @@ typeof alert // "function"  (3)
 - `undefined` για μη εκχωρημένες τιμές - έναν αυτόνομο τύπο που έχει μία μόνο τιμή `undefined`.
 - `object` για πιο περίπλοκες δομές δεδομένων.
 - `symbol` για μοναδικούς identifiers.
+=======
+- `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
+- `bigint` is for integer numbers of arbitrary length.
+- `string` for strings. A string may have zero or more characters, there's no separate single-character type.
+- `boolean` for `true`/`false`.
+- `null` for unknown values -- a standalone type that has a single value `null`.
+- `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
+- `object` for more complex data structures.
+- `symbol` for unique identifiers.
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
 Ο τελεστής `typeof` μας επιτρέπει να δούμε ποιος τύπος αποθηκεύεται σε μια μεταβλητή.
 
