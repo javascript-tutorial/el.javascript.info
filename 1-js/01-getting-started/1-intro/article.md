@@ -4,11 +4,7 @@
 
 ## Τι είναι η JavaScript?
 
-<<<<<<< HEAD
 Η *JavaScript* είχε φτιαχτεί για να *ζωντανέψει τις ιστοσελίδες*
-=======
-*JavaScript* was initially created to "make web pages alive".
->>>>>>> c89ddc5d92195e08e2c32e30526fdb755fec4622
 
 Τα προγράμματα σε αυτήν τη γλώσσα λέγονται *scripts*. Μπορούν να γραφτούν κατευθείαν στην κονσόλα του browser ή στο HTML μίας ιστοσελίδας και να τρέχονται όταν φορτώνει η ιστοσελίδα.
 
@@ -16,13 +12,8 @@
 
 Σε αυτό το σημείο, να συμπληρώσω οτι η JavaScript έχει μεγάλη διάφορα με την [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
-<<<<<<< HEAD
 '''smart header="Γιατί <u>Java</u>Script?"
 Όταν είχε φτιαχτεί η JavaScript, είχε ένα διαφορετικό όνομά, λεγότανε "LiveScript". Αλά η Java ήταν πολύ γνωστή εκείνη την εποχή, οπότε αποφασίστηκε οτι θα βοηθούσε αν έκαναν την γλωσσά προγραμματισμού τον "μικρο αδελφό" της Java.
-=======
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 Αλλά καθώς εξελίχθηκε, η JavaScript έγινε μια πλήρως ανεξάρτητη γλώσσα με τη δική της προδιαγραφή που ονομάζεται [ECMAScript] (http://en.wikipedia.org/wiki/ECMAScript), και τώρα δεν έχει καμία σχέση με την Java
 
@@ -30,13 +21,8 @@ When JavaScript was created, it initially had another name: "LiveScript". But Ja
 
 Το browser έχει ένα ενσωματωμένο JavaScript engine που συνηθως λέγεται "JavaScript virtual machine".
 
-<<<<<<< HEAD
+
 Κάθε engine έχει δικό του "codename". Για παράδειγμά:
-=======
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "ChakraCore" for Microsoft Edge, "Nitro" and "SquirrelFish" for Safari, etc.
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
 - [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- στο Chrome και Opera.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- στο Firefox.
