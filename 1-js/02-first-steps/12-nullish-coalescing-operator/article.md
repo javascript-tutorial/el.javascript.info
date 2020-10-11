@@ -11,8 +11,9 @@
 Ετσι είναι `x = a ?? b` ισοδύναμο με:
 
 ```js
-x = (a !== null && a !== undefined) ? a : b;
+result = (a !== null && a !== undefined) ? a : b;
 ```
+
 
 Εδώ είναι ένα μεγαλύτερο παράδειγμα.
 
@@ -23,11 +24,38 @@ x = (a !== null && a !== undefined) ? a : b;
 Ας χρησιμοποιήσουμε τον τελεστή `??` για να επιλέξουμε τον πρώτο καθορισμένο:
 
 ```js run
+let user;
+
+alert(user ?? "Anonymous"); // Anonymous
+```
+
+Of course, if `user` had any value except `null/undefined`, then we would see it instead:
+
+```js run
+let user = "John";
+
+alert(user ?? "Anonymous"); // John
+```
+
+We can also use a sequence of `??` to select the first value from a list that isn't `null/undefined`.
+
+Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be undefined, if the user decided not to enter a value.
+
+We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are undefined.
+
+Let's use the `??` operator for that:
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+
+```js run
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
 
+<<<<<<< HEAD
 // εμφάνιση της πρώτης μη μηδενικής / μη καθορισμένης τιμής
+=======
+// shows the first defined value:
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 *!*
 alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 */!*
@@ -45,8 +73,16 @@ alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 
 Για παράδειγμα, δείτε αυτό:
 
-```js
-height = height ?? 100;
+```js run
+let firstName = null;
+let lastName = null;
+let nickName = "Supercoder";
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+
+// shows the first truthy value:
+*!*
+alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
+*/!*
 ```
 
 Αυτό ορίζει το `height` σε `100` εάν δεν έχει οριστεί.
@@ -63,9 +99,7 @@ alert(height ?? 100); // 0
 Εδώ, `height || 100` αντιμετωπίζει το μηδέν ύψος ως μη ορισμένο, όπως το `null`, το `undefined` ή οποιαδήποτε άλλη τιμή falsy.
 Έτσι το αποτέλεσμα είναι `100`.
 
-The `height ?? 100` returns `100` only if `height` is exactly `null` or `undefined`. So the `alert` shows the height value `0` "as is".
-
-Το `height ?? 100` επιστρέφει το `100` μόνο εάν το `height` είναι `null` ή `undefined`. Έτσι, το `alert` δείχνει την τιμή ύψους `0` "ως έχει".
+Το `height ?? 100` επιστρέφει το `100` μόνο εάν το `height` είναι `null` ή `undefined`. Έτσι, το `alert` δείχνει την τιμή ύψους `0` "ως έχει".
 
 Ποια συμπεριφορά είναι καλύτερη εξαρτάται από μια συγκεκριμένη περίπτωση χρήσης. Όταν το μηδέν ύψος είναι μια έγκυρη τιμή, τότε το `??` είναι προτιμότερο.
 
@@ -89,6 +123,7 @@ alert(area); // 5000
 ```
 Διαφορετικά, εάν παραλείψουμε παρενθέσεις, το `*` έχει την υψηλότερη προτεραιότητα από το `??` και θα τρέξει πρώτα.
 
+
 Αυτό θα λειτουργούσε ακριβώς το ίδιο με:
 
 ```js
@@ -99,6 +134,15 @@ let area = height ?? (100 * width) ?? 50;
 Υπάρχει επίσης ένας σχετικός περιορισμός σε επίπεδο γλώσσας.
 
 **Για λόγους ασφαλείας, απαγορεύεται η χρήση του τελεστή `??` με `&&` και `||`.**
+
+
+```js
+// without parentheses
+let area = height ?? 100 * width ?? 50;
+
+// ...works the same as this (probably not what we want):
+let area = height ?? (100 * width) ?? 50;
+```
 
 Ο παρακάτω κώδικας ενεργοποιεί ένα σφάλμα σύνταξης:
 
@@ -119,7 +163,9 @@ alert(x); // 2
 
 ## Περίληψη
 
+
 - Ο μηδενικός τελεστής συγχώνευσης `??` παρέχει έναν σύντομο τρόπο για να επιλέξετε μια "defined" τιμή από τη λίστα.
+
 
     Χρησιμοποιείται για την ανάθεση προεπιλεγμένων τιμών σε μεταβλητές:
 
@@ -130,3 +176,4 @@ alert(x); // 2
 
 - Ο τελεστής `??` έχει πολύ χαμηλή προτεραιότητα, λίγο υψηλότερος από το `?` και το `=`.
 - Απαγορεύεται η χρήση του με `||`" ή `&&` χωρίς ρητές παρενθέσεις.
+

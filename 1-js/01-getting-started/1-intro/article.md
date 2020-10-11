@@ -4,11 +4,7 @@
 
 ## Τι είναι η JavaScript?
 
-<<<<<<< HEAD
 Η *JavaScript* είχε φτιαχτεί για να *ζωντανέψει τις ιστοσελίδες*
-=======
-*JavaScript* was initially created to "make web pages alive".
->>>>>>> c89ddc5d92195e08e2c32e30526fdb755fec4622
 
 Τα προγράμματα σε αυτήν τη γλώσσα λέγονται *scripts*. Μπορούν να γραφτούν κατευθείαν στην κονσόλα του browser ή στο HTML μίας ιστοσελίδας και να τρέχονται όταν φορτώνει η ιστοσελίδα.
 
@@ -16,19 +12,15 @@
 
 Σε αυτό το σημείο, να συμπληρώσω οτι η JavaScript έχει μεγάλη διάφορα με την [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
-<<<<<<< HEAD
 '''smart header="Γιατί <u>Java</u>Script?"
 Όταν είχε φτιαχτεί η JavaScript, είχε ένα διαφορετικό όνομά, λεγότανε "LiveScript". Αλά η Java ήταν πολύ γνωστή εκείνη την εποχή, οπότε αποφασίστηκε οτι θα βοηθούσε αν έκαναν την γλωσσά προγραμματισμού τον "μικρο αδελφό" της Java.
-=======
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 Αλλά καθώς εξελίχθηκε, η JavaScript έγινε μια πλήρως ανεξάρτητη γλώσσα με τη δική της προδιαγραφή που ονομάζεται [ECMAScript] (http://en.wikipedia.org/wiki/ECMAScript), και τώρα δεν έχει καμία σχέση με την Java
 
 Σήμερα, Μπορούμε να τρέξουμε την JavaScript και στον server, και σε οποιαδήποτε συσκευή που έχει ένα δικό της πρόγραμμά που λέγετε [JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
 Το browser έχει ένα ενσωματωμένο JavaScript engine που συνηθως λέγεται "JavaScript virtual machine".
+
 
 Κάθε engine έχει δικό του "codename". Για παράδειγμά:
 
