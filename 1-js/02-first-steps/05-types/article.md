@@ -82,29 +82,12 @@ n = 12.345;
 const bigInt = 1234567890123456789012345678901234567890n;
 ```
 
-Καθώς οι αριθμοί BigInt σπάνια χρειάζονται, έχουμε αφιερώσει ένα ξεχωριστό κεφάλαιο στο <info:bigint>.
-
 ```smart header="Compatability issues"
 Αυτήν τη στιγμή το "BigInt" υποστηρίζεται στον Firefox και το Chrome, αλλά όχι στο Safari/IE/Edge.
 
-<<<<<<< HEAD
-=======
-=======
+Καθώς οι αριθμοί `BigInt` σπάνια χρειάζονται, δεν τους καλύπτουμε εδώ, αλλά τους αφιερώσαμε ένα ξεχωριστό κεφάλαιο <info:bigint>. Διαβάστε το όταν χρειάζεστε τόσο μεγάλους αριθμούς.
 
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
-```smart header="Compatibility issues"
-Right now, `BigInt` is supported in Firefox/Chrome/Edge/Safari, but not in IE.
-```
-
-<<<<<<< HEAD
-Καθώς οι αριθμοί `BigInt` σπάνια χρειάζονται, δεν τους καλύπτουμε εδώ, αλλά τους αφιερώσαμε ένα ξεχωριστό κεφάλαιο <info:bigint>. Διαβάστε το όταν χρειάζεστε τόσο μεγάλους αριθμούς.
-=======
-You can check [*MDN* BigInt compatibility table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) to know which versions of a browser are supported.
-
-## String
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
-
-## Συμβολοσειρά
+## Συμβολοσειρά
 
 Μια συμβολοσειρά σε JavaScript πρέπει να περιβάλλεται από εισαγωγικά.
 
@@ -134,7 +117,7 @@ alert( `Hello, *!*${name}*/!*!` ); // Hello, John!
 alert( `the result is *!*${1 + 2}*/!*` ); // το αποτέλεσμα θα είναι 3
 ```
 
-Η έκφραση μέσα στο `${…}` αξιολογείται και το αποτέλεσμα γίνεται μέρος της συμβολοσειράς. Μπορούμε να βάλουμε οτιδήποτε εκεί: μια μεταβλητή όπως `name` ή μια αριθμητική έκφραση όπως `1 + 2` ή κάτι πιο περίπλοκο.
+Η έκφραση μέσα στο `${…}` αξιολογείται και το αποτέλεσμα γίνεται μέρος της συμβολοσειράς. Μπορούμε να βάλουμε οτιδήποτε εκεί: μια μεταβλητή όπως `name` ή μια αριθμητική έκφραση όπως `1 + 2` ή κάτι πιο περίπλοκο.
 
 Λάβετε υπόψη ότι αυτό μπορεί να γίνει μόνο με backticks. Άλλα εισαγωγικά δεν έχουν αυτήν τη δυνατότητα ενσωμάτωσης!
 ```js run
@@ -146,12 +129,7 @@ alert( "the result is ${1 + 2}" ); // το αποτέλεσμα θα είναι 
 ```smart header="There is no *character* type."
 Σε ορισμένες γλώσσες, υπάρχει ένας ειδικός τύπος "character" για έναν μόνο χαρακτήρα. Για παράδειγμα, στη γλώσσα C και στην Java ονομάζεται "char"
 
-<<<<<<< HEAD
 Στην JavaScript, δεν υπάρχει τέτοιος τύπος. Υπάρχει μόνο ένας τύπος: `string`. Μια συμβολοσειρά μπορεί να αποτελείται από έναν μόνο χαρακτήρα ή πολλούς.
-=======
-In JavaScript, there is no such type. There's only one type: `string`. A string may consist of zero characters (be empty), one character or many of them.
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
-```
 
 ## Boolean (λογικός τύπος)
 
@@ -218,7 +196,7 @@ alert(age); // "undefined"
 ```
 
 ...Αλλά δεν σας το συνιστάμε να το κάνετε αυτό. Κανονικά, χρησιμοποιούμε το `null` για να αναθέσουμε μια τιμή "empty" ή "unknown" σε μια μεταβλητή και χρησιμοποιούμε `undefined` για ελέγχους, όπως να δούμε αν έχει εκχωρηθεί μια μεταβλητή.
-
+
 ## Objects και Σύμβολα
 
 Το `object` είναι ειδικός τύπος.
@@ -278,7 +256,6 @@ typeof alert // "function"  (3)
 
 Υπάρχουν 8 βασικοί τύποι δεδομένων στην JavaScript.
 
-<<<<<<< HEAD
 - `number` για αριθμούς οποιουδήποτε είδους: ακέραιος ή floating-point, οι ακέραιοι αριθμοί περιορίζονται κατά ±2<sup>53</sup>.
 - `bigint` είναι για ακέραιους αριθμούς αυθαίρετου μήκους.
 - `string` για συμβολοσειρές. Μια συμβολοσειρά μπορεί να έχει έναν ή περισσότερους χαρακτήρες, δεν υπάρχει ξεχωριστός τύπος ενός χαρακτήρα.
@@ -287,21 +264,11 @@ typeof alert // "function"  (3)
 - `undefined` για μη εκχωρημένες τιμές - έναν αυτόνομο τύπο που έχει μία μόνο τιμή `undefined`.
 - `object` για πιο περίπλοκες δομές δεδομένων.
 - `symbol` για μοναδικούς identifiers.
-=======
-- `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
-- `bigint` is for integer numbers of arbitrary length.
-- `string` for strings. A string may have zero or more characters, there's no separate single-character type.
-- `boolean` for `true`/`false`.
-- `null` for unknown values -- a standalone type that has a single value `null`.
-- `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
-- `object` for more complex data structures.
-- `symbol` for unique identifiers.
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
 Ο τελεστής `typeof` μας επιτρέπει να δούμε ποιος τύπος αποθηκεύεται σε μια μεταβλητή.
 
 - Σε 2 μορφές: `typeof x` ή `typeof(x)`.
-- Επιστρέφει μια συμβολοσειρά με το τύπου όνοματος, όπως `"string"`.
+- Επιστρέφει μια συμβολοσειρά με το τύπου όνοματος, όπως `"string"`.
 - Για το `null` επιστρέφει `"object"` -- αυτό είναι ένα σφάλμα στη γλώσσα, δεν είναι στην πραγματικότητα ένα object.
 
 Στα επόμενα κεφάλαια, θα επικεντρωθούμε σε primitive τιμές και μόλις εξοικειωθούμε με αυτές, θα προχωρήσουμε στα objects.
