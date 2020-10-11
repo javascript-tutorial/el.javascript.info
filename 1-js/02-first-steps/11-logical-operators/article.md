@@ -83,11 +83,8 @@ result = value1 || value2 || value3;
 
 Η τιμή επιστρέφεται στην αρχική της μορφή, χωρίς τη μετατροπή.
 
-<<<<<<< HEAD
+
 Με άλλα λόγια, μια αλυσίδα OR `"||"` επιστρέφει την πρώτη αληθινή τιμή ή την τελευταία, εάν δεν βρεθεί τιμή αλήθειας.
-=======
-In other words, a chain of OR `||` returns the first truthy value or the last one if no truthy value is found.
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
 Για παράδειγμα:
 
@@ -104,16 +101,9 @@ alert( undefined || null || 0 ); // 0 (όλα falsy, επιστρέφει την
 
 1. **Λήψη της πρώτης τιμής από μια λίστα μεταβλητών ή εκφράσεων.**
 
-<<<<<<< HEAD
     Για παράδειγμα, έχουμε μεταβλητές "firstName", "lastName" και "nickName", όλες προαιρετικές.
 
-    Let's use OR `||` to choose the one that has the data and show it (or `anonymous` if nothing set)
-		Ας χρησιμοποιήσουμε το OR `||` για να διαλέξουμε το ένα που έχει τα δεδομένα και να τα δείξουμε (ή "ανώνυμα" αν δεν έχει οριστεί):
-=======
-    For instance, we have `firstName`, `lastName` and `nickName` variables, all optional (i.e. can be undefined or have falsy values).
-
-    Let's use OR `||` to choose the one that has the data and show it (or `"Anonymous"` if nothing set):
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+    Ας χρησιμοποιήσουμε το OR `||` για να διαλέξουμε το ένα που έχει τα δεδομένα και να τα δείξουμε (ή "ανώνυμα" αν δεν έχει οριστεί):
 
     ```js run
     let firstName = "";
@@ -125,13 +115,10 @@ alert( undefined || null || 0 ); // 0 (όλα falsy, επιστρέφει την
     */!*
     ```
 
-<<<<<<< HEAD
-    Εάν όλες οι μεταβλητές ήταν ψευδείς, θα εμφανιστεί το `Anonymous`.
-=======
-    If all variables were falsy, `"Anonymous"` would show up.
 
-2. **Short-circuit evaluation.**
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+    Εάν όλες οι μεταβλητές ήταν ψευδείς, θα εμφανιστεί το `Anonymous`.
+
+
 
 2. **Παράκαμψη αξιολόγησης (`short-circuit evaluation`).**
 
@@ -238,13 +225,9 @@ alert( 1 && 2 && 3 ); // 3, the last one
 Έτσι, ο κωδικός `a && b || c && d` είναι ουσιαστικά το ίδιο εάν οι εκφράσεις `&&` ήταν σε παρένθεση: `(a && b) || (c && d)`.
 ````
 
-<<<<<<< HEAD
 ````warn header="Μην αντικαταστήσετε το `if` με || ή &&"
 Μερικές φορές, οι χρήστες χρησιμοποιούν τον τελεστή AND `&&` ως "συντομευση για το `if`".
-=======
-````warn header="Don't replace `if` with `||` or `&&`"
-Sometimes, people use the AND `&&` operator as a "shorter way to write `if`".
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+
 
 
 Για παράδειγμα:
@@ -265,11 +248,7 @@ let x = 1;
 if (x > 0) alert( 'Greater than zero!' );
 ```
 
-<<<<<<< HEAD
 Παρόλο που, η παραλλαγή με `&&` εμφανίζεται πιο σύντομη, `if` είναι πιο εμφανής και τείνει να είναι λίγο πιο ευανάγνωστη. Προτείνουμε λοιπόν να χρησιμοποιείτε κάθε κατασκευή για το σκοπό της: χρησιμοποιούμε το `if` εάν θέλουμε `if` και χρησιμοποιούμε το `&&` εάν θέλουμε AND.
-=======
-Although, the variant with `&&` appears shorter, `if` is more obvious and tends to be a little bit more readable. So we recommend using every construct for its purpose: use `if` if we want `if` and use `&&` if we want AND.
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 ````
 
 ## ! (NOT)
