@@ -44,12 +44,8 @@ result = prompt(title, [default]);
 Ο επισκέπτης μπορεί να πληκτρολογήσει κάτι στο πεδίο εισαγωγής prompt και να πατήσει OK. Ή μπορούν να ακυρώσουν την είσοδο πατώντας Cancel ή πατώντας το `key:Esc` πλήκτρο.
 
 ```smart header="The square brackets in syntax `[...]`"
-<<<<<<< HEAD
+
 Οι αγκύλες γύρω από το `default` στην παραπάνω σύνταξη υποδηλώνουν ότι η παράμετρος ως προαιρετική, δεν απαιτείται.
-=======
-The square brackets around `default` in the syntax above denote that the parameter is optional, not required.
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
-```
 
 Η κλήση στο `prompt` επιστρέφει το κείμενο από το πεδίο εισαγωγής ή `null` εάν η είσοδος ακυρώθηκε.
 
