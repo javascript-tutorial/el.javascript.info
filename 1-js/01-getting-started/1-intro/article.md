@@ -1,6 +1,10 @@
 # Εισαγωγή στον κόσμο της JavaScript
 
+<<<<<<< HEAD
 Ας δούμε τι είναι τόσο απίθανο στην JavaScript, τι μπορούμε να φτιάξουμε με αυτήν, και ποιες άλλες τεχνολογίες μπορούμε να χρησιμοποιήσουμε με αυτήν.
+=======
+Let's see what's so special about JavaScript, what we can achieve with it, and what other technologies play well with it.
+>>>>>>> 0599d07b3c13ee25f583fc091cead3c17a7e7779
 
 ## Τι είναι η JavaScript?
 
@@ -71,8 +75,13 @@ Examples of such restrictions include:
 
 Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an '<input>' tag.
 
+<<<<<<< HEAD
 There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
 - Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+=======
+    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
+- Different tabs/windows generally do not know about each other. Sometimes they do; for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+>>>>>>> 0599d07b3c13ee25f583fc091cead3c17a7e7779
 
 This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
 
@@ -124,6 +133,6 @@ There are more. Of course, even if we use one of transpiled languages, we should
 
 ## Summary
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
+- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
+- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration in HTML/CSS.
 - There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
