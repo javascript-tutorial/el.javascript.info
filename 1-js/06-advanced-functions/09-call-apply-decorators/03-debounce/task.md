@@ -2,15 +2,24 @@ importance: 5
 
 ---
 
-# Debounce decorator
+# Debounce διακοσμητής
 
-The result of `debounce(f, ms)` decorator is a wrapper that suspends calls to `f` until there's `ms` milliseconds of inactivity (no calls, "cooldown period"), then invokes `f` once with the latest arguments.
 
-In other words, `debounce` is like a secretary that accepts "phone calls", and waits until there's `ms` milliseconds of being quiet. And only then it transfers the latest call information to "the boss" (calls the actual `f`).
+Το αποτέλεσμα του `debounce(f, ms)` διακοσμητή πρέπει να είναι μια συνάρτηση-κάλυμμα η οποία περνάει τη κλήση στην `f` το πολύ μια φορά ανά `ms` δέκατα του δευτερολέπτου.
 
-For instance, we had a function `f` and replaced it with `f = debounce(f, 1000)`.
+Με άλλα λόγια, όταν καλούμε μια "debounced" συνάρτηση, μας εγγυάται ότι όλες οι μελλοντικές κλήσεις στη συνάρτηση που κάναν λιγότερο από `ms` δέκατα του δευτερολέπτου μετά τη προηγούμενη κλήση θα αγνοηθούν.
 
-Then if the wrapped function is called at 0ms, 200ms and 500ms, and then there are no calls, then the actual `f` will be only called once, at 1500ms. That is: after the cooldown period of 1000ms from the last call.
+Για παράδειγμα:
+
+f(1); // τρέχει αμέσως
+f(2); // αγνοείται
+
+setTimeout( () => f(3), 100); // αγνοείται ( μόνο 100 ms περάσαν )
+setTimeout( () => f(4), 1100); // τρέχει
+setTimeout( () => f(5), 1500); // αγνοείται (λιγότερο από 1000 ms από το τελευταίο τρέξιμο)
+```
+
+Στη πρακτική η `debounce` είναι χρήσιμη για συναρτήσεις που ανακτούν/ανανεώνουν κάτι όταν γνωρίζουμε ότι τίποτα καινούργιο δεν μπορεί να γίνει σε μια τόσο μικρή περίοδο χρόνου, οπότε είναι καλύτερο να μην σπαταληθούν πόροι.
 
 ![](debounce.svg)
 
@@ -49,3 +58,4 @@ It waits the given time after the last call, and then runs its function, that ca
 The task is to implement `debounce` decorator.
 
 Hint: that's just a few lines if you think about it :)
+
