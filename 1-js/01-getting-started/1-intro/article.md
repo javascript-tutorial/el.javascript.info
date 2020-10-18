@@ -1,10 +1,6 @@
 # Εισαγωγή στον κόσμο της JavaScript
 
-<<<<<<< HEAD
 Ας δούμε τι είναι τόσο απίθανο στην JavaScript, τι μπορούμε να φτιάξουμε με αυτήν, και ποιες άλλες τεχνολογίες μπορούμε να χρησιμοποιήσουμε με αυτήν.
-=======
-Let's see what's so special about JavaScript, what we can achieve with it, and what other technologies play well with it.
->>>>>>> 0599d07b3c13ee25f583fc091cead3c17a7e7779
 
 ## Τι είναι η JavaScript?
 
@@ -41,13 +37,8 @@ Engines are complicated. But the basics are easy.
 2. Then it converts ("compiles") the script to the machine language.
 3. And then the machine code runs, pretty fast.
 
-<<<<<<< HEAD
 The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and applies optimizations to the machine code based on that knowledge. When it's done, scripts run quite fast.
 '''
-=======
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
-```
->>>>>>> fcfef6a07842ed56144e04a80c3a24de049a952a
 
 ## What can in-browser JavaScript do?
 
@@ -75,13 +66,8 @@ Examples of such restrictions include:
 
 Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an '<input>' tag.
 
-<<<<<<< HEAD
 There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
 - Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
-=======
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do; for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
->>>>>>> 0599d07b3c13ee25f583fc091cead3c17a7e7779
 
 This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
 
@@ -105,11 +91,7 @@ JavaScript is the only browser technology that combines these three things.
 
 That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
 
-<<<<<<< HEAD
 While planning to learn a new technology, it's beneficial to check its perspectives. So let's move on to the modern trends affecting it, including new languages and browser abilities.
-=======
-That said, JavaScript also allows to create servers, mobile applications, etc.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 ## Languages "over" JavaScript
 
