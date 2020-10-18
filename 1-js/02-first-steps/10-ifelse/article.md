@@ -1,14 +1,14 @@
-# Conditional operators: if, '?'
+# Υπό συνθήκη χειριστές: if, '?'
 
-Sometimes, we need to perform different actions based on different conditions.
+Μερικές φορές, πρέπει να εκτελέσουμε διαφορετικές ενέργειες βάσει διαφορετικών συνθηκών.
 
-To do that, we can use the `if` statement and the conditional operator `?`, that's also called a "question mark" operator.
+Για να το κάνουμε αυτό, μπορούμε να χρησιμοποιήσουμε τη δήλωση `if` και τον τελεστή υπό όρο `?`, που ονομάζεται επίσης τελεστής "ερωτηματικού".
 
-## The "if" statement
+## Η δήλωση "if"
 
-The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
+Η δήλωση `if(...)` αξιολογεί μια συνθήκη σε παρένθεση και, εάν το αποτέλεσμα είναι `true`, εκτελεί ένα μπλοκ κώδικα.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 let year = prompt('In which year was ECMAScript-2015 specification published?', '');
@@ -18,9 +18,9 @@ if (year == 2015) alert( 'You are right!' );
 */!*
 ```
 
-In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
+Στο παραπάνω παράδειγμα, η συνθήκη είναι ένας απλός έλεγχος ισότητας (`year == 2015`), αλλά μπορεί να είναι πολύ πιο περίπλοκος.
 
-If we want to execute more than one statement, we have to wrap our code block inside curly braces:
+Εάν θέλουμε να εκτελέσουμε περισσότερες από μία δηλώσεις, πρέπει να τυλίξουμε το μπλοκ κώδικα μας μέσα σε άγκιστρα:
 
 ```js
 if (year == 2015) {
@@ -29,63 +29,63 @@ if (year == 2015) {
 }
 ```
 
-We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
+Σας συνιστούμε να τυλίγετε το μπλοκ κώδικα με άγκιστρα `{}` κάθε φορά που χρησιμοποιείτε μια δήλωση `if`, ακόμη και αν υπάρχει μόνο μία δήλωση για εκτέλεση. Αυτό βελτιώνει την αναγνωσιμότητα.
 
-## Boolean conversion
+## Μετατροπή σε Boolean
 
-The `if (…)` statement evaluates the expression in its parentheses and converts the result to a boolean.
+Η δήλωση `if (…)` αξιολογεί την έκφραση στις παρενθέσεις και μετατρέπει το αποτέλεσμα σε δυαδικό.
 
-Let's recall the conversion rules from the chapter <info:type-conversions>:
+Ας θυμηθούμε τους κανόνες μετατροπής από το κεφάλαιο <info:type-conversions>:
 
-- A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called "falsy" values.
-- Other values become `true`, so they are called "truthy".
+- Ένας αριθμός `0`, μια κενή συμβολοσειρά `""`, `null`, `undefined` και `NaN` όλα γίνονται `false`. Εξαιτίας αυτού, ονομάζονται "falsy" τιμές.
+- Άλλες τιμές γίνονται `true`, επομένως ονομάζονται "truthy".
 
-So, the code under this condition would never execute:
+Έτσι, ο κώδικας υπό αυτήν την κατάσταση δεν θα εκτελεστεί ποτέ:
 
 ```js
-if (0) { // 0 is falsy
+if (0) { // 0 είναι falsy
   ...
 }
 ```
 
-...and inside this condition -- it always will:
+...και μέσα σε αυτήν την κατάσταση - θα είναι πάντα:
 
 ```js
-if (1) { // 1 is truthy
+if (1) { // 1 είναι truthy
   ...
 }
 ```
 
-We can also pass a pre-evaluated boolean value to `if`, like this:
+Μπορούμε επίσης να περάσουμε μια προ-αξιολογημένη τιμή boolean στο `if`, έτσι:
 
 ```js
-let cond = (year == 2015); // equality evaluates to true or false
+let cond = (year == 2015); // η ισότητα αξιολογείται true ή false
 
 if (cond) {
   ...
 }
 ```
 
-## The "else" clause
+## Η ρήτρα "else"
 
-The `if` statement may contain an optional "else" block. It executes when the condition is false.
+Η δήλωση `if` μπορεί να περιέχει ένα προαιρετικό μπλοκ "else". Εκτελείται όταν η συνθήκη είναι λανθασμένη.
 
-For example:
+Για παράδειγμα:
 ```js run
 let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
 
 if (year == 2015) {
   alert( 'You guessed it right!' );
 } else {
-  alert( 'How can you be so wrong?' ); // any value except 2015
+  alert( 'How can you be so wrong?' ); // οποιαδήποτε τιμή εκτός 2015
 }
 ```
 
-## Several conditions: "else if"
+## Διάφορες συνθήκες: "else if"
 
-Sometimes, we'd like to test several variants of a condition. The `else if` clause lets us do that.
+Μερικές φορές, θα θέλαμε να δοκιμάσουμε πολλές παραλλαγές μιας κατάστασης. Η ρήτρα `else if` μας επιτρέπει να το κάνουμε αυτό.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
@@ -99,15 +99,15 @@ if (year < 2015) {
 }
 ```
 
-In the code above, JavaScript first checks `year < 2015`. If that is falsy, it goes to the next condition `year > 2015`. If that is also falsy, it shows the last `alert`.
+Στον παραπάνω κώδικα, η JavaScript ελέγχει πρώτα το `year < 2015. Εάν αυτό είναι falsy, πηγαίνει στην επόμενη συνθήκη `year > 2015`. Εάν αυτό είναι επίσης falsy, δείχνει το τελευταίο `alert`.
 
-There can be more `else if` blocks. The final `else` is optional.
+Μπορεί να υπάρχουν περισσότερα μπλοκ `else if`. Το τελικό `else` είναι προαιρετικό.
 
-## Conditional operator '?'
+## Υπό συνθήκη τελεστής '?'
 
-Sometimes, we need to assign a variable depending on a condition.
+Μερικές φορές, πρέπει να αντιστοιχίσουμε μια μεταβλητή αναλόγως με μια συνθήκη.
 
-For instance:
+Για παράδειγμα:
 
 ```js run no-beautify
 let accessAllowed;
@@ -124,49 +124,49 @@ if (age > 18) {
 alert(accessAllowed);
 ```
 
-The so-called "conditional" or "question mark" operator lets us do that in a shorter and simpler way.
+Ο ονομαζομενος τελεστής "υπό όρους" ή "ερωτηματικό" μας επιτρέπει να κάνουμε με συντομότερο και απλούστερο τρόπο.
 
-The operator is represented by a question mark `?`. Sometimes it's called "ternary", because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+Ο τελεστής αντιπροσωπεύεται από ένα ερωτηματικό `?`. Μερικές φορές ονομάζεται "ternary", επειδή ο τελεστής έχει τρεις τελεστές. Στην πραγματικότητα είναι ο μοναδικός τελεστής σε JavaScript που έχει τόσα πολλά.
 
-The syntax is:
+Συντάσεται ως εξής:
 ```js
 let result = condition ? value1 : value2;
 ```
 
-The `condition` is evaluated: if it's truthy then `value1` is returned, otherwise -- `value2`.
+Η `condition` αξιολογείται: εάν είναι αλήθεια τότε επιστρέφεται η `value1`, διαφορετικά -- `value2`
 
-For example:
+Για παράδειγμα:
 
 ```js
 let accessAllowed = (age > 18) ? true : false;
 ```
 
-Technically, we can omit the parentheses around `age > 18`. The question mark operator has a low precedence, so it executes after the comparison `>`.
+Τεχνικά, μπορούμε να παραλείψουμε τις παρενθέσεις γύρω από την `age > 18`. Ο τελεστής ερωτηματικών έχει χαμηλή προτεραιότητα, οπότε εκτελείται μετά τη σύγκριση `>`.
 
-This example will do the same thing as the previous one:
+Αυτό το παράδειγμα θα κάνει το ίδιο με το παραπάνω:
 
 ```js
-// the comparison operator "age > 18" executes first anyway
-// (no need to wrap it into parentheses)
+// ο τελεστής σύγκρισης "age > 18" εκτελεί πρώτα ούτως ή άλλως
+// (δεν χρειάζεται να το τυλίξουμε σε παρένθεση)
 let accessAllowed = age > 18 ? true : false;
 ```
 
-But parentheses make the code more readable, so we recommend using them.
+Ωστόσο, οι παρενθέσεις καθιστούν τον κώδικα πιο ευανάγνωστο, επομένως σας συνιστούμε να τον χρησιμοποιήσετε.
 
 ````smart
-In the example above, you can avoid using the question mark operator because the comparison itself returns `true/false`:
+Στο παραπάνω παράδειγμα, μπορείτε να αποφύγετε τη χρήση του τελεστή ερωτηματικών επειδή επιστρέφει την ίδια την σύγκριση `true/false`:
 
 ```js
-// the same
+// το ίδιο
 let accessAllowed = age > 18;
 ```
 ````
 
 ## Multiple '?'
 
-A sequence of question mark operators `?` can return a value that depends on more than one condition.
+Μια ακολουθία τελεστών ερωτηματικών `?` μπορεί να επιστρέψει μια τιμή που εξαρτάται από περισσότερες από μία συνθήκη.
 
-For instance:
+Για παράδειγμα:
 ```js run
 let age = prompt('age?', 18);
 
@@ -178,14 +178,14 @@ let message = (age < 3) ? 'Hi, baby!' :
 alert( message );
 ```
 
-It may be difficult at first to grasp what's going on. But after a closer look, we can see that it's just an ordinary sequence of tests:
+Μπορεί να είναι δύσκολο στην αρχή να κατανοήσουμε τι συμβαίνει. Αλλά μετά από μια πιο προσεκτική ματιά, μπορούμε να δούμε ότι είναι απλώς μια συνηθισμένη σειρά δοκιμών:
 
-1. The first question mark checks whether `age < 3`.
-2. If true -- it returns `'Hi, baby!'`. Otherwise, it continues to the expression after the colon '":"', checking `age < 18`.
-3. If that's true -- it returns `'Hello!'`. Otherwise, it continues to the expression after the next colon '":"', checking `age < 100`.
-4. If that's true -- it returns `'Greetings!'`. Otherwise, it continues to the expression after the last colon '":"', returning `'What an unusual age!'`.
+1. Το πρώτο ερωτηματικό ελέγχει εάν `age < 3`.
+2. Εάν είναι true -- τότε επιστρέφει `'Hi, baby!'`. Διαφορετικά, συνεχίζει στην έκφραση μετά την άνω και κάτω τελεία `'Hi, baby!'`, ελέγχοντας `age < 18`.
+3. Εάν αυτό είναι true -- επιστρέφει `'Hello!'`. Διαφορετικά, συνεχίζει στην έκφραση μετά την επόμενη άνω και κάτω τελεία '":"', ελέγχοντας `age < 100`.
+4. Αν αυτό είναι true -- επιστρέφει `'Greetings!'`. Διαφορετικά, συνεχίζει στην έκφραση μετά την τελευταία άνω και κάτω τελεία '":"', επιστρέφοντας `'What an unusual age!'`.
 
-Here's how this looks using `if..else`:
+Δείτε πώς φαίνεται αυτό `if..else`:
 
 ```js
 if (age < 3) {
@@ -199,9 +199,9 @@ if (age < 3) {
 }
 ```
 
-## Non-traditional use of '?'
+## Μη παραδοσιακή χρήση του '?'
 
-Sometimes the question mark `?` is used as a replacement for `if`:
+Μερικές φορές το ερωτηματικό `?` χρησιμοποιείται ως αντικατάσταση του `if`:
 
 ```js run no-beautify
 let company = prompt('Which company created JavaScript?', '');
@@ -212,15 +212,15 @@ let company = prompt('Which company created JavaScript?', '');
 */!*
 ```
 
-Depending on the condition `company == 'Netscape'`, either the first or the second expression after the `?` gets executed and shows an alert.
+Ανάλογα με την κατάσταση `company == 'Netscape'`, εκτελείται είτε η πρώτη είτε η δεύτερη έκφραση μετά το `?` και εμφανίζει μια ειδοποίηση.
 
-We don't assign a result to a variable here. Instead, we execute different code depending on the condition.
+Δεν αποδίδουμε αποτέλεσμα σε μια μεταβλητή εδώ. Αντ 'αυτού, εκτελούμε διαφορετικό κώδικα ανάλογα με την κατάσταση.
 
-**It's not recommended to use the question mark operator in this way.**
+**Δεν συνιστάται η χρήση του τελεστή ερωτηματικών με αυτόν τον τρόπο.**
 
-The notation is shorter than the equivalent `if` statement, which appeals to some programmers. But it is less readable.
+Η σημειογραφία είναι μικρότερη από την αντίστοιχη δήλωση `if`, η οποία απευθύνεται σε ορισμένους προγραμματιστές. Αλλά είναι λιγότερο ευανάγνωστο.
 
-Here is the same code using `if` for comparison:
+Εδώ είναι ο ίδιος κωδικός που χρησιμοποιεί το `if` για σύγκριση:
 
 ```js run no-beautify
 let company = prompt('Which company created JavaScript?', '');
@@ -234,6 +234,7 @@ if (company == 'Netscape') {
 */!*
 ```
 
-Our eyes scan the code vertically. Code blocks which span several lines are easier to understand than a long, horizontal instruction set.
+Τα μάτια μας σαρώνουν τον κώδικα κάθετα. Τα μπλοκ κώδικα που καλύπτουν πολλές γραμμές είναι πιο κατανοητά από ένα μακρύ, οριζόντιο σύνολο οδηγιών.
 
-The purpose of the question mark operator `?` is to return one value or another depending on its condition. Please use it for exactly that. Use `if` when you need to execute different branches of code.
+Ο σκοπός του τελεστή ερωτηματικών `?` είναι να επιστρέψει μια τιμή ή κάτι ανάλογα με την κατάστασή της. Χρησιμοποιήστε το για ακριβώς αυτό. Χρησιμοποιήστε το `if` όταν πρέπει να εκτελέσετε διαφορετικούς κλάδους κώδικα.
+

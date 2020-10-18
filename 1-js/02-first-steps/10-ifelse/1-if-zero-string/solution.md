@@ -1,8 +1,8 @@
-**Yes, it will.**
+**Ναι θα εκτελεστεί.**
 
-Any string except an empty one (and `"0"` is not empty) becomes `true` in the logical context.
+Κάθε συμβολοσειρά εκτός από μια κενή (και το `"0"` δεν είναι κενό) γίνεται `true` στο λογικό περιβάλλον.
 
-We can run and check:
+Μπορούμε να τρέξουμε και να ελέγξουμε:
 
 ```js run
 if ("0") {

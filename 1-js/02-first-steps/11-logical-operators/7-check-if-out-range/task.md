@@ -2,8 +2,12 @@ importance: 3
 
 ---
 
-# Check the range outside
+# Ελέγξτε εκτος του εύρος 
 
-Write an `if` condition to check that `age` is NOT between 14 and 90 inclusively.
+<<<<<<< HEAD
+Γράψτε μια συνθήκη `if` για να ελέγξετε ότι η `age` ΔΕΝ είναι μεταξύ 14 και 90.
+=======
+Write an `if` condition to check that `age` is NOT between `14` and `90` inclusively.
+>>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
-Create two variants: the first one using NOT `!`, the second one -- without it.
+Δημιουργήστε δύο παραλλαγές: η πρώτη χρησιμοποιώντας NOT `!`, Η δεύτερη - χωρίς αυτήν.

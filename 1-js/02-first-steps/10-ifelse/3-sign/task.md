@@ -2,14 +2,14 @@ importance: 2
 
 ---
 
-# Show the sign
+# Δείξτε την ένδειξη
 
-Using `if..else`, write the code which gets a number via `prompt` and then shows in `alert`:
+Χρησιμοποιώντας το `if..else`, γράψτε τον κωδικό που λαμβάνει έναν αριθμό μέσω του `prompt` και μετά εμφανίζεται στο `alert`:
 
-- `1`, if the value is greater than zero,
-- `-1`, if less than zero,
-- `0`, if equals zero.
+- `1`, εάν η τιμή είναι μεγαλύτερη από το μηδέν,
+- `-1`, εάν είναι μικρότερο από το μηδέν,
+- `0`, εάν είναι ίσον με το μηδέν.
 
-In this task we assume that the input is always a number.
+Σε αυτήν την εργασία, υποθέτουμε ότι η είσοδος είναι πάντα ένας αριθμός.
 
 [demo src="if_sign"]

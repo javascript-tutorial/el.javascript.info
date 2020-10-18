@@ -4,9 +4,21 @@ importance: 5
 
 # Throttle διακοσμητής
 
+
 Δημιούργησε ένα "throttling" διακοσμητή `throttle(f, ms)` -- που επιστρέφει μια συνάρτηση κάλυμμα, δίνοντας τη κλήση στην `f` το πολύ μια φορά ανά `ms` δέκατα του δευτερολέπτου. Αυτές οι κλήσεις που πέφτου μέσα στη περίοδο "παγώματος", αγνοούνται.
 
 **Η διαφορά με τη `debounce` -- αν μια κλήση που αγνοήθηκε είναι η τελευταία κατά το πάγωμα, τότε εκτελείται στο τέλος της καθυστέρησης.**
+
+Create a "throttling" decorator `throttle(f, ms)` -- that returns a wrapper.
+
+When it's called multiple times, it passes the call to `f` at maximum once per `ms` milliseconds.
+
+The difference with debounce is that it's completely different decorator:
+- `debounce` runs the function once after the "cooldown" period. Good for processing the final result.
+- `throttle` runs it not more often than given `ms` time. Good for regular updates that shouldn't be very often.
+
+In other words, `throttle` is like a secretary that accepts phone calls, but bothers the boss (calls the actual `f`) not more often than once per `ms` milliseconds.
+
 
 Ας δουμε την πρακτική εφαρμογή για να καταλάβουμε καλύτερα την απαίτηση αυτή και να δούμε από που προέρχεται.
 

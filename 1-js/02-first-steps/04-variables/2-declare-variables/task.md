@@ -2,7 +2,7 @@ importance: 3
 
 ---
 
-# Giving the right name
+# Δίνοντας το σωστό όνομα
 
-1. Create a variable with the name of our planet. How would you name such a variable?
-2. Create a variable to store the name of a current visitor to a website. How would you name that variable?
+1. Δημιουργήστε μια μεταβλητή με το όνομα του πλανήτη μας. Πώς θα ονόμαζες μια τέτοια μεταβλητή?
+2. Δημιουργήστε μια μεταβλητή για να αποθηκεύσετε το όνομα ενός τρέχοντος επισκέπτη σε έναν ιστότοπο. Πώς θα ονομάζατε αυτήν τη μεταβλητή?

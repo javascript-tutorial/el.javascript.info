@@ -1,10 +1,10 @@
-The first variant:
+Η πρώτη παραλλαγή:
 
 ```js
 if (!(age >= 14 && age <= 90))
 ```
 
-The second variant:
+Η δεύτερη παραλλαγή:
 
 ```js
 if (age < 14 || age > 90)

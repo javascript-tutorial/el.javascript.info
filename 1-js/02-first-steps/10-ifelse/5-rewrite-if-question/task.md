@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Rewrite 'if' into '?'
+# Ξαναγράψτε 'if' μέσα στο '?'
 
-Rewrite this `if` using the conditional operator `'?'`:
+Ξαναγράψτε τό `if` χρησιμοποιώντας τον τελεστή υπό όρους `'?'`:
 
 ```js
 let result;

@@ -1,5 +1,5 @@
-We generally use upper case for constants that are "hard-coded". Or, in other words, when the value is known prior to execution and directly written into the code.
+Χρησιμοποιούμε γενικά κεφαλαία γράμματα για σταθερές που είναι "hard-coded". Ή, με άλλα λόγια, όταν η τιμή είναι γνωστή πριν από την εκτέλεση και εγγράφεται απευθείας στον κώδικα.
 
-In this code, `birthday` is exactly like that. So we could use the upper case for it.
+Σε αυτόν τον κωδικό, το `birthday` είναι ακριβώς έτσι. Έτσι θα μπορούσαμε να χρησιμοποιήσουμε κεφαλαία για αυτό.
 
-In contrast, `age` is evaluated in run-time. Today we have one age, a year after we'll have another one. It is constant in a sense that it does not change through the code execution. But it is a bit "less of a constant" than `birthday`: it is calculated, so we should keep the lower case for it.
+Αντίθετα, το `age` αξιολογείται στο χρόνο εκτέλεσης. Σήμερα έχουμε μια ηλικία, ένα χρόνο μετά θα έχουμε μια άλλη. Είναι σταθερό υπό την έννοια ότι δεν αλλάζει μέσω της εκτέλεσης κώδικα. Αλλά είναι σχετικά "λιγότερο από μια σταθερά" από το `birthday`: υπολογίζεται, οπότε πρέπει να διατηρήσουμε το πεζό.

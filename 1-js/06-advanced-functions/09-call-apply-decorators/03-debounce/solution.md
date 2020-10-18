@@ -1,19 +1,12 @@
 ```js demo
-function debounce(f, ms) {
-
-  let isCooldown = false;
-
+function debounce(func, ms) {
+  let timeout;
   return function() {
-    if (isCooldown) return;
-
-    f.apply(this, arguments);
-
-    isCooldown = true;
-
-    setTimeout(() => isCooldown = false, ms);
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, arguments), ms);
   };
-
 }
+
 ```
 
 Μια κλήση στη `debounce` επιστρέφει μια συνάρτηση-κάλυμμα. Μπορεί να υπάρχουν δύο καταστάσεις:
@@ -26,3 +19,9 @@ function debounce(f, ms) {
 Όοσ η `isCooldown` είναι αληθής, όλες οι άλλες κλήσεις μπορούν να αγνοηθούν.
 
 Τότε η `setTimeout` την ξανακάνει `false` μετά τη δοσμένη καθυστέρηση.
+
+
+```
+
+A call to `debounce` returns a wrapper. When called, it schedules the original function call after given `ms` and cancels the previous such timeout.
+

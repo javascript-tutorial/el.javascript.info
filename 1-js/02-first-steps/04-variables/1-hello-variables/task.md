@@ -2,9 +2,9 @@ importance: 2
 
 ---
 
-# Working with variables
+# Δουλεύοντας με μεταβλητές
 
-1. Declare two variables: `admin` and `name`.
-2. Assign the value `"John"` to `name`.
-3. Copy the value from `name` to `admin`.
-4. Show the value of `admin` using `alert` (must output "John").
+1. Δήλωση δυο μεταβλητών: `admin` ή `name`.
+2. Ανάθεση το `"John"` στην `name`.
+3. Αντέγραψε απο `name` σε `admin`.
+4. Δείξε την τιμή `admin` χρησιμοποιόντας `alert` (πρέπει να δείξει "John").

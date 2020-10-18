@@ -1,44 +1,44 @@
-# Code structure
+# Δομή κώδικα
 
-The first thing we'll study is the building blocks of code.
+Το πρώτο πράγμα που θα μελετήσουμε είναι τα δομικά στοιχεία του κώδικα.
 
-## Statements
+## Δηλώσεις
 
-Statements are syntax constructs and commands that perform actions.
+Οι δηλώσεις είναι δομές σύνταξης και εντολές που εκτελούν πράξεις.
 
-We've already seen a statement, `alert('Hello, world!')`, which shows the message "Hello, world!".
+Έχουμε ήδη δει μια δήλωση, `alert ('Hello, world!')`, Η οποία εμφανίζει το μήνυμα "Hello, world!".
 
-We can have as many statements in our code as we want. Statements can be separated with a semicolon.
+Μπορούμε να έχουμε όσες δηλώσεις θέλουμε στον κώδικα μας. Οι δηλώσεις μπορούν να διαχωριστούν με ένα ερωτηματικό (;).
 
-For example, here we split "Hello World" into two alerts:
+Για παράδειγμα, εδώ χωρίσαμε το "Hello World" σε δύο alert:
 
 ```js run no-beautify
 alert('Hello'); alert('World');
 ```
 
-Usually, statements are written on separate lines to make the code more readable:
+Συνήθως, οι δηλώσεις γράφονται σε ξεχωριστές γραμμές για να καταστεί ο κώδικας πιο αναγνώσιμος:
 
 ```js run no-beautify
 alert('Hello');
 alert('World');
 ```
 
-## Semicolons [#semicolon]
+## Ερωτηματικά [#semicolon]
 
-A semicolon may be omitted in most cases when a line break exists.
+Ενδέχεται να παραλειφθεί ένα ερωτηματικό στις περισσότερες περιπτώσεις όταν υπάρχει διακοπή γραμμής.
 
-This would also work:
+Επίσης και αυτό λειτουργεί:
 
 ```js run no-beautify
 alert('Hello')
 alert('World')
 ```
 
-Here, JavaScript interprets the line break as an "implicit" semicolon. This is called an [automatic semicolon insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
+Εδώ, το JavaScript ερμηνεύει την αλλαγή γραμμής ως ένα "έμμεσο" ερωτηματικό. Αυτό ονομάζεται [αυτόματη εισαγωγή γραμμής](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
 
-**In most cases, a newline implies a semicolon. But "in most cases" does not mean "always"!**
+**Στις περισσότερες περιπτώσεις, μια νέα γραμμή υποδηλώνει ένα ερωτηματικό. Αλλά "στις περισσότερες περιπτώσεις" δεν σημαίνει "πάντα"!**
 
-There are cases when a newline does not mean a semicolon. For example:
+Υπάρχουν περιπτώσεις όπου μια νέα γραμμή δεν σημαίνει ερωτηματικό. Ένα παράδειγμα:
 
 ```js run no-beautify
 alert(3 +
@@ -46,22 +46,22 @@ alert(3 +
 + 2);
 ```
 
-The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so the semicolon is not required. And in this case that works as intended.
+Το αποτέλεσμα του κώδικα είναι `6` επειδή το JavaScript δεν εισάγει εδώ ερωτηματικά. Είναι ολοφάνερο ότι αν η γραμμή τελειώσει με ένα συν `` + '', τότε είναι μια "ατελής έκφραση", οπότε δεν χρειάζεται το ερωτηματικό. Και σε αυτή την περίπτωση αυτό λειτουργεί όπως είχε προβλεφθεί.
 
-**But there are situations where JavaScript "fails" to assume a semicolon where it is really needed.**
+**Ωστόσο, υπάρχουν περιπτώσεις στις οποίες η JavaScript "αποτυγχάνει" να υποθέσει ένα ερωτηματικό όπου είναι πραγματικά απαραίτητο.**
 
-Errors which occur in such cases are quite hard to find and fix.
+Τα σφάλματα που προκύπτουν σε τέτοιες περιπτώσεις είναι αρκετά δύσκολο να βρεθούν και να διορθωθούν.
 
-````smart header="An example of an error"
-If you're curious to see a concrete example of such an error, check this code out:
+````smart header="Aν example of an error"
+Αν είστε περίεργοι να δείτε ένα παράδειγμα ενός τέτοιου σφάλματος, ελέγξτε αυτόν τον κωδικό:
 
-```js run
+```js run
 [1, 2].forEach(alert)
 ```
 
-No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of the code: it shows `1` then `2`.
+Δεν χρειάζεται να σκεφτούμε ακόμα την έννοια των παρενθέσεων `[]` και `forEach`. Θα τα μελετήσουμε αργότερα. Προς το παρόν, να θυμάστε μόνο το αποτέλεσμα του κώδικα: δείχνει `1` και ` 2`.
 
-Now, let's add an `alert` before the code and *not* finish it with a semicolon:
+Τώρα, ας προσθέσουμε ενα  «alert» πριν από τον κώδικα και * όχι * να τελειώσει με ένα ερωτηματικό:
 
 ```js run no-beautify
 alert("There will be an error")
@@ -69,40 +69,40 @@ alert("There will be an error")
 [1, 2].forEach(alert)
 ```
 
-Now if we run the code, only the first `alert` is shown and then we have an error!
+Τώρα, εάν εκτελέσουμε τον κώδικα, εμφανίζεται μόνο το πρώτo 'alert' και στη συνέχεια έχουμε ένα σφάλμα!
 
-But everything is fine again if we add a semicolon after `alert`:
+Eάν προσθέσουμε ένα ερωτηματικό μετά `alert` τότε όλα θα λειτουργούν σωστά:
 ```js run
 alert("All fine now");
 
 [1, 2].forEach(alert)  
 ```
 
-Now we have the "All fine now" message followed by `1` and `2`.
+Τώρα έχουμε το μήνυμα "All fine now" που ακολουθείται από το "1" και το "2".
 
 
-The error in the no-semicolon variant occurs because JavaScript does not assume a semicolon before square brackets `[...]`.
+Το σφάλμα στην εκδοχή χωρίς ερωτηματικό εμφανίζεται επειδή η JavaScript δεν υποθέτει ένα ερωτηματικό πριν τις αγκύλες `[...]`.
 
-So, because the semicolon is not auto-inserted, the code in the first example is treated as a single statement. Here's how the engine sees it:
+Επομένως, επειδή το ερωτηματικό δεν εισάφεται αυτόματα, ο κώδικας στο παράδειγμα αντιμετωπίζεται ως μία μόνο δήλωση. Δείτε πώς το βλέπει το JavaScript engine:
 
 ```js run no-beautify
 alert("There will be an error")[1, 2].forEach(alert)
 ```
 
-But it should be two separate statements, not one. Such a merging in this case is just wrong, hence the error. This can happen in other situations.
+Αλλά θα πρέπει να είναι δύο χωριστές δηλώσεις, όχι μία. Μια τέτοια συγχώνευση, στην περίπτωση αυτή, είναι απλώς λανθασμένη, εξ ου και το σφάλμα. Αυτό μπορεί να συμβεί και σε άλλες περιπτώσεις.
 ````
 
-We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let's note once again -- *it is possible* to leave out semicolons most of the time. But it's safer -- especially for a beginner -- to use them.
+Συνιστούμε να τοποθετείτε ερωτηματικά μεταξύ δηλώσεων ακόμα και αν διαχωρίζονται από νέες γραμμές. Αυτός ο κανόνας υιοθετείται ευρέως από την κοινότητα. Ας σημειώσουμε για μια ακόμη φορά - * είναι δυνατόν * να αφήνουμε τα ερωτηματικά τις περισσότερες φορές. Αλλά είναι ασφαλέστερο - ειδικά για έναν αρχάριο - να τα χρησιμοποιήσει.
 
-## Comments [#code-comments]
+## Σχόλια
 
-As time goes on, programs become more and more complex. It becomes necessary to add *comments* which describe what the code does and why.
+Με την πάροδο του χρόνου, τα προγράμματα γίνονται όλο και πιο περίπλοκα. Είναι απαραίτητο να προσθέσετε * σχόλια * που περιγράφουν τι κάνει ο κώδικας και γιατί.
 
-Comments can be put into any place of a script. They don't affect its execution because the engine simply ignores them.
+Τα σχόλια μπορούν να τοποθετηθούν σε οποιοδήποτε σημείο ενός script. Δεν επηρεάζουν την εκτέλεσή του, επειδή το JavaScript engine απλώς τους αγνοεί.
 
-**One-line comments start with two forward slash characters `//`.**
+**Τα σχόλια μιας γραμμής ξεκινούν με δύο χαρακτήρες προς τα εμπρός `//`.**
 
-The rest of the line is a comment. It may occupy a full line of its own or follow a statement.
+Το υπόλοιπο της γραμμής είναι ένα σχόλιο. Μπορεί να καταλάβει μια πλήρη γραμμή ή να ακολουθήσει μια δήλωση.
 
 Like here:
 ```js run
@@ -112,9 +112,9 @@ alert('Hello');
 alert('World'); // This comment follows the statement
 ```
 
-**Multiline comments start with a forward slash and an asterisk <code>/&#42;</code> and end with an asterisk and a forward slash <code>&#42;/</code>.**
+**Τα σχόλια πολλαπλών γραμμών ξεκινούν με μια προς τα εμπρός κάθετος <code>/&#42;</code>και έναν αστερίσκο και τελειώνουν με έναν αστερίσκο και μια μπροστινή κάθετος <code>&#42;/</code>**
 
-Like this:
+Ακριβώς έτσι:
 
 ```js run
 /* An example with two messages.
@@ -124,25 +124,26 @@ alert('Hello');
 alert('World');
 ```
 
-The content of comments is ignored, so if we put code inside <code>/&#42; ... &#42;/</code>, it won't execute.
+Το περιεχόμενο των σχολίων αγνοείται, οπότε αν βάλουμε κώδικα μέσα σε αυτό <code>/&#42; ... &#42;/</code>, δεν θα εκτελεστεί.
 
-Sometimes it can be handy to temporarily disable a part of code:
+Μερικές φορές μπορεί να είναι χρήσιμο να απενεργοποιήσετε προσωρινά ένα μέρος του κώδικα:
 
 ```js run
 /* Commenting out the code
 alert('Hello');
+
 */
 alert('World');
 ```
 
 ```smart header="Use hotkeys!"
-In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`.
+Στα περισσότερα editors, μια γραμμή κώδικα μπορεί να σχολιαστεί πατώντας το πλήκτρο `key:Ctrl+/`  για σχόλιο μίας γραμμής και για τα πολλαπλά σχόλια πατώντας το πλήκτρο `key:Ctrl+Shift+/` --(επιλέξτε ένα κομμάτι κώδικα και πατήστε το πλήκτρο πρόσβασης). Για Mac, δοκιμάστε το πλήκτρο «key:Cmd» αντί για «key: Ctrl».
 ```
 
 ````warn header="Nested comments are not supported!"
-There may not be `/*...*/` inside another `/*...*/`.
+Δεν μπορεί να υπάρχει ενα σχόλιο `/*..*/ ' μέσα σε ένα άλλο σχόλιο ` /*..*/`
 
-Such code will die with an error:
+Αυτός ο κώδικας θα δείξει ένα σφάλμα:
 
 ```js run no-beautify
 /*
@@ -152,8 +153,8 @@ alert( 'World' );
 ```
 ````
 
-Please, don't hesitate to comment your code.
+Παρακαλώ μη διστάσετε να σχολιάσετε τον κωδικό σας.
 
-Comments increase the overall code footprint, but that's not a problem at all. There are many tools which minify code before publishing to a production server. They remove comments, so they don't appear in the working scripts. Therefore, comments do not have negative effects on production at all.
+Τα σχόλια αυξάνουν το συνολικό αποτύπωμα κώδικα, αλλά αυτό δεν είναι καθόλου πρόβλημα. Υπάρχουν πολλά εργαλεία που ελαχιστοποιούν τον κώδικα πριν από τη δημοσίευση σε έναν διακομιστή παραγωγής. Καταργούν σχόλια, επομένως δεν εμφανίζονται στα scr εργασίας. Συνεπώς, οι παρατηρήσεις δεν έχουν καθόλου αρνητικές επιπτώσεις στην παραγωγή.
 
-Later in the tutorial there will be a chapter <info:code-quality> that also explains how to write better comments.
+Αργότερα στο σεμινάριο <info:code-quality>, θα υπάρχει ένα κεφάλαιο που εξηγεί επίσης πώς να γράψετε καλύτερα σχόλια.

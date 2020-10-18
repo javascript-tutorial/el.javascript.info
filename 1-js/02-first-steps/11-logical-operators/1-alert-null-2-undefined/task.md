@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# What's the result of OR?
+# Πιο είναι το αποτέλεσμα της OR?
 
-What is the code below going to output?
+Ποιό θα είναι το αποτέλεσμα του παρακάτω κώδικα?
 
 ```js
 alert( null || 2 || undefined );

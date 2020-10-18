@@ -4,11 +4,7 @@
 
 ## Τι είναι η JavaScript?
 
-<<<<<<< HEAD
 Η *JavaScript* είχε φτιαχτεί για να *ζωντανέψει τις ιστοσελίδες*
-=======
-*JavaScript* was initially created to "make web pages alive".
->>>>>>> c89ddc5d92195e08e2c32e30526fdb755fec4622
 
 Τα προγράμματα σε αυτήν τη γλώσσα λέγονται *scripts*. Μπορούν να γραφτούν κατευθείαν στην κονσόλα του browser ή στο HTML μίας ιστοσελίδας και να τρέχονται όταν φορτώνει η ιστοσελίδα.
 
@@ -16,19 +12,15 @@
 
 Σε αυτό το σημείο, να συμπληρώσω οτι η JavaScript έχει μεγάλη διάφορα με την [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
-<<<<<<< HEAD
 '''smart header="Γιατί <u>Java</u>Script?"
 Όταν είχε φτιαχτεί η JavaScript, είχε ένα διαφορετικό όνομά, λεγότανε "LiveScript". Αλά η Java ήταν πολύ γνωστή εκείνη την εποχή, οπότε αποφασίστηκε οτι θα βοηθούσε αν έκαναν την γλωσσά προγραμματισμού τον "μικρο αδελφό" της Java.
-=======
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 Αλλά καθώς εξελίχθηκε, η JavaScript έγινε μια πλήρως ανεξάρτητη γλώσσα με τη δική της προδιαγραφή που ονομάζεται [ECMAScript] (http://en.wikipedia.org/wiki/ECMAScript), και τώρα δεν έχει καμία σχέση με την Java
 
 Σήμερα, Μπορούμε να τρέξουμε την JavaScript και στον server, και σε οποιαδήποτε συσκευή που έχει ένα δικό της πρόγραμμά που λέγετε [JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
 Το browser έχει ένα ενσωματωμένο JavaScript engine που συνηθως λέγεται "JavaScript virtual machine".
+
 
 Κάθε engine έχει δικό του "codename". Για παράδειγμά:
 
@@ -45,13 +37,8 @@ Engines are complicated. But the basics are easy.
 2. Then it converts ("compiles") the script to the machine language.
 3. And then the machine code runs, pretty fast.
 
-<<<<<<< HEAD
 The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and applies optimizations to the machine code based on that knowledge. When it's done, scripts run quite fast.
 '''
-=======
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
-```
->>>>>>> fcfef6a07842ed56144e04a80c3a24de049a952a
 
 ## What can in-browser JavaScript do?
 
@@ -104,11 +91,7 @@ JavaScript is the only browser technology that combines these three things.
 
 That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
 
-<<<<<<< HEAD
 While planning to learn a new technology, it's beneficial to check its perspectives. So let's move on to the modern trends affecting it, including new languages and browser abilities.
-=======
-That said, JavaScript also allows to create servers, mobile applications, etc.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 ## Languages "over" JavaScript
 
@@ -126,11 +109,12 @@ Examples of such languages:
 - [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
 - [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
 - [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+- [Brython](https://brython.info/) is a Python transpiler to JavaScript that allow to write application in pure Python without JavaScript.
 
 There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
 
 ## Summary
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
+- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
+- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration in HTML/CSS.
 - There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
