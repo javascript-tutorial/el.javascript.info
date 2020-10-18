@@ -37,13 +37,8 @@ Engines are complicated. But the basics are easy.
 2. Then it converts ("compiles") the script to the machine language.
 3. And then the machine code runs, pretty fast.
 
-<<<<<<< HEAD
 The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and applies optimizations to the machine code based on that knowledge. When it's done, scripts run quite fast.
 '''
-=======
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
-```
->>>>>>> fcfef6a07842ed56144e04a80c3a24de049a952a
 
 ## What can in-browser JavaScript do?
 
@@ -96,11 +91,7 @@ JavaScript is the only browser technology that combines these three things.
 
 That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
 
-<<<<<<< HEAD
 While planning to learn a new technology, it's beneficial to check its perspectives. So let's move on to the modern trends affecting it, including new languages and browser abilities.
-=======
-That said, JavaScript also allows to create servers, mobile applications, etc.
->>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
 
 ## Languages "over" JavaScript
 
@@ -124,6 +115,6 @@ There are more. Of course, even if we use one of transpiled languages, we should
 
 ## Summary
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
+- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
+- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration in HTML/CSS.
 - There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
