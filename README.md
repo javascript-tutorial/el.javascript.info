@@ -1,65 +1,65 @@
 # Το μοντέρνο JavaScript Tutorial στα Ελληνικά
 
-This repository hosts the translation of <https://javascript.info> in Greek.
+Αυτό το αποθετήριο φιλοξενεί τη μετάφραση <https://javascript.info> στα ελληνικά.
 
 
 **Πώς μπορείς να βοηθήσεις:**
 
-- See the [Greek Translate Progress](https://github.com/javascript-tutorial/el.javascript.info/issues/1) issue.
-- Choose an unchecked article you'd like to translate.
-- Add a comment with the article title to the issue, e.g. `An Introduction to JavaScript`.
-    - Our bot will mark it in the issue, for everyone to know that you're translating it.
-    - Your comment should contain only the title.
-- Fork the repository, translate and send a PR when done.
-    - PR title should match article title, the bot will write it's number into the issue.
-
-Please kindly allow maintainers to review and merge or request changes in your translation.
+- Κοίτα την [Ελληνική μετάφραση σε εξέλιξη](https://github.com/javascript-tutorial/el.javascript.info/issues/1).
+- Επιλέξτε ένα μη επιλεγμένο άρθρο που θέλετε να μεταφράσετε.
+- Προσθέστε ένα σχόλιο με τον τίτλο του άρθρου στο θέμα, π.χ. `An Introduction to JavaScript`.
+- Το bot μας θα το επισημάνει στο issue, για να γνωρίζουν όλοι ότι το μεταφράζετε.
+- Το σχόλιό σας πρέπει να περιέχει μόνο τον τίτλο.
+- Πιέστε το αποθετήριο, μεταφράστε και στείλτε ένα PR όταν τελειώσετε.
+- Ο τίτλος PR πρέπει να ταιριάζει με τον τίτλο του άρθρου, το bot θα γράψει τον αριθμό του στο issue.	
+		
+Επιτρέψτε στους συντηρητές να ελέγχουν και να συγχωνεύουν ή να ζητούν αλλαγές στη μετάφρασή σας.
    
-If maintainers do not respond, or if you'd like to become a maintainer, write us at the [main repo](https://github.com/javascript-tutorial/en.javascript.info/issues/new).
+Εάν οι συντηρητές δεν ανταποκρίνονται ή αν θέλετε να γίνετε συντηρητής, γράψτε μας στο [main repo](https://github.com/javascript-tutorial/en.javascript.info/issues/new).
     
-**Let others know what you're translating, in message boards or chats in your language. Invite them to join!**
+**Ενημερώστε τους άλλους τι μεταφράζετε, σε πίνακες μηνυμάτων ή συζητήσεις στη γλώσσα σας. Προσκαλέστε τους να συμμετάσχουν!**
 
-🎉 Thank you!
+🎉 Σας ευχαριστώ!
+Το όνομά σας και το μέγεθος της συνεισφοράς θα εμφανιστούν στη σελίδα "Σχετικά με το έργο" κατά τη δημοσίευση της μετάφρασης.
 
-Your name and the contribution size will appear in the "About project" page when the translation gets published.
+P.S. Μπορείτε να βρείτε την πλήρη λίστα γλωσσών στη διεύθυνση <https://javascript.info/translate>.
 
-P.S. The full list of languages can be found at <https://javascript.info/translate>.
+## Δόμη
 
-## Structure
+Κάθε κεφάλαιο, ένα άρθρο ή μια εργασία βρίσκεται στον δικό του φάκελο.
 
-Every chapter, an article or a task resides in its own folder.
+Ο φάκελος ονομάζεται `N-url`, όπου `N` - είναι ο αριθμός για ταξινόμηση (τα άρθρα που είναι στοιχισμένα) και το `url` είναι το URL-slug στον ιστότοπο.
 
-The folder is named `N-url`, where `N` – is the number for sorting (articles are ordered), and `url` is the URL-slug on the site.
+Ο φάκελος έχει ένα από τα αρχεία:
 
-The folder has one of files:
+- `index.md` είναι για την ενότητα,
+- `article.md` είναι για το άρθρο,
+- `task.md` για μια διατύπωση εργασιών (+`solution.md` με το κείμενο της λύσης εάν υπάρχει).
 
-- `index.md` for a section,
-- `article.md` for an article,
-- `task.md` for a task formulation (+`solution.md` with the solution text if any).
+Ένα αρχείο ξεκινά με το `# Title Header` και έπειτα το κείμενο σε μορφή τύπου Markdown, επεξεργάσιμο σε ένα απλό πρόγραμμα επεξεργασίας κειμένου.
 
-A file starts with the `# Title Header`, and then the text in Markdown-like format, editable in a simple text editor. 
+Πρόσθετοι πόροι και παραδείγματα για το άρθρο ή την εργασία, βρίσκονται επίσης στον ίδιο φάκελο.
 
-Additional resources and examples for the article or the task, are also in the same folder.
 
-## Translation Tips
+## Συμβουλές για την μετάφραση
 
-Please keep line breaks and paragraphs "as is": don't add newlines and don't remove existing ones. Makes it easy to merge future changes from the English version into the translation. 
+Διατηρήστε τις αλλαγές γραμμής και τις παραγράφους "ως έχει": μην προσθέσετε νέες γραμμές και μην καταργήσετε τις υπάρχουσες. Διευκολύνει τη συγχώνευση μελλοντικών αλλαγών από την αγγλική έκδοση στη μετάφραση. 
 
-If you see that the English version can be improved – great, please send a PR to it.
+Εάν δείτε ότι η αγγλική έκδοση μπορεί να βελτιωθεί - υπέροχα, στείλτε ένα PR σε αυτό.
 
-### Terms
+### Όροι
 
-- Some specification terms are not to be translated, e.g. "Function Declaration" can be left "as is".
-- For other terms like `resolved promise`, `slash`, `regexp`, and so on - look for a glossary, hopefully there's one for your language already. If not, look for translations in manuals, such as [MDN](https://developer.mozilla.org/en-US/).
+- Ορισμένοι όροι προδιαγραφών δεν χρειάζονται μετάφραση π.χ. Η "Function Declaration" μπορεί να παραμείνει "ως έχει". 
+- Για άλλους όρους όπως `resolved promise`, `slash`, `regexp` και ούτω καθεξής - αναζητήστε ένα γλωσσάριο, ελπίζουμε ότι υπάρχει ήδη για τη γλώσσα σας. Εάν όχι, αναζητήστε μεταφράσεις σε εγχειρίδια, όπως [MDN](https://developer.mozilla.org/en-US/).
 
-### Text in Code Blocks
+### Κείμενο σε μπλοκ κώδικα
 
-- Translate comments.
-- Translate user-messages and example strings.
-- Don't translate variables, classes, identifiers.
-- Ensure that the code works after the translation :)
+- Μεταφράστε τα σχόλια.
+- Μετάφραση μηνυμάτων χρήστη και συμβολοσειρών παραδείγματος.
+- Μην μεταφράζετε μεταβλητές, classes, identifiers.
+- Βεβαιωθείτε ότι ο κώδικας λειτουργεί μετά τη μετάφραση :)
 
-Example:
+Παράδειγμα:
 
 ```js
 // Example
@@ -67,7 +67,7 @@ const text = "Hello, world";
 document.querySelector('.hello').innerHTML = text;
 ```
 
-✅ DO (translate comment):
+✅ Μεταφράστε (την μετάφραση σχολίων):
 
 ```js
 // Ejemplo
@@ -75,7 +75,7 @@ const text = 'Hola mundo';
 document.querySelector('.hello').innerHTML = text;
 ```
 
-❌ DON'T (translate class):
+❌ Μην το μεταφράστε (το class):
 
 ```js
 // Ejemplo
@@ -85,14 +85,14 @@ const text = 'Hola mundo';
 document.querySelector('.hola').innerHTML = text;
 ```
 
-### External Links
+### Εξωτερικοί σύνδεσμοι.
 
-If an external link is to Wikipedia, e.g. `https://en.wikipedia.org/wiki/JavaScript`, and a version of that article exists in your language that is of decent quality, link to that version instead.
+Εάν ένας εξωτερικός σύνδεσμος προορίζεται για τη Wikipedia, π.χ. `https://en.wikipedia.org/wiki/JavaScript`, και υπάρχει μια έκδοση αυτού του άρθρου στη γλώσσα σας που είναι καλής ποιότητας, συνδέστε την με αυτήν την έκδοση.
 
-Example:
+Παράδειγμα:
 
 ```md
-[JavaScript](https://en.wikipedia.org/wiki/JavaScript) is a programming language.
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript) είναι μια γλώσσα προγραμματισμού.
 ```
 
 ✅ OK (en -> es):
@@ -101,13 +101,14 @@ Example:
 [JavaScript](https://es.wikipedia.org/wiki/JavaScript) es un lenguaje de programación.
 ```
 
-For links to MDN, a partially translated version is ok.
+Για συνδέσμους προς MDN, η εν μέρει μεταφρασμένη έκδοση είναι εντάξει. 
 
-If a linked article has no translated version, leave the link "as is".
+Εάν ένα συνδεδεμένο άρθρο δεν έχει μεταφρασμένη έκδοση, αφήστε τον σύνδεσμο "ως έχει".
 
 ### Metadata
 
-Some files, usually tasks, have YAML metadata at the top, delimited by `---`:
+Some files, usually tasks, have YAML at the top, delimited by 
+Ορισμένα αρχεία, συνήθως εργασίες, έχουν YAML metadata στην κορυφή, οριοθετημένα από `---`:
 
 ```md
 importance: 5
@@ -116,20 +117,22 @@ importance: 5
 ...
 ```
 
-Please don't translate "importance" (and other top metadata).
+Μην μεταφράζετε το "importance" (και ολα τα metadata).
 
 ### Anchors
 
-Some headers have `[#anchor]` at the end, e.g.
+Μερικοί τίτλοι εχουν `[#anchor]` στο τέλος, π.χ.
 
 ```md
 ## Spread operator [#spread-operator]
+
 ```
 
-Please don't translate or remove the `[#...]` part, it's for URL anchors.
+Μην μεταφράζετε ή  αφαίρειτε `[#...]` part, είναι για τα URL anchors.
 
 ## Running locally
 
-You can run the tutorial server locally to see how the translation looks.
+Μπορείτε να εκτελέσετε τον server τοπικά για να δείτε πώς φαίνεται η μετάφραση.
 
-The server and install instructions are at <https://github.com/javascript-tutorial/server>. 
+Για την εγκατάσταση του server βλεπε εδω 
+<https://github.com/javascript-tutorial/server>. 
