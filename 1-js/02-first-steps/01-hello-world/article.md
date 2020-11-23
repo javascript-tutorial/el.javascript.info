@@ -9,7 +9,11 @@
 
 ## Το "script" tag
 
+<<<<<<< HEAD
 Oί κώδικες της JavaScript μπορούν να εισαχθούν σε οποιοδήποτε τμήμα ενός εγγράφου HTML με τη βοήθεια του`<script>` tag.
+=======
+JavaScript programs can be inserted almost anywhere into an HTML document using the `<script>` tag.
+>>>>>>> 23da191b58643387783f38e999f5b05be87d3d93
 
 Για παράδειγμα:
 
