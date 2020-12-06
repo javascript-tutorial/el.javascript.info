@@ -137,7 +137,7 @@ Global variables are visible from any function (unless shadowed by locals)
 Είναι καλή πρακτική να ελαχιστοποιήσετε τη χρήση global μεταβλητών. Ο σύγχρονος κώδικας έχει λίγα ή καθόλου global. Οι περισσότερες μεταβλητές βρίσκονται στις συναρτήσεις τους. Μερικές φορές όμως, μπορούν να είναι χρήσιμα για την αποθήκευση δεδομένων σε project-level.
 ```
 
-## Parameters
+## Παράμετροι
 
 We can pass arbitrary data to functions using parameters (also called *function arguments*) .
 
