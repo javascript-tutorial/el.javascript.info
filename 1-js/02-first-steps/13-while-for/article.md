@@ -1,46 +1,46 @@
-# Loops: while and for
+# Βρόχοι: while καί for
 
-We often need to repeat actions.
+Συχνά πρέπει να επαναλάβουμε τις ενέργειες.
 
-For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.
+Για παράδειγμα, η παραγωγή προϊόντων από τη λίστα μία μετά την άλλη ή απλώς με τον ίδιο κώδικα για κάθε αριθμό από 1 έως 10.
 
-*Loops* are a way to repeat the same code multiple times.
+Οι *βρόχοι* είναι ένας τρόπος επανάληψης του ίδιου κώδικα πολλές φορές.
 
-## The "while" loop
+## Ο βρόχος "while"
 
-The `while` loop has the following syntax:
+Ο βρόχος `while` έχει την ακόλουθη σύνταξη:
 
 ```js
 while (condition) {
-  // code
-  // so-called "loop body"
+  // κώδικας
+  // επονομαζόμενος "loop body"
 }
 ```
 
-While the `condition` is truthy, the `code` from the loop body is executed.
+Ενώ η `condition` είναι αληθινή, εκτελείται ο `code` από το σώμα του βρόχου.
 
-For instance, the loop below outputs `i` while `i < 3`:
+Για παράδειγμα, ο παρακάτω βρόχος θα δείξει `i` while `i < 3`:
 
 ```js run
 let i = 0;
-while (i < 3) { // shows 0, then 1, then 2
+while (i < 3) { // δείξε 0, μετά 1, μετά 2
   alert( i );
   i++;
 }
 ```
 
-A single execution of the loop body is called *an iteration*. The loop in the example above makes three iterations.
+Μια μεμονωμένη εκτέλεση του σώματος βρόχου ονομάζεται *επανάληψη*. Ο βρόχος στο παραπάνω παράδειγμα κάνει τρεις επαναλήψεις.
 
-If `i++` was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
+Εάν το `i++` έλειπε από το παραπάνω παράδειγμα, ο βρόχος θα επαναλαμβανόταν (θεωρητικά) για πάντα. Στην πράξη, το πρόγραμμα περιήγησης παρέχει τρόπους για να σταματήσετε αυτούς τους βρόχους και σε JavaScript από την πλευρά του διακομιστή, μπορούμε να σταματήσουμε τη διαδικασία.
 
-Any expression or variable can be a loop condition, not just comparisons: the condition is evaluated and converted to a boolean by `while`.
+Οποιαδήποτε έκφραση ή μεταβλητή μπορεί να είναι μια κατάσταση βρόχου, όχι μόνο συγκρίσεις: η συνθήκη αξιολογείται και μετατρέπεται σε δυαδική από το `while`
 
-For instance, a shorter way to write `while (i != 0)` is `while (i)`:
+Για παράδειγμα, ένας συντομότερος τρόπος για να γράψετε το `while (i != 0)` είναι `while (i)`:
 
 ```js run
 let i = 3;
 *!*
-while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+while (i) { // όταν το `i` γίνει 0, η κατάσταση γίνεται falsy και ο βρόχος σταματά
 */!*
   alert( i );
   i--;
@@ -48,7 +48,7 @@ while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
 ```
 
 ````smart header="Curly braces are not required for a single-line body"
-If the loop body has a single statement, we can omit the curly braces `{…}`:
+Εάν το σώμα του βρόχου έχει μία μόνο δήλωση, μπορούμε να παραλείψουμε τα άγκυστρα `{…}`:
 
 ```js run
 let i = 3;
@@ -58,9 +58,9 @@ while (i) alert(i--);
 ```
 ````
 
-## The "do..while" loop
+## Οι βρόχοι "do..while" 
 
-The condition check can be moved *below* the loop body using the `do..while` syntax:
+Ο έλεγχος συνθηκών μπορεί να μετακινηθεί *κάτω* από το σώμα του βρόχου χρησιμοποιώντας τη σύνταξη `do..while`:
 
 ```js
 do {
@@ -68,9 +68,9 @@ do {
 } while (condition);
 ```
 
-The loop will first execute the body, then check the condition, and, while it's truthy, execute it again and again.
+Ο βρόχος θα εκτελέσει πρώτα το σώμα, μετά θα ελέγξει την κατάσταση και, όσο είναι truthy, θα το εκτελεί ξανά και ξανά.
 
-For example:
+Για παράδειγμα:
 
 ```js run
 let i = 0;
@@ -79,39 +79,37 @@ do {
   i++;
 } while (i < 3);
 ```
+Αυτή η μορφή σύνταξης πρέπει να χρησιμοποιείται μόνο όταν θέλετε το σώμα του βρόχου να εκτελεί **τουλάχιστον μία φορά** ανεξάρτητα από την truthy της κατάστασης. Συνήθως, προτιμάται η άλλη μορφή:
+`while(…) {…}`.
 
-This form of syntax should only be used when you want the body of the loop to execute **at least once** regardless of the condition being truthy. Usually, the other form is preferred: `while(…) {…}`.
+## Ο βρόχος "for"
 
-## The "for" loop
+Ο βρόχος `for` είναι πιο περίπλοκος, αλλά είναι επίσης ο βρόχος που χρησιμοποιείται πιο συχνά.
 
-The `for` loop is more complex, but it's also the most commonly used loop.
-
-It looks like this:
+Μοιάζει κάπως έτσι:
 
 ```js
 for (begin; condition; step) {
   // ... loop body ...
 }
 ```
-
-Let's learn the meaning of these parts by example. The loop below runs `alert(i)` for `i` from `0` up to (but not including) `3`:
+Ας μάθουμε για παράδειγμα την έννοια αυτών των μερών. Ο βρόχος παρακάτω τρέχει `alert(i)` for i` από `0` έως (αλλά δεν περιλαμβάνει) `3`:
 
 ```js run
-for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+for (let i = 0; i < 3; i++) { // δείξε 0, μετά 1, μετά 2
   alert(i);
 }
 ```
-
-Let's examine the `for` statement part-by-part:
+Ας εξετάσουμε την συνθήκη `for` βήμα - βήμα:
 
 | part  |          |                                                                            |
 |-------|----------|----------------------------------------------------------------------------|
-| begin | `i = 0`    | Executes once upon entering the loop.                                      |
-| condition | `i < 3`| Checked before every loop iteration. If false, the loop stops.              |
-| body | `alert(i)`| Runs again and again while the condition is truthy.                         |
-| step| `i++`      | Executes after the body on each iteration. |
+| begin | `i = 0`    | Εκτελείται μία φορά κατά την είσοδο του βρόχου.                                      |
+| condition | `i < 3`| Ελέγχεται πριν από κάθε επανάληψη βρόχου. Εάν είναι λάθος, ο βρόχος σταματά.             |
+| body | `alert(i)`| Τρέχει ξανά και ξανά οσο η κατάσταση είναι αληθινή           |
+| step| `i++`      | Εκτελείται μετά το σώμα σε κάθε επανάληψη. |
 
-The general loop algorithm works like this:
+Ο γενικός αλγόριθμος βρόχου λειτουργεί κάπως έτσι:
 
 ```
 Run begin
@@ -121,11 +119,11 @@ Run begin
 → ...
 ```
 
-That is, `begin` executes once, and then it iterates: after each `condition` test, `body` and `step` are executed.
+Δηλαδή, το `begin` εκτελείται μία φορά και στη συνέχεια επαναλαμβάνεται: μετά από κάθε δοκιμή του `condition`, εκτελούνται `body` και `step`.
 
-If you are new to loops, it could help to go back to the example and reproduce how it runs step-by-step on a piece of paper.
+Εάν είστε νέοι στους βρόχους, θα μπορούσε να σας βοηθήσει να επιστρέψετε στο παράδειγμα και να αναπαραγάγετε τον τρόπο λειτουργίας του βήμα προς βήμα σε ένα κομμάτι χαρτί.
 
-Here's exactly what happens in our case:
+Στην δική μας περίπτωσή συμβαίνει ακριβώς αυτό:
 
 ```js
 // for (let i = 0; i < 3; i++) alert(i)
@@ -138,51 +136,50 @@ if (i < 3) { alert(i); i++ }
 if (i < 3) { alert(i); i++ }
 // if condition → run body and run step
 if (i < 3) { alert(i); i++ }
-// ...finish, because now i == 3
+// ...τέλος, επειδη το i == 3
 ```
 
 ````smart header="Inline variable declaration"
-Here, the "counter" variable `i` is declared right in the loop. This is called an "inline" variable declaration. Such variables are visible only inside the loop.
+Εδώ, η μεταβλητή "counter" δηλώνεται ακριβώς στο βρόχο. Αυτό ονομάζεται "inline" μεταβλητή δήλωση. Τέτοιες μεταβλητές είναι ορατές μόνο εντός του βρόχου
 
 ```js run
 for (*!*let*/!* i = 0; i < 3; i++) {
   alert(i); // 0, 1, 2
 }
-alert(i); // error, no such variable
+alert(i); // σφάλμα, δεν υπάρχει τέτοια μεταβλητή
 ```
-
-Instead of defining a variable, we could use an existing one:
+Αντί να ορίσουμε μια μεταβλητή, θα μπορούσαμε να χρησιμοποιήσουμε μια υπάρχουσα:
 
 ```js run
 let i = 0;
 
-for (i = 0; i < 3; i++) { // use an existing variable
+for (i = 0; i < 3; i++) { //  χρησιμοποιούμε μια υπάρχουσα
   alert(i); // 0, 1, 2
 }
 
-alert(i); // 3, visible, because declared outside of the loop
+alert(i); // 3, ορατό, επειδή δηλώνεται εκτός του βρόχου
 ```
 
 ````
 
 
-### Skipping parts
+### Παράλειψη τμήματος
 
-Any part of `for` can be skipped.
+Μπορείτε να παραλείψετε οποιοδήποτε μέρος του `for`.
 
-For example, we can omit `begin` if we don't need to do anything at the loop start.
+Για παράδειγμα, μπορούμε να παραλείψουμε το `begin` εάν δεν χρειάζεται να κάνουμε τίποτα κατά την έναρξη του βρόχου.
 
-Like here:
+Οπως εδώ:
 
 ```js run
-let i = 0; // we have i already declared and assigned
+let i = 0; // έχουμε ήδη δηλώσει και αναθέσει το i
 
-for (; i < 3; i++) { // no need for "begin"
+for (; i < 3; i++) { // δεν χρειάζεται στο "begin"
   alert( i ); // 0, 1, 2
 }
 ```
 
-We can also remove the `step` part:
+Μπορούμε επίσης να αφαιρέσουμε το τμήμα `step`:
 
 ```js run
 let i = 0;
@@ -192,25 +189,25 @@ for (; i < 3;) {
 }
 ```
 
-This makes the loop identical to `while (i < 3)`.
+Αυτό κάνει το βρόχο πανομοιότυπο με `while (i < 3)`.
 
-We can actually remove everything, creating an infinite loop:
+Μπορούμε πραγματικά να αφαιρέσουμε τα πάντα, δημιουργώντας έναν άπειρο βρόχο:
 
 ```js
 for (;;) {
-  // repeats without limits
+  // επαναλαμβάνεται χωρίς όρια
 }
 ```
 
-Please note that the two `for` semicolons `;` must be present. Otherwise, there would be a syntax error.
+Σημειώστε ότι πρέπει να υπάρχουν τα δύο `;` ερωτηματικά για το `for`. Διαφορετικά, θα υπάρχει σφάλμα σύνταξης.
 
-## Breaking the loop
+## Διακοπή του βρόχου
 
-Normally, a loop exits when its condition becomes falsy.
+Κανονικά, ένας βρόχος βγαίνει όταν η κατάστασή του γίνει falsy.
 
-But we can force the exit at any time using the special `break` directive.
+Αλλά μπορούμε να αναγκάσουμε την έξοδο ανά πάσα στιγμή χρησιμοποιώντας την ειδική οδηγία `break`.
 
-For example, the loop below asks the user for a series of numbers, "breaking" when no number is entered:
+Για παράδειγμα, ο παρακάτω βρόχος ζητά από το χρήστη μια σειρά αριθμών, "breaking" όταν δεν έχει εισαχθεί αριθμός:
 
 ```js run
 let sum = 0;
@@ -228,33 +225,31 @@ while (true) {
 }
 alert( 'Sum: ' + sum );
 ```
+Η οδηγία `break` ενεργοποιείται στη γραμμή `(*)` εάν ο χρήστης εισάγει μια κενή γραμμή ή ακυρώσει την είσοδο. Σταματά το βρόχο αμέσως, περνώντας τον έλεγχο στην πρώτη γραμμή μετά το βρόχο. Δηλαδή, `alert`.
 
-The `break` directive is activated at the line `(*)` if the user enters an empty line or cancels the input. It stops the loop immediately, passing control to the first line after the loop. Namely, `alert`.
+Ο συνδυασμός "infinite loop + `break` όπως απαιτείται" είναι ιδανικός για καταστάσεις όπου η κατάσταση ενός βρόχου πρέπει να ελεγχθεί όχι στην αρχή ή στο τέλος του βρόχου, αλλά στη μέση ή ακόμη και σε πολλά σημεία του body.
 
-The combination "infinite loop + `break` as needed" is great for situations when a loop's condition must be checked not in the beginning or end of the loop, but in the middle or even in several places of its body.
+## Συνεχίστε στην επόμενη επανάληψη [#continue]
 
-## Continue to the next iteration [#continue]
+Η οδηγία `continue` είναι μια "ελαφρύτερη έκδοση" του `break`. Δεν σταματά ολόκληρο τον βρόχο. Αντ 'αυτού, σταματά την τρέχουσα επανάληψη και αναγκάζει τον βρόχο να ξεκινήσει μια νέα (εάν το επιτρέπει η συνθήκη).
 
-The `continue` directive is a "lighter version" of `break`. It doesn't stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows).
+Μπορούμε να το χρησιμοποιήσουμε αν τελειώσουμε με την τρέχουσα επανάληψη και θέλουμε να προχωρήσουμε στην επόμενη.
 
-We can use it if we're done with the current iteration and would like to move on to the next one.
-
-The loop below uses `continue` to output only odd values:
+Ο βρόχος χρησιμοποιεί το παρακάτω `continue` για την έξοδο μόνο περιττών τιμών:
 
 ```js run no-beautify
 for (let i = 0; i < 10; i++) {
 
-  // if true, skip the remaining part of the body
+  // εάν είναι αλήθεια, παράλειψε το υπόλοιπο μέρος του σώματος
   *!*if (i % 2 == 0) continue;*/!*
 
   alert(i); // 1, then 3, 5, 7, 9
 }
 ```
+Για ζυγές τιμές του `i`, η οδηγία `continue` σταματά να εκτελεί το σώμα και περνά τον έλεγχο στην επόμενη επανάληψη του `for` (με τον επόμενο αριθμό). Επομένως, το `alert` καλείται μόνο για περιττές τιμές.
 
-For even values of `i`, the `continue` directive stops executing the body and passes control to the next iteration of `for` (with the next number). So the `alert` is only called for odd values.
-
-````smart header="The `continue` directive helps decrease nesting"
-A loop that shows odd values could look like this:
+````smart header="Η οδηγία `continue` συμβάλλει στη μείωση του nesting"
+Ένας βρόχος που δείχνει περιττές τιμές θα μπορούσε να μοιάζει με αυτό:
 
 ```js run
 for (let i = 0; i < 10; i++) {
@@ -266,15 +261,15 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-From a technical point of view, this is identical to the example above. Surely, we can just wrap the code in an `if` block instead of using `continue`.
+Από τεχνική άποψη, αυτό είναι πανομοιότυπο με το παραπάνω παράδειγμα. Σίγουρα, μπορούμε απλώς να τυλίξουμε τον κώδικα σε ένα μπλοκ `if` αντί να χρησιμοποιήσουμε το `continue`.
 
-But as a side-effect, this created one more level of nesting (the `alert` call inside the curly braces). If the code inside of `if` is longer than a few lines, that may decrease the overall readability.
+Αλλά ως παρενέργεια, αυτό δημιούργησε ένα ακόμη επίπεδο ένθεσης (η κλήση `alert` μέσα στα άγκυστρα). Εάν ο κώδικας στο εσωτερικό του `if` είναι μεγαλύτερος από μερικές γραμμές, αυτό μπορεί να μειώσει τη συνολική αναγνωσιμότητα.
 ````
 
-````warn header="No `break/continue` to the right side of '?'"
-Please note that syntax constructs that are not expressions cannot be used with the ternary operator `?`. In particular, directives such as `break/continue` aren't allowed there.
+````warn header="Δεν υπάρχει `break/continue` στη δεξιά πλευρά του '?'"
+Λάβετε υπόψη ότι οι δομές σύνταξης που δεν είναι εκφράσεις δεν μπορούν να χρησιμοποιηθούν με τον ternary τελεστή `?`. Συγκεκριμένα, δεν επιτρέπονται οδηγίες όπως `break/continue`.
 
-For example, if we take this code:
+Για παράδειγμα, αν λάβουμε αυτόν τον κωδικό:
 
 ```js
 if (i > 5) {
@@ -284,23 +279,23 @@ if (i > 5) {
 }
 ```
 
-...and rewrite it using a question mark:
+...και να το ξαναγράψουμε χρησιμοποιώντας ένα ερωτηματικό:
 
 
 ```js no-beautify
-(i > 5) ? alert(i) : *!*continue*/!*; // continue isn't allowed here
+(i > 5) ? alert(i) : *!*continue*/!*; // το continue δεν επιτρέπεται εδώ
 ```
 
-...it stops working: there's a syntax error.
+...σταματά να λειτουργεί: υπάρχει σφάλμα σύνταξης.
 
-This is just another reason not to use the question mark operator `?` instead of `if`.
+Αυτός είναι ένας άλλος λόγος για να μην χρησιμοποιήσετε τον τελεστή ερωτηματικών `;` αντί για `if`.
 ````
 
-## Labels for break/continue
+## Ετικέτα για break/continue
 
-Sometimes we need to break out from multiple nested loops at once.
+Μερικές φορές πρέπει να διακόπψουμε από πολλούς ένθετους βρόχους ταυτόχρονα.
 
-For example, in the code below we loop over `i` and `j`, prompting for the coordinates `(i, j)` from `(0,0)` to `(2,2)`:
+Για παράδειγμα, στον παρακάτω κώδικα με βροχο στο `i` και `j`, ζητάμε τις συντεταγμένες `(i, j)` απο `(0,0)` προς `(2,2)`:
 
 ```js run no-beautify
 for (let i = 0; i < 3; i++) {
@@ -309,25 +304,27 @@ for (let i = 0; i < 3; i++) {
 
     let input = prompt(`Value at coords (${i},${j})`, '');
 
-    // what if we want to exit from here to Done (below)?
+    // τι γίνεται εάν θέλουμε να βγούμε από εδώ στο Done (παρακάτω);
   }
 }
 
 alert('Done!');
 ```
 
-We need a way to stop the process if the user cancels the input.
+Χρειαζόμαστε έναν τρόπο να σταματήσουμε τη διαδικασία εάν ο χρήστης ακυρώσει την εισαγωγή.
 
 The ordinary `break` after `input` would only break the inner loop. That's not sufficient--labels, come to the rescue!
 
-A *label* is an identifier with a colon before a loop:
+Το συνήθης `break` μετά την `input` θα σπάσει μόνο τον εσωτερικό βρόχο. Αυτό δεν είναι αρκετή--ετικέτα, για να διασωθή!
+
+Η *ετικέτα* είναι ένα αναγνωριστικό με άνω και κάτω τελεία πριν από έναν βρόχο:
 ```js
 labelName: for (...) {
   ...
 }
 ```
 
-The `break <labelName>` statement in the loop below breaks out to the label:
+Η δήλωση `break <labelName>` στον παρακάτω βρόχο διακόπτη την ετικέτα:
 
 ```js run no-beautify
 *!*outer:*/!* for (let i = 0; i < 3; i++) {
@@ -336,51 +333,55 @@ The `break <labelName>` statement in the loop below breaks out to the label:
 
     let input = prompt(`Value at coords (${i},${j})`, '');
 
-    // if an empty string or canceled, then break out of both loops
+    // εάν είναι μια κενή συμβολοσειρά ή canceled, τότε διέκοψε και από τους δύο βρόχους
     if (!input) *!*break outer*/!*; // (*)
 
-    // do something with the value...
+    // κανε κατι με την τιμή...
   }
 }
 alert('Done!');
 ```
 
-In the code above, `break outer` looks upwards for the label named `outer` and breaks out of that loop.
+Στον παραπάνω κώδικα, το `break outer` αναζητά προς τα πάνω την ετικέτα με το όνομα `outer` και διάκοπτεται από αυτόν τον.
 
-So the control goes straight from `(*)` to `alert('Done!')`.
+Έτσι ο έλεγχος πηγαίνει κατευθείαν από `(*)` προς `alert('Done!')`.
 
-We can also move the label onto a separate line:
+Μπορούμε επίσης να μετακινήσουμε την ετικέτα σε ξεχωριστή γραμμή:
 
 ```js no-beautify
 outer:
 for (let i = 0; i < 3; i++) { ... }
 ```
-
-The `continue` directive can also be used with a label. In this case, code execution jumps to the next iteration of the labeled loop.
+Η οδηγία `continue` μπορεί επίσης να χρησιμοποιηθεί με μια ετικέτα. Σε αυτήν την περίπτωση, η εκτέλεση κώδικα μεταβαίνει στην επόμενη επανάληψη του επισημασμένου βρόχου.
 
 ````warn header="Labels do not allow to \"jump\" anywhere"
-Labels do not allow us to jump into an arbitrary place in the code.
+Οι ετικέτες δεν μας επιτρέπουν να μεταβούμε σε αυθαίρετο μέρος στον κώδικα.
 
-For example, it is impossible to do this:
+Για παράδειγμα, αυτό είναι αδύνατο να γίνει:
 ```js
-break label; // doesn't jumps to the label below
+break label; // δεν μεταβαίνει στην παρακάτω ετικέτα
 
 label: for (...)
 ```
-
-A call to `break/continue` is only possible from inside a loop and the label must be somewhere above the directive.
+Μια κλήση για `break/continue` είναι δυνατή μόνο μέσα από ένα βρόχο και η ετικέτα πρέπει να βρίσκεται κάπου πάνω από την οδηγία.
 ````
 
-## Summary
+## Περίληψη
 
-We covered 3 types of loops:
+Καλύψαμε 3 τύπους βρόχων:
 
-- `while` -- The condition is checked before each iteration.
-- `do..while` -- The condition is checked after each iteration.
-- `for (;;)` -- The condition is checked before each iteration, additional settings available.
+- `while` -- Η συνθήκη ελέγχεται πριν από κάθε επανάληψη.
+- `do..while` -- Η συνθήκη ελέγχεται μετά από κάθε επανάληψη.
+- `for (;;)` -- Η κατάσταση ελέγχεται πριν από κάθε επανάληψη, διαθέσιμες πρόσθετες ρυθμίσεις.
 
-To make an "infinite" loop, usually the `while(true)` construct is used. Such a loop, just like any other, can be stopped with the `break` directive.
+Για να δημιουργήσετε έναν "άπειρο" βρόχο, συνήθως χρησιμοποιείται η κατασκευή `while(true)`. Ένας τέτοιος βρόχος, όπως και κάθε άλλος, μπορεί να σταματήσει με την οδηγία `break`.
 
-If we don't want to do anything in the current iteration and would like to forward to the next one, we can use the `continue` directive.
+Εάν δεν θέλουμε να κάνουμε τίποτα στην τρέχουσα επανάληψη και θέλουμε να προωθήσουμε στην επόμενη, μπορούμε να χρησιμοποιήσουμε την οδηγία `continue`.
 
-`break/continue` support labels before the loop. A label is the only way for `break/continue` to escape a nested loop to go to an outer one.
+Tα `break/continue` υποστήριζουνται πριν από το βρόχο. Μια ετικέτα είναι ο μόνος τρόπος για να `break/continue` να ξεφύγει από έναν ένθετο βρόχο για να πάει σε έναν εξωτερικό.
+
+
+
+
+
+

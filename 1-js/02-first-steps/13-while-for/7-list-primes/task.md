@@ -2,16 +2,16 @@ importance: 3
 
 ---
 
-# Output prime numbers
+# Εξαγωγή πρώτων αριθμών
 
-An integer number greater than `1` is called a [prime](https://en.wikipedia.org/wiki/Prime_number) if it cannot be divided without a remainder by anything except `1` and itself.
+Ένας ακέραιος αριθμός μεγαλύτερος από το `1` ονομάζεται [πρωταρχικός](https://en.wikipedia.org/wiki/Prime_number), εάν  διαιρεθεί χωρίς να υπαρχει υπόλοιπο τοτε διαιρείται μόνο με το `1` και με τον εαυτό του.
 
-In other words, `n > 1` is a prime if it can't be evenly divided by anything except `1` and `n`.
+Με άλλα λόγια, το `n > 1` είναι ένα πρωταρχικός εάν δεν μπορεί να διαιρεθεί ομοιόμορφα με οτιδήποτε εκτός από τα `1` και `n`.
 
-For example, `5` is a prime, because it cannot be divided without a remainder by `2`, `3` and `4`.
+Για παράδειγμα, το `5` είναι ένα πρωταρχικό, επειδή δεν μπορεί να διαιρεθεί χωρίς το υπόλοιπο με τα `2`, `3` και `4`.
 
-**Write the code which outputs prime numbers in the interval from `2` to `n`.**
+**Γράψτε τον κωδικό που εξάγει πρώτους αριθμούς μεταξύ από `2` έως `n`.**
 
-For `n = 10` the result will be `2,3,5,7`.
+Για `n = 10` το αποτέλεσμα θα είναι `2,3,5,7`.
 
-P.S. The code should work for any `n`, not be hard-tuned for any fixed value.
+P.S. Ο κώδικας θα πρέπει να λειτουργεί για οποιοδήποτε `n`, δεν πρέπει να είναι ασυντόνιστος για οποιαδήποτε σταθερή τιμή.

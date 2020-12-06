@@ -2,9 +2,9 @@ importance: 4
 
 ---
 
-# Rewrite "if" into "switch"
+# Ξαναγράψτε το "if" σε "switch"
 
-Rewrite the code below using a single `switch` statement:
+Ξαναγράψτε τον παρακάτω κώδικα χρησιμοποιώντας μια δήλωση `switch`:
 
 ```js run
 let a = +prompt('a?', '');

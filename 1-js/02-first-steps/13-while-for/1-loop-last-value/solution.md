@@ -1,4 +1,4 @@
-The answer: `1`.
+Η απάντηση είναι: `1`.
 
 ```js run
 let i = 3;
@@ -7,19 +7,18 @@ while (i) {
   alert( i-- );
 }
 ```
+Κάθε επανάληψη βρόχου μειώνει το `i` κατά `1`. Ο έλεγχος `while(i)` σταματά τον βρόχο όταν `i = 0`.
 
-Every loop iteration decreases `i` by `1`. The check `while(i)` stops the loop when `i = 0`.
-
-Hence, the steps of the loop form the following sequence ("loop unrolled"):
+Ως εκ τούτου, τα βήματα του βρόχου σχηματίζουν την ακόλουθη ακολουθία ("loop unrolled"):
 
 ```js
 let i = 3;
 
-alert(i--); // shows 3, decreases i to 2
+alert(i--); // δείχνει 3, μειώνεται i στο 2
 
-alert(i--) // shows 2, decreases i to 1
+alert(i--) // δείχνει 2, μειώνεται i στο 1
 
-alert(i--) // shows 1, decreases i to 0
+alert(i--) // δείχνει 1, μειώνεται i στο 0
 
-// done, while(i) check stops the loop
+// τελείωσε, while(i) ο έλεγχος σταματά τον βρόχο
 ```

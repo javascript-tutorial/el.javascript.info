@@ -2,12 +2,12 @@ importance: 5
 
 ---
 
-# Repeat until the input is correct
+# Επαναλάβετε έως ότου η είσοδος είναι σωστή
 
-Write a loop which prompts for a number greater than `100`. If the visitor enters another number -- ask them to input again.
+Γράψτε έναν βρόχο που ζητά έναν αριθμό μεγαλύτερο από `100`. Εάν ο επισκέπτης εισάγει έναν άλλο αριθμό -- ζητήστε του να εισαγάγει ξανά.
 
-The loop must ask for a number until either the visitor enters a number greater than `100` or cancels the input/enters an empty line.
+Ο βρόχος πρέπει να ζητήσει έναν αριθμό έως ότου είτε ο επισκέπτης εισάγει έναν αριθμό μεγαλύτερο από `100` ή ακυρώσει την είσοδο/εισέλθει σε μια κενή γραμμή.
 
-Here we can assume that the visitor only inputs numbers. There's no need to implement a special handling for a non-numeric input in this task.
+Εδώ μπορούμε να υποθέσουμε ότι ο επισκέπτης εισάγει μόνο αριθμούς. Δεν υπάρχει ανάγκη εφαρμογής ειδικού χειρισμού για μη αριθμητική εισαγωγή σε αυτήν την εργασία.
 
 [demo]

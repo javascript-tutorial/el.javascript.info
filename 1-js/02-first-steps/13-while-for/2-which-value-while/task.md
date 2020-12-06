@@ -2,19 +2,19 @@ importance: 4
 
 ---
 
-# Which values does the while loop show?
+# Ποιες τιμές δείχνει το while loop?
 
-For every loop iteration, write down which value it outputs and then compare it with the solution.
+Για κάθε επανάληψη βρόχου, γράψτε ποια τιμή εξέρχεται και, στη συνέχεια, συγκρίνετε τη με τη λύση. 
 
-Both loops `alert` the same values, or not?
+Και οι δύο βρόχοι  `alert` τις ίδιες τιμές, ή όχι;
 
-1. The prefix form `++i`:
+1. Η μορφή prefix `++i`:
 
     ```js
     let i = 0;
     while (++i < 5) alert( i );
     ```
-2. The postfix form `i++`
+2. H μορφή postfix `i++`
 
     ```js
     let i = 0;

@@ -7,9 +7,9 @@ do {
 } while (num <= 100 && num);
 ```
 
-The loop `do..while` repeats while both checks are truthy:
+Ο βρόχος `do..while` επαναλαμβάνεται ενώ και οι δύο έλεγχοι είναι αληθινοί:
 
-1. The check for `num <= 100` -- that is, the entered value is still not greater than `100`.
-2. The check `&& num` is false when `num` is `null` or an empty string. Then the `while` loop stops too.
+1. Ο έλεγχος για `num <= 100` - δηλαδή, η τιμή που έχει εισαχθεί δεν είναι ακόμη μεγαλύτερη από `100`. 
+2. Ο έλεγχος `&& num` είναι ψευδής όταν το `num` είναι `null` ή μια κενή συμβολοσειρά. Στη συνέχεια, ο βρόχος `while` σταματά επίσης.
 
-P.S. If `num` is `null` then `num <= 100` is `true`, so without the 2nd check the loop wouldn't stop if the user clicks CANCEL. Both checks are required.
+P.S. Εάν το `num` είναι `null`, τότε το `num <= 100` είναι `true`, οπότε χωρίς τον 2ο έλεγχο, ο βρόχος δεν θα σταματήσει εάν ο χρήστης κάνει κλικ στο CANCEL. Απαιτούνται και οι δύο έλεγχοι.

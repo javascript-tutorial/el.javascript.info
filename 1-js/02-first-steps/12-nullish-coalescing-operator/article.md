@@ -44,18 +44,16 @@ Let's say we have a user's data in variables `firstName`, `lastName` or `nickNam
 We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are undefined.
 
 Let's use the `??` operator for that:
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+
 
 ```js run
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
 
-<<<<<<< HEAD
+
 // εμφάνιση της πρώτης μη μηδενικής / μη καθορισμένης τιμής
-=======
-// shows the first defined value:
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
+
 *!*
 alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 */!*
@@ -77,7 +75,6 @@ alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
->>>>>>> 181cc781ab6c55fe8c43887a0c060db7f93fb0ca
 
 // shows the first truthy value:
 *!*
@@ -98,7 +95,6 @@ alert(height ?? 100); // 0
 
 Εδώ, `height || 100` αντιμετωπίζει το μηδέν ύψος ως μη ορισμένο, όπως το `null`, το `undefined` ή οποιαδήποτε άλλη τιμή falsy.
 Έτσι το αποτέλεσμα είναι `100`.
-
 Το `height ?? 100` επιστρέφει το `100` μόνο εάν το `height` είναι `null` ή `undefined`. Έτσι, το `alert` δείχνει την τιμή ύψους `0` "ως έχει".
 
 Ποια συμπεριφορά είναι καλύτερη εξαρτάται από μια συγκεκριμένη περίπτωση χρήσης. Όταν το μηδέν ύψος είναι μια έγκυρη τιμή, τότε το `??` είναι προτιμότερο.
@@ -123,8 +119,7 @@ alert(area); // 5000
 ```
 Διαφορετικά, εάν παραλείψουμε παρενθέσεις, το `*` έχει την υψηλότερη προτεραιότητα από το `??` και θα τρέξει πρώτα.
 
-
-Αυτό θα λειτουργούσε ακριβώς το ίδιο με:
+Αυτό θα λειτουργούσε ακριβώς το ίδιο με:
 
 ```js
 // μάλλον δεν είναι σωστό

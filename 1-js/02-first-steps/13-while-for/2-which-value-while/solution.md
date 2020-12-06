@@ -1,30 +1,31 @@
-The task demonstrates how postfix/prefix forms can lead to different results when used in comparisons.
+Η εργασία δείχνει πώς οι φόρμες μετά την postfix/prefix μπορούν να οδηγήσουν σε διαφορετικά αποτελέσματα όταν χρησιμοποιούνται σε συγκρίσεις.
 
-1. **From 1 to 4**
+1. **Από 1 έως 4**
 
     ```js run
     let i = 0;
     while (++i < 5) alert( i );
     ```
 
-    The first value is `i = 1`, because `++i` first increments `i` and then returns the new value. So the first comparison is `1 < 5` and the `alert` shows `1`.
+    Η πρώτη τιμή είναι `i = 1`, επειδή το `++i` πρώτα αυξάνει το `i` και στη συνέχεια επιστρέφει τη νέα τιμή. Έτσι, η πρώτη σύγκριση είναι `1 < 5` και το `alert` δείχνει `1`.
 
-    Then follow `2, 3, 4…` -- the values show up one after another. The comparison always uses the incremented value, because `++` is before the variable.
-
-    Finally, `i = 4` is incremented to `5`, the comparison `while(5 < 5)` fails, and the loop stops. So `5` is not shown.
-2. **From 1 to 5**
+    Στη συνέχεια, ακολουθούν τα `2, 3, 4…` -- οι τιμές εμφανίζονται το ένα μετά το άλλο. Η σύγκριση χρησιμοποιεί πάντα την αυξημένη τιμή, επειδή το `++` βρίσκεται πριν από τη μεταβλητή.
+		
+    Τέλος, το `i = 4` αυξάνεται στο `5`, η σύγκριση `while(5 < 5)` αποτυγχάνει και ο βρόχος σταματά. Δεν εμφανίζεται λοιπόν το `5`.
+		
+2. **Από 1 έως 5**
 
     ```js run
     let i = 0;
     while (i++ < 5) alert( i );
     ```
 
-    The first value is again `i = 1`. The postfix form of `i++` increments `i` and then returns the *old* value, so the comparison `i++ < 5` will use `i = 0` (contrary to `++i < 5`).
+		Η πρώτη τιμή είναι πάλι `i = 1. Η φόρμα postfix του `i++` αυξάνει το `i` και στη συνέχεια επιστρέφει την *παλία* τιμή, οπότε η σύγκριση `i++ < 5` θα χρησιμοποιεί το `i = 0` (αντίθετα με το `++i < 5`)
 
-    But the `alert` call is separate. It's another statement which executes after the increment and the comparison. So it gets the current `i = 1`.
+		Αλλά η κλήση `alert` είναι ξεχωριστή. Είναι μια άλλη δήλωση που εκτελείται μετά την αύξηση και τη σύγκριση. Έτσι παίρνει το τρέχον `i = 1`. 
+	 
+		Στη συνέχεια, ακολουθούν τα `2, 3, 4…`.
 
-    Then follow `2, 3, 4…`
+		Ας σταματήσουμε στο `i = 4`. Η φόρμα prefix `++i` θα την αυξήσει και θα χρησιμοποιήσει το `5` στη σύγκριση. Αλλά εδώ έχουμε τη φόρμα postfix `i++`. Έτσι αυξάνει το `i στο 5`, αλλά επιστρέφει την παλιά τιμή. Ως εκ τούτου, η σύγκριση είναι στην πραγματικότητα `while(4 < 5)` -- true, και ο έλεγχος συνεχίζεται στο "alert".
 
-    Let's stop on `i = 4`. The prefix form `++i` would increment it and use `5` in the comparison. But here we have the postfix form `i++`. So it increments `i` to `5`, but returns the old value. Hence the comparison is actually `while(4 < 5)` -- true, and the control goes on to `alert`.
-
-    The value `i = 5` is the last one, because on the next step `while(5 < 5)` is false.
+		Η τιμή `i = 5` είναι η τελευταία, επειδή στο επόμενο βήμα `while(5 < 5)` είναι false.
