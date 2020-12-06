@@ -146,7 +146,7 @@ loadScript('/my/script.js', function(script) {
     });
 */!*
 
-  })
+  });
 
 });
 ```
@@ -223,7 +223,7 @@ loadScript('1.js', function(error, script) {
         });
 
       }
-    })
+    });
   }
 });
 ```
@@ -258,7 +258,7 @@ loadScript('1.js', function(error, script) {
           }
         });
       }
-    })
+    });
   }
 });
 -->
@@ -299,7 +299,7 @@ function step3(error, script) {
   } else {
     // ...continue after all scripts are loaded (*)
   }
-};
+}
 ```
 
 See? It does the same, and there's no deep nesting now because we made every action a separate top-level function.

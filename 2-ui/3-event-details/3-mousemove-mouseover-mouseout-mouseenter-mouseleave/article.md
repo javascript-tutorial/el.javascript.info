@@ -91,10 +91,14 @@ An important feature of `mouseout` -- it triggers, when the pointer moves from a
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![](mouseover-to-child.svg)
 =======
 If we're on `#parent` and then move the pointer deeper into `#child`, but we get `mouseout` on `#parent`!
 >>>>>>> a0bfa924a17cad8e7fee213904b27dbf57c2dbac
+=======
+If we're on `#parent` and then move the pointer deeper into `#child`, we get `mouseout` on `#parent`!
+>>>>>>> e1a3f634a47c119cf1ec7420c49fc0fc7172c0b5
 
 ![](mouseover-to-child.svg)
 

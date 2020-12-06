@@ -1,21 +1,21 @@
-# Decorators and forwarding, call/apply
+# Διακοσμητές και προώθηση, call/apply
 
-JavaScript gives exceptional flexibility when dealing with functions. They can be passed around, used as objects, and now we'll see how to *forward* calls between them and *decorate* them.
+Η JavaScript δίνει εξαιρετική ευελιξία στη χρήση συναρτήσεων. Μπορούν να δοθούν σαν ορίσματα, να χρησιμοποιηθούν σαν αντικείμενα και τώρα θα δούμε πως γίνεται να *προωθήσουμε* κλήσεις μεταξύ τους και να τις *διακοσμήσουμε*.
 
-## Transparent caching
+## Διαφανές caching
 
-Let's say we have a function `slow(x)` which is CPU-heavy, but its results are stable. In other words, for the same `x` it always returns the same result.
+Ας υποθέσουμε ότι έχουμε μια συνάρτηση `slow(x)` η οποία απαιτεί υψηλή επεξεργαστική ισχύ όμως τα αποτελέσματα της είναι σταθερά. Με άλλα λόγια, για το ίδιο `x` επιστρέφει πάντα το ίδιο αποτέλεσμα.
 
-If the function is called often, we may want to cache (remember) the results to avoid spending extra-time on recalculations.
+Αν η συνάρτηση καλείται συχνά, ενδέχεται να θέλουμε να κάνουμε cache (θυμόμαστε) τα αποτελέσματα προκείμενου να μην χρειάζεται να δαπανήσουμε επιπλέον χρόνο σε επανυπολογισμούς.
 
-But instead of adding that functionality into `slow()` we'll create a wrapper function, that adds caching. As we'll see, there are many benefits of doing so.
+Όμως, αντί να προσθέσουμε αυτή τη λειτουργικότητα στη `slow()` θα δημιουρήσουμε μια συνάρτηση-κάλυμμα, η οποία θα προσθέσει το caching. Όπως θα δούμε, υπάρχουν αρκετά πλεονεκτήματα σε αυτή τη μέθοδο.
 
-Here's the code, and explanations follow:
+Αυτός είναι ο κώδικας, και οι επεξηγήσεις ακολουθούν:
 
 ```js run
 function slow(x) {
-  // there can be a heavy CPU-intensive job here
-  alert(`Called with ${x}`);
+  // μπορεί να είναι μια διεργασία που απαιτεί υψηλή επεξεργαστική ισχύ εδώ
+  alert(`Καλέστηκε με ${x}`);
   return x;
 }
 
@@ -23,65 +23,65 @@ function cachingDecorator(func) {
   let cache = new Map();
 
   return function(x) {
-    if (cache.has(x)) {    // if there's such key in cache
-      return cache.get(x); // read the result from it
+    if (cache.has(x)) {  // αν υπάρχει τέτοιο κλειδί στο cache
+      return cache.get(x); // διάβασε το αποτέλεσμα από αυτό
     }
 
-    let result = func(x);  // otherwise call func
+    let result = func(x);  // αλλιώς κάλεσε την func
 
-    cache.set(x, result);  // and cache (remember) the result
+    cache.set(x, result);  // και κανε cached (θυμήσου) το αποτέλεσμα
     return result;
   };
 }
 
 slow = cachingDecorator(slow);
 
-alert( slow(1) ); // slow(1) is cached
-alert( "Again: " + slow(1) ); // the same
+alert( slow(1) ); // slow(1) είναι cached
+alert( "Ξανά: " + slow(1) ); // το ίδιο
 
-alert( slow(2) ); // slow(2) is cached
-alert( "Again: " + slow(2) ); // the same as the previous line
+alert( slow(2) ); // slow(2) είναι cached
+alert( "Ξανά: " + slow(2) ); // το ίδιο με τη προηγούμενη γραμμή
 ```
 
-In the code above `cachingDecorator` is a *decorator*: a special function that takes another function and alters its behavior.
+Στον από πάνω κώδικα, ο `cachingDecorator` είναι ένας *διακοσμητής*: μια ειδική συνάρτηση η οποία παίρνει μια άλλη συνάρτηση και επηρεάζει την συμπεριφορά της.
 
-The idea is that we can call `cachingDecorator` for any function, and it will return the caching wrapper. That's great, because we can have many functions that could use such a feature, and all we need to do is to apply `cachingDecorator` to them.
+Η ιδέα είναι ότι μπορούμε να καλέσουμε τον `cachingDecorator` για κάθε συνάρτηση, και αυτός θα επιστρέψει τη συνάρτηση-κάλυμμα του cache. Αυτό είναι πολύ καλό, γιατί μπορούμε να έχουμε πολλές συναρτήσεις που μπορούν να χρησιμοποιήσουν αυτό το χαρακτηριστικό, και το μόνο που χρειάζεται να κάνουμε είναι να εφαρμόσουμε τον `cachingDecorator` σε αυτές.
 
-By separating caching from the main function code we also keep the main code simpler.
+Με το να διαχωρίζουμε το caching από τη συνάρτηση με τον βασικό κώδικα, διατηρούμε και τον βασικό κώδικα πιο απλό.
 
-The result of `cachingDecorator(func)` is a "wrapper": `function(x)` that "wraps" the call of `func(x)` into caching logic:
+Το αποτέλεσμα της `cachingDecorator(func)` είναι μια συνάρτηση-κάλυμμα: `function(x)` που "καλύπτει" το κάλεσμα της `func(x)` με λογική caching:
 
 ![](decorator-makecaching-wrapper.svg)
 
-From an outside code, the wrapped `slow` function still does the same. It just got a caching aspect added to its behavior.
+Από κάποιον εξωτερικό κώδικα, η συνάρτηση που επικαλύπτεται `slow` συνεχίζει να κάνει το ίδιο. Απλά προστέθηκε ένας caching παράγοντας στη συμπεριφορά της.
 
-To summarize, there are several benefits of using a separate `cachingDecorator` instead of altering the code of `slow` itself:
+Για να συνοψίσουμε, υπάρχουν αρκετά πλεονεκτήματα της χρήσης ενός ξεχωριστού `cachingDecorator` αντί να αλλάξει ο κώδικας της ίδιας της `slow`.
 
-- The `cachingDecorator` is reusable. We can apply it to another function.
-- The caching logic is separate, it did not increase the complexity of `slow` itself (if there was any).
-- We can combine multiple decorators if needed (other decorators will follow).
+- Ο `cachingDecorator` είναι επαναχρησιμοποιήσιμος. Μπορούμε να την εφαρμόσουμε σε άλλη συνάρτηση.
+- Η λογική cache είναι διαχωρισμένη, δεν αύξησε τη πολυπλοκότητα της ίδιας της `slow` (εαν υπήρχε κάποια).
+- Μπορούμε να συνδυάσουμε πολλαπλούς διακοσμητές αν χρειάζεται (οι άλλοι διακοσμητές θα ακολουθήσουν).
 
-## Using "func.call" for the context
+## Χρησιμοποιώντας "func.call" για το πλαίσιο.
 
-The caching decorator mentioned above is not suited to work with object methods.
+O διακοσμητής caching που αναφέρθυηκε πάνω δεν είναι κατάλληλος για χρήση με μεθόδους αντικειμένου.
 
-For instance, in the code below `worker.slow()` stops working after the decoration:
+Για παράδειγμα, στον κώδικα κάτω η `worker.slow()` σταματάει να τρέχει μετά την διακόσμηση.
 
 ```js run
-// we'll make worker.slow caching
+// θα παράξουμε caching με τη worker.slow
 let worker = {
   someMethod() {
     return 1;
   },
 
   slow(x) {
-    // scary CPU-heavy task here  
-    alert("Called with " + x);
+    // "βαριά" υπολογιστική διαδικασία εδώ
+    alert("Καλέστηκε με " + x);
     return x * this.someMethod(); // (*)
   }
 };
 
-// same code as before
+// ο ίδιος κώδικας με πριν
 function cachingDecorator(func) {
   let cache = new Map();
   return function(x) {
@@ -96,78 +96,78 @@ function cachingDecorator(func) {
   };
 }
 
-alert( worker.slow(1) ); // the original method works
+alert( worker.slow(1) ); // η αρχική μέθοδος δουλεύει
 
-worker.slow = cachingDecorator(worker.slow); // now make it caching
+worker.slow = cachingDecorator(worker.slow); // χρησιμοποίησε το caching
 
 *!*
 alert( worker.slow(2) ); // Whoops! Error: Cannot read property 'someMethod' of undefined
 */!*
 ```
 
-The error occurs in the line `(*)` that tries to access `this.someMethod` and fails. Can you see why?
+Το error προκύπτει στην γραμμή `(*)` που προσπαθεί να έχει πρόσβαση στη `this.someMethod` και αποτυγχάνει. Μπορείς να δεις γιατί?
 
-The reason is that the wrapper calls the original function as `func(x)` in the line `(**)`. And, when called like that, the function gets `this = undefined`.
+Ο λόγος είναι ότι η συνάρτηση-κάλυμμα καλεί την αρχική συνάρτηση σαν `func(x)` στη γραμμή `(**)`. Και, όταν καλείται με αυτό το τρόπο, η συνάρτηση παίρνει `this = undefined`.
 
-We would observe a similar symptom if we tried to run:
+Θα παρατηρούσαμε ένα παρόμοιο αποτέλεσμα αν προσπαθούσαμε να τρέξουμε:
 
 ```js
 let func = worker.slow;
 func(2);
 ```
 
-So, the wrapper passes the call to the original method, but without the context `this`. Hence the error.
+Οπότε, η συνάρτηση-κάλυμμα δίνει τη κλήση στην αρχική μέθοδο, αλλά χωρίς το πλαίσιο `this`. Έτσι δημιουργείτε το error.
 
-Let's fix it.
+Ας το διορθώσουμε.
 
-There's a special built-in function method [func.call(context, ...args)](mdn:js/Function/call) that allows to call a function explicitly setting `this`.
+Υπάρχει μια ειδική ενσωματωμένη συνάρτηση-μέθοδος [func.call(context, ...args)](mdn:js/Function/call) η οποία επιτρέπει τη κλήση μιας συνάρτησης ρητά θέτωντας το `this`.
 
-The syntax is:
+Η σύνταξη είναι:
 
 ```js
 func.call(context, arg1, arg2, ...)
 ```
 
-It runs `func` providing the first argument as `this`, and the next as the arguments.
+Τρέχει το `func` δίνοντας το πρώτο όρισμα σαν `this`, και το επόμενο σαν τα ορίσματα.
 
-To put it simply, these two calls do almost the same:
+Για να το πούμε απλά, αυτές οι δύο κλήσεις κάνουν σχεδόν το ίδιο.
+
 ```js
 func(1, 2, 3);
 func.call(obj, 1, 2, 3)
 ```
 
-They both call `func` with arguments `1`, `2` and `3`. The only difference is that `func.call` also sets `this` to `obj`.
+Καλούν και οι δύο τη `func` με ορίσματα τα `1`, `2` and `3`. Η μόνη διαφορά είναι ότι η `func.call` επίσης θέτει το `this` στο `obj`.
 
-As an example, in the code below we call `sayHi` in the context of different objects: `sayHi.call(user)` runs `sayHi` providing `this=user`, and the next line sets `this=admin`:
+Σαν παράδειγμα, στον κώδικα από κάτω, καλούμε τη `sayHi` στο πλαίσιο διαφορετικών αντικειμένων: η `sayHi.call(user)` τρέχει τη `sayHi` δίνοντας `this=user`, και η επόμενη γραμμή θέτει `this=admin`:
 
 ```js run
 function sayHi() {
   alert(this.name);
 }
 
-let user = { name: "John" };
-let admin = { name: "Admin" };
+let user = { name: "Γιάννης" };
+let admin = { name: "Διαχειριστής" };
 
-// use call to pass different objects as "this"
-sayHi.call( user ); // John
-sayHi.call( admin ); // Admin
+// χρησιμοποιήσε τη κλήση για το θέσιμο διαφορετικών αντικειμένων σαν "this"
+sayHi.call( user ); // this = Γιάννης
+sayHi.call( admin ); // this = Διαχειριστής
 ```
 
-And here we use `call` to call `say` with the given context and phrase:
-
+Και εδώ χρησιμοποιούμε `call` για να καλέσουμε τη `say` με το δοσμένο context και τη φράση:
 
 ```js run
 function say(phrase) {
   alert(this.name + ': ' + phrase);
 }
 
-let user = { name: "John" };
+let user = { name: "Γιάννης" };
 
-// user becomes this, and "Hello" becomes the first argument
-say.call( user, "Hello" ); // John: Hello
+// ο χρήστης γίνεται this, και το "Γεια σου" γίνεται το πρώτο όρισμα
+say.call( user, "Γεια" ); // Γιάννης: Γεια
 ```
 
-In our case, we can use `call` in the wrapper to pass the context to the original function:
+Στη περίπτωση μας, μπορούμε να χρησιμοποιήσουμε τη `call` στη συνάρτηση-κάλυμμα για να δώσουμε το context στην αρχική συνάρτηση:
 
 ```js run
 let worker = {
@@ -176,7 +176,7 @@ let worker = {
   },
 
   slow(x) {
-    alert("Called with " + x);
+    alert("Καλέστηκε με " + x);
     return x * this.someMethod(); // (*)
   }
 };
@@ -188,62 +188,65 @@ function cachingDecorator(func) {
       return cache.get(x);
     }
 *!*
-    let result = func.call(this, x); // "this" is passed correctly now
+    let result = func.call(this, x); // "this" δίνεται σωστά τώρα
 */!*
     cache.set(x, result);
     return result;
   };
 }
 
-worker.slow = cachingDecorator(worker.slow); // now make it caching
+worker.slow = cachingDecorator(worker.slow); // τώρα να κάνει caching
 
-alert( worker.slow(2) ); // works
-alert( worker.slow(2) ); // works, doesn't call the original (cached)
+alert( worker.slow(2) ); // δουλεύει
+alert( worker.slow(2) ); // δουλεύει, δεν καλεί το αρχικό (cached)
 ```
 
-Now everything is fine.
+Τώρα όλα λειτουργούν σωστά.
 
-To make it all clear, let's see more deeply how `this` is passed along:
+Για να γίνουν όλα πιο ξεκάθαρα, ας δούμε πιο βαθιά πώς το `this` περνάει μέσα από τις κλήσεις:
 
-1. After the decoration `worker.slow` is now the wrapper `function (x) { ... }`.
-2. So when `worker.slow(2)` is executed, the wrapper gets `2` as an argument and `this=worker` (it's the object before dot).
-3. Inside the wrapper, assuming the result is not yet cached, `func.call(this, x)` passes the current `this` (`=worker`) and the current argument (`=2`) to the original method.
+1. Μετά τη διακόσμηση η `worker.slow` είναι τώρα η συνάρτηση-κάλυμμα `function (x) { ... }`.
+2. Οπότε όταν η `worker.slow(2)` εκτελείται, η συνάρτηση-κάλυμμα παίρνει `2` σαν ένα όρισμα και το `this=worker` (είναι το αντικέιμενο πρίν τη τελεία).
+3. Μέσα στη συνάρτηση-κάλυμμα, υποθέτωντας ότι το αποτέλεσμα δεν έχει γίνει ακόμα cached, η `func.call(this, x)` δίνει το τωρινό `this` (`=worker`) και το τωρινό όρισμα (`=2`) στην αρχική μέθοδο.
 
-## Going multi-argument
 
-Now let's make `cachingDecorator` even more universal. Till now it was working only with single-argument functions.
+## Πολλαπλά ορίσματα με τη "func.apply"
 
-Now how to cache the multi-argument `worker.slow` method?
+
+Τώρα ας κάνουμε τον `cachingDecorator` ακόμα πιο γενικό. Μέχρι τώρα δούλευε μόνο με συναρτήσεις με ένα όρισμα.
+
+Πώς γίνεται να κάνουμε cache τη μέθοδο `worker.slow` που έχει πολλαπλά ορίσματα?
 
 ```js
 let worker = {
   slow(min, max) {
-    return min + max; // scary CPU-hogger is assumed
+    return min + max; // εργασία που απαιτεί υψηλή επεξεργαστική ισχύ εδώ
   }
 };
 
-// should remember same-argument calls
+// πρέπει να θυμάται τις κλήσεις με τα ίδια ορίσματα
 worker.slow = cachingDecorator(worker.slow);
 ```
 
-Previously, for a single argument `x` we could just `cache.set(x, result)` to save the result and `cache.get(x)` to retrieve it. But now we need to remember the result for a *combination of arguments* `(min,max)`. The native `Map` takes single value only as the key.
+Προηγουμένως, για ένα μονό όρισμα `x` θα μπορούσαμε να χρησιμοποιήσουμε τη `cache.set(x, result)` για να σώσουμε το αποτέλεσμα και μετά με την `cache.get(x)` να το ανακτήσουμε. Τώρα όμως πρέπει να θυμόμαστε το αποτέλεσμα για ένα *συνδυασμό από ορίσματα* `(min,max)`. Το υπάρχον `Map` παίρνει μια τιμή μόνο σαν κλειδί.  
 
-There are many solutions possible:
+Υπάρχουν αρκετές δυνατές λύσεις:
 
-1. Implement a new (or use a third-party) map-like data structure that is more versatile and allows multi-keys.
-2. Use nested maps: `cache.set(min)` will be a `Map` that stores the pair `(max, result)`. So we can get `result` as `cache.get(min).get(max)`.
-3. Join two values into one. In our particular case we can just use a string `"min,max"` as the `Map` key. For flexibility, we can allow to provide a *hashing function* for the decorator, that knows how to make one value from many.
+1. Η δημιουργία μιας νέας (η χρήση μιας τρίτης) δομής δεδομένων που να μοιάζει με map η οποία θα έιναι πιο εύελικτη και θα επιτρέπει πολλαπλά κλειδιά.
+2. Η χρήση εμφωλευμένων maps: `cache.set(min)` θα είναι ένα `Map` που θα αποθηκέυει το ζευγάρι `(max, result)`. Έτσι μπορούμε να πάρουμε το `result` σαν `cache.get(min).get(max)`.
+3. Η ένωση δύο τιμών σε μία. Στη συγκεκρίμενη περίπτωση μπορούμε να χρησιμοποιήσουμε ένα string `"min,max"` σαν το κλειδί για το `Map`. Για ευελιξία, μπορούμε να δώσουμε μια *συνάρτηση κατακερματισμού* για τον διακοσμητή, η οποία θα γνωρίζει πώς να δημιουργεί μια τιμή από πολλές.
 
-For many practical applications, the 3rd variant is good enough, so we'll stick to it.
+Για αρκετές πρακτικές εφαρμογές, η 3η επιλογή είναι αρκετά καλή, οπότε θα μείνουμε με αυτή.
 
-Also we need to pass not just `x`, but all arguments in `func.call`. Let's recall that in a `function()` we can get a pseudo-array of its arguments as `arguments`, so `func.call(this, x)` should be replaced with `func.call(this, ...arguments)`.
+Επίσης, χρειάζεται να αντικαταστήσουμε τη `func.call(this, x)` με τη `func.call(this, ...arguments)`, για να δώσουμε όλα τα ορίσματα στο κάλεσμα της συνάρτησης-κάλυμμα, όχι μόνο το πρώτο.
 
-Here's a more powerful `cachingDecorator`:
+
+Ας δούμε ένα πιο ισχυρό `cachingDecorator`:
 
 ```js run
 let worker = {
   slow(min, max) {
-    alert(`Called with ${min},${max}`);
+    alert(`Καλέστηκε με ${min},${max}`);
     return min + max;
   }
 };
@@ -273,50 +276,49 @@ function hash(args) {
 
 worker.slow = cachingDecorator(worker.slow, hash);
 
-alert( worker.slow(3, 5) ); // works
-alert( "Again " + worker.slow(3, 5) ); // same (cached)
+alert( worker.slow(3, 5) ); // δουλεύει
+alert( "Ξανά " + worker.slow(3, 5) ); // το ίδιο (cached)
 ```
 
-Now it works with any number of arguments (though the hash function would also need to be adjusted to allow any number of arguments. An interesting way to handle this will be covered below).
+Τώρα δουλεύει με οποιοδήποτε αριθμό ορισμάτων (ωστόσο η συνάρτηση κατακερματισμού θα πρέπει να προσαρμοστεί για να επιτρέπει οποιοδήποτε αριθμό ορισμάτων. Ένας ενδιαφέρον τρόπος για χειριστούμε αυτό θα καλυφθεί πιο κάτω).
 
-There are two changes:
+Υπάρχουν δύο αλλαγές:
 
-- In the line `(*)` it calls `hash` to create a single key from `arguments`. Here we use a simple "joining" function that turns arguments `(3, 5)` into the key `"3,5"`. More complex cases may require other hashing functions.
-- Then `(**)` uses `func.call(this, ...arguments)` to pass both the context and all arguments the wrapper got (not just the first one) to the original function.
+- Στη γραμμή `(*)` καλείται η `hash` για να δημιουργήσει ένα μόνο κλειδί από τα `arguments`. Εδώ χρησιμοποιούμε μια απλή συνάρτηση "ένωσης" η οποία μετατρέπει τα ορίσματα `(3, 5)` στο κλειδί `"3,5"`. Πιο πολύπλοκες περιπτώσεις μπορεί να χρειάζονται άλλες συναρτήσεις κατακερματισμού.
+- Έπειτα στο `(**)` χρησιμοποιείται η `func.call(this, ...arguments)` για να δωθούν τόσο το context όσο και όλα τα ορίσματα που απέκτησε ο wrapper (όχι μόνο το πρώτο) στην αρχική συνάρτηση.
 
-## func.apply
+Αντί για `func.call(this, ...arguments)` υα μπορούσαμε να χρησιμοποιήσουμε τη `func.apply(this, arguments)`.
 
-Instead of `func.call(this, ...arguments)` we could use `func.apply(this, arguments)`.
-
-The syntax of built-in method [func.apply](mdn:js/Function/apply) is:
+Η σύνταξη της ενσωματωμένης συνάρτησης [func.apply](mdn:js/Function/apply) είναι:
 
 ```js
 func.apply(context, args)
 ```
 
-It runs the `func` setting `this=context` and using an array-like object `args` as the list of arguments.
+Τρέχει τη `func` θέτωντας `this=context` και χρησιμοποιώντας ένα αντικέιμενο που μοιάζει με πίνακα και ονομάζεται `args` σαν τη λίστα των ορισμάτων.
 
-The only syntax difference between `call` and `apply` is that `call` expects a list of arguments, while `apply` takes an array-like object with them.
+Η μόνη συντακτική διαφορά ανάμεσα στο `call` και το `apply` είναι ότι το `call` περιμένει μια λίστα από ορίσματα, ενώ το `apply` δέχεται ένα αντικέιμενο που έχει τη μορφή πίνακα με αυτά.
 
-So these two calls are almost equivalent:
+Οπότε οι δύο αυτές κλήσεις είναι σχεδόν ίδιες:
 
 ```js
-func.call(context, ...args); // pass an array as list with spread syntax
-func.apply(context, args);   // is same as using call
+func.call(context, ...args); // δώσε ένα πίνακα σαν λίστα με τον τελεστή διασποράς
+func.apply(context, args);   // είναι το ίδιο χρησιμοποιώντας apply
 ```
 
-There's only a subtle difference:
 
-- The spread syntax `...` allows to pass *iterable* `args` as the list to `call`.
-- The `apply` accepts only *array-like* `args`.
+Υπάρχει μόνο μία μικρή διαφορά:
 
-So, where we expect an iterable, `call` works, and where we expect an array-like, `apply` works.
+- Ο τελεστής διασποράς `...` επιτρέπει το δώσιμο του *iterable* `args` σαν τη λίστα στο `call`.
+- Η `apply` δέχεται μόνο *σαν-πίνακα* `args`.
 
-And for objects that are both iterable and array-like, like a real array, we can use any of them, but `apply` will probably be faster, because most JavaScript engines internally optimize it better.
+Άρα, αυτές οι δύο κλήσεις συμπληρώνουν η μία την άλλη. Όπου περιμένουν ένα iterable, η `call` λειτουργεί, όπου περιμένουμε κάτι σαν πίνακα, η `apply` λειτουργεί εκεί.
 
-Passing all arguments along with the context to another function is called *call forwarding*.
+Και για αντικέιμενα που είναι και iterable και σαν πίνακες, όπως ένας πραγματικός πίνακας, τεχνικά θα μπορούσαμε να χρησιμοποιήσουμε οποιαδήποτε από αυτές, όμως η `apply` θα είναι πιθανότατα πιο γρήγορη, διότι οι περισσότερες μηχανές JavaScript εσωτερικά τη βελτιστοποιούν καλύτερα.
 
-That's the simplest form of it:
+Δίνοντας όλα τα ορίσματα μαζί με το context σε μια άλλη συνάρτηση λέγεται *προώθηση κλήσης*
+
+Η πιο απλή του μορφή είναι αυτή:
 
 ```js
 let wrapper = function() {
@@ -324,11 +326,11 @@ let wrapper = function() {
 };
 ```
 
-When an external code calls such `wrapper`, it is indistinguishable from the call of the original function `func`.
+Όταν ένας εξωτερικός κώδικας καλεί μια τέτοια `wrapper`, είναι δυσδιάκριτο από τη κλήση της αρχικής συνάρτησης `func`.
 
-## Borrowing a method [#method-borrowing]
+## Δανεισμός μιας μεθόδου [#δανεισμός-μεδόδου]
 
-Now let's make one more minor improvement in the hashing function:
+Τώρα ας κάνουμε μια μικρή βελτιστοποίηση στη συνάρτηση κατακερματισμού:
 
 ```js
 function hash(args) {
@@ -336,9 +338,9 @@ function hash(args) {
 }
 ```
 
-As of now, it works only on two arguments. It would be better if it could glue any number of `args`.
+Μέχρι τώρα, δουλεύει μόνο σε δύο ορίσματα. Θα ήταν καλύτερο αν μπορούσε να ενώσει οποιοδήποτε αριθμό από `args`.
 
-The natural solution would be to use [arr.join](mdn:js/Array/join) method:
+Η φυσική λύση θα ήταν η χρήση της μεθόδου [arr.join](mdn:js/Array/join):
 
 ```js
 function hash(args) {
@@ -346,9 +348,9 @@ function hash(args) {
 }
 ```
 
-...Unfortunately, that won't work. Because we are calling `hash(arguments)`, and `arguments` object is both iterable and array-like, but not a real array.
+...Δυστυχώς, αυτό δεν θα δουλέψει. Επειδή καλούμε τη `hash(arguments)` και το αντικέιμενο `arguments` είναι και iterable και σαν-πίνακας, αλλά όχι ένας πραγματικός πίνακας.
 
-So calling `join` on it would fail, as we can see below:
+Έτσι το να καλέσουμε τη `join` θα αποτύγχανε, όπως βλέπουμε παρακάτω:
 
 ```js run
 function hash() {
@@ -360,7 +362,7 @@ function hash() {
 hash(1, 2);
 ```
 
-Still, there's an easy way to use array join:
+Ωστόσο, υπάρχει ένα εύκολος τρόπος να χρησιμοποιήσουμε την ένωση πινάκων:
 
 ```js run
 function hash() {
@@ -372,48 +374,49 @@ function hash() {
 hash(1, 2);
 ```
 
-The trick is called *method borrowing*.
+Ο τρόπος ονομάζεται *δανεισμός μεθόδου*.
 
-We take (borrow) a join method from a regular array (`[].join`) and use `[].join.call` to run it in the context of `arguments`.
+Παίρνουμε (δανειζόμαστε) μια μέθοδο ένωσης από ένα κανονικό πίνακα (`[].join`) και χρησιμοποιούμε `[].join.call` για να το τρέξουμε στο context των `arguments`.
 
-Why does it work?
+Γιατί δουλεύει?
 
-That's because the internal algorithm of the native method `arr.join(glue)` is very simple.
+Αυτό είναι γιατί ο εσωτερικός αλγόριθμος της υπάρχουσας μεθόδου `arr.join(glue)` είναι πολύ απλός.
 
-Taken from the specification almost "as-is":
+Από το specification της γλώσσας ισχύει:
 
-1. Let `glue` be the first argument or, if no arguments, then a comma `","`.
-2. Let `result` be an empty string.
-3. Append `this[0]` to `result`.
-4. Append `glue` and `this[1]`.
-5. Append `glue` and `this[2]`.
-6. ...Do so until `this.length` items are glued.
-7. Return `result`.
+1. Έστω ότι το `glue` είναι το πρώτο όρισμα ή, αν δεν υπάρχουν ορίσματα, τότε μια κόμμα `","`.
+2. Έστω ότι το `result` είναι μια άδεια συμβολοσειρά.
+3. Προσάρτησε το `this[0]` στο `result`.
+4. Προσάρτησε το `glue` στο `this[1]`.
+5. Προσάρτησε το `glue` στο `this[2]`.
+6. ...Συνέχισε έτσι μέχρι `this.length` από πράγματα έχουν ενωθεί.
+7. Επέστρεψε το `result`.
 
-So, technically it takes `this` and joins `this[0]`, `this[1]` ...etc together. It's intentionally written in a way that allows any array-like `this` (not a coincidence, many methods follow this practice). That's why it also works with `this=arguments`.
+Οπότε, τεχνικά, παίρνει το `this` και ενώνει `this[0]`, `this[1]` ...κτλπ μαζί. Είναι επίτηδες γραμμένο με αυτό το τρόπο που να επιτρέπει οποιοδήποτε `this` με τη μορφή πίνακα (δεν είναι σύμπτωση, πολλές μέθοδοι ακολουθούν αυτή τη πρακτική). Για το λόγο αυτό δουλεύει και με το `this=arguments`.
 
-## Decorators and function properties
+## Διακοσμητές και ιδιότητες συναρτήσεων
 
-It is generally safe to replace a function or a method with a decorated one, except for one little thing. If the original function had properties on it, like `func.calledCount` or whatever, then the decorated one will not provide them. Because that is a wrapper. So one needs to be careful if one uses them.
+Είναι γενικά ασφαλής η αντικατάσταση μιας συνάρτησης η μιας μεθόδου με μια διακοσμημένη, εκτός από μια μικρή περίπτωση. Αν η αρχική συνάρτηση έχει ιδιότητες μέσα της, όπως η `func.calledCount` η οποιαδήποτε άλλη, τότε η διακοσμημένη συνάρτηση δεν θα της διαθέσει. Διότι αυτή είναι μια συνάρτηση-κάλυμμα. Οπότε θέλουν ιδιαίτερη προσόχη στη χρήση τους.
 
-E.g. in the example above if `slow` function had any properties on it, then `cachingDecorator(slow)` is a wrapper without them.
+Π.χ. στο παράδειγμα πάνω αν η συνάρτηση `slow` είχε ιδιότητες μέσα της, τότε ο `cachingDecorator(slow)` είναι μια συνάρτηση-κάλυμμα χωρίς αυτές.
 
-Some decorators may provide their own properties. E.g. a decorator may count how many times a function was invoked and how much time it took, and expose this information via wrapper properties.
+Κάποιοι διακοσμητές ενδέχεται να προσφέρουν τις δικές τους ιδιότητες. Π.χ. ένας διακοσμητής μπορεί να μετράει πόσες φορές μια συνάρτηση έτρεξε και πόσο χρόνο πήρε, και να προωθεί τη πληροφορία αυτή μέσω ιδιοτήτων της συνάρτησης-κάλυμμα.
 
-There exists a way to create decorators that keep access to function properties, but this requires using a special `Proxy` object to wrap a function. We'll discuss it later in the article <info:proxy#proxy-apply>.
+Υπάρχει ένας τρόπος για να δημιουργηθούν διακοσμητές που κρατάνε πρόσβαση στις ιδιότητες της συνάρτησης, αλλά αυτό απαιτεί τη χρήση ενός ειδικού `Proxy` αντικέιμενου για να περικλύσει την συνάρτηση. Θα το συζητήσουμε αυτό αργότερα στο άρθρο <info:proxy#proxy-apply>.
 
-## Summary
+## Σύνοψη
 
-*Decorator* is a wrapper around a function that alters its behavior. The main job is still carried out by the function.
+*Διακοσμητής* είναι ένα κάλυμμα γύρω από μια συνάρτηση το οποία αλλάζει τη συμπεριφορά της. Η κύρια δουλειά συνεχίζει να γίνεται από την συνάρτηση.
 
-Decorators can be seen as "features" or "aspects" that can be added to a function. We can add one or add many. And all this without changing its code!
+Οι διακοσμητές μπορούν να θεωρηθούν σαν "χαρακτηριστικά" ή "γνωρίσματα" που μπορούν να προστεθούν σε μια συνάρτηση. Μπορούμε να προσθέσουμε ένα ή πολλά. Και όλα αυτά χωρίς να αλλάζουμε τον κώδικα της.
 
-To implement `cachingDecorator`, we studied methods:
+Για να υλοποιήσουμε τον `cachingDecorator`, είδαμε τις μεθόδους:
 
-- [func.call(context, arg1, arg2...)](mdn:js/Function/call) -- calls `func` with given context and arguments.
-- [func.apply(context, args)](mdn:js/Function/apply) -- calls `func` passing `context` as `this` and array-like `args` into a list of arguments.
+- [func.call(context, arg1, arg2...)](mdn:js/Function/call) -- καλεί τη `func` με το δοσμένο context και ορίσματα.
+- [func.apply(context, args)](mdn:js/Function/apply) -- καλεί τη `func` δίνοντας το `context` σαν το `this` και στη μορφή πίνακα `args` σε μια λίστα από ορίσματα.
 
-The generic *call forwarding* is usually done with `apply`:
+Η γενικότερη μορφή *προώθησης κλήσης* συνήθως γίνεται με την `apply`:
+
 
 ```js
 let wrapper = function() {
@@ -421,6 +424,6 @@ let wrapper = function() {
 };
 ```
 
-We also saw an example of *method borrowing* when we take a method from an object and `call` it in the context of another object. It is quite common to take array methods and apply them to `arguments`. The alternative is to use rest parameters object that is a real array.
+Επίσης είδαμε ένα παράδειγμα από *δανεισμό μεθόδου* όπου παίρνουμε μια μέθοδο από ένα αντικείμενο και κάνουμε `call` σε αυτό στο πλαίσιο ενός άλλου αντικειμένου. Είναι αρκετά συνηθισμένο να παίρνουμε μεθόδους πινάκων και να τις εφαρμόζουμε στα `arguments`. Η εναλλακτική λύση είναι να χρησιμοποιήσουμε τις παραμέτρους υπολοίπου ενός αντικειμένου που είναι ένας πραγματικός πίνακας.
 
-There are many decorators there in the wild. Check how well you got them by solving the tasks of this chapter.
+Υπάρχουν αρκετοί διακοσμητές εκεί έξω. Έλεγξε πόσο καλά τους κατάλαβες λύνοντας τις ασκήσεις αυτού του κεφαλαίου.

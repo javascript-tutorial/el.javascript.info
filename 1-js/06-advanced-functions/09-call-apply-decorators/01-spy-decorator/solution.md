@@ -1,1 +1,1 @@
-The wrapper returned by `spy(f)` should store all arguments and then use `f.apply` to forward the call.
+Η συνάρτηση-κάλλυμα που επιστρέφεται από τη `spy(f)` πρέπει να αποθηκεύει όλα τα ορίσματα και μετά να χρησιμοποιεί την `f.apply` για να προωθήσει τη κλήση.
