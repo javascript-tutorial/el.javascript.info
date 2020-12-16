@@ -105,16 +105,8 @@ alert(2 + 2 + '1' ); // "41" and not "221"
 
 Εδώ, οι τελεστές δουλεύουν το ένα μετά το άλλο. Το πρώτο `+` αθροίζει δύο αριθμούς, οπότε επιστρέφει `4`, και στη συνέχεια το επόμενο `+` προσθέτει τη συμβολοσειρά `1` σε αυτό, έτσι είναι σαν `4 + '1' = 41`.
 
-<<<<<<< HEAD
 Το δυαδικό `+` είναι ο μόνος τελεστής που υποστηρίζει συμβολοσειρές τόσο μακριά. Άλλοι αριθμητικοί τελεστές λειτουργούν μόνο με αριθμούς και μετατρέπουν πάντα τους τελεστές τους σε αριθμούς.
-=======
-```js run
-alert('1' + 2 + 2); // "122" and not "14"
-```
-Here, the first operand is a string, the compiler treats the other two operands as strings too. The `2` gets concatenated to `'1'`, so it's like `'1' + 2 = "12"` and `"12" + 2 = "122"`.
 
-The binary `+` is the only operator that supports strings in such a way. Other arithmetic operators work only with numbers and always convert their operands to numbers.
->>>>>>> 23e85b3c33762347e26276ed869e491e959dd557
 
 Εδώ είναι το παράδειγμα για αφαίρεση και διαίρεση:
 
