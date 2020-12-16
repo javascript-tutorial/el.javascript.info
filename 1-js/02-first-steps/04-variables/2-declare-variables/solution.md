@@ -6,11 +6,7 @@
 let ourPlanetName = "Earth";
 ```
 
-<<<<<<< HEAD
 Σημειώστε ότι θα μπορούσαμε να χρησιμοποιήσουμε ένα μικρότερο όνομα `planet`, αλλά μπορεί να μην είναι προφανές σε ποιον πλανήτη αναφέρεται. Είναι ωραίο να είσαι πιο ρητός. Τουλάχιστον έως ότου η μεταβλητή είναι NotTooLong.
-=======
-Note, we could use a shorter name `planet`, but it might not be obvious what planet it refers to. It's nice to be more verbose. At least until the variable isNotTooLong.
->>>>>>> 23e85b3c33762347e26276ed869e491e959dd557
 
 ## Το όνομα του τρέχοντος επισκέπτη
 
