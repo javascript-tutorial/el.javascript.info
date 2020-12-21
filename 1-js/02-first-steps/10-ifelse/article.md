@@ -68,7 +68,11 @@ if (cond) {
 
 ## Η ρήτρα "else"
 
+<<<<<<< HEAD
 Η δήλωση `if` μπορεί να περιέχει ένα προαιρετικό μπλοκ "else". Εκτελείται όταν η συνθήκη είναι λανθασμένη.
+=======
+The `if` statement may contain an optional "else" block. It executes when the condition is falsy.
+>>>>>>> fc3f811c03ca97ff8304271bb2b918413bed720f
 
 Για παράδειγμα:
 ```js run
