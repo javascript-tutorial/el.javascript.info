@@ -2,7 +2,6 @@
 
 Αυτό το αποθετήριο φιλοξενεί τη μετάφραση <https://javascript.info> στα ελληνικά.
 
-
 **Πώς μπορείς να βοηθήσεις:**
 
 - Κοίτα την [Ελληνική μετάφραση σε εξέλιξη](https://github.com/javascript-tutorial/el.javascript.info/issues/1).
@@ -23,6 +22,7 @@
 Το όνομά σας και το μέγεθος της συνεισφοράς θα εμφανιστούν στη σελίδα "Σχετικά με το έργο" κατά τη δημοσίευση της μετάφρασης.
 
 P.S. Μπορείτε να βρείτε την πλήρη λίστα γλωσσών στη διεύθυνση <https://javascript.info/translate>.
+
 
 ## Δόμη
 
@@ -85,6 +85,7 @@ const text = 'Hola mundo';
 document.querySelector('.hola').innerHTML = text;
 ```
 
+
 ### Εξωτερικοί σύνδεσμοι.
 
 Εάν ένας εξωτερικός σύνδεσμος προορίζεται για τη Wikipedia, π.χ. `https://en.wikipedia.org/wiki/JavaScript`, και υπάρχει μια έκδοση αυτού του άρθρου στη γλώσσα σας που είναι καλής ποιότητας, συνδέστε την με αυτήν την έκδοση.
@@ -113,9 +114,6 @@ Some files, usually tasks, have YAML at the top, delimited by
 ```md
 importance: 5
 
----
-...
-```
 
 Μην μεταφράζετε το "importance" (και ολα τα metadata).
 
@@ -134,5 +132,7 @@ importance: 5
 
 Μπορείτε να εκτελέσετε τον server τοπικά για να δείτε πώς φαίνεται η μετάφραση.
 
+
 Για την εγκατάσταση του server βλεπε εδω 
 <https://github.com/javascript-tutorial/server>. 
+

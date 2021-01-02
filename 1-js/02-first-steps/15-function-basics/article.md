@@ -186,7 +186,11 @@ alert( from ); // Ann
 showMessage("Ann");
 ```
 
+<<<<<<< HEAD
 Αυτό δεν είναι λάθος. Μια τέτοια κλήση θα έδινε το `"Ann: undefined"`. Δεν υπάρχει `text`, έτσι θεωρούμαι ότι το `text === undefined`.
+=======
+That's not an error. Such a call would output `"*Ann*: undefined"`. There's no `text`, so it's assumed that `text === undefined`.
+>>>>>>> 98e21cdc278ba9a99a42820d405ea4e9e267db0b
 
 Αν θέλουμε να χρησιμοποιήσουμε ένα "default" `text` σε αυτήν την περίπτωση, τότε μπορούμε να το καθορίσουμε μετά το `=`:
 

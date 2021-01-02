@@ -242,7 +242,7 @@ The output order is: 1 -> nested -> 2.
 
 Please note that the nested event `menu-open` is caught on the `document`. The propagation and handling of the nested event is finished before the processing gets back to the outer code (`onclick`).
 
-That's not only about `dispatchEvent`, there are other cases. If an event handler calls methods that trigger other events -- they too are processed synchronously, in a nested fashion.
+That's not only about `dispatchEvent`, there are other cases. If an event handler calls methods that trigger other events -- they are processed synchronously too, in a nested fashion.
 
 Let's say we don't like it. We'd want `onclick` to be fully processed first, independently from `menu-open` or any other nested events.
 
@@ -266,7 +266,7 @@ Then we can either put the `dispatchEvent` (or another event-triggering call) at
 </script>
 ```
 
-Now `dispatchEvent` runs asynchronously after the current code execution is finished, including `mouse.onclick`, so event handlers are totally separate.
+Now `dispatchEvent` runs asynchronously after the current code execution is finished, including `menu.onclick`, so event handlers are totally separate.
 
 The output order becomes: 1 -> 2 -> nested.
 
