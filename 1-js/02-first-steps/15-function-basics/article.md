@@ -370,53 +370,53 @@ return (
 Και θα λειτουργήσει όπως το περιμένουμε.
 ````
 
-## Naming a function [#function-naming]
+## Το όνομα μιας συνάρτησης [#function-naming]
 
-Functions are actions. So their name is usually a verb. It should be brief, as accurate as possible and describe what the function does, so that someone reading the code gets an indication of what the function does.
+Οι συναρτήσεις είναι ενέργειες. Έτσι το όνομά τους είναι συνήθως ένα ρήμα. Θα πρέπει να είναι σύντομη, όσο το δυνατόν ακριβέστερη και να περιγράφει τι κάνει η λειτουργία, έτσι ώστε κάποιος που διαβάζει τον κωδικό να λάβει μια ένδειξη για το τι κάνει η λειτουργία.
 
-It is a widespread practice to start a function with a verbal prefix which vaguely describes the action. There must be an agreement within the team on the meaning of the prefixes.
+Είναι μια διαδεδομένη πρακτική να ξεκινήσετε μια συνάρτηση με ένα λεκτικό πρόθεμα που περιγράφει αόριστα τη δράση. Πρέπει να υπάρχει συμφωνία εντός της ομάδας για την έννοια των προθημάτων.
 
-For instance, functions that start with `"show"` usually show something.
+Για παράδειγμα, οι συναρτήσεις που ξεκινούν με το `"show"` συνήθως δείχνουν κάτι.
 
-Function starting with...
+Οι συναρτήσεις ξεκινάνε κάπως έτσι...
 
-- `"get…"` -- return a value,
-- `"calc…"` -- calculate something,
-- `"create…"` -- create something,
-- `"check…"` -- check something and return a boolean, etc.
+- `"get…"` -- επιστρέψει μια τιμή,
+- `"calc…"` -- υπολογιζει κάτι,
+- `"create…"` -- δημιουργεί κάτι,
+- `"check…"` -- ελέγχει κάτι και επιστρέφει ένα boolean, κ.τ.λ.
 
-Examples of such names:
+Παραδείγματα τέτοιων ονομασιών:
 
 ```js no-beautify
-showMessage(..)     // shows a message
-getAge(..)          // returns the age (gets it somehow)
-calcSum(..)         // calculates a sum and returns the result
-createForm(..)      // creates a form (and usually returns it)
-checkPermission(..) // checks a permission, returns true/false
+showMessage(..)     // δείχνει ένα μύνημα
+getAge(..)          // επιστρέφει την ηλικία (τα παίρνει από κάπου)
+calcSum(..)         // υπολογίζει ένα άθροισμα και επιστρέφει το αποτέλεσμα
+createForm(..)      // δημιουργεί μια φόρμα (κυρίως την επιστρέφει)
+checkPermission(..) // ελέγχει μια 	συναίνεση, επιστρέφει true/false
 ```
 
-With prefixes in place, a glance at a function name gives an understanding what kind of work it does and what kind of value it returns.
+Με τα προθέματα στη θέση τους, μια ματιά σε ένα όνομα συνάρτησης δίνει μια κατανόηση τι είδους δουλειά κάνει και τι είδους τιμή επιστρέφει.
 
-```smart header="One function -- one action"
-A function should do exactly what is suggested by its name, no more.
+```smart header="Μια συνάρτηση -- μια δράση"
+Μια συνάρτηση πρέπει να κάνει ακριβώς αυτό που δηλώνει το όνομά της, όχι κάτι πλέον.
 
-Two independent actions usually deserve two functions, even if they are usually called together (in that case we can make a 3rd function that calls those two).
+Δύο ανεξάρτητες ενέργειες συνήθως ειναι δύο συναρτήσεις, ακόμα κι αν συνήθως κληθούν μαζί (σε αυτήν την περίπτωση μπορούμε να δημιουργήσουμε μια 3η συνάρτηση που καλεί αυτές τις δύο).
 
-A few examples of breaking this rule:
+Μερικά παραδείγματα παραβίασης αυτού του κανόνα:
 
-- `getAge` -- would be bad if it shows an `alert` with the age (should only get).
-- `createForm` -- would be bad if it modifies the document, adding a form to it (should only create it and return).
-- `checkPermission` -- would be bad if it displays the `access granted/denied` message (should only perform the check and return the result).
+- `getAge` -- θα ήταν κακό αν εμφανίζει `alert` με την ηλικία (πρέπει μόνο να δέχεται).
+- `createForm` -- θα ήταν άσχημο αν τροποποιήθει το έγγραφο, προσθέτοντας μια φόρμα σε αυτό (θα πρέπει μόνο να δημιουργήθεί και να επιστραφεί).
+- `checkPermission` -- θα ήταν άσχημο εαν εμφανιζόταν το μήνυμα `access granted/denied` (θα πρέπει μόνο να έλεγχει την εκτέλεση και να επιστρέφει το αποτέλεσμα).
 
-These examples assume common meanings of prefixes. You and your team are free to agree on other meanings, but usually they're not much different. In any case, you should have a firm understanding of what a prefix means, what a prefixed function can and cannot do. All same-prefixed functions should obey the rules. And the team should share the knowledge.
+Αυτά τα παραδείγματα θεωρούνται κοινές έννοιες των prefixes. Εσείς και η ομάδα σας είστε ελεύθεροι να συμφωνήσετε για άλλες έννοιες, αλλά συνήθως δεν διαφέρουν πολύ. Σε κάθε περίπτωση, θα πρέπει να έχετε μια σταθερή κατανόηση το τι σημαίνει ένα prefix, τι μπορεί και τι δεν μπορεί να κάνει μια προκαταρκτική συνάρτηση. Όλες οι συναρτήσεις του ίδιου prefix πρέπει να τηρούν τους κανόνες. Και η ομάδα πρέπει να μοιραστεί τις γνώσεις.
 ```
 
-```smart header="Ultrashort function names"
-Functions that are used *very often* sometimes have ultrashort names.
+```smart header="'Ονομα συνάρτησης Ultrashort"
+Οι συναρτήσεις που χρησιμοποιούνται *πολύ συχνά* μερικές φορές έχουν συντομα ονόματα.
 
-For example, the [jQuery](http://jquery.com) framework defines a function with `$`. The [Lodash](http://lodash.com/) library has its core function named `_`.
+Για παράδειγμα το [jQuery](http://jquery.com) βιβλιοθήκη ορίζει μια συνάρτηση με `$`. Το [Lodash](http://lodash.com/) βιβλιοθήκη δηλώνει τις συναρτήσεις με `_`.
 
-These are exceptions. Generally functions names should be concise and descriptive.
+Αυτές είναι εξαιρέσεις. Γενικά τα ονόματα των συναρτήσεων πρέπει να είναι συνοπτικά και περιγραφικά.
 ```
 
 ## Functions == Comments
