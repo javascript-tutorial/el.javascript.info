@@ -36,11 +36,19 @@ function cachingDecorator(func) {
 
 slow = cachingDecorator(slow);
 
+<<<<<<< HEAD
 alert( slow(1) ); // slow(1) είναι cached
 alert( "Ξανά: " + slow(1) ); // το ίδιο
 
 alert( slow(2) ); // slow(2) είναι cached
 alert( "Ξανά: " + slow(2) ); // το ίδιο με τη προηγούμενη γραμμή
+=======
+alert( slow(1) ); // slow(1) is cached and the result returned
+alert( "Again: " + slow(1) ); // slow(1) result returned from cache
+
+alert( slow(2) ); // slow(2) is cached and the result returned
+alert( "Again: " + slow(2) ); // slow(2) result returned from cache
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 ```
 
 Στον από πάνω κώδικα, ο `cachingDecorator` είναι ένας *διακοσμητής*: μια ειδική συνάρτηση η οποία παίρνει μια άλλη συνάρτηση και επηρεάζει την συμπεριφορά της.

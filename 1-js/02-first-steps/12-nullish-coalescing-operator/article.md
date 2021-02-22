@@ -2,6 +2,7 @@
 
 [recent browser="new"]
 
+<<<<<<< HEAD
 Ο μηδενικός τελεστής συγχώνευσης `??` παρέχει μια σύντομη σύνταξη για την επιλογή μιας πρώτης `καθορισμένης` μεταβλητής από τη λίστα.
 
 Το αποτέλεσμα της `a ?? b` είναι:
@@ -9,11 +10,27 @@
 - `b`, αλλίως.
 
 Ετσι είναι `x = a ?? b` ισοδύναμο με:
+=======
+The nullish coalescing operator is written as two question marks `??`.
+
+As it treats `null` and `undefined` similarly, we'll use a special term here, in this article. We'll say that an expression is "defined" when it's neither `null` nor `undefined`.
+
+The result of `a ?? b` is:
+- if `a` is defined, then `a`,
+- if `a` isn't defined, then `b`.
+
+In other words, `??` returns the first argument if it's not `null/undefined`. Otherwise, the second one.
+
+The nullish coalescing operator isn't anything completely new. It's just a nice syntax to get the first "defined" value of the two.
+
+We can rewrite `result = a ?? b` using the operators that we already know, like this:
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 
 ```js
 result = (a !== null && a !== undefined) ? a : b;
 ```
 
+<<<<<<< HEAD
 
 Εδώ είναι ένα μεγαλύτερο παράδειγμα.
 
@@ -22,26 +39,33 @@ result = (a !== null && a !== undefined) ? a : b;
 Θα θέλαμε να εμφανίσουμε το όνομα χρήστη: μία από αυτές τις τρεις μεταβλητές ή να δείξουμε "Anonymous" εάν δεν έχει οριστεί τίποτα.
 
 Ας χρησιμοποιήσουμε τον τελεστή `??` για να επιλέξουμε τον πρώτο καθορισμένο:
+=======
+Now it should be absolutely clear what `??` does. Let's see where it helps.
+
+The common use case for `??` is to provide a default value for a potentially undefined variable.
+
+For example, here we show `user` if defined, otherwise `Anonymous`:
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 
 ```js run
 let user;
 
-alert(user ?? "Anonymous"); // Anonymous
+alert(user ?? "Anonymous"); // Anonymous (user not defined)
 ```
 
-Of course, if `user` had any value except `null/undefined`, then we would see it instead:
+Here's the example with `user` assigned to a name:
 
 ```js run
 let user = "John";
 
-alert(user ?? "Anonymous"); // John
+alert(user ?? "Anonymous"); // John (user defined)
 ```
 
 We can also use a sequence of `??` to select the first value from a list that isn't `null/undefined`.
 
-Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be undefined, if the user decided not to enter a value.
+Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be not defined, if the user decided not to enter a value.
 
-We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are undefined.
+We'd like to display the user name using one of these variables, or show "Anonymous" if all of them aren't defined.
 
 Let's use the `??` operator for that:
 
@@ -82,7 +106,19 @@ alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
 */!*
 ```
 
+<<<<<<< HEAD
 Αυτό ορίζει το `height` σε `100` εάν δεν έχει οριστεί.
+=======
+Historically, the OR `||` operator was there first. It exists since the beginning of JavaScript, so developers were using it for such purposes for a long time.
+
+On the other hand, the nullish coalescing operator `??` was added to JavaScript only recently, and the reason for that was that people weren't quite happy with `||`.
+
+The important difference between them is that:
+- `||` returns the first *truthy* value.
+- `??` returns the first *defined* value.
+
+In other words, `||` doesn't distinguish between `false`, `0`, an empty string `""` and `null/undefined`. They are all the same -- falsy values. If any of these is the first argument of `||`, then we'll get the second argument as the result.
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 
 Ας συκγρίνουμε το `||`:
 
@@ -93,6 +129,7 @@ alert(height || 100); // 100
 alert(height ?? 100); // 0
 ```
 
+<<<<<<< HEAD
 Εδώ, `height || 100` αντιμετωπίζει το μηδέν ύψος ως μη ορισμένο, όπως το `null`, το `undefined` ή οποιαδήποτε άλλη τιμή falsy.
 Έτσι το αποτέλεσμα είναι `100`.
 Το `height ?? 100` επιστρέφει το `100` μόνο εάν το `height` είναι `null` ή `undefined`. Έτσι, το `alert` δείχνει την τιμή ύψους `0` "ως έχει".
@@ -100,11 +137,25 @@ alert(height ?? 100); // 0
 Ποια συμπεριφορά είναι καλύτερη εξαρτάται από μια συγκεκριμένη περίπτωση χρήσης. Όταν το μηδέν ύψος είναι μια έγκυρη τιμή, τότε το `??` είναι προτιμότερο.
 
 ## Προτεραιότητα
+=======
+- The `height || 100` checks `height` for being a falsy value, and it's `0`, falsy indeed.
+    - so the result of `||` is the second argument, `100`.
+- The `height ?? 100` checks `height` for being `null/undefined`, and it's not,
+    - so the result is `height` "as is", that is `0`.
+
+In practice, the zero height is often a valid value, that shouldn't be replaced with the default. So `??` does just the right thing.
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 
 Η προτεραιότητα του τελεστή `??` είναι μάλλον χαμηλή: `5` στο
 [πίνακα MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
 
+<<<<<<< HEAD
 Για αυτό το `??` αξιολογείται μετά τις υπόλοιπες λειτουργίες, αλλά πριν από το `=` και το `?`.
+=======
+The precedence of the `??` operator is about the same as `||`, just a bit lower. It equals `5` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table), while `||` is `6`.
+
+That means that, just like `||`, the nullish coalescing operator `??` is evaluated before `=` and `?`, but after most other operations, such as `+`, `*`.
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 
 Εάν χρεαστούμε να επιλέξουμε μια τιμή με `??` σε μια σύνθετη έκφραση, τότε να λαμβάνεται υπ όψιν να προσθέσετε παρενθέσεις:
 
@@ -146,7 +197,13 @@ let x = 1 && 2 ?? 3; // Syntax error
 ```
 Ο περιορισμός είναι σίγουρα συζητήσιμος, αλλά προστέθηκε στις προδιαγραφές γλώσσας με σκοπό να αποφευχθούν λάθη προγραμματισμού, καθώς οι άνθρωποι αρχίζουν να αλλάζουν σε `??` από `||`.
 
+<<<<<<< HEAD
 Χρησιμοποιήστε ρητές παρενθέσεις για να το επιλύσετε:
+=======
+The limitation is surely debatable, it was added to the language specification with the purpose to avoid programming mistakes, when people start to switch from `||` to `??`.
+
+Use explicit parentheses to work around it:
+>>>>>>> 7533c719fbf62ba57188d6d51fe4c038b282bd0c
 
 ```js run
 *!*
