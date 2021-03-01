@@ -13,20 +13,32 @@
 
 Για να διαβάσετε για τα πιο πρόσφατα νέα σχετικά για τα χαρακτηριστικά, συμπεριλαμβανομένων εκείνων που είναι "almost standard" (το λεγόμενο "stage 3") , βλέπε στο  <https://github.com/tc39/proposals>.
 
+<<<<<<< HEAD
 Επίσης, εάν αναπτύσσεται για το πρόγραμμα περιήγησης, τότε υπάρχουν και άλλες προδιαγραφές που καλύπτονται στο [δεύτερο μέρος](info:browser-environment) του εκπαιδευτικού υλικού.
+=======
+Also, if you're developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
+>>>>>>> f6ae0b5a5f3e48074312ca3e47c17c92a5a52328
 
 ## Εγχειρίδια
 
+<<<<<<< HEAD
 - **MDN (Mozilla) JavaScript Reference** είναι ένα εγχειρίδιο με παραδείγματα και άλλες πληροφορίες. Είναι καλό να λάβετε σε βάθος πληροφορίες σχετικά με μεμονωμένες λειτουργίες γλώσσας, μεθόδους κλπ.
+=======
+- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It's great to get in-depth information about individual language functions, methods etc.
+>>>>>>> f6ae0b5a5f3e48074312ca3e47c17c92a5a52328
 
     Μπορεί κανείς να το βρει στο <https://developer.mozilla.org/en-US/ docs/Web/JavaScript/Reference>.
 
+<<<<<<< HEAD
     Αν και είναι καλύτερα να χρησιμοποιήσετε μια αναζήτηση στο Διαδίκτυο. Απλά χρησιμοποιήστε "MDN [όρος]" σαν ερώτημα, πχ. <https://google.com/search?q=MDN+parseInt> αναζήτηση σχετικά για το `parseInt` function.
 
 
 - **MSDN** – Microsoft εγχειρίδιο με πολλές πληροφορίες, όπως JavaScript (συχνά αναφέρεται ως JScript). Εάν κάποιος χρειάζεται κάτι συγκεκριμένο για τον Internet Explorer, καλύτερα να πάτε στο: <http://msdn.microsoft.com/>.
 
     Επίσης, μπορούμε να χρησιμοποιήσουμε μια αναζήτηση στο διαδίκτυο με φράσεις όπως "RegExp MSDN" ή "RegExp MSDN jscript".
+=======
+Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for `parseInt` function.
+>>>>>>> f6ae0b5a5f3e48074312ca3e47c17c92a5a52328
 
 ## Πίνακες συμβατότητας
 

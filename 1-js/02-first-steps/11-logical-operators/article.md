@@ -1,6 +1,10 @@
 # Λογικοί τελεστές
 
+<<<<<<< HEAD
 Υπάρχουν τρεις λογικοί τελεστές στην JavaScript: `||` (OR), `&&` (AND), `!` (NOT).
+=======
+There are four logical operators in JavaScript: `||` (OR), `&&` (AND), `!` (NOT), `??` (Nullish Coalescing). Here we cover the first three, the `??` operator is in the next article.
+>>>>>>> f6ae0b5a5f3e48074312ca3e47c17c92a5a52328
 
 Αν και ονομάζονται "logical", μπορούν να εφαρμοστούν σε οποιουδήποτε τύπου, όχι μόνο boolean. Το αποτέλεσμα τους μπορεί επίσης να είναι οποιουδήποτε τύπου.
 
