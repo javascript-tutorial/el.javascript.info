@@ -1,16 +1,16 @@
-# Functions
+# Συναρτήσεις
 
 Πολύ συχνά πρέπει να κάνουμε παρόμοια εργασιες σε πολλά σημεία του script.
 
 Για παράδειγμα, πρέπει να δείξουμε ένα ωραίο μήνυμα όταν ένας επισκέπτης συνδέεται ή αποσυνδέεται σε κάποιο σημείο της εφαρμογής.
 
-Οι functions είναι τα κύρια "building blocks" του προγράμματος. Επιτρέπουν στον κωδικό να καλείται πολλές φορές χωρίς επανάληψη.
+Οι συναρτήσεις είναι τα κύρια "building blocks" του προγράμματος. Επιτρέπουν στον κωδικό να καλείται πολλές φορές χωρίς επανάληψη.
 
-Έχουμε ήδη δει παραδείγματα ενσωματωμένων συναρτήσεων, όπως `alert(message)`, `prompt(message, default)` καί `confirm(question)`. Μπορούμε όμως να δημιουργήσουμε και δικές μας functions.
+Έχουμε ήδη δει παραδείγματα ενσωματωμένων συναρτήσεων, όπως `alert(message)`, `prompt(message, default)` καί `confirm(question)`. Μπορούμε όμως να δημιουργήσουμε και δικές μας συναρτήσεις.
 
 ## Function Declaration
 
-Για να δημιουργήσουμε μια function μπορούμε να χρησιμοποιήσουμε το *function declaration*.
+Για να δημιουργήσουμε μια συνάρτηση μπορούμε να χρησιμοποιήσουμε το *function declaration*.
 
 Υλοποιείται με αυτό το τρόπο:
 
@@ -20,7 +20,7 @@ function showMessage() {
 }
 ```
 
-Η λέξη-κλειδί `function` πηγαίνει πρώτα, μετά πηγαίνει το *όνομα της function*, μετά μια λίστα *παραμέτρων* μεταξύ των παρενθέσεων (διαχωρισμένη με κόμμα, κενή στο παραπάνω παράδειγμα) και τέλος ο κωδικός της συνάρτησης, που ονομάζεται επίσης "the function body", ανάμεσα σε άγκιστρα.
+Η λέξη-κλειδί `function` πηγαίνει πρώτα, μετά πηγαίνει το `όνομα της συνάρτησης`, μετά μια λίστα *παραμέτρων* μεταξύ των παρενθέσεων (διαχωρισμένη με κόμμα, κενή στο παραπάνω παράδειγμα) και τέλος ο κωδικός της συνάρτησης, που ονομάζεται επίσης "the function body", ανάμεσα σε άγκιστρα.
 
 ```js
 function name(parameters) {
@@ -28,7 +28,7 @@ function name(parameters) {
 }
 ```
 
-Η νέα μας function μπορεί να κληθεί με το όνομά της: `showMessage()`.
+Η νέα μας συνάρτηση μπορεί να κληθεί με το όνομά της: `showMessage()`.
 
 Για παράδειγμα:
 
@@ -43,16 +43,16 @@ showMessage();
 */!*
 ```
 
-Η κλήση `showMessage()` εκτελεί τον κωδικό της function. Εδώ θα δούμε το μήνυμα δύο φορές.
+Η κλήση `showMessage()` εκτελεί τον κωδικό της συνάρτησης. Εδώ θα δούμε το μήνυμα δύο φορές.
 
-Αυτό το παράδειγμα καταδεικνύει με σαφήνεια έναν από τους κύριους σκοπούς των functions: την αποφυγή αντιγραφής του κώδικα.
+Αυτό το παράδειγμα καταδεικνύει με σαφήνεια έναν από τους κύριους σκοπούς των συναρτήσεων: την αποφυγή αντιγραφής του κώδικα.
 
-Εάν κάποτε χρειαστεί να αλλάξουμε το μήνυμα ή τον τρόπο που εμφανίζεται, αρκεί να τροποποιήσουμε τον κώδικα σε ένα μέρος: τη function που το εξάγει.
+Εάν κάποτε χρειαστεί να αλλάξουμε το μήνυμα ή τον τρόπο που εμφανίζεται, αρκεί να τροποποιήσουμε τον κώδικα σε ένα μέρος: τη συνάρτηση που το εξάγει.
 
 
 ## Τοπικές μεταβλητές
 
-Μια μεταβλητή που δηλώνεται μέσα σε μια function είναι ορατή μόνο μέσα σε αυτήν.
+Μια μεταβλητή που δηλώνεται μέσα σε μια συνάρτηση είναι ορατή μόνο μέσα σε αυτήν.
 
 Για παράδειγμα:
 
@@ -72,7 +72,7 @@ alert( message ); // <-- Error! Η μεταβλητή ειναι τοπική
 
 ## Εξωτερικές μεταβλητές
 
-Μια function μπορεί να έχει πρόσβαση και σε μια εξωτερική μεταβλητή, για παράδειγμα:
+Μια συνάρτηση μπορεί να έχει πρόσβαση και σε μια εξωτερική μεταβλητή, για παράδειγμα:
 
 ```js run no-beautify
 let userName = 'John';
@@ -85,7 +85,7 @@ function showMessage() {
 showMessage(); // Hello, John
 ```
 
-Η function έχει πλήρη πρόσβαση στην εξωτερική μεταβλητή. Μπορεί επίσης να την τροποποιήσει.
+Η συνάρτηση έχει πλήρη πρόσβαση στην εξωτερική μεταβλητή. Μπορεί επίσης να την τροποποιήσει.
 
 Για παράδειγμα:
 
@@ -99,16 +99,16 @@ function showMessage() {
   alert(message);
 }
 
-alert( userName ); // *!*John*/!* πριν την εκτέλεση της function
+alert( userName ); // *!*John*/!* πριν την εκτέλεση της συνάρτηση
 
 showMessage();
 
-alert( userName ); // *!*Bob*/!*, η τιμή εχει τροποποιήθει απο την function
+alert( userName ); // *!*Bob*/!*, η τιμή εχει τροποποιήθει απο την συνάρτηση
 ```
 
 Η εξωτερική μεταβλητή χρησιμοποιείται μόνο εφόσον δεν υπάρχει τοπική.
 
-Εάν μια ίδια μεταβλητή δηλώνεται μέσα στη function, τότε *σκιάζει* την εξωτερική. Για παράδειγμα, στον παρακάτω κώδικα η function χρησιμοποιεί την local `userName`. Το εξωτερικό αγνοείται:
+Εάν μια ίδια μεταβλητή δηλώνεται μέσα στη function, τότε *σκιάζει* την εξωτερική. Για παράδειγμα, στον παρακάτω κώδικα η συνάρτηση χρησιμοποιεί την local `userName`. Το εξωτερικό αγνοείται:
 
 ```js run
 let userName = 'John';
@@ -122,24 +122,23 @@ function showMessage() {
   alert(message);
 }
 
-// η function θα δημιουργήσει και θα χρησιμοποιήσει δικό της όνομα χρήστη
+// η συνάρτηση θα δημιουργήσει και θα χρησιμοποιήσει δικό της όνομα χρήστη
 showMessage();
 
-alert( userName ); // *!*John*/!*, αμετάβλητη, η function δεν είχε πρόσβαση στην εξωτερική μεταβλητή
+alert( userName ); // *!*John*/!*, αμετάβλητη, η συνάρτηση δεν είχε πρόσβαση στην εξωτερική μεταβλητή
 ```
 
 ```smart header="Global variables"
 Οι μεταβλητές που δηλώνονται εκτός συνάρτησης, όπως το εξωτερικό `userName` στον παραπάνω κωδικό, ονομάζονται *global*.
 
-Global variables are visible from any function (unless shadowed by locals)
-Οι global μεταβλητές είναι ορατές από οποιαδήποτε function (εκτός εάν επισκιάζονται από locals).
+Οι global μεταβλητές είναι ορατές από οποιαδήποτε συνάρτηση (εκτός εάν επισκιάζονται από locals).
 
 Είναι καλή πρακτική να ελαχιστοποιήσετε τη χρήση global μεταβλητών. Ο σύγχρονος κώδικας έχει λίγα ή καθόλου global. Οι περισσότερες μεταβλητές βρίσκονται στις συναρτήσεις τους. Μερικές φορές όμως, μπορούν να είναι χρήσιμα για την αποθήκευση δεδομένων σε project-level.
 ```
 
 ## Παράμετροι
 
-Μπορούμε να μεταφέρουμε αυθαίρετα δεδομένα σε συναρτήσεις χρησιμοποιώντας παραμέτρους (επίσης λέγεται *function arguments*) .
+Μπορούμε να μεταφέρουμε αυθαίρετα δεδομένα σε συναρτήσεις χρησιμοποιώντας παραμέτρους (επίσης λέγεται *συνάρτηση arguments*) .
 
 Στο παρακάτω παράδειγμα, η συνάρτηση έχει δύο παραμέτρους: `from` και `text`.
 
@@ -176,7 +175,7 @@ showMessage(from, "Hello"); // *Ann*: Hello
 alert( from ); // Ann
 ```
 
-## Default values
+## Προκαθορισμένες τιμές
 
 Εάν μια παράμετρος δεν παρέχεται, τότε η τιμή της γίνεται `undefined`.
 
@@ -186,11 +185,7 @@ alert( from ); // Ann
 showMessage("Ann");
 ```
 
-<<<<<<< HEAD
 Αυτό δεν είναι λάθος. Μια τέτοια κλήση θα έδινε το `"Ann: undefined"`. Δεν υπάρχει `text`, έτσι θεωρούμαι ότι το `text === undefined`.
-=======
-That's not an error. Such a call would output `"*Ann*: undefined"`. There's no `text`, so it's assumed that `text === undefined`.
->>>>>>> 98e21cdc278ba9a99a42820d405ea4e9e267db0b
 
 Αν θέλουμε να χρησιμοποιήσουμε ένα "default" `text` σε αυτήν την περίπτωση, τότε μπορούμε να το καθορίσουμε μετά το `=`:
 
@@ -302,7 +297,6 @@ if ( checkAge(age) ) {
 }
 ```
 
-It is possible to use without a value. That causes the function to exit immediately
 Υπάρχει περίπτωση να χρησιμοποιήσετε την `return` χωρίς τιμή. Αυτό αναγκάζει τη λειτουργία να κλείσει αμέσως.
 
 Για παράδειγμα:
@@ -418,16 +412,15 @@ checkPermission(..) // ελέγχει μια 	συναίνεση, επιστρέ
 
 Αυτές είναι εξαιρέσεις. Γενικά τα ονόματα των συναρτήσεων πρέπει να είναι συνοπτικά και περιγραφικά.
 ```
+## Συναρτήσεις == Σχόλια
 
-## Functions == Comments
+Οι συναρτήσεις πρέπει να είναι σύντομες και να κάνουν μια συγκεκριμένη λειτουργία. Εάν αυτό τη η λειτουργία είναι μεγάλη, ίσως αξίζει νσ την χωρίσετε τη συνάρτηση σε μερικές μικρότερες συνάρτησης. Μερικές φορές η τήρηση αυτού του κανόνα μπορεί να μην είναι τόσο εύκολη, αλλά σίγουρα είναι η καλύτερη λυση.
 
-Functions should be short and do exactly one thing. If that thing is big, maybe it's worth it to split the function into a few smaller functions. Sometimes following this rule may not be that easy, but it's definitely a good thing.
+Μια ξεχωριστή συνάρτηση δεν είναι μόνο πιο εύκολη στη δοκιμή και τον εντοπισμό σφαλμάτων - η ίδια η ύπαρξή της ειναι η διευκόλυνση σας!
 
-A separate function is not only easier to test and debug -- its very existence is a great comment!
+Για παράδειγμα, συγκρίνετε τις δύο συναρτήσεις `showPrimes(n)`. Κάθε ένα εξέρχει [πρώτους αριθμούς](https://en.wikipedia.org/wiki/Prime_number) έως `n`.
 
-For instance, compare the two functions `showPrimes(n)` below. Each one outputs [prime numbers](https://en.wikipedia.org/wiki/Prime_number) up to `n`.
-
-The first variant uses a label:
+Η πρώτη παραλλαγή χρησιμοποιεί μια ετικέτα:
 
 ```js
 function showPrimes(n) {
@@ -437,12 +430,11 @@ function showPrimes(n) {
       if (i % j == 0) continue nextPrime;
     }
 
-    alert( i ); // a prime
+    alert( i ); // πρώτος αριθμός
   }
 }
 ```
-
-The second variant uses an additional function `isPrime(n)` to test for primality:
+Η δεύτερη παραλλαγή χρησιμοποιεί μια πρόσθετη συνάρτηση `isPrime (n)` για να δοκιμάσει την αρχικότητα:
 
 ```js
 function showPrimes(n) {
@@ -450,7 +442,7 @@ function showPrimes(n) {
   for (let i = 2; i < n; i++) {
     *!*if (!isPrime(i)) continue;*/!*
 
-    alert(i);  // a prime
+    alert(i);  // πρώτος αριθμός
   }
 }
 
@@ -462,32 +454,31 @@ function isPrime(n) {
 }
 ```
 
-The second variant is easier to understand, isn't it? Instead of the code piece we see a name of the action (`isPrime`). Sometimes people refer to such code as *self-describing*.
+Η δεύτερη παραλλαγή είναι πιο κατανοητή, έτσι δεν είναι; Αντί για το κομμάτι κώδικα βλέπουμε ένα όνομα της δράσης (`isPrime`). Μερικές φορές οι άνθρωποι αναφέρονται στον κώδικα ως *self-describing*.
 
-So, functions can be created even if we don't intend to reuse them. They structure the code and make it readable.
+Έτσι, οι συναρτήσεις μπορούν να δημιουργηθούν ακόμη και αν δεν σκοπεύουμε να τις επαναχρησιμοποιήσουμε. Δομούν τον κώδικα και τον κάνουν αναγνώσιμο.
 
-## Summary
+## Περίληψη
 
-A function declaration looks like this:
+Μία function declaration δηλώνεται με αυτό τον τρόπο:
 
 ```js
 function name(parameters, delimited, by, comma) {
   /* code */
 }
 ```
+- Οι τιμές μεταβιβάζονται σε μια συνάρτηση ως παράμετροι, αντιγράφονται στις τοπικές μεταβλητές της.
+- Μια συνάρτηση μπορεί να έχει πρόσβαση σε εξωτερικές μεταβλητές. Αλλά λειτουργεί μόνο από μέσα προς τα έξω. Οι τοπικές μεταβλητές ειναι ορατές μόνο μέσα στην συνάρτηση.
+- Μια συνάρτηση μπορεί να επιστρέψει μια τιμή. Εάν δεν το κάνει, τότε το αποτέλεσμα είναι `undefined`.
 
-- Values passed to a function as parameters are copied to its local variables.
-- A function may access outer variables. But it works only from inside out. The code outside of the function doesn't see its local variables.
-- A function can return a value. If it doesn't, then its result is `undefined`.
+Για να κάνετε τον κώδικα καθαρό και κατανοητό, συνίσταται η χρήση κυρίως τοπικών μεταβλητών και παραμέτρων στη συνάρτηση, όχι εξωτερικών μεταβλητών.
 
-To make the code clean and easy to understand, it's recommended to use mainly local variables and parameters in the function, not outer variables.
+Είναι πάντα πιο εύκολο να κατανοήσουμε μια συνάρτηση που παίρνει παραμέτρους, δουλεύει μαζί τους και επιστρέφει ένα αποτέλεσμα, παρά μια συνάρτηση που δεν έχει παραμέτρους, αλλά τροποποιεί τις εξωτερικές μεταβλητές ως side-effect.
 
-It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side-effect.
+Ονομασία συναρτήσεων:
 
-Function naming:
+- Ένα όνομα πρέπει να περιγράφει με σαφήνεια την λειτουργία της συνάρτησης. Ένα καλό όνομα μας δίνει αμέσως τι κάνει και τι επιστρέφει μια συνάρτηση.
+- Μια συνάρτηση είναι μια δράση, επομένως τα ονόματα των συνάρτησης είναι συνήθως λεκτικά.
+- Υπάρχουν πολλά γνωστά προθέματα συναρτήσεων όπως `create…`, `show…`, `get…`, `check…` και ούτω καθεξής. Χρησιμοποιήστε τα για να υποδείξετε τι κάνει μια συνάρτηση.
 
-- A name should clearly describe what the function does. When we see a function call in the code, a good name instantly gives us an understanding what it does and returns.
-- A function is an action, so function names are usually verbal.
-- There exist many well-known function prefixes like `create…`, `show…`, `get…`, `check…` and so on. Use them to hint what a function does.
-
-Functions are the main building blocks of scripts. Now we've covered the basics, so we actually can start creating and using them. But that's only the beginning of the path. We are going to return to them many times, going more deeply into their advanced features.
+Οι συναρτήσεις είναι τα κύρια δομικά στοιχεία των scripts. Τώρα έχουμε καλύψει τα βασικά, έτσι μπορούμε πραγματικά να αρχίσουμε να τα δημιουργούμε και να τα χρησιμοποιούμε. Αλλά αυτή είναι μόνο η αρχή του μονοπατιού. Θα επιστρέψουμε σε αυτές πολλές φορές, πηγαίνοντας βαθύτερα στα προηγμένα χαρακτηριστικά τους.
