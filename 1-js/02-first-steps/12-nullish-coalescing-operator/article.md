@@ -11,9 +11,7 @@
 Ετσι είναι `x = a ?? b` ισοδύναμο με:
 
 ```js
-result = (a !== null && a !== undefined) ? a : b;
-```
-
+result = (a !== null && a !== undefined) ? a : b;```
 
 Εδώ είναι ένα μεγαλύτερο παράδειγμα.
 
@@ -29,7 +27,7 @@ let user;
 alert(user ?? "Anonymous"); // Anonymous
 ```
 
-Of course, if `user` had any value except `null/undefined`, then we would see it instead:
+Φυσικά, εάν ο `user` είχε κάποια τιμή εκτός από το `null/undefined`, τότε θα το δούμε:
 
 ```js run
 let user = "John";
@@ -37,20 +35,18 @@ let user = "John";
 alert(user ?? "Anonymous"); // John
 ```
 
-We can also use a sequence of `??` to select the first value from a list that isn't `null/undefined`.
+Μπορούμε επίσης να χρησιμοποιήσουμε μια ακολουθία του `??` για να επιλέξουμε την πρώτη τιμή από μια λίστα που δεν είναι `null/undefined`.
 
-Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be undefined, if the user decided not to enter a value.
+Ας υποθέσουμε ότι έχουμε δεδομένα του χρήστη σε μεταβλητές `firstName`, `lastName` ή `nickName`. Όλα αυτά μπορεί να είναι undefined, εάν ο χρήστης αποφασίσει να μην εισαγάγει μια τιμή.
 
-We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are undefined.
+Θα θέλαμε να εμφανίσουμε το όνομα χρήστη χρησιμοποιώντας μία από αυτές τις μεταβλητές ή να δείξουμε "Anonymous"  εάν όλες είναι undefined.
 
-Let's use the `??` operator for that:
-
+Ας χρησιμοποιήσουμε τον τελεστή `??`  για αυτό:
 
 ```js run
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
-
 
 // εμφάνιση της πρώτης μη μηδενικής / μη καθορισμένης τιμής
 
@@ -62,7 +58,6 @@ alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 ## Σύγκριση με ||
 
 Ο τελεστής OR `||` μπορεί να χρησιμοποιηθεί με τον ίδιο τρόπο όπως `??`. Στην πραγματικότητα, μπορούμε να αντικαταστήσουμε το `??` με το `||` στον παραπάνω κώδικα και να πάρουμε το ίδιο αποτέλεσμα, όπως περιγράφηκε στο [προηγούμενο κεφάλαιο](info:logical-operators#or-finds-the-first-truthy-value)
-
 
 Οι σημαντικές διαφορές είναι:
 - `||` επιστρέφει την πρώτη *truthy* τιμή.
@@ -158,7 +153,6 @@ alert(x); // 2
 
 ## Περίληψη
 
-
 - Ο μηδενικός τελεστής συγχώνευσης `??` παρέχει έναν σύντομο τρόπο για να επιλέξετε μια "defined" τιμή από τη λίστα.
 
 
@@ -171,4 +165,3 @@ alert(x); // 2
 
 - Ο τελεστής `??` έχει πολύ χαμηλή προτεραιότητα, λίγο υψηλότερος από το `?` και το `=`.
 - Απαγορεύεται η χρήση του με `||`" ή `&&` χωρίς ρητές παρενθέσεις.
-
