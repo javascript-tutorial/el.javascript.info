@@ -162,7 +162,6 @@ alert(i); // 3, ορατό, επειδή δηλώνεται εκτός του β
 
 ````
 
-
 ### Παράλειψη τμήματος
 
 Μπορείτε να παραλείψετε οποιοδήποτε μέρος του `for`.
@@ -359,23 +358,13 @@ for (let i = 0; i < 3; i++) { ... }
 
 Για παράδειγμα, αυτό είναι αδύνατο να γίνει:
 ```js
-<<<<<<< HEAD
+
 break label; // δεν μεταβαίνει στην παρακάτω ετικέτα
 
 label: for (...)
 ```
 Μια κλήση για `break/continue` είναι δυνατή μόνο μέσα από ένα βρόχο και η ετικέτα πρέπει να βρίσκεται κάπου πάνω από την οδηγία.
-=======
-break label; // jump to the label below (doesn't work)
 
-label: for (...)
-```
-
-A call to `continue` is only possible from inside the loop.
-
-The `break` directive may be placed before code blocks too, as `label: { ... }`, but it's almost never used like that. And it also works only inside-out.
->>>>>>> e01998baf8f85d9d6cef9f1add6c81b901f16d69
-````
 
 ## Περίληψη
 
@@ -390,9 +379,3 @@ The `break` directive may be placed before code blocks too, as `label: { ... }`,
 Εάν δεν θέλουμε να κάνουμε τίποτα στην τρέχουσα επανάληψη και θέλουμε να προωθήσουμε στην επόμενη, μπορούμε να χρησιμοποιήσουμε την οδηγία `continue`.
 
 Tα `break/continue` υποστήριζουνται πριν από το βρόχο. Μια ετικέτα είναι ο μόνος τρόπος για να `break/continue` να ξεφύγει από έναν ένθετο βρόχο για να πάει σε έναν εξωτερικό.
-
-
-
-
-
-
