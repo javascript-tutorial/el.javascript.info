@@ -36,20 +36,9 @@ function cachingDecorator(func) {
 
 slow = cachingDecorator(slow);
 
-<<<<<<< HEAD
-alert( slow(1) ); // slow(1) είναι cached
 alert( "Ξανά: " + slow(1) ); // το ίδιο
 
-alert( slow(2) ); // slow(2) είναι cached
 alert( "Ξανά: " + slow(2) ); // το ίδιο με τη προηγούμενη γραμμή
-=======
-alert( slow(1) ); // slow(1) is cached and the result returned
-alert( "Again: " + slow(1) ); // slow(1) result returned from cache
-
-alert( slow(2) ); // slow(2) is cached and the result returned
-alert( "Again: " + slow(2) ); // slow(2) result returned from cache
->>>>>>> e01998baf8f85d9d6cef9f1add6c81b901f16d69
-```
 
 Στον από πάνω κώδικα, ο `cachingDecorator` είναι ένας *διακοσμητής*: μια ειδική συνάρτηση η οποία παίρνει μια άλλη συνάρτηση και επηρεάζει την συμπεριφορά της.
 
@@ -313,7 +302,6 @@ func.apply(context, args)
 func.call(context, ...args); // δώσε ένα πίνακα σαν λίστα με τον τελεστή διασποράς
 func.apply(context, args);   // είναι το ίδιο χρησιμοποιώντας apply
 ```
-
 
 Υπάρχει μόνο μία μικρή διαφορά:
 
