@@ -410,7 +410,11 @@ checkPermission(..) // ελέγχει μια 	συναίνεση, επιστρέ
 
 Για παράδειγμα το [jQuery](http://jquery.com) βιβλιοθήκη ορίζει μια συνάρτηση με `$`. Το [Lodash](http://lodash.com/) βιβλιοθήκη δηλώνει τις συναρτήσεις με `_`.
 
+<<<<<<< HEAD
 Αυτές είναι εξαιρέσεις. Γενικά τα ονόματα των συναρτήσεων πρέπει να είναι συνοπτικά και περιγραφικά.
+=======
+These are exceptions. Generally function names should be concise and descriptive.
+>>>>>>> 6ab384f2512902d74e4b0ff5a6be60e48ab52e96
 ```
 ## Συναρτήσεις == Σχόλια
 
