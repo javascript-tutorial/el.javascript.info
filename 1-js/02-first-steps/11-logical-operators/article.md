@@ -1,10 +1,6 @@
 # Λογικοί τελεστές
 
-<<<<<<< HEAD
 Υπάρχουν τρεις λογικοί τελεστές στην JavaScript: `||` (OR), `&&` (AND), `!` (NOT).
-=======
-There are four logical operators in JavaScript: `||` (OR), `&&` (AND), `!` (NOT), `??` (Nullish Coalescing). Here we cover the first three, the `??` operator is in the next article.
->>>>>>> 6ab384f2512902d74e4b0ff5a6be60e48ab52e96
 
 Αν και ονομάζονται "logical", μπορούν να εφαρμοστούν σε οποιουδήποτε τύπου, όχι μόνο boolean. Το αποτέλεσμα τους μπορεί επίσης να είναι οποιουδήποτε τύπου.
 
@@ -67,11 +63,7 @@ if (hour < 10 || hour > 18 || isWeekend) {
 }
 ```
 
-<<<<<<< HEAD
 ## Ή OR "||" βρίσκει την πρώτη αληθινή τιμή
-=======
-## OR "||" finds the first truthy value [#or-finds-the-first-truthy-value]
->>>>>>> 6ab384f2512902d74e4b0ff5a6be60e48ab52e96
 
 Η λογική που περιγράφεται παραπάνω είναι κάπως κλασική. Τώρα, ας φέρουμε τις "επιπλέον" δυνατότητες της JavaScript.
 
@@ -123,10 +115,7 @@ alert( undefined || null || 0 ); // 0 (όλα falsy, επιστρέφει την
     */!*
     ```
 
-
     Εάν όλες οι μεταβλητές ήταν ψευδείς, θα εμφανιστεί το `Anonymous`.
-
-
 
 2. **Παράκαμψη αξιολόγησης (`short-circuit evaluation`).**
 
