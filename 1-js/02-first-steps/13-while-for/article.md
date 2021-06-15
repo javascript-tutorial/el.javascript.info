@@ -313,7 +313,7 @@ alert('Done!');
 
 Χρειαζόμαστε έναν τρόπο να σταματήσουμε τη διαδικασία εάν ο χρήστης ακυρώσει την εισαγωγή.
 
-The ordinary `break` after `input` would only break the inner loop. That's not sufficient--labels, come to the rescue!
+The ordinary `break` after `input` would only break the inner loop. That's not sufficient -- labels, come to the rescue!
 
 Το συνήθης `break` μετά την `input` θα σπάσει μόνο τον εσωτερικό βρόχο. Αυτό δεν είναι αρκετή--ετικέτα, για να διασωθή!
 
@@ -359,11 +359,31 @@ for (let i = 0; i < 3; i++) { ... }
 
 Για παράδειγμα, αυτό είναι αδύνατο να γίνει:
 ```js
+<<<<<<< HEAD
 break label; // δεν μεταβαίνει στην παρακάτω ετικέτα
 
 label: for (...)
 ```
 Μια κλήση για `break/continue` είναι δυνατή μόνο μέσα από ένα βρόχο και η ετικέτα πρέπει να βρίσκεται κάπου πάνω από την οδηγία.
+=======
+break label; // jump to the label below (doesn't work)
+
+label: for (...)
+```
+
+A `break` directive must be inside a code block. Technically, any labelled code block will do, e.g.:
+```js
+label: {
+  // ...
+  break label; // works
+  // ...
+}
+```
+
+...Although, 99.9% of the time `break` used is inside loops, as we've seen in the examples above.
+
+A `continue` is only possible from inside a loop.
+>>>>>>> fb4fc33a2234445808100ddc9f5e4dcec8b3d24c
 ````
 
 ## Περίληψη
