@@ -46,7 +46,11 @@ alert(3 +
 + 2);
 ```
 
+<<<<<<< HEAD
 Το αποτέλεσμα του κώδικα είναι `6` επειδή το JavaScript δεν εισάγει εδώ ερωτηματικά. Είναι ολοφάνερο ότι αν η γραμμή τελειώσει με ένα συν `` + '', τότε είναι μια "ατελής έκφραση", οπότε δεν χρειάζεται το ερωτηματικό. Και σε αυτή την περίπτωση αυτό λειτουργεί όπως είχε προβλεφθεί.
+=======
+The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so a semicolon there would be incorrect. And in this case, that works as intended.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 **Ωστόσο, υπάρχουν περιπτώσεις στις οποίες η JavaScript "αποτυγχάνει" να υποθέσει ένα ερωτηματικό όπου είναι πραγματικά απαραίτητο.**
 
@@ -55,6 +59,7 @@ alert(3 +
 ````smart header="Aν example of an error"
 Αν είστε περίεργοι να δείτε ένα παράδειγμα ενός τέτοιου σφάλματος, ελέγξτε αυτόν τον κωδικό:
 
+<<<<<<< HEAD
 ```js run
 [1, 2].forEach(alert)
 ```
@@ -62,34 +67,60 @@ alert(3 +
 Δεν χρειάζεται να σκεφτούμε ακόμα την έννοια των παρενθέσεων `[]` και `forEach`. Θα τα μελετήσουμε αργότερα. Προς το παρόν, να θυμάστε μόνο το αποτέλεσμα του κώδικα: δείχνει `1` και ` 2`.
 
 Τώρα, ας προσθέσουμε ενα  «alert» πριν από τον κώδικα και * όχι * να τελειώσει με ένα ερωτηματικό:
+=======
+```js run
+alert("Hello");
 
-```js run no-beautify
-alert("There will be an error")
-
-[1, 2].forEach(alert)
+[1, 2].forEach(alert);
 ```
 
+No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of running the code: it shows `Hello`, then `1`, then `2`.
+
+Now let's remove the semicolon after the `alert`:
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
+
+```js run no-beautify
+alert("Hello")
+
+[1, 2].forEach(alert);
+```
+
+<<<<<<< HEAD
 Τώρα, εάν εκτελέσουμε τον κώδικα, εμφανίζεται μόνο το πρώτo 'alert' και στη συνέχεια έχουμε ένα σφάλμα!
 
 Eάν προσθέσουμε ένα ερωτηματικό μετά `alert` τότε όλα θα λειτουργούν σωστά:
 ```js run
 alert("All fine now");
+=======
+The difference compared to the code above is only one character: the semicolon at the end of the first line is gone.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
-[1, 2].forEach(alert)  
-```
+If we run this code, only the first `Hello` shows (and there's an error, you may need to open the console to see it). There are no numbers any more.
 
+<<<<<<< HEAD
 Τώρα έχουμε το μήνυμα "All fine now" που ακολουθείται από το "1" και το "2".
 
 
 Το σφάλμα στην εκδοχή χωρίς ερωτηματικό εμφανίζεται επειδή η JavaScript δεν υποθέτει ένα ερωτηματικό πριν τις αγκύλες `[...]`.
 
 Επομένως, επειδή το ερωτηματικό δεν εισάφεται αυτόματα, ο κώδικας στο παράδειγμα αντιμετωπίζεται ως μία μόνο δήλωση. Δείτε πώς το βλέπει το JavaScript engine:
+=======
+That's because JavaScript does not assume a semicolon before square brackets `[...]`. So, the code in the last example is treated as a single statement.
+
+Here's how the engine sees it:
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 ```js run no-beautify
-alert("There will be an error")[1, 2].forEach(alert)
+alert("Hello")[1, 2].forEach(alert);
 ```
 
+<<<<<<< HEAD
 Αλλά θα πρέπει να είναι δύο χωριστές δηλώσεις, όχι μία. Μια τέτοια συγχώνευση, στην περίπτωση αυτή, είναι απλώς λανθασμένη, εξ ου και το σφάλμα. Αυτό μπορεί να συμβεί και σε άλλες περιπτώσεις.
+=======
+Looks weird, right? Such merging in this case is just wrong. We need to put a semicolon after `alert` for the code to work correctly.
+
+This can happen in other situations also.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 ````
 
 Συνιστούμε να τοποθετείτε ερωτηματικά μεταξύ δηλώσεων ακόμα και αν διαχωρίζονται από νέες γραμμές. Αυτός ο κανόνας υιοθετείται ευρέως από την κοινότητα. Ας σημειώσουμε για μια ακόμη φορά - * είναι δυνατόν * να αφήνουμε τα ερωτηματικά τις περισσότερες φορές. Αλλά είναι ασφαλέστερο - ειδικά για έναν αρχάριο - να τα χρησιμοποιήσει.

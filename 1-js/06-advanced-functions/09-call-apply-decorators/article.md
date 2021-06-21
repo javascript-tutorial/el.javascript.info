@@ -36,11 +36,19 @@ function cachingDecorator(func) {
 
 slow = cachingDecorator(slow);
 
+<<<<<<< HEAD
 alert( slow(1) ); // slow(1) είναι cached
 alert( "Ξανά: " + slow(1) ); // το ίδιο
 
 alert( slow(2) ); // slow(2) είναι cached
 alert( "Ξανά: " + slow(2) ); // το ίδιο με τη προηγούμενη γραμμή
+=======
+alert( slow(1) ); // slow(1) is cached and the result returned
+alert( "Again: " + slow(1) ); // slow(1) result returned from cache
+
+alert( slow(2) ); // slow(2) is cached and the result returned
+alert( "Again: " + slow(2) ); // slow(2) result returned from cache
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 ```
 
 Στον από πάνω κώδικα, ο `cachingDecorator` είναι ένας *διακοσμητής*: μια ειδική συνάρτηση η οποία παίρνει μια άλλη συνάρτηση και επηρεάζει την συμπεριφορά της.
@@ -302,17 +310,31 @@ func.apply(context, args)
 Οπότε οι δύο αυτές κλήσεις είναι σχεδόν ίδιες:
 
 ```js
+<<<<<<< HEAD
 func.call(context, ...args); // δώσε ένα πίνακα σαν λίστα με τον τελεστή διασποράς
 func.apply(context, args);   // είναι το ίδιο χρησιμοποιώντας apply
 ```
 
+=======
+func.call(context, ...args);
+func.apply(context, args);
+```
+
+They perform the same call of `func` with given context and arguments.
+
+There's only a subtle difference regarding `args`:
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 Υπάρχει μόνο μία μικρή διαφορά:
 
+<<<<<<< HEAD
 - Ο τελεστής διασποράς `...` επιτρέπει το δώσιμο του *iterable* `args` σαν τη λίστα στο `call`.
 - Η `apply` δέχεται μόνο *σαν-πίνακα* `args`.
 
 Άρα, αυτές οι δύο κλήσεις συμπληρώνουν η μία την άλλη. Όπου περιμένουν ένα iterable, η `call` λειτουργεί, όπου περιμένουμε κάτι σαν πίνακα, η `apply` λειτουργεί εκεί.
+=======
+...And for objects that are both iterable and array-like, such as a real array, we can use any of them, but `apply` will probably be faster, because most JavaScript engines internally optimize it better.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 Και για αντικέιμενα που είναι και iterable και σαν πίνακες, όπως ένας πραγματικός πίνακας, τεχνικά θα μπορούσαμε να χρησιμοποιήσουμε οποιαδήποτε από αυτές, όμως η `apply` θα είναι πιθανότατα πιο γρήγορη, διότι οι περισσότερες μηχανές JavaScript εσωτερικά τη βελτιστοποιούν καλύτερα.
 
