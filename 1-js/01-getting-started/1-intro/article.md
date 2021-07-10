@@ -21,14 +21,7 @@
 
 Το browser έχει ένα ενσωματωμένο JavaScript engine που συνηθως λέγεται "JavaScript virtual machine".
 
-
-<<<<<<< HEAD
 Κάθε engine έχει δικό του "codename". Για παράδειγμά:
-=======
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
->>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 - [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- στο Chrome και Opera.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- στο Firefox.
@@ -125,21 +118,4 @@
 - Σήμερα, η JavaScript έχει μια μοναδική θέση ως η πιο ευρέως υιοθετημένη γλώσσα προγράμματος περιήγησης με πλήρη ενσωμάτωση σε HTML / CSS. 
 - Υπάρχουν πολλές γλώσσες που "μεταδίδονται" στην JavaScript και παρέχουν ορισμένες λειτουργίες. Συνιστάται να τα ρίξετε μια ματιά, τουλάχιστον εν συντομία, εφόσον γίνεται ατσίδες στην JavaScript.
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
-- [Brython](https://brython.info/) is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
-<<<<<<< HEAD
-=======
-- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) is a modern, concise and safe programming language that can target the browser or Node.
-
-There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
-
-## Summary
-
->>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
-- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration in HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
 
