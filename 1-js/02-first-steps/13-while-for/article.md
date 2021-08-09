@@ -366,7 +366,16 @@ label: for (...)
 ```
 Μια κλήση για `break/continue` είναι δυνατή μόνο μέσα από ένα βρόχο και η ετικέτα πρέπει να βρίσκεται κάπου πάνω από την οδηγία.
 
+<<<<<<< HEAD
 ## Περίληψη
+=======
+...Although, 99.9% of the time `break` is used inside loops, as we've seen in the examples above.
+
+A `continue` is only possible from inside a loop.
+````
+
+## Summary
+>>>>>>> bc08fd1b32285304b14afea12a9deaa10d13452b
 
 Καλύψαμε 3 τύπους βρόχων:
 
