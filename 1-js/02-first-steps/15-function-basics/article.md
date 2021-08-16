@@ -20,7 +20,6 @@ function showMessage() {
 }
 ```
 
-
 Η λέξη-κλειδί `function` πηγαίνει πρώτα, μετά πηγαίνει το `όνομα της συνάρτησης`, μετά μια λίστα *παραμέτρων* μεταξύ των παρενθέσεων (διαχωρισμένη με κόμμα, κενή στο παραπάνω παράδειγμα) και τέλος ο κωδικός της συνάρτησης, που ονομάζεται επίσης "the function body", ανάμεσα σε άγκιστρα.
 
 ```js
@@ -171,21 +170,8 @@ showMessage(from, "Hello"); // *Ann*: Hello
 alert( from ); // Ann
 ```
 
-<<<<<<< HEAD
+
 ## Προκαθορισμένες τιμές
-=======
-When a value is passed as a function parameter, it's also called an *argument*.
-
-In other words, to put these terms straight:
-
-- A parameter is the variable listed inside the parentheses in the function declaration (it's a declaration time term)
-- An argument is the value that is passed to the function when it is called (it's a call time term).
-
-We declare functions listing their parameters, then call them passing arguments.
-
-In the example above, one might say: "the function `showMessage` is declared with two parameters, then called with two arguments: `from` and `"Hello"`".
-
->>>>>>> 4d01fc20d4d82358e61518a31efe80dec9bb2602
 
 Εάν μια παράμετρος δεν παρέχεται, τότε η τιμή της γίνεται `undefined`.
 
