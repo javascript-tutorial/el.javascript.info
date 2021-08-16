@@ -104,10 +104,17 @@ for (let i = 0; i < 3; i++) { // δείξε 0, μετά 1, μετά 2
 
 | part  |          |                                                                            |
 |-------|----------|----------------------------------------------------------------------------|
+<<<<<<< HEAD
 | begin | `i = 0`    | Εκτελείται μία φορά κατά την είσοδο του βρόχου.                                      |
 | condition | `i < 3`| Ελέγχεται πριν από κάθε επανάληψη βρόχου. Εάν είναι λάθος, ο βρόχος σταματά.             |
 | body | `alert(i)`| Τρέχει ξανά και ξανά οσο η κατάσταση είναι αληθινή           |
 | step| `i++`      | Εκτελείται μετά το σώμα σε κάθε επανάληψη. |
+=======
+| begin | `let i = 0`    | Executes once upon entering the loop.                                      |
+| condition | `i < 3`| Checked before every loop iteration. If false, the loop stops.              |
+| body | `alert(i)`| Runs again and again while the condition is truthy.                         |
+| step| `i++`      | Executes after the body on each iteration. |
+>>>>>>> 4d01fc20d4d82358e61518a31efe80dec9bb2602
 
 Ο γενικός αλγόριθμος βρόχου λειτουργεί κάπως έτσι:
 
@@ -366,7 +373,16 @@ label: for (...)
 ```
 Μια κλήση για `break/continue` είναι δυνατή μόνο μέσα από ένα βρόχο και η ετικέτα πρέπει να βρίσκεται κάπου πάνω από την οδηγία.
 
+<<<<<<< HEAD
 ## Περίληψη
+=======
+...Although, 99.9% of the time `break` is used inside loops, as we've seen in the examples above.
+
+A `continue` is only possible from inside a loop.
+````
+
+## Summary
+>>>>>>> 4d01fc20d4d82358e61518a31efe80dec9bb2602
 
 Καλύψαμε 3 τύπους βρόχων:
 
