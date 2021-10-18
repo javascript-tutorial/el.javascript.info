@@ -126,7 +126,11 @@ alert( undefined || null || 0 ); // 0 (όλα falsy, επιστρέφει την
 				
     Σημαίνει ότι `||` επεξεργάζεται τα ορίσματά του έως ότου επιτευχθεί η πρώτη τιμή αλήθειας και, στη συνέχεια, η τιμή επιστρέφεται αμέσως, χωρίς καν να αγγίξει το άλλο επιχείρημα.
 
+<<<<<<< HEAD
     Αυτή η σημασία αυτής της δυνατότητας γίνεται προφανής εάν ένας τελεστής δεν είναι απλώς μια τιμή, αλλά μια έκφραση με side effect, όπως μια μεταβλητή ανάθεσης ή μια κλήση συνάρτησης.
+=======
+    The importance of this feature becomes obvious if an operand isn't just a value, but an expression with a side effect, such as a variable assignment or a function call.
+>>>>>>> eda333d423db8ade41f75d2e2d30ea06c7d997ef
 
     Στο παρακάτω παράδειγμα, εκτυπώνεται μόνο το δεύτερο μήνυμα:
 

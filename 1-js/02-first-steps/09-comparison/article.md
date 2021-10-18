@@ -4,6 +4,13 @@
 
 Στην JavaScript, είναι γραμμένα με αυτό τον τρόπο:
 
+<<<<<<< HEAD
+=======
+- Greater/less than: <code>a &gt; b</code>, <code>a &lt; b</code>.
+- Greater/less than or equals: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
+- Equals: `a == b`, please note the double equality sign `==` means the equality test, while a single one `a = b` means an assignment.
+- Not equals: In maths the notation is <code>&ne;</code>, but in JavaScript it's written as <code>a != b</code>.
+>>>>>>> eda333d423db8ade41f75d2e2d30ea06c7d997ef
 
 - Μεγαλύτερο/μικρότερο από: <code>a &gt; b</code>, <code>a &lt; b</code>.
 - Μεγαλύτερο/μικρότερο από ή ίσον: <code>a &gt;= b</code>, <code>a &lt;= b</code>.

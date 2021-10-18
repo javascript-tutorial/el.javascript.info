@@ -23,11 +23,19 @@
 
 Κάθε engine έχει δικό του "codename". Για παράδειγμά:
 
+<<<<<<< HEAD
 - [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- στο Chrome και Opera.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- στο Firefox.
 - ...Υπάρχουν και άλλα codenames οπός το "Trident" και "Chakra" για διαφορετικές εκδόσεις του Internet Explorer, "ChakraCore" για το Microsoft Edge, "Nitro" και "SquirrelFish" γα το Safari, κα.
 
 Είναι κάλο να θυμόμαστε τους παρακάτω ορούς γιατί χρησιμοποιούνται σε άρθρα προγραμματιστών στο Internet. Και θα τα χρησιμοποιήσουμε και σε αυτό το tutorial.
+=======
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome, Opera and Edge.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
+- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+
+The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome, Opera and Edge.
+>>>>>>> eda333d423db8ade41f75d2e2d30ea06c7d997ef
 
 '''smart header="How do engines work?"
 
