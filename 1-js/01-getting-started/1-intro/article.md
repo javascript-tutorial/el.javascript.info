@@ -59,11 +59,7 @@
 
 Οι δυνατότητες τις JavaScript στο πρόγραμμα περιήγησης είναι περιορισμένες για λόγους ασφάλειας του χρήστη. Ο στόχος είναι να αποτραπεί η πρόσβαση μιας κακόβουλης ιστοσελίδας σε ιδιωτικές πληροφορίες ή να βλάψει τα δεδομένα του χρήστη.
 
-<<<<<<< HEAD
 Παραδείγματα τέτοιων περιορισμών περιλαμβάνουν:
-=======
-JavaScript's abilities in the browser are limited for the sake of a user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
->>>>>>> 4541b7af7584014a676da731f6e8774da5e059f6
 
 - Η JavaScript σε μια ιστοσελίδα ενδέχεται να μην διαβάζει / γράφει αυθαίρετα αρχεία στον σκληρό δίσκο, να τα αντιγράφει ή να εκτελεί προγράμματα. Δεν έχει άμεση πρόσβαση στις λειτουργίες του λειτουργικού συστήματος. 
 
@@ -93,16 +89,7 @@ JavaScript's abilities in the browser are limited for the sake of a user's safet
 
 Αυτό κάνει την JavaScript μοναδική. Γι 'αυτό είναι το πιο διαδεδομένο εργαλείο για τη δημιουργία διεπαφών προγράμματος περιήγησης. 
 
-<<<<<<< HEAD
 Ενώ σχεδιάζετε να μάθετε μια νέα τεχνολογία, είναι ωφέλιμο να ελέγξετε τις προοπτικές της. Ας προχωρήσουμε λοιπόν στις σύγχρονες τάσεις που το επηρεάζουν, συμπεριλαμβανομένων των νέων γλωσσών και των δυνατοτήτων του προγράμματος περιήγησης.
-=======
-```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Supported by all major browsers and enabled by default.
-```
-JavaScript is the only browser technology that combines these three things.
->>>>>>> 4541b7af7584014a676da731f6e8774da5e059f6
 
 ## Γλώσσες "πάνω απο" την JavaScript
 
@@ -130,11 +117,3 @@ JavaScript is the only browser technology that combines these three things.
 - Η JavaScript δημιουργήθηκε αρχικά ως γλώσσα μόνο για πρόγραμμα περιήγησης, αλλά τώρα χρησιμοποιείται και σε πολλά άλλα περιβάλλοντα.
 - Σήμερα, η JavaScript έχει μια μοναδική θέση ως η πιο ευρέως υιοθετημένη γλώσσα προγράμματος περιήγησης με πλήρη ενσωμάτωση σε HTML / CSS. 
 - Υπάρχουν πολλές γλώσσες που "μεταδίδονται" στην JavaScript και παρέχουν ορισμένες λειτουργίες. Συνιστάται να τα ρίξετε μια ματιά, τουλάχιστον εν συντομία, εφόσον γίνεται ατσίδες στην JavaScript.
-
-
-<<<<<<< HEAD
-=======
-- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language, fully integrated with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
->>>>>>> 4541b7af7584014a676da731f6e8774da5e059f6
