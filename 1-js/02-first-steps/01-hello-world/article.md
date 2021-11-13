@@ -74,11 +74,7 @@ Oί κώδικες της JavaScript μπορούν να εισαχθούν σε
 <script src="/path/to/script.js"></script>
 ```
 
-<<<<<<< HEAD
 Εδώ, `/path/to/script.js` είναι μια απόλυτη διεύθυνση του script από τo site root. Κάποιος μπορεί επίσης να παρέχει μια σχετική διεύθυνση από την τρέχουσα σελίδα. Για παράδειγμα, `src="script.js"` εννοεί ένα αρχείο `"script.js"` μέσα στο τρέχων φάκελο.
-=======
-Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"`, just like `src="./script.js"`, would mean a file `"script.js"` in the current folder.
->>>>>>> 4541b7af7584014a676da731f6e8774da5e059f6
 
 Επίσης μπορούμε να δώσουμε μια πλήρη διεύθυνση URL. Για παράδειγμα:
 
