@@ -211,7 +211,6 @@ alert(age); // "undefined"
 
 Ο τελεστής `typeof` επιστρέφει τον τύπο του ορίσματος. Είναι χρήσιμο όταν θέλουμε να επεξεργαστούμε διαφορετικές τιμές διαφορετικών τύπων ή απλώς να κάνουμε έναν γρήγορο έλεγχο.
 
-<<<<<<< HEAD
 Υποστηρίζει δύο μορφές σύνταξης:
 
 1. Ως τελεστής: `typeof x`.
@@ -220,9 +219,6 @@ alert(age); // "undefined"
 Με άλλα λόγια, λειτουργεί με παρενθέσεις ή χωρίς αυτές. Το αποτέλεσμα είναι το ίδιο.
 
 Η κλήση στο `typeof x` επιστρέφει μια συμβολοσειρά με τύπου όνοματος:
-=======
-A call to `typeof x` returns a string with the type name:
->>>>>>> 8d04d0d2db97276dbb2b451c30a7bd3e05d65831
 
 ```js
 typeof undefined // "undefined"
@@ -252,29 +248,11 @@ typeof alert // "function"  (3)
 
 Οι τρεις τελευταίες γραμμές μπορεί να χρειάζονται περισσότερη εξήγηση:
 
-<<<<<<< HEAD
 1. Το `Math` είναι ένα ενσωματωμένο object που παρέχει μαθηματικές λειτουργίες. Θα το μάθουμε στο κεφάλαιο <info:number>. Εδώ, χρησιμεύει ακριβώς ως παράδειγμα ενός object.
 2. Το αποτέλεσμα του `typeof null` είναι `"object"`. Αυτό είναι λάθος. Είναι ένα επίσημα αναγνωρισμένο σφάλμα στο `typeof`, διατηρεί την συμβατότητα. Φυσικά, το `null` δεν είναι αντικείμενο. Είναι μια ειδική τιμή με ξεχωριστό τύπο. Και αυτό πάλι είναι ένα λάθος στη γλώσσα.
 3. Το αποτέλεσμα του `typeof alert` είναι `"function"`, επειδή το `alert` είναι μια function. Θα μελετήσουμε για τις functions στα επόμενα κεφάλαια όπου θα δούμε επίσης ότι δεν υπάρχει ειδικός τύπος "function" στην JavaScript. Οι functions ανήκουν στον τύπο object. Αλλά το `typeof` τα αντιμετωπίζει διαφορετικά, επιστρέφοντας `"function"`. Αυτό δεν είναι απόλυτα σωστό, αλλά πολύ βολικό στην πράξη.
 
 ## Περίληψη
-=======
-1. `Math` is a built-in object that provides mathematical operations. We will learn it in the chapter <info:number>. Here, it serves just as an example of an object.
-2. The result of `typeof null` is `"object"`. That's an officially recognized error in `typeof`, coming from very early days of JavaScript and kept for compatibility. Definitely, `null` is not an object. It is a special value with a separate type of its own. The behavior of `typeof` is wrong here.
-3. The result of `typeof alert` is `"function"`, because `alert` is a function. We'll study functions in the next chapters where we'll also see that there's no special "function" type in JavaScript. Functions belong to the object type. But `typeof` treats them differently, returning `"function"`. That also comes from the early days of JavaScript. Technically, such behavior isn't correct, but can be convenient in practice.
-
-```smart header="The `typeof(x)` syntax"
-You may also come across another syntax: `typeof(x)`. It's the same as `typeof x`.
-
-To put it clear: `typeof` is an operator, not a function. The parentheses here aren't a part of `typeof`. It's the kind of parentheses used for mathematical grouping.
-
-Usually, such parentheses contain a mathematical expression, such as `(2 + 2)`, but here they contain only one argument `(x)`. Syntactically, they allow to avoid a space between the `typeof` operator and its argument, and some people like it.
-
-Some people prefer `typeof(x)`, although the `typeof x` syntax is much more common.
-```
-
-## Summary
->>>>>>> 8d04d0d2db97276dbb2b451c30a7bd3e05d65831
 
 Υπάρχουν 8 βασικοί τύποι δεδομένων στην JavaScript.
 
@@ -289,14 +267,8 @@ Some people prefer `typeof(x)`, although the `typeof x` syntax is much more comm
 
 Ο τελεστής `typeof` μας επιτρέπει να δούμε ποιος τύπος αποθηκεύεται σε μια μεταβλητή.
 
-<<<<<<< HEAD
 - Σε 2 μορφές: `typeof x` ή `typeof(x)`.
 - Επιστρέφει μια συμβολοσειρά με το τύπου όνοματος, όπως `"string"`.
 - Για το `null` επιστρέφει `"object"` -- αυτό είναι ένα σφάλμα στη γλώσσα, δεν είναι στην πραγματικότητα ένα object.
-=======
-- Usually used as `typeof x`, but `typeof(x)` is also possible.
-- Returns a string with the name of the type, like `"string"`.
-- For `null` returns `"object"` -- this is an error in the language, it's not actually an object.
->>>>>>> 8d04d0d2db97276dbb2b451c30a7bd3e05d65831
 
 Στα επόμενα κεφάλαια, θα επικεντρωθούμε σε primitive τιμές και μόλις εξοικειωθούμε με αυτές, θα προχωρήσουμε στα objects.
