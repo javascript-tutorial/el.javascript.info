@@ -48,13 +48,23 @@ n = 12.345;
     alert( "not a number" / 2 ); // NaN, μια τέτοια διαίρεση είναι εσφαλμένη
     ```
 
+<<<<<<< HEAD
     `NaN` είναι sticky. Οποιαδήποτε περαιτέρω λειτουργία στο `NaN` επιστρέφει `NaN`:
+=======
+    `NaN` is sticky. Any further mathematical operation on `NaN` returns `NaN`:
+>>>>>>> 0f748275e20a81700c8514f22a7cc80c4422d09c
 
     ```js run
-    alert( "not a number" / 2 + 5 ); // NaN
+    alert( NaN + 1 ); // NaN
+    alert( 3 * NaN ); // NaN
+    alert( "not a number" / 2 - 1 ); // NaN
     ```
 
+<<<<<<< HEAD
    Έτσι, εάν υπάρχει ένα `NaN` κάπου σε μια μαθηματική έκφραση, μεταδίδεται σε ολόκληρο το αποτέλεσμα.
+=======
+    So, if there's a `NaN` somewhere in a mathematical expression, it propagates to the whole result (there's only one exception to that: `NaN ** 0` is `1`).
+>>>>>>> 0f748275e20a81700c8514f22a7cc80c4422d09c
 
 ```smart header="Mathematical operations are safe"
 Το να κάνουμε μαθηματικά είναι "ασφαλές" στην JavaScript. Μπορούμε να κάνουμε οτιδήποτε: διαίρεση με μηδέν, αντιμετωπίζουμε μη αριθμητικές συμβολοσειρές ως αριθμούς κ.λπ.
