@@ -189,22 +189,30 @@ alert( +apples + +oranges ); // 5
 | Precedence | Name | Sign |
 |------------|------|------|
 | ... | ... | ... |
-| 17 | unary plus | `+` |
-| 17 | unary negation | `-` |
-| 16 | exponentiation | `**` |
-| 15 | multiplication | `*` |
-| 15 | division | `/` |
-| 13 | addition | `+` |
-| 13 | subtraction | `-` |
+| 15 | unary plus | `+` |
+| 15 | unary negation | `-` |
+| 14 | exponentiation | `**` |
+| 13 | multiplication | `*` |
+| 13 | division | `/` |
+| 12 | addition | `+` |
+| 12 | subtraction | `-` |
 | ... | ... | ... |
-| 3 | assignment | `=` |
+| 2 | assignment | `=` |
 | ... | ... | ... |
 
+<<<<<<< HEAD
 Όπως μπορούμε να δούμε, το "unary plus" έχει προτεραιότητα `17` που είναι υψηλότερη από το `13` της "προσθήκης" (δυαδικό συν). Γι 'αυτό, στην έκφραση `"+apples + +oranges"`, τα unary plus λειτουργούν πριν από την πρόσθεση.
+=======
+As we can see, the "unary plus" has a priority of `15` which is higher than the `12` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
+>>>>>>> 29216730a877be28d0a75a459676db6e7f5c4834
 
 ## Ανάθεση
 
+<<<<<<< HEAD
 Ας σημειώσουμε ότι μια ανάθεση `=` είναι επίσης τελεστής. Παρατίθεται στον πίνακα προτεραιότητας με την πολύ χαμηλή προτεραιότητα του `3`.
+=======
+Let's note that an assignment `=` is also an operator. It is listed in the precedence table with the very low priority of `2`.
+>>>>>>> 29216730a877be28d0a75a459676db6e7f5c4834
 
 Γι 'αυτό, όταν εκχωρούμε μια μεταβλητή, όπως `x = 2 * 2 + 1`, οι υπολογισμοί γίνονται πρώτα και στη συνέχεια αξιολογείται το `=`, αποθηκεύοντας το αποτέλεσμα στο `x`.
 
