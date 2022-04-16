@@ -2,11 +2,11 @@ importance: 4
 
 ---
 
-# Is "else" required?
+# Απαιτείται "else"?
 
-The following function returns `true` if the parameter `age` is greater than `18`.
+Η ακόλουθη συνάρτηση επιστρέφει `true` αν η παράμετρος `age` είναι μεγαλύτερη από '18'.
 
-Otherwise it asks for a confirmation and returns its result:
+Διαφορετικά ζητά επιβεβαίωση και επιστρέφει το αποτέλεσμα:
 
 ```js
 function checkAge(age) {
@@ -21,7 +21,7 @@ function checkAge(age) {
 }
 ```
 
-Will the function work differently if `else` is removed?
+Η συνάρτηση θα λειτουργήσει διαφορετικά αν αφαιρεθεί το `else`;
 
 ```js
 function checkAge(age) {
@@ -34,5 +34,5 @@ function checkAge(age) {
 */!*
 }
 ```
+Υπάρχει διαφορά στη συμπεριφορά αυτών των δύο παραλλαγών;
 
-Is there any difference in the behavior of these two variants?

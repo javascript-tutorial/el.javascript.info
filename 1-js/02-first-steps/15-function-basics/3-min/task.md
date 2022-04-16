@@ -2,11 +2,11 @@ importance: 1
 
 ---
 
-# Function min(a, b)
+# Συνάρτηση min(a, b)
 
-Write a function `min(a,b)` which returns the least of two numbers `a` and `b`.
+Γράψτε μια συνάρτηση 'min (a, b)' η οποία επιστρέφει το ελάχιστο των δύο αριθμών 'a' και 'b'.
 
-For instance:
+Παραδείγματος χάριν:
 
 ```js
 min(2, 5) == 2

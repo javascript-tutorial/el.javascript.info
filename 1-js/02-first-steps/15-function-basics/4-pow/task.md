@@ -4,16 +4,15 @@ importance: 4
 
 # Function pow(x,n)
 
-Write a function `pow(x,n)` that returns `x` in power `n`. Or, in other words, multiplies `x` by itself `n` times and returns the result.
+Γράψτε μια συνάρτηση 'pow (x, n)' που επιστρέφει 'x' στην ισχύ 'n'. Ή, με άλλα λόγια, πολλαπλασιάζει το `x` με τον εαυτό του `n`  φορές και επιστρέφει το αποτέλεσμα.
 
 ```js
 pow(3, 2) = 3 * 3 = 9
 pow(3, 3) = 3 * 3 * 3 = 27
 pow(1, 100) = 1 * 1 * ...* 1 = 1
 ```
-
-Create a web-page that prompts for `x` and `n`, and then shows the result of `pow(x,n)`.
+Δημιουργήστε μια ιστοσελίδα που υποκινεί για 'x' και 'n', και στη συνέχεια εμφανίζει το αποτέλεσμα του 'pow (x, n)'.
 
 [demo]
 
-P.S. In this task the function should support only natural values of `n`: integers up from `1`.
+Υ.Σ. Σε αυτή την εργασία η συνάρτηση θα πρέπει να υποστηρίζει μόνο φυσικές τιμές του 'n': ακέραιοος από το '1'.

@@ -2,13 +2,13 @@ importance: 5
 
 ---
 
-# Fix the addition
+# Διόρθωση της προσθήσης
 
-Here's a code that asks the user for two numbers and shows their sum.
+Εδώ υπάρχει ένας κώδικας που ζητά από το χρήστη δύο αριθμούς και δείχνει το άθροισμά τους.
 
-It works incorrectly. The output in the example below is `12` (for default prompt values).
+Λειτουργεί εσφαλμένα. Η έξοδος στο παρακάτω παράδειγμα είναι `12` (για προκαθορισμένες άμεσες τιμές).
 
-Why? Fix it. The result should be `3`.
+Ποιός είναι ο λόγος; Φτιάξτε το. Το αποτέλεσμα θα πρέπει να είναι `3`.
 
 ```js run
 let a = prompt("First number?", 1);

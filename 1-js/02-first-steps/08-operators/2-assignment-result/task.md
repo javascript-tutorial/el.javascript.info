@@ -2,9 +2,9 @@ importance: 3
 
 ---
 
-# Assignment result
+# Αποτέλεσμα ανάθεσης
 
-What are the values of `a` and `x` after the code below?
+Ποιες είναι οι τιμές των `a` και `x` μετά τον παρακάτω κωδικό?
 
 ```js
 let a = 2;
