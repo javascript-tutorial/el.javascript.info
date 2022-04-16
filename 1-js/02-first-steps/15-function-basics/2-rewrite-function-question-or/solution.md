@@ -1,4 +1,4 @@
-Using a question mark operator `'?'`:
+Χρήση ερωτηματικού χειριστή `'?'`:
 
 ```js
 function checkAge(age) {
@@ -6,7 +6,7 @@ function checkAge(age) {
 }
 ```
 
-Using OR `||` (the shortest variant):
+Χρήση OR `||` (η συντομότερη παραλλαγή):
 
 ```js
 function checkAge(age) {
@@ -14,4 +14,5 @@ function checkAge(age) {
 }
 ```
 
-Note that the parentheses around `age > 18` are not required here. They exist for better readability.
+Σημειώστε ότι οι παρενθέσεις γύρω από την `age > 18` δεν απαιτούνται εδώ. Υπάρχουν για καλύτερη αναγνωσιμότητα.
+

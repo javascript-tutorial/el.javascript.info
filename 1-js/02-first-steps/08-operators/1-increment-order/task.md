@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# The postfix and prefix forms
+# Οί μορφές postfix και prefix
 
-What are the final values of all variables `a`, `b`, `c` and `d` after the code below?
+Ποιες είναι οι τελικές τιμές όλων των μεταβλητών μετά τον ακόλουθο κωδικό `a`, `b`, `c` and `d` ?
 
 ```js
 let a = 1, b = 1;
