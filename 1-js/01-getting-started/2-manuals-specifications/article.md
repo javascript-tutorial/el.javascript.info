@@ -17,9 +17,10 @@
 
 ## Εγχειρίδια
 
+
 - **MDN (Mozilla) JavaScript Reference** είναι ένα εγχειρίδιο με παραδείγματα και άλλες πληροφορίες. Είναι καλό να λάβετε σε βάθος πληροφορίες σχετικά με μεμονωμένες λειτουργίες γλώσσας, μεθόδους κλπ.
 
-    Μπορεί κανείς να το βρει στο <https://developer.mozilla.org/en-US/ docs/Web/JavaScript/Reference>.
+Μπορεί κανείς να το βρει στο <https://developer.mozilla.org/en-US/ docs/Web/JavaScript/Reference>.
 
     Αν και είναι καλύτερα να χρησιμοποιήσετε μια αναζήτηση στο Διαδίκτυο. Απλά χρησιμοποιήστε "MDN [όρος]" σαν ερώτημα, πχ. <https://google.com/search?q=MDN+parseInt> αναζήτηση σχετικά για το `parseInt` function.
 
