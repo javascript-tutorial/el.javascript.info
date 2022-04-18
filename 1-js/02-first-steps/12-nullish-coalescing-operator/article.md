@@ -18,7 +18,7 @@ result = (a !== null && a !== undefined) ? a : b;```
 =======
 The nullish coalescing operator is written as two question marks `??`.
 
-As it treats `null` and `undefined` similarly, we'll use a special term here, in this article. We'll say that an expression is "defined" when it's neither `null` nor `undefined`.
+As it treats `null` and `undefined` similarly, we'll use a special term here, in this article. For brevity, we'll say that a value is "defined" when it's neither `null` nor `undefined`.
 
 The result of `a ?? b` is:
 - if `a` is defined, then `a`,
@@ -40,10 +40,14 @@ We can rewrite `result = a ?? b` using the operators that we already know, like 
 =======
 Now it should be absolutely clear what `??` does. Let's see where it helps.
 
-The common use case for `??` is to provide a default value for a potentially undefined variable.
+The common use case for `??` is to provide a default value.
 
+<<<<<<< HEAD
 For example, here we show `user` if defined, otherwise `Anonymous`:
 >>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
+=======
+For example, here we show `user` if its value isn't `null/undefined`, otherwise `Anonymous`:
+>>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
 
 ```js run
 let user;
@@ -68,12 +72,18 @@ alert(user ?? "Anonymous"); // John (user defined)
 <<<<<<< HEAD
 Ας υποθέσουμε ότι έχουμε δεδομένα του χρήστη σε μεταβλητές `firstName`, `lastName` ή `nickName`. Όλα αυτά μπορεί να είναι undefined, εάν ο χρήστης αποφασίσει να μην εισαγάγει μια τιμή.
 
+<<<<<<< HEAD
 Θα θέλαμε να εμφανίσουμε το όνομα χρήστη χρησιμοποιώντας μία από αυτές τις μεταβλητές ή να δείξουμε "Anonymous"  εάν όλες είναι undefined.
 =======
 Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be not defined, if the user decided not to enter a value.
 
 We'd like to display the user name using one of these variables, or show "Anonymous" if all of them aren't defined.
 >>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
+=======
+Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be not defined, if the user decided not to fill in the corresponding values.
+
+We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are `null/undefined`.
+>>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
 
 Ας χρησιμοποιήσουμε τον τελεστή `??`  για αυτό:
 
@@ -164,7 +174,11 @@ The precedence of the `??` operator is the same as `||`. They both equal `4` in 
 That means that, just like `||`, the nullish coalescing operator `??` is evaluated before `=` and `?`, but after most other operations, such as `+`, `*`.
 >>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
+<<<<<<< HEAD
 Εάν χρεαστούμε να επιλέξουμε μια τιμή με `??` σε μια σύνθετη έκφραση, τότε να λαμβάνεται υπ όψιν να προσθέσετε παρενθέσεις:
+=======
+So we may need to add parentheses in expressions like this:
+>>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
 
 ```js run
 let height = null;
@@ -193,7 +207,7 @@ let area = height ?? (100 * width) ?? 50;
 // without parentheses
 let area = height ?? 100 * width ?? 50;
 
-// ...works the same as this (probably not what we want):
+// ...works this way (not what we want):
 let area = height ?? (100 * width) ?? 50;
 ```
 
