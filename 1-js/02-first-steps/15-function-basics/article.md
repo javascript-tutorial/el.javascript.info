@@ -170,21 +170,6 @@ showMessage(from, "Hello"); // *Ann*: Hello
 alert( from ); // Ann
 ```
 
-<<<<<<< HEAD
-=======
-When a value is passed as a function parameter, it's also called an *argument*.
-
-In other words, to put these terms straight:
-
-- A parameter is the variable listed inside the parentheses in the function declaration (it's a declaration time term).
-- An argument is the value that is passed to the function when it is called (it's a call time term).
-
-We declare functions listing their parameters, then call them passing arguments.
-
-In the example above, one might say: "the function `showMessage` is declared with two parameters, then called with two arguments: `from` and `"Hello"`".
-
->>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
-
 ## Προκαθορισμένες τιμές
 
 Εάν μια παράμετρος δεν παρέχεται, τότε η τιμή της γίνεται `undefined`.
@@ -222,43 +207,7 @@ function showMessage(from, text = anotherFunction()) {
 
 Στο παραπάνω παράδειγμα, το `anotherFunction()` καλείται κάθε φορά που το `showMessage()` καλείται χωρίς την παράμετρο `text`.
 
-<<<<<<< HEAD
 ### Εναλλακτικοί προεπιλεγμένοι παράμετροι
-=======
-````smart header="Default parameters in old JavaScript code"
-Several years ago, JavaScript didn't support the syntax for default parameters. So people used other ways to specify them.
-
-Nowadays, we can come across them in old scripts.
-
-For example, an explicit check for `undefined`:
-
-```js
-function showMessage(from, text) {
-*!*
-  if (text === undefined) {
-    text = 'no text given';
-  }
-*/!*
-
-  alert( from + ": " + text );
-}
-```
-
-...Or using the `||` operator:
-
-```js
-function showMessage(from, text) {
-  // If the value of text is falsy, assign the default value
-  // this assumes that text == "" is the same as no text at all
-  text = text || 'no text given';
-  ...
-}
-```
-````
-
-
-### Alternative default parameters
->>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
 
 Μερικές φορές έχει νόημα να ορίσετε προεπιλεγμένες τιμές για παραμέτρους όχι στη δήλωση συνάρτησης, αλλά σε μεταγενέστερο στάδιο, κατά την εκτέλεση.
 
