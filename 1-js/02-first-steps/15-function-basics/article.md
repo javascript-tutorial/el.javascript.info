@@ -170,7 +170,6 @@ showMessage(from, "Hello"); // *Ann*: Hello
 alert( from ); // Ann
 ```
 
-
 ## Προκαθορισμένες τιμές
 
 Εάν μια παράμετρος δεν παρέχεται, τότε η τιμή της γίνεται `undefined`.
