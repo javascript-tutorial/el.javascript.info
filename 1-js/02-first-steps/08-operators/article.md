@@ -73,7 +73,6 @@ alert( 4 ** (1/2) ); // 2 (η ισχύς του 1/2 είναι η ίδια με 
 alert( 8 ** (1/3) ); // 2 (η ισχύς του 1/3 είναι η ίδια με μια τετραγωνική ρίζα)
 ```
 
-
 ## Συνδυασμός συμβολοσειράς με δυαδικό +
 
 Ας συναντήσουμε τις δυνατότητες των τελεστών JavaScript που είναι πέρα από τη σχολική αριθμητική.
@@ -108,7 +107,6 @@ alert(2 + 2 + '1' ); // "41" and not "221"
 
 
 Το δυαδικό `+` είναι ο μόνος τελεστής που υποστηρίζει συμβολοσειρές τόσο μακριά. Άλλοι αριθμητικοί τελεστές λειτουργούν μόνο με αριθμούς και μετατρέπουν πάντα τους τελεστές τους σε αριθμούς.
-
 
 Εδώ είναι το παράδειγμα για αφαίρεση και διαίρεση:
 
@@ -200,19 +198,12 @@ alert( +apples + +oranges ); // 5
 | 2 | assignment | `=` |
 | ... | ... | ... |
 
-<<<<<<< HEAD
 Όπως μπορούμε να δούμε, το "unary plus" έχει προτεραιότητα `17` που είναι υψηλότερη από το `13` της "προσθήκης" (δυαδικό συν). Γι 'αυτό, στην έκφραση `"+apples + +oranges"`, τα unary plus λειτουργούν πριν από την πρόσθεση.
-=======
-As we can see, the "unary plus" has a priority of `15` which is higher than the `12` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
->>>>>>> 2cca9a9d09fdd45819832294225aa3721fa5a2d4
 
 ## Ανάθεση
 
-<<<<<<< HEAD
+
 Ας σημειώσουμε ότι μια ανάθεση `=` είναι επίσης τελεστής. Παρατίθεται στον πίνακα προτεραιότητας με την πολύ χαμηλή προτεραιότητα του `3`.
-=======
-Let's note that an assignment `=` is also an operator. It is listed in the precedence table with the very low priority of `2`.
->>>>>>> 2cca9a9d09fdd45819832294225aa3721fa5a2d4
 
 Γι 'αυτό, όταν εκχωρούμε μια μεταβλητή, όπως `x = 2 * 2 + 1`, οι υπολογισμοί γίνονται πρώτα και στη συνέχεια αξιολογείται το `=`, αποθηκεύοντας το αποτέλεσμα στο `x`.
 
@@ -436,13 +427,7 @@ counter++;
 - RIGHT SHIFT ( `>>` )
 - ZERO-FILL RIGHT SHIFT ( `>>>` )
 
-<<<<<<< HEAD
-=======
-These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won't need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the [Bitwise Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise_operators) chapter on MDN when a need arises.
->>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
-
 Αυτοί οι τελεστές χρησιμοποιούνται πολύ σπάνια όταν έχουμε να κάνουμε με αριθμούς στο πολύ χαμηλότερο (bitwise) επίπεδο. Δεν θα χρειαζόμαστε αυτούς τους τελεστές σύντομα, καθώς η ανάπτυξη ιστού τους χρησιμοποιεί ελάχιστα, αλλά σε ορισμένες ειδικές περιοχές, όπως η κρυπτογραφία, είναι χρήσιμες. Μπορείτε να διαβάσετε το άρθρο του [Bitwise Operators](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) στο MDN όταν υπάρχει ανάγκη.
-
 
 ## Κόμμα
 
