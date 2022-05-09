@@ -470,7 +470,11 @@ function name(parameters, delimited, by, comma) {
 
 Για να κάνετε τον κώδικα καθαρό και κατανοητό, συνίσταται η χρήση κυρίως τοπικών μεταβλητών και παραμέτρων στη συνάρτηση, όχι εξωτερικών μεταβλητών.
 
+<<<<<<< HEAD
 Είναι πάντα πιο εύκολο να κατανοήσουμε μια συνάρτηση που παίρνει παραμέτρους, δουλεύει μαζί τους και επιστρέφει ένα αποτέλεσμα, παρά μια συνάρτηση που δεν έχει παραμέτρους, αλλά τροποποιεί τις εξωτερικές μεταβλητές ως side-effect.
+=======
+It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side effect.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 Ονομασία συναρτήσεων:
 

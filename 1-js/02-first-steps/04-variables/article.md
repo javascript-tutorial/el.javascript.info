@@ -194,7 +194,11 @@ let my-name; // παύλες '-' απαγορεύονται
 ```
 
 ```smart header="Case matters"
+<<<<<<< HEAD
 Μεταβλητές `apple` και `AppLE` είναι δύο διαφορετικές μεταβλητές.
+=======
+Variables named `apple` and `APPLE` are two different variables.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 ```
 
 ````smart header="Non-Latin letters are allowed, but not recommended"
@@ -298,7 +302,11 @@ const pageLoadTime = /* ο χρόνος που χρειάζεται για να 
 
 Η τιμή του "pageLoadTime" δεν είναι γνωστή πριν από τη φόρτωση της σελίδας, επομένως έχει κανονική ονομασία. Αλλά εξακολουθεί να είναι σταθερή επειδή δεν αλλάζει μετά την ανάθεση.
 
+<<<<<<< HEAD
 Με άλλα λόγια, οι σταθερές με κεφαλαία ονομασία χρησιμοποιούνται μόνο ως ψευδώνυμα για  "hard-coded" τιμές.  
+=======
+In other words, capital-named constants are only used as aliases for "hard-coded" values.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ## Να λεμε τα πράγματα με το ονομά τους 
 

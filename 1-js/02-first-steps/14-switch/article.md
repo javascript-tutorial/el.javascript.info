@@ -139,7 +139,11 @@ switch (a) {
 
 Τώρα και τα δύο `3` και `5` εμφανίζουν το ίδιο μήνυμα.
 
+<<<<<<< HEAD
 Η ικανότητα "ομαδοποίησης" περιπτώσεων είναι μια παρενέργεια του τρόπου λειτουργίας του `switch/case` χωρίς το `break`. Εδώ η εκτέλεση του `case 3` ξεκινά από τη γραμμή `(*)` και περνάει από το `case 5`, επειδή δεν υπάρχει `break`.
+=======
+The ability to "group" cases is a side effect of how `switch/case` works without `break`. Here the execution of `case 3` starts from the line `(*)` and goes through `case 5`, because there's no `break`.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ## Η σημασία του τύπου
 
