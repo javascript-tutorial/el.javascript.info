@@ -263,7 +263,11 @@ for (let i = 0; i < 10; i++) {
 
 Από τεχνική άποψη, αυτό είναι πανομοιότυπο με το παραπάνω παράδειγμα. Σίγουρα, μπορούμε απλώς να τυλίξουμε τον κώδικα σε ένα μπλοκ `if` αντί να χρησιμοποιήσουμε το `continue`.
 
+<<<<<<< HEAD
 Αλλά ως παρενέργεια, αυτό δημιούργησε ένα ακόμη επίπεδο ένθεσης (η κλήση `alert` μέσα στα άγκυστρα). Εάν ο κώδικας στο εσωτερικό του `if` είναι μεγαλύτερος από μερικές γραμμές, αυτό μπορεί να μειώσει τη συνολική αναγνωσιμότητα.
+=======
+But as a side effect, this created one more level of nesting (the `alert` call inside the curly braces). If the code inside of `if` is longer than a few lines, that may decrease the overall readability.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 ````
 
 ````warn header="Δεν υπάρχει `break/continue` στη δεξιά πλευρά του '?'"
