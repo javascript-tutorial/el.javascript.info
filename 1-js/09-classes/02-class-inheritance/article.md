@@ -122,7 +122,7 @@ class Rabbit extends Animal {
 }
 ```
 
-Usually we don't want to totally replace a parent method, but rather to build on top of it to tweak or extend its functionality. We do something in our method, but call the parent method before/after it or in the process.
+Usually, however, we don't want to totally replace a parent method, but rather to build on top of it to tweak or extend its functionality. We do something in our method, but call the parent method before/after it or in the process.
 
 Classes provide `"super"` keyword for that.
 
@@ -176,6 +176,7 @@ Now `Rabbit` has the `stop` method that calls the parent `super.stop()` in the p
 As was mentioned in the chapter <info:arrow-functions>, arrow functions do not have `super`.
 
 If accessed, it's taken from the outer function. For instance:
+
 ```js
 class Rabbit extends Animal {
   stop() {
@@ -191,7 +192,6 @@ The `super` in the arrow function is the same as in `stop()`, so it works as int
 setTimeout(function() { super.stop() }, 1000);
 ```
 ````
-
 
 ## Overriding constructor
 
@@ -296,8 +296,6 @@ alert(rabbit.earLength); // 10
 */!*
 ```
 
-
-
 ### Overriding class fields: a tricky note
 
 ```warn header="Advanced note"
@@ -386,12 +384,11 @@ In our case, `Rabbit` is the derived class. There's no `constructor()` in it. As
 
 So, `new Rabbit()` calls `super()`, thus executing the parent constructor, and (per the rule for derived classes) only after that its class fields are initialized. At the time of the parent constructor execution, there are no `Rabbit` class fields yet, that's why `Animal` fields are used.
 
-This subtle difference between fields and methods is specific to JavaScript
+This subtle difference between fields and methods is specific to JavaScript.
 
 Luckily, this behavior only reveals itself if an overridden field is used in the parent constructor. Then it may be difficult to understand what's going on, so we're explaining it here.
 
 If it becomes a problem, one can fix it by using methods or getters/setters instead of fields.
-
 
 ## Super: internals, [[HomeObject]]
 
