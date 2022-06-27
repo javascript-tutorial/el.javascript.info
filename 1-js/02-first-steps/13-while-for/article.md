@@ -6,7 +6,24 @@
 
 Οι *βρόχοι* είναι ένας τρόπος επανάληψης του ίδιου κώδικα πολλές φορές.
 
+<<<<<<< HEAD
 ## Ο βρόχος "while"
+=======
+```smart header="The for..of and for..in loops"
+A small announcement for advanced readers.
+
+This article covers only basic loops: `while`, `do..while` and `for(..;..;..)`.
+
+If you came to this article searching for other types of loops, here are the pointers:
+
+- See [for..in](info:object#forin) to loop over object properties.
+- See [for..of](info:array#loops) and [iterables](info:iterable) for looping over arrays and iterable objects.
+
+Otherwise, please read on.
+```
+
+## The "while" loop
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 Ο βρόχος `while` έχει την ακόλουθη σύνταξη:
 
@@ -159,11 +176,14 @@ for (i = 0; i < 3; i++) { //  χρησιμοποιούμε μια υπάρχου
 
 alert(i); // 3, ορατό, επειδή δηλώνεται εκτός του βρόχου
 ```
-
 ````
 
+<<<<<<< HEAD
 
 ### Παράλειψη τμήματος
+=======
+### Skipping parts
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 Μπορείτε να παραλείψετε οποιοδήποτε μέρος του `for`.
 
@@ -285,7 +305,6 @@ if (i > 5) {
 
 ...και να το ξαναγράψουμε χρησιμοποιώντας ένα ερωτηματικό:
 
-
 ```js no-beautify
 (i > 5) ? alert(i) : *!*continue*/!*; // το continue δεν επιτρέπεται εδώ
 ```
@@ -319,9 +338,14 @@ alert('Done!');
 
 The ordinary `break` after `input` would only break the inner loop. That's not sufficient -- labels, come to the rescue!
 
+<<<<<<< HEAD
 Το συνήθης `break` μετά την `input` θα σπάσει μόνο τον εσωτερικό βρόχο. Αυτό δεν είναι αρκετή--ετικέτα, για να διασωθή!
 
 Η *ετικέτα* είναι ένα αναγνωριστικό με άνω και κάτω τελεία πριν από έναν βρόχο:
+=======
+A *label* is an identifier with a colon before a loop:
+
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```js
 labelName: for (...) {
   ...
@@ -343,6 +367,7 @@ labelName: for (...) {
     // κανε κατι με την τιμή...
   }
 }
+
 alert('Done!');
 ```
 
@@ -361,12 +386,28 @@ for (let i = 0; i < 3; i++) { ... }
 ````warn header="Labels do not allow to \"jump\" anywhere"
 Οι ετικέτες δεν μας επιτρέπουν να μεταβούμε σε αυθαίρετο μέρος στον κώδικα.
 
+<<<<<<< HEAD
 Για παράδειγμα, αυτό είναι αδύνατο να γίνει:
+=======
+For example, it is impossible to do this:
+
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```js
 
 break label; // δεν μεταβαίνει στην παρακάτω ετικέτα
 
+<<<<<<< HEAD
 label: for (...)
+=======
+A `break` directive must be inside a code block. Technically, any labelled code block will do, e.g.:
+
+```js
+label: {
+  // ...
+  break label; // works
+  // ...
+}
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```
 Μια κλήση για `break/continue` είναι δυνατή μόνο μέσα από ένα βρόχο και η ετικέτα πρέπει να βρίσκεται κάπου πάνω από την οδηγία.
 

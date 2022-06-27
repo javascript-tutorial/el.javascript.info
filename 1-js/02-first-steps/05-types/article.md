@@ -266,6 +266,7 @@ typeof alert // "function"  (3)
 
 Υπάρχουν 8 βασικοί τύποι δεδομένων στην JavaScript.
 
+<<<<<<< HEAD
 - `number` για αριθμούς οποιουδήποτε είδους: ακέραιος ή floating-point, οι ακέραιοι αριθμοί περιορίζονται κατά ±2<sup>53</sup>.
 - `bigint` είναι για ακέραιους αριθμούς αυθαίρετου μήκους.
 - `string` για συμβολοσειρές. Μια συμβολοσειρά μπορεί να έχει έναν ή περισσότερους χαρακτήρες, δεν υπάρχει ξεχωριστός τύπος ενός χαρακτήρα.
@@ -274,6 +275,18 @@ typeof alert // "function"  (3)
 - `undefined` για μη εκχωρημένες τιμές - έναν αυτόνομο τύπο που έχει μία μόνο τιμή `undefined`.
 - `object` για πιο περίπλοκες δομές δεδομένων.
 - `symbol` για μοναδικούς identifiers.
+=======
+- Seven primitive data types:
+    - `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
+    - `bigint` for integer numbers of arbitrary length.
+    - `string` for strings. A string may have zero or more characters, there's no separate single-character type.
+    - `boolean` for `true`/`false`.
+    - `null` for unknown values -- a standalone type that has a single value `null`.
+    - `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
+    - `symbol` for unique identifiers.
+- And one non-primitive data type:
+    - `object` for more complex data structures.
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 Ο τελεστής `typeof` μας επιτρέπει να δούμε ποιος τύπος αποθηκεύεται σε μια μεταβλητή.
 
