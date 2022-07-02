@@ -12,8 +12,13 @@
 
 Εάν δεν έχετε επιλέξει ακόμα ένα IDE, τότε εξετάστε τις ακόλουθες επιλογές:
 
+<<<<<<< HEAD
 - [Visual Studio](https://visualstudio.microsoft.com/vs/) (cross-platform, επί πληρωμής)
 - [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, επί πληρωμής).
+=======
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 Το "Visual Studio" δεν πρέπει να συγχέεται με το "Visual Studio Code". Το "Visual Studio" είναι ένας επί πληρωμής και ισχυρός επεξεργαστής για τα Windows και Mac, κατάλληλος για την πλατφόρμα .Net. Επίσης είναι κάνει και για JavaScript. <br> Υπάρχει επίσης μια δωρεάν έκδοση στο [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 

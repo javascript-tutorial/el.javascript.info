@@ -27,7 +27,12 @@
 
 - **MSDN** – Microsoft εγχειρίδιο με πολλές πληροφορίες, όπως JavaScript (συχνά αναφέρεται ως JScript). Εάν κάποιος χρειάζεται κάτι συγκεκριμένο για τον Internet Explorer, καλύτερα να πάτε στο: <http://msdn.microsoft.com/>.
 
+<<<<<<< HEAD
     Επίσης, μπορούμε να χρησιμοποιήσουμε μια αναζήτηση στο διαδίκτυο με φράσεις όπως "RegExp MSDN" ή "RegExp MSDN jscript".
+=======
+- <https://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
+- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 ## Πίνακες συμβατότητας
 
