@@ -1,7 +1,11 @@
 
 # Εγχειρίδια και προδιαγραφές
 
+<<<<<<< HEAD
 Αυτό το βιβλίο είναι ένα *εκπαιδευτικό υλικό*. Στόχος του είναι να σας βοηθήσει να μάθετε σταδιακά τη γλώσσα. Αλλά μόλις εξοικειωθείτε με τα βασικά, θα χρειαστείτε άλλες πηγές.
+=======
+This book is a *tutorial*. It aims to help you gradually learn the language. But once you're familiar with the basics, you'll need other resources.
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 
 ## Προδιαγραφή
 
@@ -9,7 +13,11 @@
 
 Αλλά είναι τόσο επίσημο, είναι δύσκολο να το καταλάβεις στην αρχή. Έτσι, εάν χρειάζεστε την πιο αξιόπιστη πηγή πληροφοριών σχετικά με τις λεπτομέρειες της γλώσσας, η προδιαγραφή αυτή είναι το σωστό μέρος. Αλλά δεν είναι για καθημερινή χρήση.
 
+<<<<<<< HEAD
 Μια νέα έκδοση προδιαγραφών κυκλοφορεί κάθε χρόνο. Μεταξύ αυτών των εκδόσεων, η τελευταία έκδοση υπάρχει και στο <https://tc39.es/ecma262/>.
+=======
+A new specification version is released every year. Between these releases, the latest specification draft is at <https://tc39.es/ecma262/>.
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 
 Για να διαβάσετε για τα πιο πρόσφατα νέα σχετικά για τα χαρακτηριστικά, συμπεριλαμβανομένων εκείνων που είναι "almost standard" (το λεγόμενο "stage 3") , βλέπε στο  <https://github.com/tc39/proposals>.
 
@@ -18,9 +26,15 @@
 ## Εγχειρίδια
 
 
+<<<<<<< HEAD
 - **MDN (Mozilla) JavaScript Reference** είναι ένα εγχειρίδιο με παραδείγματα και άλλες πληροφορίες. Είναι καλό να λάβετε σε βάθος πληροφορίες σχετικά με μεμονωμένες λειτουργίες γλώσσας, μεθόδους κλπ.
 
 Μπορεί κανείς να το βρει στο <https://developer.mozilla.org/en-US/ docs/Web/JavaScript/Reference>.
+=======
+    You can find it at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
+
+Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for the `parseInt` function.
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 
     Αν και είναι καλύτερα να χρησιμοποιήσετε μια αναζήτηση στο Διαδίκτυο. Απλά χρησιμοποιήστε "MDN [όρος]" σαν ερώτημα, πχ. <https://google.com/search?q=MDN+parseInt> αναζήτηση σχετικά για το `parseInt` function.
 
@@ -28,13 +42,21 @@
 - **MSDN** – Microsoft εγχειρίδιο με πολλές πληροφορίες, όπως JavaScript (συχνά αναφέρεται ως JScript). Εάν κάποιος χρειάζεται κάτι συγκεκριμένο για τον Internet Explorer, καλύτερα να πάτε στο: <http://msdn.microsoft.com/>.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     Επίσης, μπορούμε να χρησιμοποιήσουμε μια αναζήτηση στο διαδίκτυο με φράσεις όπως "RegExp MSDN" ή "RegExp MSDN jscript".
 =======
 - <https://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
+=======
+- <https://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <https://caniuse.com/#feat=cryptography>.
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 - <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
 >>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
+<<<<<<< HEAD
 ## Πίνακες συμβατότητας
+=======
+All these resources are useful in real-life development, as they contain valuable information about language details, their support, etc.
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 
 JavaScript είναι μια αναπτυσσόμενη γλώσσα, νέα χαρακτηριστικά προστίθενται τακτικά.
 
