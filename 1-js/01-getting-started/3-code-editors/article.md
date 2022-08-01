@@ -36,8 +36,13 @@
 
 Οι παρακάτω επιλογές αξίζουν την προσοχή σας:
 
+<<<<<<< HEAD
 - [Atom](https://atom.io/) (cross-platform, δωρεάν).
 - [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, δωρεάν).
+=======
+The following options deserve your attention:
+
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 - [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, δωρεάν).
 - [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) είναι επίσης πολύ καλή επιλογή, εφόσον ξέρετε πώς να τα χρησιμοποιήσετε.
