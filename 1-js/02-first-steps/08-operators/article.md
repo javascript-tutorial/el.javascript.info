@@ -187,18 +187,22 @@ alert( +apples + +oranges ); // 5
 | Precedence | Name | Sign |
 |------------|------|------|
 | ... | ... | ... |
-| 15 | unary plus | `+` |
-| 15 | unary negation | `-` |
-| 14 | exponentiation | `**` |
-| 13 | multiplication | `*` |
-| 13 | division | `/` |
-| 12 | addition | `+` |
-| 12 | subtraction | `-` |
+| 14 | unary plus | `+` |
+| 14 | unary negation | `-` |
+| 13 | exponentiation | `**` |
+| 12 | multiplication | `*` |
+| 12 | division | `/` |
+| 11 | addition | `+` |
+| 11 | subtraction | `-` |
 | ... | ... | ... |
 | 2 | assignment | `=` |
 | ... | ... | ... |
 
+<<<<<<< HEAD
 Όπως μπορούμε να δούμε, το "unary plus" έχει προτεραιότητα `17` που είναι υψηλότερη από το `13` της "προσθήκης" (δυαδικό συν). Γι 'αυτό, στην έκφραση `"+apples + +oranges"`, τα unary plus λειτουργούν πριν από την πρόσθεση.
+=======
+As we can see, the "unary plus" has a priority of `14` which is higher than the `11` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
+>>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 ## Ανάθεση
 
@@ -297,9 +301,13 @@ alert( n ); // 14
 ```js run
 let n = 2;
 
-n *= 3 + 5;
+n *= 3 + 5; // right part evaluated first, same as n *= 8
 
+<<<<<<< HEAD
 alert( n ); // 16  (το σωστό μέρος αξιολογήθηκε πρώτα, το ίδια και για το n *= 8)
+=======
+alert( n ); // 16  
+>>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 ```
 
 ## Αύξηση/μείωση

@@ -24,7 +24,7 @@ function showMessage() {
 
 ```js
 function name(parameter1, parameter2, ... parameterN) {
-  ...body...
+ // body
 }
 ```
 
@@ -191,7 +191,17 @@ function showMessage(from, *!*text = "no text given"*/!*) {
 showMessage("Ann"); // Ann: δεν έχει δοθεί κείμενο
 ```
 
+<<<<<<< HEAD
 Τώρα, εάν η παράμετρος `text` δεν δοθεί, θα λάβει την τιμή `"no text given"`.
+=======
+Now if the `text` parameter is not passed, it will get the value `"no text given"`.
+
+The default value also jumps in if the parameter exists, but strictly equals `undefined`, like this:
+
+```js
+showMessage("Ann", undefined); // Ann: no text given
+```
+>>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 Εδώ `"no text given"` είναι μια συμβολοσειρά, αλλά μπορεί να είναι μια πιο περίπλοκη έκφραση, η οποία αξιολογείται και αναθέτετε μόνο εάν λείπει η παράμετρος. Αυτό είναι επίσης δυνατό:
 
