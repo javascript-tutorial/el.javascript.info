@@ -66,21 +66,13 @@ alert(age); // NaN, η μετατροπή απέτυχε
 
 Κανόνες αριθμητικών μετατροπών:
 
-<<<<<<< HEAD
+
 | Τιμή                                  | Γίνεται...                                                                                                                                                                                                                               |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `undefined`                           | `NaN`                                                                                                                                                                                                                                    |
 | `null`                                | `0`                                                                                                                                                                                                                                      |
 | <code>true&nbsp;και&nbsp;false</code> | `1` και `0`                                                                                                                                                                                                                              |
 | `string`                              | Οι κενοί χαρακτήρες από την αρχή και το τέλος αφαιρούνται. Εάν το υπολοιπόμενο περιεχόμενο της συμβολοσειράς είναι άδειο, τότε το αποτέλεσμα είναι `0`. Διαφορετικά, ο αριθμός "διαβάζεται" από τη συμβολοσειρά. Ένα σφάλμα δίνει `NaN`. |
-=======
-| Value |  Becomes... |
-|-------|-------------|
-|`undefined`|`NaN`|
-|`null`|`0`|
-|<code>true&nbsp;and&nbsp;false</code> | `1` and `0` |
-| `string` | Whitespaces (includes spaces, tabs `\t`, newlines `\n` etc.) from the start and end are removed. If the remaining string is empty, the result is `0`. Otherwise, the number is "read" from the string. An error gives `NaN`. |
->>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 Παραδείγματα:
 
@@ -142,13 +134,9 @@ alert(Boolean("")); // false
 |-------|-------------|
 |`undefined`|`NaN`|
 |`null`|`0`|
-|<code>true&nbsp;/&nbsp;false</code> | `1 / 0` |
-<<<<<<< HEAD
+
 | `string` | Η συμβολοσειρά διαβάζεται "όπως είναι", τα κενά και από τις δύο πλευρές αγνοούνται. Μια άδεια συμβολοσειρά γίνεται `0`. Ένα σφάλμα δίνει `NaN`. |
 
-=======
-| `string` | The string is read "as is", whitespaces (includes spaces, tabs `\t`, newlines `\n` etc.) from both sides are ignored. An empty string becomes `0`. An error gives `NaN`. |
->>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 **`Boolean μετατροπή`** -- Γίνεται σε λογικές πράξεις. Μπορεί να εφαρμοστεί με τη `Boolean(value)`.
 
