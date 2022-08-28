@@ -96,12 +96,8 @@ alert(height ?? 100); // 0
 
 ## Προτεραιότητα
 
-<<<<<<< HEAD
 Η προτεραιότητα του τελεστή `??` είναι μάλλον χαμηλή: `5` στο
 [πίνακα MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
-=======
-The precedence of the `??` operator is the same as `||`. They both equal `3` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
->>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 Για αυτό το `??` αξιολογείται μετά τις υπόλοιπες λειτουργίες, αλλά πριν από το `=` και το `?`.
 
