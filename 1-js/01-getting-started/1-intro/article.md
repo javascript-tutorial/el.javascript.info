@@ -33,15 +33,16 @@
 
 Τα engines είναι περίπλοκοι. Αλλά τα βασικά είναι εύκολα.
 
+
 1. Το engine (ενσωματωμένος αν είναι πρόγραμμα περιήγησης) διαβάζει ("αναλύει") τα script.
 2. Στη συνέχεια μετατρέπει ("μεταγλώττιση") το script στη γλώσσα του μηχανήματος.
 3. Ύστερα ο κώδικας του μηχανήματος τρέχει, αρκετά γρήγορα.
 Το engine εφαρμόζει βελτιστοποιήσει σε κάθε βήμα της διαδικασίας. Παρακολουθεί ακόμη και το μεταγλωττισμένο script καθώς εκτελείται, αναλύει τα δεδομένα που ρέουν μέσα από αυτό και εφαρμόζει βελτιστοποιήσεις στον κώδικα του μηχανήματος βάσει αυτής της γνώσης. Όταν ολοκληρωθεί, τα script εκτελούνται αρκετά γρήγορα.
-'''
 
 ## Τι μπορεί να κάνει η JavaScript στο πρόγραμμα περιήγησης?
 
 Η σύγχρονη JavaScript είναι μια "ασφαλής" γλώσσα προγραμματισμού. Δεν παρέχει low-level πρόσβαση στη μνήμη ή στη CPU, επειδή δημιουργήθηκε αρχικά για προγράμματα περιήγησης που δεν το χρειάζονται.
+
 
 Οι δυνατότητες της JavaScript εξαρτώνται σε μεγάλο βαθμό από το περιβάλλον στο οποίο εκτελείται. Για παράδειγμα, το [Node.js] (https://wikipedia.org/wiki/Node.js) υποστηρίζει λειτουργίες που επιτρέπουν στην JavaScript να διαβάζει/γράφει αυθαίρετα αρχεία, να εκτελεί αιτήματα δικτύου, και τα λοιπά.
 
@@ -103,21 +104,11 @@
 
 Παραδείγματα τέτοιων γλωσσών:
 
-<<<<<<< HEAD
 - [CoffeeScript](http://coffeescript.org/) είναι "syntactic sugar" για την JavaScript. Εισάγει συντομότερη σύνταξη, επιτρέποντάς μας να γράψουμε σαφέστερο και ακριβέστερο κώδικα.
 Συνήθως, στούς Ruby devs αρέσει.
 - [TypeScript](http://www.typescriptlang.org/) επικεντρώνεται στην προσθήκη "αυστηρής πληκτρολόγησης δεδομένων" για απλοποίηση της ανάπτυξης και υποστήριξης σύνθετων συστημάτων. Αναπτύσσεται από τη Microsoft.
 - [Flow](http://flow.org/)  προσθέτει επίσης πληκτρολόγηση δεδομένων, αλλά με διαφορετικό τρόπο. Αναπτύχθηκε από το Facebook.
 - [Dart](https://www.dartlang.org/) είναι μια αυτόνομη γλώσσα που έχει τη δική της μηχανή που λειτουργεί σε περιβάλλοντα εκτός προγράμματος περιήγησης (όπως εφαρμογές για κινητά), αλλά μπορεί επίσης να μεταφερθεί σε JavaScript. Αναπτύχθηκε από την Google.
-- [Brython](https://brython.info/) είναι ένας Python transpiler σε JavaScript που επιτρέπει την εγγραφή εφαρμογής σε πλήρη Python χωρίς JavaScript.
-=======
-- [CoffeeScript](https://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](https://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](https://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
-- [Brython](https://brython.info/) is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
-- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) is a modern, concise and safe programming language that can target the browser or Node.
->>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 Υπάρχουν περισσότερα. Φυσικά, ακόμη και αν χρησιμοποιούμε μία από τις μεταγλωττισμένες γλώσσες, πρέπει επίσης να γνωρίζουμε τη JavaScript για να κατανοήσουμε πραγματικά τι κάνουμε.
 
