@@ -120,7 +120,7 @@ There's usually no real need to prevent the bubbling. A task that seemingly requ
 
 There's another phase of event processing called "capturing". It is rarely used in real code, but sometimes can be useful.
 
-The standard [DOM Events](http://www.w3.org/TR/DOM-Level-3-Events/) describes 3 phases of event propagation:
+The standard [DOM Events](https://www.w3.org/TR/DOM-Level-3-Events/) describes 3 phases of event propagation:
 
 1. Capturing phase -- the event goes down to the element.
 2. Target phase -- the event reached the target element.
@@ -192,7 +192,7 @@ There's a property `event.eventPhase` that tells us the number of the phase on w
 If we `addEventListener(..., true)`, then we should mention the same phase in `removeEventListener(..., true)` to correctly remove the handler.
 ```
 
-````smart header="Listeners on same element and same phase run in their set order"
+````smart header="Listeners on the same element and same phase run in their set order"
 If we have multiple event handlers on the same phase, assigned to the same element with `addEventListener`, they run in the same order as they are created:
 
 ```js

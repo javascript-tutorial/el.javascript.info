@@ -24,7 +24,7 @@ result = (a !== null && a !== undefined) ? a : b;```
 ```js run
 let user;
 
-alert(user ?? "Anonymous"); // Anonymous (user not defined)
+alert(user ?? "Anonymous"); // Anonymous (user is undefined)
 ```
 
 Φυσικά, εάν ο `user` είχε κάποια τιμή εκτός από το `null/undefined`, τότε θα το δούμε:
@@ -32,7 +32,7 @@ alert(user ?? "Anonymous"); // Anonymous (user not defined)
 ```js run
 let user = "John";
 
-alert(user ?? "Anonymous"); // John (user defined)
+alert(user ?? "Anonymous"); // John (user is not null/udefined)
 ```
 
 Μπορούμε επίσης να χρησιμοποιήσουμε μια ακολουθία του `??` για να επιλέξουμε την πρώτη τιμή από μια λίστα που δεν είναι `null/undefined`.
