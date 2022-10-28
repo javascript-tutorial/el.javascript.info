@@ -161,7 +161,11 @@ let message = "That"; // SyntaxError: 'message' has already been declared
 ````
 
 ```smart header="Functional languages"
+<<<<<<< HEAD
 Είναι ενδιαφέρον να σημειωθεί ότι υπάρχουν [functional](https://en.wikipedia.org/wiki/Functional_programming) γλώσσες προγραμματισμού, όπως [Scala](http://www.scala-lang.org/) ή [Erlang](http://www.erlang.org/) που απαγορεύουν την αλλαγή τιμής στις μεταβλητές.
+=======
+It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](https://www.scala-lang.org/) or [Erlang](https://www.erlang.org/) that forbid changing variable values.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Σε τέτοιες γλώσσες, όταν η τιμή αποθηκευτεί "στο κουτί", είναι εκεί για πάντα. Εάν χρειαστεί να αποθηκεύσουμε κάτι άλλο, η γλώσσα μας αναγκάζει να δημιουργήσουμε ένα νέο πλαίσιο (δηλώστε μια νέα μεταβλητή). Δεν μπορούμε να επαναχρησιμοποιήσουμε το παλιό.
 
@@ -212,7 +216,11 @@ Variables named `apple` and `APPLE` are two different variables.
 ```
 
 ````smart header="Non-Latin letters are allowed, but not recommended"
+<<<<<<< HEAD
 Είναι δυνατή η χρήση οποιασδήποτε γλώσσας, συμπεριλαμβανομένων κυριλλικών γραμμάτων ή ακόμη και ιερογλυφικών, όπως αυτή:
+=======
+It is possible to use any language, including cyrillic letters, Chinese logograms and so on, like this:
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 ```js
 let имя = '...';

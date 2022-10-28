@@ -215,7 +215,42 @@ function showMessage(from, text = anotherFunction()) {
 
 Μερικές φορές έχει νόημα να ορίσετε προεπιλεγμένες τιμές για παραμέτρους όχι στη δήλωση συνάρτησης, αλλά σε μεταγενέστερο στάδιο, κατά την εκτέλεση.
 
+<<<<<<< HEAD
 Για να ελέγξουμε μια παράμετρο που παραλείφθηκε, μπορούμε να τη συγκρίνουμε με το `undefined`:
+=======
+For example, an explicit check for `undefined`:
+
+```js
+function showMessage(from, text) {
+*!*
+  if (text === undefined) {
+    text = 'no text given';
+  }
+*/!*
+
+  alert( from + ": " + text );
+}
+```
+
+...Or using the `||` operator:
+
+```js
+function showMessage(from, text) {
+  // If the value of text is falsy, assign the default value
+  // this assumes that text == "" is the same as no text at all
+  text = text || 'no text given';
+  ...
+}
+```
+````
+
+
+### Alternative default parameters
+
+Sometimes it makes sense to assign default values for parameters at a later stage after the function declaration.
+
+We can check if the parameter is passed during the function execution, by comparing it with `undefined`:
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 ```js run
 function showMessage(text) {
@@ -408,7 +443,11 @@ checkPermission(..) // ελέγχει μια 	συναίνεση, επιστρέ
 ```smart header="'Ονομα συνάρτησης Ultrashort"
 Οι συναρτήσεις που χρησιμοποιούνται *πολύ συχνά* μερικές φορές έχουν συντομα ονόματα.
 
+<<<<<<< HEAD
 Για παράδειγμα το [jQuery](http://jquery.com) βιβλιοθήκη ορίζει μια συνάρτηση με `$`. Το [Lodash](http://lodash.com/) βιβλιοθήκη δηλώνει τις συναρτήσεις με `_`.
+=======
+For example, the [jQuery](https://jquery.com/) framework defines a function with `$`. The [Lodash](https://lodash.com/) library has its core function named `_`.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Αυτές είναι εξαιρέσεις. Γενικά τα ονόματα των συναρτήσεων πρέπει να είναι συνοπτικά και περιγραφικά.
 

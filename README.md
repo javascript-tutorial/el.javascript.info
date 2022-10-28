@@ -1,6 +1,10 @@
 # Το μοντέρνο JavaScript Tutorial στα Ελληνικά
 
+<<<<<<< HEAD
 Αυτό το αποθετήριο φιλοξενεί τη μετάφραση <https://javascript.info> στα ελληνικά.
+=======
+This repository hosts the English content of the Modern JavaScript Tutorial, published at [https://javascript.info](https://javascript.info).
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 **Πώς μπορείς να βοηθήσεις:**
 
@@ -24,19 +28,31 @@
 P.S. Μπορείτε να βρείτε την πλήρη λίστα γλωσσών στη διεύθυνση <https://javascript.info/translate>.
 
 
+<<<<<<< HEAD
 ## Δόμη
 
 Κάθε κεφάλαιο, ένα άρθρο ή μια εργασία βρίσκεται στον δικό του φάκελο.
+=======
+Something's wrong? A topic is missing? Explain it to people, add it as PR 👏
+
+**You can edit the text in any editor.** The tutorial uses an enhanced "markdown" format, easy to grasp. And if you want to see how it looks on-site, there's a server to run the tutorial locally at <https://github.com/javascript-tutorial/server>.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Ο φάκελος ονομάζεται `N-url`, όπου `N` - είναι ο αριθμός για ταξινόμηση (τα άρθρα που είναι στοιχισμένα) και το `url` είναι το URL-slug στον ιστότοπο.
 
 Ο φάκελος έχει ένα από τα αρχεία:
 
+<<<<<<< HEAD
 - `index.md` είναι για την ενότητα,
 - `article.md` είναι για το άρθρο,
 - `task.md` για μια διατύπωση εργασιών (+`solution.md` με το κείμενο της λύσης εάν υπάρχει).
 
 Ένα αρχείο ξεκινά με το `# Title Header` και έπειτα το κείμενο σε μορφή τύπου Markdown, επεξεργάσιμο σε ένα απλό πρόγραμμα επεξεργασίας κειμένου.
+=======
+Every chapter, article, or task has its folder.
+
+The folder is named like `N-url`, where `N` is a number for the sorting purposes and `URL` is the URL part with the title of the material.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Πρόσθετοι πόροι και παραδείγματα για το άρθρο ή την εργασία, βρίσκονται επίσης στον ίδιο φάκελο.
 

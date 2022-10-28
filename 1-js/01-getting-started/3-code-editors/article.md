@@ -37,6 +37,7 @@
 Οι παρακάτω επιλογές αξίζουν την προσοχή σας:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Atom](https://atom.io/) (cross-platform, δωρεάν).
 - [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, δωρεάν).
 =======
@@ -46,6 +47,13 @@ The following options deserve your attention:
 - [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, δωρεάν).
 - [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) είναι επίσης πολύ καλή επιλογή, εφόσον ξέρετε πώς να τα χρησιμοποιήσετε.
+=======
+There are many options, for instance:
+
+- [Sublime Text](https://www.sublimetext.com/) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](https://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 ## Ας μην διαφωνούμε
 
@@ -53,4 +61,13 @@ The following options deserve your attention:
 
 Υπάρχουν και άλλοι σπουδαίοι επεξεργαστές κώδικα στον κόσμο μας. Παρακαλώ επιλέξτε αυτό που σας αρέσει περισσότερο.
 
+<<<<<<< HEAD
 Η επιλογή ενός επεξεργαστή κώδικα, όπως και κάθε άλλο εργαλείο, είναι ατομική και εξαρτάται από τα έργα, τις συνήθειες και τις προσωπικές σας προτιμήσεις.
+=======
+The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
+
+The author's personal opinion:
+
+- I'd use [Visual Studio Code](https://code.visualstudio.com/) if I develop mostly frontend.
+- Otherwise, if it's mostly another language/platform and partially frontend, then consider other editors, such as XCode (Mac), Visual Studio (Windows) or Jetbrains family (Webstorm, PHPStorm, RubyMine etc, depending on the language).
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
