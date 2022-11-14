@@ -49,8 +49,14 @@
 
 Για παράδειγμα:
 ```js run
+<<<<<<< HEAD
 alert( 5 % 2 ); // 1, ένα υπόλοιπο 5 διαιρούμενο με 2
 alert( 8 % 3 ); // 2, ένα υπόλοιπο 8 διαιρούμενο με 3
+=======
+alert( 5 % 2 ); // 1, a remainder of 5 divided by 2
+alert( 8 % 3 ); // 2, a remainder of 8 divided by 3
+alert( 8 % 4 ); // 2, 0 remainder of 8 divided by 4
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 ```
 
 ### Εκθετικό **
@@ -65,7 +71,11 @@ alert( 2 ** 3 ); // 8  (2 * 2 * 2, 3 φορές)
 alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2, 4 φορές)
 ```
 
+<<<<<<< HEAD
 Μαθηματικά, ο εκθετικός ορίζεται και για μη ακέραιους αριθμούς. Για παράδειγμα, μια τετραγωνική ρίζα εκτείνεται με το `1/2`:
+=======
+Just like in maths, the exponentiation operator is defined for non-integer numbers as well.
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 
 
 ```js run
@@ -302,7 +312,12 @@ let n = 2;
 
 n *= 3 + 5; // right part evaluated first, same as n *= 8
 
+<<<<<<< HEAD
 alert( n ); // 16  (το σωστό μέρος αξιολογήθηκε πρώτα, το ίδια και για το n *= 8)
+=======
+alert( n ); // 16
+```
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 
 ## Αύξηση/μείωση
 

@@ -236,7 +236,11 @@ alert(age); // "undefined"
 
 ## Ο τελεστής `typeof` [#type-typeof]
 
+<<<<<<< HEAD
 Ο τελεστής `typeof` επιστρέφει τον τύπο του ορίσματος. Είναι χρήσιμο όταν θέλουμε να επεξεργαστούμε διαφορετικές τιμές διαφορετικών τύπων ή απλώς να κάνουμε έναν γρήγορο έλεγχο.
+=======
+The `typeof` operator returns the type of the operand. It's useful when we want to process values of different types differently or just want to do a quick check.
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 
 Υποστηρίζει δύο μορφές σύνταξης:
 

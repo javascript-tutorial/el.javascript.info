@@ -32,7 +32,7 @@ alert(user ?? "Anonymous"); // Anonymous (user is undefined)
 ```js run
 let user = "John";
 
-alert(user ?? "Anonymous"); // John (user is not null/udefined)
+alert(user ?? "Anonymous"); // John (user is not null/undefined)
 ```
 
 Μπορούμε επίσης να χρησιμοποιήσουμε μια ακολουθία του `??` για να επιλέξουμε την πρώτη τιμή από μια λίστα που δεν είναι `null/undefined`.
