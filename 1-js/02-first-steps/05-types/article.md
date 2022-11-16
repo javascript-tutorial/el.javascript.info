@@ -48,11 +48,7 @@ n = 12.345;
     alert( "not a number" / 2 ); // NaN, μια τέτοια διαίρεση είναι εσφαλμένη
     ```
 
-<<<<<<< HEAD
     `NaN` είναι sticky. Οποιαδήποτε περαιτέρω λειτουργία στο `NaN` επιστρέφει `NaN`:
-=======
-    `NaN` is sticky. Any further mathematical operation on `NaN` returns `NaN`:
->>>>>>> 2cca9a9d09fdd45819832294225aa3721fa5a2d4
 
     ```js run
     alert( NaN + 1 ); // NaN
@@ -60,11 +56,7 @@ n = 12.345;
     alert( "not a number" / 2 - 1 ); // NaN
     ```
 
-<<<<<<< HEAD
    Έτσι, εάν υπάρχει ένα `NaN` κάπου σε μια μαθηματική έκφραση, μεταδίδεται σε ολόκληρο το αποτέλεσμα.
-=======
-    So, if there's a `NaN` somewhere in a mathematical expression, it propagates to the whole result (there's only one exception to that: `NaN ** 0` is `1`).
->>>>>>> 2cca9a9d09fdd45819832294225aa3721fa5a2d4
 
 ```smart header="Mathematical operations are safe"
 Το να κάνουμε μαθηματικά είναι "ασφαλές" στην JavaScript. Μπορούμε να κάνουμε οτιδήποτε: διαίρεση με μηδέν, αντιμετωπίζουμε μη αριθμητικές συμβολοσειρές ως αριθμούς κ.λπ.
@@ -78,27 +70,9 @@ n = 12.345;
 
 ## BigInt [#bigint-type]
 
-<<<<<<< HEAD
 Στην JavaScript, ο τύπου "αριθμός" δεν μπορεί να αντιπροσωπεύει ακέραιες τιμές μεγαλύτερες από <code>2<sup>53</sup></code> (`9007199254740991`) (ή μικρότερες από <code>-2<sup>53</sup></code> για αρνητικά), αυτός είναι ένας τεχνικός περιορισμός που προκαλείται από την εσωτερική τους αναπαράσταση. 
 
-
 Οπότε για τους περισσότερους σκοπούς ο περιορισμός δεν αποτελεί πρόβλημα, αλλά μερικές φορές χρειαζόμαστε πολύ μεγάλους αριθμούς, π.χ. για cryptography ή  microsecond-precision timestamps.
-=======
-In JavaScript, the "number" type cannot safely represent integer values larger than <code>(2<sup>53</sup>-1)</code> (that's `9007199254740991`), or less than <code>-(2<sup>53</sup>-1)</code> for negatives.
-
-To be really precise, the "number" type can store larger integers (up to <code>1.7976931348623157 * 10<sup>308</sup></code>), but outside of the safe integer range <code>±(2<sup>53</sup>-1)</code> there'll be a precision error, because not all digits fit into the fixed 64-bit storage. So an "approximate" value may be stored.
-
-For example, these two numbers (right above the safe range) are the same:
-
-```js
-console.log(9007199254740991 + 1); // 9007199254740992
-console.log(9007199254740991 + 2); // 9007199254740992
-```
-
-So to say, all odd integers greater than <code>(2<sup>53</sup>-1)</code> can't be stored at all in the "number" type.
-
-For most purposes <code>±(2<sup>53</sup>-1)</code> range is quite enough, but sometimes we need the entire range of really big integers, e.g. for cryptography or microsecond-precision timestamps.
->>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 
 Ο τύπου `BigInt` προστέθηκε πρόσφατα στη γλώσσα για να αντιπροσωπεύει ακέραιους αριθμούς αυθαίρετου μήκους.
 
@@ -283,7 +257,6 @@ typeof alert // "function"  (3)
 
 Υπάρχουν 8 βασικοί τύποι δεδομένων στην JavaScript.
 
-<<<<<<< HEAD
 - `number` για αριθμούς οποιουδήποτε είδους: ακέραιος ή floating-point, οι ακέραιοι αριθμοί περιορίζονται κατά ±2<sup>53</sup>.
 - `bigint` είναι για ακέραιους αριθμούς αυθαίρετου μήκους.
 - `string` για συμβολοσειρές. Μια συμβολοσειρά μπορεί να έχει έναν ή περισσότερους χαρακτήρες, δεν υπάρχει ξεχωριστός τύπος ενός χαρακτήρα.
@@ -292,18 +265,7 @@ typeof alert // "function"  (3)
 - `undefined` για μη εκχωρημένες τιμές - έναν αυτόνομο τύπο που έχει μία μόνο τιμή `undefined`.
 - `object` για πιο περίπλοκες δομές δεδομένων.
 - `symbol` για μοναδικούς identifiers.
-=======
-- Seven primitive data types:
-    - `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
-    - `bigint` for integer numbers of arbitrary length.
-    - `string` for strings. A string may have zero or more characters, there's no separate single-character type.
-    - `boolean` for `true`/`false`.
-    - `null` for unknown values -- a standalone type that has a single value `null`.
-    - `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
-    - `symbol` for unique identifiers.
-- And one non-primitive data type:
-    - `object` for more complex data structures.
->>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
+
 
 Ο τελεστής `typeof` μας επιτρέπει να δούμε ποιος τύπος αποθηκεύεται σε μια μεταβλητή.
 
