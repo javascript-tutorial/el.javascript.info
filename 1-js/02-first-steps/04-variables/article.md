@@ -162,14 +162,22 @@ let message = "That"; // SyntaxError: 'message' has already been declared
 
 ```smart header="Functional languages"
 <<<<<<< HEAD
+<<<<<<< HEAD
 Είναι ενδιαφέρον να σημειωθεί ότι υπάρχουν [functional](https://en.wikipedia.org/wiki/Functional_programming) γλώσσες προγραμματισμού, όπως [Scala](http://www.scala-lang.org/) ή [Erlang](http://www.erlang.org/) που απαγορεύουν την αλλαγή τιμής στις μεταβλητές.
 =======
 It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](https://www.scala-lang.org/) or [Erlang](https://www.erlang.org/) that forbid changing variable values.
 >>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
+=======
+It's interesting to note that there exist so-called [pure functional](https://en.wikipedia.org/wiki/Purely_functional_programming) programming languages, such as [Haskell](https://en.wikipedia.org/wiki/Haskell), that forbid changing variable values.
+>>>>>>> 746ad803c878e33182e7fab1578c0d15b9b75ca0
 
 Σε τέτοιες γλώσσες, όταν η τιμή αποθηκευτεί "στο κουτί", είναι εκεί για πάντα. Εάν χρειαστεί να αποθηκεύσουμε κάτι άλλο, η γλώσσα μας αναγκάζει να δημιουργήσουμε ένα νέο πλαίσιο (δηλώστε μια νέα μεταβλητή). Δεν μπορούμε να επαναχρησιμοποιήσουμε το παλιό.
 
+<<<<<<< HEAD
 Αν και μπορεί να φαίνεται λίγο περίεργο με την πρώτη ματιά, αυτές οι γλώσσες είναι αρκετά ικανές για σοβαρή ανάπτυξη. Επιπλέον, υπάρχουν περιοχές όπως οι παράλληλοι υπολογισμοί, όπου αυτός ο περιορισμός παρέχει ορισμένα οφέλη. Η μελέτη μιας τέτοιας γλώσσας (ακόμα κι αν δεν σκοπεύετε να τη χρησιμοποιήσετε σύντομα) συνιστάται να διευρύνετε το μυαλό.
+=======
+Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits.
+>>>>>>> 746ad803c878e33182e7fab1578c0d15b9b75ca0
 ```
 
 ## Ονομασία μεταβλητής [#variable-naming]
