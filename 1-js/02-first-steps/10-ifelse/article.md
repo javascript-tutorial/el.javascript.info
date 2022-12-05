@@ -184,10 +184,17 @@ alert( message );
 
 Μπορεί να είναι δύσκολο στην αρχή να κατανοήσουμε τι συμβαίνει. Αλλά μετά από μια πιο προσεκτική ματιά, μπορούμε να δούμε ότι είναι απλώς μια συνηθισμένη σειρά δοκιμών:
 
+<<<<<<< HEAD
 1. Το πρώτο ερωτηματικό ελέγχει εάν `age < 3`.
 2. Εάν είναι true -- τότε επιστρέφει `'Hi, baby!'`. Διαφορετικά, συνεχίζει στην έκφραση μετά την άνω και κάτω τελεία `'Hi, baby!'`, ελέγχοντας `age < 18`.
 3. Εάν αυτό είναι true -- επιστρέφει `'Hello!'`. Διαφορετικά, συνεχίζει στην έκφραση μετά την επόμενη άνω και κάτω τελεία '":"', ελέγχοντας `age < 100`.
 4. Αν αυτό είναι true -- επιστρέφει `'Greetings!'`. Διαφορετικά, συνεχίζει στην έκφραση μετά την τελευταία άνω και κάτω τελεία '":"', επιστρέφοντας `'What an unusual age!'`.
+=======
+1. The first question mark checks whether `age < 3`.
+2. If true -- it returns `'Hi, baby!'`. Otherwise, it continues to the expression after the colon ":", checking `age < 18`.
+3. If that's true -- it returns `'Hello!'`. Otherwise, it continues to the expression after the next colon ":", checking `age < 100`.
+4. If that's true -- it returns `'Greetings!'`. Otherwise, it continues to the expression after the last colon ":", returning `'What an unusual age!'`.
+>>>>>>> 1ce5644a15ee141fbe78c0fb79c8f40d870d7043
 
 Δείτε πώς φαίνεται αυτό `if..else`:
 

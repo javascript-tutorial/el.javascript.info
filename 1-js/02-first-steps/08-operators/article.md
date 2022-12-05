@@ -49,9 +49,15 @@
 
 Για παράδειγμα:
 ```js run
+<<<<<<< HEAD
 alert( 5 % 2 ); // 1, ένα υπόλοιπο 5 διαιρούμενο με 2
 alert( 8 % 3 ); // 2, ένα υπόλοιπο 8 διαιρούμενο με 3
 alert( 8 % 4 ); // 3, ένα υπόλοιπο 8 διαιρούμενο με 4
+=======
+alert( 5 % 2 ); // 1, the remainder of 5 divided by 2
+alert( 8 % 3 ); // 2, the remainder of 8 divided by 3
+alert( 8 % 4 ); // 0, the remainder of 8 divided by 4
+>>>>>>> 1ce5644a15ee141fbe78c0fb79c8f40d870d7043
 ```
 
 ### Εκθετικό **
