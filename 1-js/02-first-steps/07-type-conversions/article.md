@@ -35,7 +35,11 @@ alert(typeof value); // string
 
 ## Αριθμητική μετατροπή
 
+<<<<<<< HEAD
 Η μετατροπή αριθμών γίνεται αυτόματα σε Μαθηματικές συναρτήσεις και εκφράσεις.
+=======
+Numeric conversion in mathematical functions and expressions happens automatically.
+>>>>>>> 9e3fa1351f80cfd6353a778a55b2c86bca9e895f
 
 Για παράδειγμα, όταν η διαίρεση `/` εφαρμόζεται σε μη αριθμούς:
 
