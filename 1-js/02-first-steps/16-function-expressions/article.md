@@ -345,7 +345,7 @@ welcome(); // εντάξει τώρα
 */!*
 ```
 
-Or we could simplify it even further using a question mark operator `?`:
+Ή θα μπορούσαμε να το απλοποιήσουμε ακόμη περισσότερο χρησιμοποιώντας έναν τελεστή ερωτηματικού `?`:
 
 ```js run
 let age = prompt("What is your age?", 18);
