@@ -1,42 +1,42 @@
-# Function expressions
+# Εκφράσεις συναρτήσεων
 
-In JavaScript, a function is not a "magical language structure", but a special kind of value.
+Στην JavaScript, μια συνάρτηση δεν είναι μια "μαγική δομή γλώσσας", αλλά ένα ειδικό είδος αξίας.
 
-The syntax that we used before is called a *Function Declaration*:
+Η σύνταξη που χρησιμοποιούμε ονομάζεται _Function Declaration_:
 
 ```js
 function sayHi() {
-  alert( "Hello" );
+  alert("Hello");
 }
 ```
 
-There is another syntax for creating a function that is called a *Function Expression*.
+Υπάρχει μια άλλη σύνταξη για τη δημιουργία μιας συνάρτησης που ονομάζεται _Function Expression_.
 
-It allows us to create a new function in the middle of any expression.
+Μας επιτρέπει να δημιουργήσουμε μια νέα συνάρτηση στη μέση οποιασδήποτε έκφρασης.
 
-For example:
+Για παράδειγμα:
 
 ```js
-let sayHi = function() {
-  alert( "Hello" );
+let sayHi = function () {
+  alert("Hello");
 };
 ```
 
-Here we can see a variable `sayHi` getting a value, the new function, created as `function() { alert("Hello"); }`.
+Εδώ μπορούμε να δούμε μια μεταβλητή `sayHi` να παίρνει μια τιμή, τη νέα συνάρτηση, που δημιουργήθηκε ως `function() { alert("Hello"); }`.
 
-As the function creation happens in the context of the assignment expression (to the right side of `=`), this is a *Function Expression*.
+Καθώς η δημιουργία της συνάρτησης συμβαίνει στο πλαίσιο της έκφρασης ανάθεσης (στη δεξιά πλευρά του `=`), αυτή είναι μια έκφραση ενός _Function_.
 
-Please note, there's no name after the `function` keyword. Omitting a name is allowed for Function Expressions.
+Λάβετε υπόψη ότι δεν υπάρχει όνομα μετά τη λέξη-κλειδί `funtion`. Η παράλειψη ενός ονόματος επιτρέπεται για τις εκφράσεις συναρτήσεων.
 
-Here we immediately assign it to the variable, so the meaning of these code samples is the same: "create a function and put it into the variable `sayHi`".
+Εδώ το εκχωρούμε αμέσως στη μεταβλητή, οπότε η σημασία αυτών των δειγμάτων κώδικα είναι η ίδια: "δημιουργήστε μια συνάρτηση και βάλτε τη στη μεταβλητή `sayHi`.
 
-In more advanced situations, that we'll come across later, a function may be created and immediately called or scheduled for a later execution, not stored anywhere, thus remaining anonymous.
+Σε πιο προχωρημένες καταστάσεις, που θα συναντήσουμε αργότερα, μια συνάρτηση μπορεί να δημιουργηθεί και να κληθεί αμέσως ή να προγραμματιστεί για μεταγενέστερη εκτέλεση, να μην αποθηκευτεί πουθενά, με αποτέλεσμα να παραμείνει ανώνυμη.
 
-## Function is a value
+## Η συνάρτηση είναι μια τιμή
 
-Let's reiterate: no matter how the function is created, a function is a value. Both examples above store a function in the `sayHi` variable.
+Ας επαναλάβουμε: ανεξάρτητα από το πώς δημιουργείται η συνάρτηση, μια συνάρτηση είναι μια τιμή. Και τα δύο παραπάνω παραδείγματα αποθηκεύουν μια συνάρτηση στη μεταβλητή`sayHi`.
 
-We can even print out that value using `alert`:
+Μπορούμε ακόμη και να εμφανίσουμε αυτήν την τιμή χρησιμοποιώντας την εντολή `alert`:
 
 ```js run
 function sayHi() {
@@ -44,53 +44,54 @@ function sayHi() {
 }
 
 *!*
-alert( sayHi ); // shows the function code
+alert( sayHi ); // δείχνει τον κωδικό της συνάρτησης
 */!*
 ```
 
-Please note that the last line does not run the function, because there are no parentheses after `sayHi`. There are programming languages where any mention of a function name causes its execution, but JavaScript is not like that.
+Λάβετε υπόψη ότι η τελευταία γραμμή δεν εκτελεί τη συνάρτηση, επειδή δεν υπάρχουν παρενθέσεις μετά το `sayHi`. Υπάρχουν γλώσσες προγραμματισμού όπου οποιαδήποτε αναφορά ονόματος συνάρτησης προκαλεί την εκτέλεσή της, αλλά η JavaScript δεν είναι έτσι.
 
-In JavaScript, a function is a value, so we can deal with it as a value. The code above shows its string representation, which is the source code.
+Στο JavaScript, μια συνάρτηση είναι μια τιμή, επομένως μπορούμε να την αντιμετωπίσουμε ως τιμή. Ο παραπάνω κώδικας δείχνει την αναπαράσταση συμβολοσειράς του, που είναι ο πηγαίος κώδικας.
 
-Surely, a function is a special value, in the sense that we can call it like `sayHi()`.
+Σίγουρα, μια συνάρτηση είναι μια ειδική τιμή, με την έννοια ότι μπορούμε να την ονομάσουμε σαν `sayHi()`.
 
-But it's still a value. So we can work with it like with other kinds of values.
+Αλλά εξακολουθεί να είναι μια τιμή. Έτσι μπορούμε να δουλέψουμε με αυτό όπως με άλλα είδη αξιών.
 
-We can copy a function to another variable:
+Μπορούμε να αντιγράψουμε μια συνάρτηση σε μια άλλη μεταβλητή:
 
 ```js run no-beautify
-function sayHi() {   // (1) create
-  alert( "Hello" );
+function sayHi() {
+  // (1) δημιουργήστε
+  alert("Hello");
 }
 
-let func = sayHi;    // (2) copy
+let func = sayHi; // (2) αντίγραφο
 
-func(); // Hello     // (3) run the copy (it works)!
-sayHi(); // Hello    //     this still works too (why wouldn't it)
+func(); // Hello     // (3) εκτελέστε το αντίγραφο (δουλεύει)!
+sayHi(); // Hello    //     αυτό εξακολουθεί να λειτουργεί επίσης (γιατί όχι)
 ```
 
 Here's what happens above in detail:
 
-1. The Function Declaration `(1)` creates the function and puts it into the variable named `sayHi`.
-2. Line `(2)` copies it into the variable `func`. Please note again: there are no parentheses after `sayHi`. If there were, then `func = sayHi()` would write  *the result of the call* `sayHi()` into `func`, not *the function* `sayHi` itself.
-3. Now the function can be called as both `sayHi()` and `func()`.
+1. Η δήλωση συνάρτησης `(1)` δημιουργεί τη συνάρτηση και την τοποθετεί στη μεταβλητή με το όνομα `sayHi`.
+2. Η γραμμή `(2)` την αντιγράφει στη μεταβλητή `func`. Σημειώστε ξανά: δεν υπάρχουν παρενθέσεις μετά το «sayHi». Αν υπήρχε, τότε το `func = sayHi()` θα έγραφε _το αποτέλεσμα της κλήσης_ `sayHi()` στο `func`, όχι στην ίδια τη συνάρτηση` `sayHi`.
+3. Τώρα η συνάρτηση μπορεί να κληθεί και ως `sayHi()` και ως `func()`.
 
-We could also have used a Function Expression to declare `sayHi`, in the first line:
+Θα μπορούσαμε επίσης να χρησιμοποιήσουμε μια έκφραση συνάρτησης για να δηλώσουμε «sayHi», στην πρώτη γραμμή:
 
 ```js
-let sayHi = function() { // (1) create
-  alert( "Hello" );
+let sayHi = function () {
+  // (1) δημιουργήστε
+  alert("Hello");
 };
 
 let func = sayHi;
 // ...
 ```
 
-Everything would work the same.
+Όλα θα λειτουργούσαν το ίδιο.
 
-
-````smart header="Why is there a semicolon at the end?"
-You might wonder, why do Function Expressions have a semicolon `;` at the end, but Function Declarations do not:
+````smart header="Γιατί υπάρχει ερωτηματικό στο τέλος;"
+Ίσως αναρωτιέστε γιατί οι εκφράσεις συνάρτησης έχουν ερωτηματικό «;» στο τέλος, αλλά οι Δηλώσεις συναρτήσεων δεν έχουν:
 
 ```js
 function sayHi() {
@@ -102,27 +103,27 @@ let sayHi = function() {
 }*!*;*/!*
 ```
 
-The answer is simple: a Function Expression is created here as `function(…) {…}` inside the assignment statement: `let sayHi = …;`. The semicolon `;` is recommended at the end of the statement, it's not a part of the function syntax.
+Η απάντηση είναι απλή: μια Έκφραση Συνάρτησης δημιουργείται εδώ ως `συνάρτηση(…) {…}` μέσα στη δήλωση ανάθεσης: «ας sayHi = …;». Το ερωτηματικό `;` συνιστάται στο τέλος της δήλωσης, δεν αποτελεί μέρος της σύνταξης της συνάρτησης.
 
-The semicolon would be there for a simpler assignment, such as `let sayHi = 5;`, and it's also there for a function assignment.
+Το ερωτηματικό θα ήταν εκεί για μια απλούστερη ανάθεση, όπως `ας sayHi = 5;`, και υπάρχει επίσης για μια ανάθεση συνάρτησης.
 ````
 
-## Callback functions
+## Συναρτήσεις επανάκλησης
 
-Let's look at more examples of passing functions as values and using function expressions.
+Ας δούμε περισσότερα παραδείγματα μεταβίβασης συναρτήσεων ως τιμών και χρήσης παραστάσεων συναρτήσεων.
 
-We'll write a function `ask(question, yes, no)` with three parameters:
+Θα γράψουμε μια συνάρτηση `ask(ερώτηση, ναι, όχι)` με τρεις παραμέτρους:
 
-`question`
-: Text of the question
+`Ερώτηση`.
+: Κείμενο της ερώτησης
 
-`yes`
-: Function to run if the answer is "Yes"
+`Yes`.
+: Λειτουργία για εκτέλεση εάν η απάντηση είναι `Yes`
 
-`no`
-: Function to run if the answer is "No"
+`No`.
+: Λειτουργία για εκτέλεση εάν η απάντηση είναι `No`
 
-The function should ask the `question` and, depending on the user's answer, call `yes()` or `no()`:
+Η συνάρτηση πρέπει να κάνει την «ερώτηση» και, ανάλογα με την απάντηση του χρήστη, να καλεί `yes()` ή `no()`:
 
 ```js run
 *!*
@@ -140,17 +141,17 @@ function showCancel() {
   alert( "You canceled the execution." );
 }
 
-// usage: functions showOk, showCancel are passed as arguments to ask
+// χρήση: οι συναρτήσεις showOk, showCancel μεταβιβάζονται ως ορίσματα προς ερώτηση
 ask("Do you agree?", showOk, showCancel);
 ```
 
-In practice, such functions are quite useful. The major difference between a real-life `ask` and the example above is that real-life functions use more complex ways to interact with the user than a simple `confirm`. In the browser, such functions usually draw a nice-looking question window. But that's another story.
+Στην πράξη, τέτοιες λειτουργίες είναι αρκετά χρήσιμες. Η κύρια διαφορά μεταξύ μιας πραγματικής `ερώτησης` και του παραπάνω παραδείγματος είναι ότι οι πραγματικές συναρτήσεις χρησιμοποιούν πιο σύνθετους τρόπους αλληλεπίδρασης με τον χρήστη από μια απλή `επιβεβαίωση`. Στο πρόγραμμα περιήγησης, τέτοιες λειτουργίες συνήθως σχεδιάζουν ένα όμορφο παράθυρο ερωτήσεων. Αλλά αυτό είναι μια άλλη ιστορία.
 
-**The arguments `showOk` and `showCancel` of `ask` are called *callback functions* or just *callbacks*.**
+**Τα ορίσματα `showOk` και `showCancel` του `ask` ονομάζονται _συναρτήσεις επανάκλησης_ ή απλώς _callbacks_.**
 
-The idea is that we pass a function and expect it to be "called back" later if necessary. In our case, `showOk` becomes the callback for "yes" answer, and `showCancel` for "no" answer.
+Η ιδέα είναι ότι περνάμε μια συνάρτηση και περιμένουμε να "κληθεί πίσω" αργότερα εάν χρειαστεί. Στην περίπτωσή μας, το `showOk` γίνεται η επανάκληση για την απάντηση `ναι` και `showCancel` για την απάντηση `όχι`.
 
-We can use Function Expressions to write an equivalent, shorter function:
+Μπορούμε να χρησιμοποιήσουμε τις εκφράσεις συνάρτησης για να γράψουμε μια ισοδύναμη, μικρότερη συνάρτηση:
 
 ```js run no-beautify
 function ask(question, yes, no) {
@@ -167,59 +168,59 @@ ask(
 */!*
 ```
 
-Here, functions are declared right inside the `ask(...)` call. They have no name, and so are called *anonymous*. Such functions are not accessible outside of `ask` (because they are not assigned to variables), but that's just what we want here.
+Εδώ, οι συναρτήσεις δηλώνονται ακριβώς μέσα στην κλήση `ask(...)`. Δεν έχουν όνομα, και έτσι ονομάζονται _ανώνυμοι_. Τέτοιες συναρτήσεις δεν είναι προσπελάσιμες εκτός του «ρωτήστε» (επειδή δεν έχουν εκχωρηθεί σε μεταβλητές), αλλά αυτό ακριβώς θέλουμε εδώ.
 
-Such code appears in our scripts very naturally, it's in the spirit of JavaScript.
+Ένας τέτοιος κώδικας εμφανίζεται στα σενάρια μας πολύ φυσικά, είναι στο πνεύμα της JavaScript.
 
-```smart header="A function is a value representing an \"action\""
-Regular values like strings or numbers represent the *data*.
+```smart header="Μια συνάρτηση είναι μια τιμή που αντιπροσωπεύει μια "ενέργεια""
+Οι κανονικές τιμές όπως οι συμβολοσειρές ή οι αριθμοί αντιπροσωπεύουν τα *δεδομένα*.
 
-A function can be perceived as an *action*.
+Μια συνάρτηση μπορεί να εκληφθεί ως *ενέργεια*.
 
-We can pass it between variables and run when we want.
+Μπορούμε να το περάσουμε ανάμεσα σε μεταβλητές και να το τρέξουμε όποτε θέλουμε.
 ```
 
+## Έκφραση συνάρτησης έναντι δήλωση συνάρτησης
 
-## Function Expression vs Function Declaration
+Ας διατυπώσουμε τις βασικές διαφορές μεταξύ Δηλώσεων Συναρτήσεων και Εκφράσεων.
 
-Let's formulate the key differences between Function Declarations and Expressions.
+Πρώτον, η σύνταξη: πώς να τα διαφοροποιήσετε στον κώδικα.
 
-First, the syntax: how to differentiate between them in the code.
+- _Δήλωση συνάρτησης:_ μια συνάρτηση, που δηλώνεται ως ξεχωριστή δήλωση, στην κύρια ροή κώδικα:
 
-- *Function Declaration:* a function, declared as a separate statement, in the main code flow:
+  ```js
+  // Δήλωση συνάρτησης
+  function sum(a, b) {
+    return a + b;
+  }
+  ```
 
-    ```js
-    // Function Declaration
-    function sum(a, b) {
-      return a + b;
-    }
-    ```
-- *Function Expression:* a function, created inside an expression or inside another syntax construct. Here, the function is created on the right side of the "assignment expression" `=`:
+- _Έκφραση συνάρτησης:_ μια συνάρτηση, που δημιουργείται μέσα σε μια έκφραση ή μέσα σε μια άλλη δομή σύνταξης. Εδώ, η συνάρτηση δημιουργείται στη δεξιά πλευρά της "έκφρασης ανάθεσης" `=`:
 
-    ```js
-    // Function Expression
-    let sum = function(a, b) {
-      return a + b;
-    };
-    ```
+  ```js
+  // Έκφραση συνάρτησης
+  let sum = function (a, b) {
+    return a + b;
+  };
+  ```
 
-The more subtle difference is *when* a function is created by the JavaScript engine.
+Η πιο λεπτή διαφορά είναι _όταν_ δημιουργείται μια συνάρτηση από τη μηχανή JavaScript.
 
-**A Function Expression is created when the execution reaches it and is usable only from that moment.**
+**Μια έκφραση συνάρτησης δημιουργείται όταν φτάσει η εκτέλεση και μπορεί να χρησιμοποιηθεί μόνο από εκείνη τη στιγμή.**
 
-Once the execution flow passes to the right side of the assignment `let sum = function…` -- here we go, the function is created and can be used (assigned, called, etc. ) from now on.
+Μόλις η ροή εκτέλεσης περάσει στη δεξιά πλευρά της εκχώρησης `ας αθροίσουμε = συνάρτηση…` -- εδώ πάμε, η συνάρτηση δημιουργείται και μπορεί να χρησιμοποιηθεί (εκχωρηθεί, κληθεί κ.λπ. ) από εδώ και στο εξής.
 
-Function Declarations are different.
+Οι δηλώσεις λειτουργιών είναι διαφορετικές.
 
-**A Function Declaration can be called earlier than it is defined.**
+**Μια δήλωση συνάρτησης μπορεί να κληθεί νωρίτερα από ό,τι έχει οριστεί.**
 
-For example, a global Function Declaration is visible in the whole script, no matter where it is.
+Για παράδειγμα, μια καθολική δήλωση συνάρτησης είναι ορατή σε ολόκληρο το σενάριο, ανεξάρτητα από το πού βρίσκεται.
 
-That's due to internal algorithms. When JavaScript prepares to run the script, it first looks for global Function Declarations in it and creates the functions. We can think of it as an "initialization stage".
+Αυτό οφείλεται σε εσωτερικούς αλγόριθμους. Όταν η JavaScript προετοιμάζεται να εκτελέσει το σενάριο, αναζητά πρώτα καθολικές δηλώσεις συναρτήσεων σε αυτό και δημιουργεί τις συναρτήσεις. Μπορούμε να το σκεφτούμε ως «στάδιο αρχικοποίησης».
 
-And after all Function Declarations are processed, the code is executed. So it has access to these functions.
+Και μετά την επεξεργασία όλων των Δηλώσεων Συναρτήσεων, ο κώδικας εκτελείται. Άρα έχει πρόσβαση σε αυτές τις λειτουργίες.
 
-For example, this works:
+Για παράδειγμα, αυτό λειτουργεί:
 
 ```js run refresh untrusted
 *!*
@@ -231,34 +232,34 @@ function sayHi(name) {
 }
 ```
 
-The Function Declaration `sayHi` is created when JavaScript is preparing to start the script and is visible everywhere in it.
+Η δήλωση συνάρτησης `sayHi` δημιουργείται όταν η JavaScript ετοιμάζεται να ξεκινήσει το σενάριο και είναι ορατή παντού μέσα σε αυτό.
 
-...If it were a Function Expression, then it wouldn't work:
+...Αν ήταν μια έκφραση συνάρτησης, τότε δεν θα λειτουργούσε:
 
 ```js run refresh untrusted
 *!*
-sayHi("John"); // error!
+sayHi("John"); // Σφάλμα!
 */!*
 
-let sayHi = function(name) {  // (*) no magic any more
+let sayHi = function(name) {  // (*) καμία μαγεία πια
   alert( `Hello, ${name}` );
 };
 ```
 
-Function Expressions are created when the execution reaches them. That would happen only in the line `(*)`. Too late.
+Οι εκφράσεις συνάρτησης δημιουργούνται όταν φτάσει η εκτέλεση σε αυτές. Αυτό θα συνέβαινε μόνο στη γραμμή «(\*)». Πολύ αργά.
 
-Another special feature of Function Declarations is their block scope.
+Ένα άλλο ιδιαίτερο χαρακτηριστικό των Δηλώσεων Συναρτήσεων είναι το εύρος μπλοκ τους.
 
-**In strict mode, when a Function Declaration is within a code block, it's visible everywhere inside that block. But not outside of it.**
+**Στην αυστηρή λειτουργία, όταν μια δήλωση συνάρτησης βρίσκεται μέσα σε ένα μπλοκ κώδικα, είναι ορατή παντού μέσα σε αυτό το μπλοκ. Όχι όμως έξω από αυτό.**
 
-For instance, let's imagine that we need to declare a function `welcome()` depending on the `age` variable that we get during runtime. And then we plan to use it some time later.
+Για παράδειγμα, ας φανταστούμε ότι πρέπει να δηλώσουμε μια συνάρτηση `welcome()` ανάλογα με τη μεταβλητή `age` που λαμβάνουμε κατά τη διάρκεια του χρόνου εκτέλεσης. Και μετά σκοπεύουμε να το χρησιμοποιήσουμε λίγο καιρό αργότερα.
 
-If we use Function Declaration, it won't work as intended:
+Εάν χρησιμοποιήσουμε τη δήλωση συνάρτησης, δεν θα λειτουργήσει όπως προβλέπεται:
 
 ```js run
 let age = prompt("What is your age?", 18);
 
-// conditionally declare a function
+// δηλώνει υπό όρους μια συνάρτηση
 if (age < 18) {
 
   function welcome() {
@@ -273,30 +274,30 @@ if (age < 18) {
 
 }
 
-// ...use it later
+// ...χρησιμοποιήστε το αργότερα
 *!*
-welcome(); // Error: welcome is not defined
+welcome(); // Σφάλμα: το καλωσόρισμα δεν έχει οριστεί
 */!*
 ```
 
-That's because a Function Declaration is only visible inside the code block in which it resides.
+Αυτό συμβαίνει επειδή μια δήλωση συνάρτησης είναι ορατή μόνο μέσα στο μπλοκ κώδικα στο οποίο βρίσκεται.
 
-Here's another example:
+Εδώ είναι ένα άλλο παράδειγμα:
 
 ```js run
-let age = 16; // take 16 as an example
+let age = 16; // πάρτε ως παράδειγμα το 16
 
 if (age < 18) {
 *!*
-  welcome();               // \   (runs)
+  welcome();               // \   (τρέχει)
 */!*
                            //  |
   function welcome() {     //  |
-    alert("Hello!");       //  |  Function Declaration is available
-  }                        //  |  everywhere in the block where it's declared
+    alert("Hello!");       //  |  Η δήλωση λειτουργίας είναι διαθέσιμη
+  }                        //  |  παντού στο μπλοκ όπου έχει δηλωθεί
                            //  |
 *!*
-  welcome();               // /   (runs)
+  welcome();               // /   (τρέχει)
 */!*
 
 } else {
@@ -306,19 +307,19 @@ if (age < 18) {
   }
 }
 
-// Here we're out of curly braces,
-// so we can not see Function Declarations made inside of them.
+// Εδώ έχουμε τελειώσει τα σγουρά σιδεράκια,
+// έτσι δεν μπορούμε να δούμε Δηλώσεις συναρτήσεων που γίνονται μέσα σε αυτές.
 
 *!*
-welcome(); // Error: welcome is not defined
+welcome(); // Σφάλμα: το καλωσόρισμα δεν έχει οριστεί
 */!*
 ```
 
-What can we do to make `welcome` visible outside of `if`?
+Τι μπορούμε να κάνουμε για να κάνουμε το `welcome` ορατό έξω από το `if`;
 
-The correct approach would be to use a Function Expression and assign `welcome` to the variable that is declared outside of `if` and has the proper visibility.
+Η σωστή προσέγγιση θα ήταν να χρησιμοποιήσετε μια Έκφραση συνάρτησης και να εκχωρήσετε `welcome` στη μεταβλητή που δηλώνεται εκτός του `if` και έχει την κατάλληλη ορατότητα.
 
-This code works as intended:
+Αυτός ο κώδικας λειτουργεί όπως προβλέπεται:
 
 ```js run
 let age = prompt("What is your age?", 18);
@@ -340,7 +341,7 @@ if (age < 18) {
 }
 
 *!*
-welcome(); // ok now
+welcome(); // εντάξει τώρα
 */!*
 ```
 
@@ -354,27 +355,26 @@ let welcome = (age < 18) ?
   function() { alert("Greetings!"); };
 
 *!*
-welcome(); // ok now
+welcome(); // εντάξει τώρα
 */!*
 ```
 
+```smart header="Πότε να επιλέξετε Δήλωση συνάρτησης έναντι Έκφρασης συνάρτησης;"
+Ως εμπειρικός κανόνας, όταν πρέπει να δηλώσουμε μια συνάρτηση, το πρώτο πράγμα που πρέπει να λάβουμε υπόψη είναι η σύνταξη της δήλωσης συνάρτησης. Δίνει περισσότερη ελευθερία στον τρόπο οργάνωσης του κώδικά μας, επειδή μπορούμε να καλέσουμε τέτοιες συναρτήσεις πριν δηλωθούν.
 
-```smart header="When to choose Function Declaration versus Function Expression?"
-As a rule of thumb, when we need to declare a function, the first thing to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
+Αυτό είναι επίσης καλύτερο για την αναγνωσιμότητα, καθώς είναι πιο εύκολο να αναζητήσετε τη «συνάρτηση f(…) {…}» στον κώδικα από το «έστω f = συνάρτηση(…) {…};». Οι δηλώσεις συναρτήσεων είναι πιο «τραβηγμένες».
 
-That's also better for readability, as it's easier to look up `function f(…) {…}` in the code than `let f = function(…) {…};`. Function Declarations are more "eye-catching".
-
-...But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we've just seen an example), then Function Expression should be used.
+...Αλλά εάν μια δήλωση συνάρτησης δεν μας ταιριάζει για κάποιο λόγο ή χρειαζόμαστε μια δήλωση υπό όρους (είχαμε μόλις ένα παράδειγμα), τότε θα πρέπει να χρησιμοποιηθεί η έκφραση συνάρτησης.
 ```
 
-## Summary
+## Περίληψη
 
-- Functions are values. They can be assigned, copied or declared in any place of the code.
-- If the function is declared as a separate statement in the main code flow, that's called a "Function Declaration".
-- If the function is created as a part of an expression, it's called a "Function Expression".
-- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
-- Function Expressions are created when the execution flow reaches them.
+- Οι συναρτήσεις είναι αξίες. Μπορούν να αντιστοιχιστούν, να αντιγραφούν ή να δηλωθούν σε οποιοδήποτε σημείο του κωδικού.
+- Εάν η συνάρτηση δηλωθεί ως ξεχωριστή δήλωση στην κύρια ροή κώδικα, αυτό ονομάζεται "Δήλωση συνάρτησης".
+- Εάν η συνάρτηση δημιουργείται ως μέρος μιας έκφρασης, ονομάζεται "Έκφραση συνάρτησης".
+- Οι δηλώσεις συναρτήσεων υποβάλλονται σε επεξεργασία πριν από την εκτέλεση του μπλοκ κώδικα. Είναι ορατά παντού στο μπλοκ.
+- Οι εκφράσεις συνάρτησης δημιουργούνται όταν φτάσει σε αυτές η ροή εκτέλεσης.
 
-In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
+Στις περισσότερες περιπτώσεις, όταν χρειάζεται να δηλώσουμε μια συνάρτηση, είναι προτιμότερη μια δήλωση συνάρτησης, επειδή είναι ορατή πριν από την ίδια τη δήλωση. Αυτό μας δίνει μεγαλύτερη ευελιξία στην οργάνωση κώδικα και είναι συνήθως πιο ευανάγνωστο.
 
-So we should use a Function Expression only when a Function Declaration is not fit for the task. We've seen a couple of examples of that in this chapter, and will see more in the future.
+Επομένως, θα πρέπει να χρησιμοποιούμε μια έκφραση συνάρτησης μόνο όταν μια δήλωση συνάρτησης δεν είναι κατάλληλη για την εργασία. Έχουμε δει μερικά παραδείγματα αυτού σε αυτό το κεφάλαιο και θα δούμε περισσότερα στο μέλλον.
