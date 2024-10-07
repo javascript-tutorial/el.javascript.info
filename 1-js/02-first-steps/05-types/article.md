@@ -83,12 +83,18 @@ n = 12.345;
 const bigInt = 1234567890123456789012345678901234567890n;
 ```
 
+<<<<<<< HEAD
 ```smart header="Compatability issues"
 Αυτήν τη στιγμή το "BigInt" υποστηρίζεται στον Firefox και το Chrome, αλλά όχι στο Safari/IE/Edge.
 
 Καθώς οι αριθμοί `BigInt` σπάνια χρειάζονται, δεν τους καλύπτουμε εδώ, αλλά τους αφιερώσαμε ένα ξεχωριστό κεφάλαιο <info:bigint>. Διαβάστε το όταν χρειάζεστε τόσο μεγάλους αριθμούς.
 
 ## Συμβολοσειρά
+=======
+As `BigInt` numbers are rarely needed, we don't cover them here, but devoted them a separate chapter <info:bigint>. Read it when you need such big numbers.
+
+## String
+>>>>>>> b258d7d5b635c88228f7556e14fbe5e5ca7f736d
 
 Μια συμβολοσειρά σε JavaScript πρέπει να περιβάλλεται από εισαγωγικά.
 
