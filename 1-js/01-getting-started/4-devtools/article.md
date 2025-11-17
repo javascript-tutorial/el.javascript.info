@@ -24,7 +24,7 @@
 
 Φαίνεται κάπως έτσι:
 
-![chrome](chrome.png)
+![chrome](chrome.webp)
 
 Η ακριβής εμφάνιση των develοper tools εξαρτάται από την έκδοση του Chrome. Αλλάζει από καιρό σε καιρό, αλλά πρέπει να είναι παρόμοια.
 
@@ -51,7 +51,11 @@ To insert multiple lines, press `key:Shift+Enter`. This way one can enter long f
 
 Το Safari (πρόγραμμα περιήγησης του Mac, που δεν υποστηρίζεται από τα Windows / Linux) είναι λίγο ιδιαίτερο εδώ. Πρέπει πρώτα να ενεργοποιήσουμε το μενού "Develop menu".
 
+<<<<<<< HEAD
 Ανοίξτε τις Προτιμήσεις και μεταβείτε στο παράθυρο "Για προχωρημένους". Υπάρχει ένα πλαίσιο ελέγχου στο κάτω μέρος:
+=======
+Open Settings and go to the "Advanced" pane. There's a checkbox at the bottom:
+>>>>>>> 5e893cffce8e2346d4e50926d5148c70af172533
 
 ![safari](safari.png)
 
