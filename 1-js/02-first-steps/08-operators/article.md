@@ -264,7 +264,13 @@ alert( c ); // 4
 ```
 Οι αλυσοδεμένες εργασίες αξιολογούνται από δεξιά προς τα αριστερά. Αρχικά, αξιολογείται η πιο δεξιά έκφραση `2 + 2` και στη συνέχεια αντιστοιχίζεται στις μεταβλητές στα αριστερά: `c`, `b` και `a`. Στο τέλος, όλες οι μεταβλητές μοιράζονται μία μόνο τιμή.
 
+<<<<<<< HEAD
 Για άλλη μια φορά, για λόγους αναγνωσιμότητας, είναι καλύτερο να χωρίσετε αυτόν τον κώδικα σε λίγες γραμμές:
+=======
+Chained assignments evaluate from right to left. First, the rightmost expression `2 + 2` is evaluated and then assigned to the variables on the left: `c`, `b` and `a`. At the end, all the variables share a single value.
+
+Once again, for the purposes of readability it's better to split such code into a few lines:
+>>>>>>> 725653fd99b19d42195e837ac3bb23c1784f8f6e
 
 ```js
 c = 2 + 2;

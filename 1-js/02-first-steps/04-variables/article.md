@@ -204,7 +204,11 @@ let userName;
 let test123;
 ```
 
+<<<<<<< HEAD
 Όταν το όνομα περιέχει πολλές λέξεις, [γραφή με ενδιάμεσα κεφαλαία](https://en.wikipedia.org/wiki/CamelCase) χρησιμοποιείται συνήθως. Αυτό είναι: οι λέξεις πηγαίνουν το ένα μετά το άλλο, κάθε λέξη εκτός από την πρώτη ξεκινώντας με ένα κεφαλαίο γράμμα: `myVeryLongName`.
+=======
+When the name contains multiple words, [camelCase](https://en.wikipedia.org/wiki/CamelCase) is commonly used. That is: words go one after another, with each word except the first starting with a capital letter: `myVeryLongName`.
+>>>>>>> 725653fd99b19d42195e837ac3bb23c1784f8f6e
 
 Το ενδιαφέρον είναι οτι - το σύμβολο δολαρίου "$" και η υπογράμμιση "_" μπορούν επίσης να χρησιμοποιηθούν σε ονόματα. Είναι κανονικά σύμβολα, όπως τα γράμματα, χωρίς ιδιαίτερο νόημα.
 

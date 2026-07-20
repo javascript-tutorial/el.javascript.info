@@ -69,10 +69,15 @@
 Υπάρχουν τρόποι αλληλεπίδρασης με κάμερα / μικρόφωνο και άλλες συσκευές, αλλά απαιτούν τη ρητή άδεια του χρήστη. Επομένως, μια σελίδα με δυνατότητα JavaScript ενδέχεται να μην ενεργοποιεί κρυφά μια κάμερα web, να παρατηρεί το περιβάλλον και να στέλνει τις πληροφορίες στο [NSA] (https://en.wikipedia.org/wiki/National_Security_Agency) 
 - Διαφορετικές tabs/windows γενικά δεν αναγνωρίζουν ο ένας τον άλλον. Μερικές φορές το κάνουν, για παράδειγμα όταν ένα παράθυρο χρησιμοποιεί JavaScript για να ανοίξει το άλλο. Αλλά ακόμη και σε αυτήν την περίπτωση, η JavaScript από μία σελίδα ενδέχεται να μην έχει πρόσβαση στην άλλη, εάν προέρχεται από διαφορετικούς ιστότοπους (από διαφορετικό τομέα, πρωτόκολλο ή θύρα).
 
+<<<<<<< HEAD
 Αυτό ονομάζεται "Same Origin Policy". Για να επιλυθεί αυτό, *οι δυο σελιδες* πρέπει να συμφωνήσουν για την ανταλλαγή δεδομένων και να περιέχουν έναν ειδικό κώδικα JavaScript που το χειρίζεται. Θα το καλύψουμε έπειτα στο σεμινάριο. 
 
 Αυτός ο περιορισμός υπάρχει για την ασφάλεια του χρήστη. Μια σελίδα από το 'http://anysite.com' που έχει ανοίξει ένας χρήστης δεν πρέπει να έχει πρόσβαση σε άλλη καρτέλα του προγράμματος περιήγησης με τη διεύθυνση URL 'http://gmail.com' και να κλέβει πληροφορίες από εκεί. 
 - Η JavaScript μπορεί εύκολα να επικοινωνήσει μέσω του δικτύου στον διακομιστή από τον οποίο προήλθε η τρέχουσα σελίδα. Όμως, η ικανότητά της να λαμβάνει δεδομένα από άλλους ιστότοπους / τομείς είναι αδύνατη. Αν και είναι δυνατό, απαιτεί ρητή συμφωνία (που εκφράζεται σε κεφαλίδες HTTP) από την απομακρυσμένη πλευρά. Και πάλι, αυτός είναι ένας περιορισμός ασφάλειας.
+=======
+    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com`, for example, and steal information from there.
+- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is severely limited. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+>>>>>>> 725653fd99b19d42195e837ac3bb23c1784f8f6e
 
 ![](limitations.svg)
 
